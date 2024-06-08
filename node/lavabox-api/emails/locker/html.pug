@@ -1,0 +1,36 @@
+html(lang='en')
+  head
+    link(rel="stylesheet", href="/css/email.css", data inline)
+    title Lavabox App - Confirmacion de locker
+  body
+    div.header
+      div.content-logo
+      img.logo(src='https://lavabox.pe/assets/logo-text.png')
+      
+      div.content-description2
+        p.text ¡Tu pedido se encuentra en el casillero # #{locker}!
+        div.content-footer3
+          p.text-footer-3-1 Contraseña del casillero: 
+          p.text-footer-3-1 #{key_locker}
+          
+    div.container
+      p.text-container Para recoger su pedido siga los siguientes pasos:
+      
+      div.content-imagen
+          div.column
+            img.imagen-pago-left2(src='https://lavabox.pe/assets/order_in_locker.png') 
+   
+    div.footer-2
+      p.text-footer-7 Muchas gracias por utilizar nuestro servicio. ¡Esperamos escuchar de ti pronto!
+      
+    div.footer-18
+        div.content-column
+          p.text-footer-12 Disfruta de tu tiempo libre.
+    img.footer-content-img7(src='https://lavabox.pe/assets/footer.png') 
+            
+    div.test
+        div.content-footer3
+          p.text-footer-3 Enviado para, 
+          p.text-color-footer-3 #{email} 
+        div.content-imagen
+          img.logo-footer(src='https://lavabox.pe/assets/new_logo.png')

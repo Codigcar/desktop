@@ -1,0 +1,19 @@
+{
+  "eventSource": "aws:kafka",
+  "eventSourceArn": "arn:aws:kafka:us-east-1:627912843016:cluster/msk-dev-matrix-01/fb2d4119-a283-4e5c-a061-88906707624e-2",
+  "bootstrapServers": "b-2.mskdevmatrix01.u4jjft.c2.kafka.us-east-1.amazonaws.com:9096,b-1.mskdevmatrix01.u4jjft.c2.kafka.us-east-1.amazonaws.com:9096",
+  "records": {
+    "com.gcredicorp.matrix.card.emitted.v1-0": [
+      {
+        "topic": "com.gcredicorp.matrix.card.emitted.v1",
+        "partition": 0,
+        "offset": 491,
+        "timestamp": 1682534620738,
+        "timestampType": "CREATE_TIME",
+        "key": "Y2FyZDpkZTBjN2FlOC0yYTFjLTRmMTMtOGU2My1iMTkxMTk4MDlkZGMvMQ==",
+        "value": "eyJkYXRhIjp7InBheWxvYWQiOnsicmVmZXJlbmNlIjoiMzMzMTU5MDIzNDA0IiwiYWNjb3VudElkIjoiOTIzYjI0YjctNjg0Mi00ZmI5LWJhZTUtYmNmMjkzMzAwOTJmIiwiY3VzdG9tZXJJZCI6IjFlMGQ1MzUzLWNjZDMtNGYzYy04N2QwLThhODY0NmQ1ZWYxZCIsImNvbnRyYWN0SWQiOiJkNTE2MjdmOC00MDFiLTQ2ZDQtOTczZi1kN2Q0ZTRmYTI3ZjYiLCJjcmVkaXRMaW1pdCI6NjI1MCwiYWxpYXMiOiIqKioqKioqKioqKioyNzY3IiwiaWQiOiJkZTBjN2FlOC0yYTFjLTRmMTMtOGU2My1iMTkxMTk4MDlkZGMiLCJleHRlcm5hbFRyYW5zYWN0aW9uSWQiOiJGMTAyODM5NDkiLCJpc1ZpcnR1YWwiOnRydWUsInR5cGUiOiJNQUlOQ0FSRCIsInB1cmNoYXNlQXByIjowLjUsInN0YXR1cyI6IkFDVElWRSJ9LCJzbmFwc2hvdCI6eyJyZWZlcmVuY2UiOiIzMzMxNTkwMjM0MDQiLCJhY2NvdW50SWQiOiI5MjNiMjRiNy02ODQyLTRmYjktYmFlNS1iY2YyOTMzMDA5MmYiLCJjdXN0b21lcklkIjoiMWUwZDUzNTMtY2NkMy00ZjNjLTg3ZDAtOGE4NjQ2ZDVlZjFkIiwiY29udHJhY3RJZCI6ImQ1MTYyN2Y4LTQwMWItNDZkNC05NzNmLWQ3ZDRlNGZhMjdmNiIsImNyZWRpdExpbWl0Ijo2MjUwLCJhbGlhcyI6IioqKioqKioqKioqKjI3NjciLCJpZCI6ImRlMGM3YWU4LTJhMWMtNGYxMy04ZTYzLWIxOTExOTgwOWRkYyIsImV4dGVybmFsVHJhbnNhY3Rpb25JZCI6IkYxMDI4Mzk0OSIsImlzVmlydHVhbCI6dHJ1ZSwidHlwZSI6Ik1BSU5DQVJEIiwicHVyY2hhc2VBcHIiOjAuNSwic3RhdHVzIjoiQUNUSVZFIn19LCJhdXRob3IiOiJ1c2VyOjdhN2U0OWNjLWQ4ZjUtNGRhMi05NWYwLWQ1YjkyYmRhMjg1OSIsImlkIjoxLCJzb3VyY2UiOiJjYXJkOmRlMGM3YWU4LTJhMWMtNGYxMy04ZTYzLWIxOTExOTgwOWRkYyIsInRpbWUiOjE2ODI1MzQ2MTg4MzYsImRhdGFDb250ZW50VHlwZSI6ImFwcGxpY2F0aW9uL2pzb24iLCJ0eXBlIjoiY29tLmdjcmVkaWNvcnAubWF0cml4LmNhcmQuZW1pdHRlZC52MSIsInRyYW5zYWN0aW9uIjoiMS02NDQ5NzBjYi0yZTA1NzljZDE1ODVkZGE5MWJlN2E1NjgiLCJkYXRhRW5jb2RpbmdUeXBlIjoiaWRlbnRpdHkifQ==",
+        "headers": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,231 @@
+${
+  jsonencode({
+    "Comment": "A description of my state machine",
+  "StartAt": "Exists Selected Accounts?",
+  "States": {
+    "Exists Selected Accounts?": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "And": [
+            {
+              "Variable": "$.accounts",
+              "IsPresent": true
+            },
+            {
+              "Variable": "$.accounts[0]",
+              "IsPresent": true
+            }
+          ],
+          "Next": "Map User Accounts"
+        }
+      ],
+      "Default": "Get All Accounts"
+    },
+    "Map User Accounts": {
+      "Type": "Map",
+      "Iterator": {
+        "StartAt": "Generate Key",
+        "States": {
+          "Generate Key": {
+            "Type": "Pass",
+            "End": true,
+            "ResultPath": "$"
+          }
+        }
+      },
+      "ItemsPath": "$.accounts",
+      "ResultPath": "$.keys",
+      "Parameters": {
+        "account": {
+          "S.$": "$$.Map.Item.Value"
+        }
+      },
+      "Next": "Get Set of Accounts",
+      "MaxConcurrency": 40
+    },
+    "Get Set of Accounts": {
+      "Type": "Task",
+      "Next": "Prepare Set of Accounts",
+      "Parameters": {
+        "RequestItems": {
+          "${dyn_table_name}": {
+            "Keys.$": "$.keys",
+            "ProjectionExpression": "#user,#account,#reference",
+            "ExpressionAttributeNames": {
+              "#user": "user",
+              "#account": "account",
+              "#reference": "reference"
+            }
+          }
+        }
+      },
+      "Resource": "arn:aws:states:::aws-sdk:dynamodb:batchGetItem",
+      "ResultPath": "$.items"
+    },
+    "Prepare Set of Accounts": {
+      "Type": "Pass",
+      "Parameters": {
+        "user.$": "$.user",
+        "items.$": "$.items.Responses.${dyn_table_name}"
+      },
+      "Next": "Map References"
+    },
+    "Get All Accounts": {
+      "Type": "Task",
+      "Parameters": {
+        "TableName": "${dyn_table_name}",
+        "IndexName": "by-user",
+        "ProjectionExpression": "#user,#account,#reference",
+        "KeyConditionExpression": "#user = :user",
+        "ExpressionAttributeNames": {
+          "#user": "user",
+          "#account": "account",
+          "#reference": "reference"
+        },
+        "ExpressionAttributeValues": {
+          ":user": {
+            "S.$": "$.user"
+          }
+        }
+      },
+      "Resource": "arn:aws:states:::aws-sdk:dynamodb:query",
+      "Next": "Prepare All Accounts",
+      "ResultPath": "$.items"
+    },
+    "Prepare All Accounts": {
+      "Type": "Pass",
+      "Parameters": {
+        "user.$": "$.user",
+        "items.$": "$.items.Items"
+      },
+      "Next": "Map References"
+    },
+    "Map References": {
+      "Type": "Map",
+      "Next": "Map to i2c",
+      "Iterator": {
+        "StartAt": "Validate Ownership",
+        "States": {
+          "Validate Ownership": {
+            "Type": "Choice",
+            "Choices": [
+              {
+                "Variable": "$.owner",
+                "StringEqualsPath": "$.user",
+                "Next": "Pass Reference"
+              }
+            ],
+            "Default": "Account Not Authorized"
+          },
+          "Pass Reference": {
+            "Type": "Pass",
+            "Parameters": {
+              "user.$": "$.user",
+              "account.$": "$.account",
+              "reference.$": "$.reference"
+            },
+            "ResultPath": "$",
+            "End": true
+          },
+          "Account Not Authorized": {
+            "Type": "Fail",
+            "Error": "AccountNotAuthorized",
+            "Cause": "Acceso a cuenta no authorizada"
+          }
+        }
+      },
+      "ItemsPath": "$.items",
+      "Parameters": {
+        "user.$": "$.user",
+        "owner.$": "$$.Map.Item.Value.user.S",
+        "account.$": "$$.Map.Item.Value.account.S",
+        "reference.$": "$$.Map.Item.Value.reference.S"
+      },
+      "Catch": [
+        {
+          "ErrorEquals": [
+            "AccountNotAuthorized"
+          ],
+          "Next": "Return Empty List"
+        }
+      ],
+      "MaxConcurrency": 40
+    },
+    "Map to i2c": {
+      "Type": "Map",
+      "Iterator": {
+        "StartAt": "Invoke to i2c",
+        "States": {
+          "Invoke to i2c": {
+            "Type": "Task",
+            "Resource": "arn:aws:states:::lambda:invoke",
+            "Parameters": {
+              "Payload.$": "$",
+              "FunctionName": "${lambda_arn}:$LATEST"
+            },
+            "ResultPath": "$.orders",
+            "Next": "Map Payment Orders"
+          },
+          "Map Payment Orders": {
+            "Type": "Map",
+            "Iterator": {
+              "StartAt": "Parse Order",
+              "States": {
+                "Parse Order": {
+                  "Type": "Pass",
+                  "Parameters": {
+                    "id.$": "$.order.id",
+                    "type.$": "$.order.type",
+                    "status.$": "$.order.status",
+                    "hasPaymentInProcess.$": "$.order.hasPaymentInProcess",
+                    "accountId.$": "$.account",
+                    "statementDate.$": "$.order.statementDate",
+                    "dueDate.$": "$.order.dueDate",
+                    "startDate.$": "$.order.startDate",
+                    "endDate.$": "$.order.endDate",
+                    "total.$": "$.order.total",
+                    "pending.$": "$.order.pending",
+                    "minimum.$": "$.order.minimum"
+                  },
+                  "End": true
+                }
+              }
+            },
+            "End": true,
+            "ItemsPath": "$.orders.Payload",
+            "MaxConcurrency": 40,
+            "Parameters": {
+              "order.$": "$$.Map.Item.Value",
+              "account.$": "$.account",
+              "reference.$": "$.reference"
+            }
+          }
+        }
+      },
+      "Parameters": {
+        "user.$": "$$.Map.Item.Value.user",
+        "account.$": "$$.Map.Item.Value.account",
+        "reference.$": "$$.Map.Item.Value.reference"
+      },
+      "ItemsPath": "$",
+      "MaxConcurrency": 40,
+      "Next": "Join Result"
+    },
+    "Join Result": {
+      "Type": "Pass",
+      "Parameters": {
+        "result.$": "$[*][*]"
+      },
+      "End": true,
+      "OutputPath": "$.result"
+    },
+    "Return Empty List": {
+      "Type": "Pass",
+      "End": true,
+      "Result": [],
+      "ResultPath": "$"
+    }
+  }
+})
+}

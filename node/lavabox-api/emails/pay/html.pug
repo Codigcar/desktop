@@ -1,0 +1,43 @@
+html(lang='en')
+  head
+    link(rel="stylesheet", href="/css/email.css", data inline)
+    title ¡Paga tu orden Lavabox!
+  body
+    div.content-email
+      div.content-logo
+      img.logo(src='https://lavabox.pe/assets/logo-text.png')
+      
+      div.content-description
+          img.portada(src='https://lavabox.pe/assets/image%2048.png')
+          
+          p.text ¡Necesitamos tu pago para continuar el proceso!
+          
+          div
+            p.description Por favor ingresa a tu cuenta mediante nuestra app para realizar el pago con alguno de nuestros medios de pago disponibles.
+            
+          div.table-content
+            p.table-text Código de Orden: #{orderId}
+            p.table-text Monto a pagar: s/. #{pay}
+            
+          div.test-button
+            div.content-button
+              a(class='click2' href=`http://${host}/auth/confirmation/${token}`) Ingresar a la Aplicación
+          
+          div.test-descargas
+             a(href='https://play.google.com/store/apps/details?id=com.thinkway.lavabox')
+                img.android(src='https://lavabox.pe/assets/image%2019.png')
+                    
+             a(href='https://apps.apple.com/us/app/id1525905897')
+                img.ios(src='https://lavabox.pe/assets/image%2018.png')
+            
+      div.footer-20
+         div.content-column
+            p.text-footer-9 Disfruta de tu tiempo libre.
+      img.footer-content-img6(src='https://lavabox.pe/assets/footer.png') 
+              
+      div.test1
+        div.content-footer3
+          p.text-footer-3 Enviado para, 
+          p.text-color-footer-3 #{email} 
+        div.content-imagen
+          img.logo-footer(src='https://lavabox.pe/assets/new_logo.png')

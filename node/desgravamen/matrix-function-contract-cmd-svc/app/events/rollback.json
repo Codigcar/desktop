@@ -1,0 +1,19 @@
+{
+    "eventSource": "aws:kafka",
+    "eventSourceArn": "arn:aws:kafka:sa-east-1:123456789012:cluster/vpc-2priv-2pub/751d2973-a626-431c-9d4e-d7975eb44dd7-2",
+    "bootstrapServers": "b-1.mskdevmatrix01.u4jjft.c2.kafka.us-east-1.amazonaws.com:9096,b-2.mskdevmatrix01.u4jjft.c2.kafka.us-east-1.amazonaws.com:9096",
+    "records": {
+        "com.gcredicorp.matrix.card-register.failed.v1-0": [
+            {
+                "topic": "com.gcredicorp.matrix.card-register.failed.v1",
+                "partition": 0,
+                "offset": 15,
+                "timestamp": 1545084650987,
+                "timestampType": "CREATE_TIME",
+                "key": "abcDEFghiJKLmnoPQRstuVWXyz1235==",
+                "value": "ewogInNvdXJjZSI6ICJjYXJkOjFiZjU5YzBiLWM0NzAtNGRmNS1hMDI5LWM5NWFmOTMxZTFkZCIsCiAiaWQiOiAxLAogImF1dGhvciI6ICJ1c2VyOjMzZTcwNWJjLTRmMmItMTFlZC1iZGMzLTAyNDJhYzEyMDAwMiIsCiAiZGF0YSI6IHsKICAicGF5bG9hZCI6IHsKICAgImVycm9yIjogewogICAgImFwaU5hbWUiOiAiYWRkQ2FyZCIsCiAgICAibWVzc2FnZSI6ICJSZXF1ZXN0IGZhaWxlZCB3aXRoIHN0YXR1cyBjb2RlIDQwMCIsCiAgICAicmVzcG9uc2VDb2RlIjogIjMwIiwKICAgICJyZXNwb25zZURlc2MiOiAiRUNNQSAyNjIgcmVnZXggXlswLTFdWzAtOV1bL11bMC0zXVswLTldWy9dWzAtMl1bMC05XVswLTldWzAtOV0kIGRvZXMgbm90IG1hdGNoIGlucHV0IHN0cmluZyAxMi82LzE5OTMgZm9yIFsvcHJvZmlsZS9kb2JdIiwKICAgICJzdGF0dXNDb2RlIjogNDAwCiAgIH0sCiAgICJ0cmFuc2FjdGlvbiI6ICIxLTY0NzdiMmZhLTI3MzY4MTk1NWY2OTIzZGQ2ODNjM2E3YSIKICB9CiB9LAogImRhdGFDb250ZW50VHlwZSI6ICJhcHBsaWNhdGlvbi9qc29uIiwKICJkYXRhRW5jb2RpbmdUeXBlIjogImlkZW50aXR5IiwKICJ0aW1lIjogMTY4NTU2NjIxMjQyMSwKICJ0cmFuc2FjdGlvbiI6ICIxLTY0NzdiMmZhLTI3MzY4MTk1NWY2OTIzZGQ2ODNjM2E3YSIsCiAidHlwZSI6ICJjb20uZ2NyZWRpY29ycC5tYXRyaXguY2FyZC1yZWdpc3Rlci5mYWlsZWQudjEiCn0=",
+                "headers": []
+            }
+        ]
+    }
+}

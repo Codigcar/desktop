@@ -1,0 +1,17 @@
+{
+  "eventSource":"aws:kafka",
+  "eventSourceArn":"arn:aws:kafka:sa-east-1:123456789012:cluster/vpc-2priv-2pub/751d2973-a626-431c-9d4e-d7975eb44dd7-2",
+  "records":{
+     "com.gcredicorp.matrix.contract.offer-authorized.v1-0":[
+        {
+           "topic":"com.gcredicorp.matrix.contract.offer-authorized.v1",
+           "partition":0,
+           "offset":15,
+           "timestamp":1545084650987,
+           "timestampType":"CREATE_TIME",
+           "key":"abcDEFghiJKLmnoPQRstuVWXyz1234==",
+           "value":"ewogInNvdXJjZSI6ICI5MjdhZjhmNi00NzlhLTQ4NzctYjViOS04ZmFkYjczMGMyMzgiLAogImlkIjogMSwKICJhdXRob3IiOiAiMWE3Yjk5MDMtYjA1NC00MmVjLWI2MmUtN2VmMjRjMWViMjgwIiwKICJkYXRhIjogewogICJwYXlsb2FkIjogewogICAiY29nbml0b1VzZXJOYW1lIjogIjFhN2I5OTAzLWIwNTQtNDJlYy1iNjJlLTdlZjI0YzFlYjI4MCIsCiAgICJjb25kaXRpb25zIjogewogICAgImJpbGxpbmdEYXkiOiAyNSwKICAgICJjcmVkaXRMaW5lIjogNjY4LAogICAgImN1cnJlbmN5IjogIlBFTiIsCiAgICAiZGVzZ3JhdmFtZW4iOiAwLjAwMjU2LAogICAgIm1heFZhbHVlRGVzZ3JhdmFtZW4iOiAyMCwKICAgICJwYXlEYXkiOiAxMiwKICAgICJ0Y2VhIjogMC42Mjc0LAogICAgInRlYSI6IDAuNTgKICAgfSwKICAgImRhdGFQcm90ZWN0aW9uQ2xhdXNlQWNjZXB0ZWQiOiB0cnVlLAogICAiZG5pIjogIjQ2Njg3MTM4IiwKICAgIm9mZmVySWQiOiAibGVhZC80NjY4NzEzOC1jcmVkaXRjYXJkIgogIH0sCiAgInNuYXBzaG90IjogewogICAib2ZmZXIiOiB7CiAgICAiaWQiOiAibGVhZC80NjY4NzEzOC1jcmVkaXRjYXJkIiwKICAgICJiaWxsaW5nRGF5IjogMjUsCiAgICAiY29uZGl0aW9ucyI6IHsKICAgICAiYmlsbGluZ0RheSI6IDI1LAogICAgICJjcmVkaXRMaW5lIjogNjY4LAogICAgICJjdXJyZW5jeSI6ICJQRU4iLAogICAgICJkZXNncmF2YW1lbiI6IDAuMDAyNTYsCiAgICAgIm1heFZhbHVlRGVzZ3JhdmFtZW4iOiAyMCwKICAgICAicGF5RGF5IjogMTIsCiAgICAgInRjZWEiOiAwLjYyNzQsCiAgICAgInRlYSI6IDAuNTgKICAgIH0sCiAgICAiZGF0YVByb3RlY3Rpb25DbGF1c2VBY2NlcHRlZCI6IHRydWUsCiAgICAiZGVzZ3JhdmFtZW4iOiAwLjAwMjU2LAogICAgIm1heFZhbHVlRGVzZ3JhdmFtZW4iOiAyMCwKICAgICJwYXlEYXkiOiAxMiwKICAgICJ0Y2VhIjogMC42Mjc0LAogICAgInRlYSI6IDAuNTgKICAgfQogIH0KIH0sCiAiZGF0YUNvbnRlbnRUeXBlIjogImFwcGxpY2F0aW9uL2pzb24iLAogImRhdGFFbmNvZGluZ1R5cGUiOiAiaWRlbnRpdHkiLAogInRpbWUiOiAxNjc5OTMxMzU5MDI4LAogInRyYW5zYWN0aW9uIjogIjkyN2FmOGY2LTQ3OWEtNDg3Ny1iNWI5LThmYWRiNzMwYzIzOCIsCiAidHlwZSI6ICJjb20uZ2NyZWRpY29ycC5tYXRyaXguY29udHJhY3Qub2ZmZXItYXV0aG9yaXplZC52MSIKfQ=="
+        }
+     ]
+  }
+}

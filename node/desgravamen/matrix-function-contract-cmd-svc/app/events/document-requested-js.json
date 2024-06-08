@@ -1,0 +1,17 @@
+{
+  "eventSource": "aws:kafka",
+  "eventSourceArn": "arn:aws:kafka:sa-east-1:123456789012:cluster/vpc-2priv-2pub/751d2973-a626-431c-9d4e-d7975eb44dd7-2",
+  "records": {
+    "com.gcredicorp.matrix.contract.offer-authorized.v1": [
+      {
+        "topic": "com.gcredicorp.matrix.contract.offer-authorized.v1",
+        "partition": 0,
+        "offset": 15,
+        "timestamp": 1545084650987,
+        "timestampType": "CREATE_TIME",
+        "key": "abcDEFghiJKLmnoPQRstuVWXyz1235==",
+        "value": "eyJzb3VyY2UiOiJlZTZhOTc4MS1iMmIxLTRhMGEtOWQ1Ny05MDliMTMwNmZiOTYiLCJpZCI6MSwiYXV0aG9yIjoiMWE3Yjk5MDMtYjA1NC00MmVjLWI2MmUtN2VmMjRjMWViMjgwIiwiZGF0YSI6eyJwYXlsb2FkIjp7ImNvZ25pdG9Vc2VyTmFtZSI6IjFhN2I5OTAzLWIwNTQtNDJlYy1iNjJlLTdlZjI0YzFlYjI4MCIsImNvbmRpdGlvbnMiOnsiYmlsbGluZ0RheSI6MjUsImNyZWRpdExpbmUiOjY2NiwiY3VycmVuY3kiOiJQRU4iLCJkZXNncmF2YW1lbiI6MC4wMDI1NiwibWF4VmFsdWVEZXNncmF2YW1lbiI6MjAsInBheURheSI6MTIsInRjZWEiOjAuNjI3NCwidGVhIjowLjU4fSwiZGF0YVByb3RlY3Rpb25DbGF1c2VBY2NlcHRlZCI6dHJ1ZSwiZG5pIjoiNDY2ODcxMzgiLCJvZmZlcklkIjoibGVhZC80NjY4NzEzOC1jcmVkaXRjYXJkIn0sInNuYXBzaG90Ijp7Im9mZmVyIjp7ImlkIjoibGVhZC80NjY4NzEzOC1jcmVkaXRjYXJkIiwiYmlsbGluZ0RheSI6MjUsImNvbmRpdGlvbnMiOnsiYmlsbGluZ0RheSI6MjUsImNyZWRpdExpbmUiOjY2NiwiY3VycmVuY3kiOiJQRU4iLCJkZXNncmF2YW1lbiI6MC4wMDI1NiwibWF4VmFsdWVEZXNncmF2YW1lbiI6MjAsInBheURheSI6MTIsInRjZWEiOjAuNjI3NCwidGVhIjowLjU4fSwiZGF0YVByb3RlY3Rpb25DbGF1c2VBY2NlcHRlZCI6dHJ1ZSwiZGVzZ3JhdmFtZW4iOjAuMDAyNTYsIm1heFZhbHVlRGVzZ3JhdmFtZW4iOjIwLCJwYXlEYXkiOjEyLCJ0Y2VhIjowLjYyNzQsInRlYSI6MC41OH19fSwiZGF0YUNvbnRlbnRUeXBlIjoiYXBwbGljYXRpb24vanNvbiIsImRhdGFFbmNvZGluZ1R5cGUiOiJpZGVudGl0eSIsInRpbWUiOjE2ODAyNzQ1MDUzNDgsInRyYW5zYWN0aW9uIjoiMS02NDI2ZjQ0OC0xYjUwOTVkZjcxZGI5NDNhMDlhMjE1NmUiLCJ0eXBlIjoiY29tLmdjcmVkaWNvcnAubWF0cml4LmNvbnRyYWN0Lm9mZmVyLWF1dGhvcml6ZWQudjEifQ=="
+      }
+    ]
+  }
+}

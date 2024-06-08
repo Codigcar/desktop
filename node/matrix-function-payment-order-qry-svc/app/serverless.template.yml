@@ -1,0 +1,35 @@
+service: matrix-function-payment-order-qry-svc
+
+package:
+  exclude:
+    - package**
+    - README.md
+    - data.json
+    - app/src/**
+    - app/tsconfig**
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-1
+  environment:
+    REGION: ${self:provider.region}
+    I2C_HOST: "localhost"
+    I2C_PATH: "/MCPWebServicesRestful/services/MCPWSHandler/getCardholderStatement"
+    I2C_PORT: 6443
+    I2C_ID: "******"
+    I2C_USERID: "******"
+    I2C_PASSWORD: "******"
+
+plugins:
+  - serverless-webpack
+
+custom:
+  webpack:
+    includeModules: false
+
+functions:
+  main:
+    handler: dist/handlers/paymentOrderHandlerSvc.main

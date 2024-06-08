@@ -1,0 +1,59 @@
+doctype html
+html(lang='en')
+  head
+    link(rel="stylesheet", href="/css/email.css", data inline)
+    title Lavabox App - Commentario del usuario
+  body
+    
+    div.content-logoU
+      img.logoU(src='https://lavabox.pe/assets/logo_white.png')
+    div.content-order
+      div.headU
+        p.thanks Comentario nuevo – Edificio #{building}, código de operación #{code_operation}
+        table
+          tr
+            th Código de operación
+            td #{code_operation}
+          tr
+            th Id de usuario
+            td #{userId}
+          tr
+            th Nombre y apellido de usuario
+            td #{userName}
+          tr
+            th Tipo de orden
+            td #{serviceType}
+          tr
+            th Nombre del edificio
+            td #{building}
+          tr
+            th Dirección 
+            td #{direction}
+          tr
+            th Email
+            td #{userEmail}
+          tr
+            th Fecha y hora del pedido
+            td #{createdAt}
+          tr
+            th Monto pagado
+            td #{price}
+          tr
+            th Comentario del usuario
+            td #{aditionalComment}
+        hr
+      div.footerU
+        p.footer-title Escríbenos
+        div.footer-content-redes
+        
+          a(href='https://www.facebook.com/Lavabox-lavander%C3%ADa-100226081623561')
+            img.redesU(src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Facebook_icon_2013.svg/300px-Facebook_icon_2013.svg.png")
+        
+          a(href='https://instagram.com/Lavaboxlavanderia')
+            img.redesU(src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/1200px-Instagram-Icon.png")
+         
+          a(href='https://www.linkedin.com/company/lavabox-lavanderia/ ')
+           
+            img.redesU(src="https://pngmind.com/wp-content/uploads/2019/08/Linkedin-Logo-Png-Transparent-Background.png")
+        p.footer-direction 273 San Luis, Lima, Perú
+        p.footer-direction © Lavabox 2020

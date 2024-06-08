@@ -1,0 +1,17 @@
+require('dotenv').config();
+const path = require('path');
+
+const migrationPath = (process.env.NODE_ENV);
+let seedersPath = path.resolve('database', 'seeders');
+switch (migrationPath){
+  case 'production':
+    seedersPath = path.resolve('database', 'seeders-prod');
+    break;
+}
+
+module.exports = {
+  'config':          path.resolve('database', 'config.js'),
+  'migrations-path': path.resolve('database', 'migrations'),
+  'seeders-path':    seedersPath,
+  'models-path':     path.resolve('src', 'models'),
+};

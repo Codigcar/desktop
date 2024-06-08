@@ -1,0 +1,19 @@
+{
+  "eventSource": "aws:kafka",
+  "eventSourceArn": "arn:aws:kafka:sa-east-1:123456789012:cluster/vpc-2priv-2pub/751d2973-a626-431c-9d4e-d7975eb44dd7-2",
+  "bootstrapServers": "b-1.mskdevmatrix01.u4jjft.c2.kafka.us-east-1.amazonaws.com:9096,b-2.mskdevmatrix01.u4jjft.c2.kafka.us-east-1.amazonaws.com:9096",
+  "records": {
+    "com.gcredicorp.matrix.account.created.v1-0": [
+      {
+        "topic": "com.gcredicorp.matrix.account.created.v1",
+        "partition": 0,
+        "offset": 15,
+        "timestamp": 1545084650987,
+        "timestampType": "CREATE_TIME",
+        "key": "abcDEFghiJKLmnoPQRstuVWXyz1235==",
+        "value": "ewogInNvdXJjZSI6ICJhY2NvdW50OjkyM2IyNGI3LTY4NDItNGZiOS1iYWU1LWJjZjI5MzMwMDkyZiIsCiAiaWQiOiAxLAogImF1dGhvciI6ICJ1c2VyOjdhN2U0OWNjLWQ4ZjUtNGRhMi05NWYwLWQ1YjkyYmRhMjg1OSIsCiAiZGF0YSI6IHsKICAicGF5bG9hZCI6IHsKICAgImlkIjogIjkyM2IyNGI3LTY4NDItNGZiOS1iYWU1LWJjZjI5MzMwMDkyZiIsCiAgICJiYWxhbmNlIjogMCwKICAgImNvbnRyYWN0SWQiOiAiZDUxNjI3ZjgtNDAxYi00NmQ0LTk3M2YtZDdkNGU0ZmEyN2Y2IiwKICAgImNyZWRpdExpbWl0IjogNjI1MCwKICAgImN1c3RvbWVySWQiOiAiMWUwZDUzNTMtY2NkMy00ZjNjLTg3ZDAtOGE4NjQ2ZDVlZjFkIiwKICAgImV4dGVybmFsQ3VzdG9tZXJJZCI6ICIzMzMwMDAwMDAwMDE1OTAyMzQiLAogICAiZXh0ZXJuYWxUcmFuc2FjdGlvbklkIjogIkYxMDI4Mzk0OSIsCiAgICJsYXN0RGVwb3NpdEFtb3VudCI6IDAsCiAgICJsZWRnZXJCYWxhbmNlIjogMCwKICAgInB1cmNoYXNlQXByIjogMC41LAogICAicmVmZXJlbmNlIjogIjMzMzE1OTAyMzQwNCIKICB9LAogICJzbmFwc2hvdCI6IHsKICAgImlkIjogIjkyM2IyNGI3LTY4NDItNGZiOS1iYWU1LWJjZjI5MzMwMDkyZiIsCiAgICJiYWxhbmNlIjogMCwKICAgImNvbnRyYWN0SWQiOiAiZDUxNjI3ZjgtNDAxYi00NmQ0LTk3M2YtZDdkNGU0ZmEyN2Y2IiwKICAgImNyZWRpdExpbWl0IjogNjI1MCwKICAgImN1c3RvbWVySWQiOiAiMWUwZDUzNTMtY2NkMy00ZjNjLTg3ZDAtOGE4NjQ2ZDVlZjFkIiwKICAgImV4dGVybmFsQ3VzdG9tZXJJZCI6ICIzMzMwMDAwMDAwMDE1OTAyMzQiLAogICAiZXh0ZXJuYWxUcmFuc2FjdGlvbklkIjogIkYxMDI4Mzk0OSIsCiAgICJsYXN0RGVwb3NpdEFtb3VudCI6IDAsCiAgICJsZWRnZXJCYWxhbmNlIjogMCwKICAgInB1cmNoYXNlQXByIjogMC41LAogICAicmVmZXJlbmNlIjogIjMzMzE1OTAyMzQwNCIKICB9CiB9LAogImRhdGFDb250ZW50VHlwZSI6ICJhcHBsaWNhdGlvbi9qc29uIiwKICJkYXRhRW5jb2RpbmdUeXBlIjogImlkZW50aXR5IiwKICJ0aW1lIjogMTY4MjUzNDYxODgzNiwKICJ0cmFuc2FjdGlvbiI6ICIxLTY0NDk3MGNiLTJlMDU3OWNkMTU4NWRkYTkxYmU3YTU2OCIsCiAidHlwZSI6ICJjb20uZ2NyZWRpY29ycC5tYXRyaXguYWNjb3VudC5jcmVhdGVkLnYxIgp9",
+        "headers": []
+      }
+    ]
+  }
+}

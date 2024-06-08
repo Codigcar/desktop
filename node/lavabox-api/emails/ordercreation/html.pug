@@ -1,0 +1,39 @@
+html(lang='en')
+  head
+    link(rel="stylesheet", href="/css/email.css", data inline)
+    title ¡Tu orden ha sido aceptada!
+  body
+    div.header
+      div.content-logo
+      img.logo(src='https://lavabox.pe/assets/logo-text.png')
+      
+      div.content-description
+        p.text ¡Gracias por tu orden #{name}!
+        div.content-password2
+          p.description Hemos recibido tu orden y estamos dirigiéndonos a recogerla. Pronto recibirás un correo para realizar el pago de tu orden mediante nuestra aplicación. Además, no olvides que puedes agregar instrucciones adicionales en el app.
+          
+        div.table
+          p.table-text Código de Orden: #{orderId}
+          p.table-text Resumen de tu Orden: #{resumen}
+          p.table-text Dirección del edificio: #{direction}
+          p.table-text Casillero: # #{locker}
+          
+    div.test-background
+        div.content
+          p.text-footer-color-1 Disfruta de tu tiempo libre.
+          div.img
+            img.logo-footer-services(src='https://lavabox.pe/assets/footer.png')
+          div.content-footer3
+            p.text-footer-5 #{email} 
+            p.text-footer-6 Siguenos en  
+            p.text-footer-5 
+              a(href='https://www.facebook.com/LavaboxPeru/')
+                 img.social(src='http://lavaboxlavanderia.com/assets/facebook%203.png')
+              a(href='https://www.instagram.com/lavabox.peru/')
+                img.social2(src='http://lavaboxlavanderia.com/assets/logotipo-de-instagram%203.png')
+              
+              a(href='https://www.youtube.com/channel/UCcQ3GTLPimA7rrUIu2dLB1A')
+                img.social(src='http://lavaboxlavanderia.com/assets/youtube%203.png')
+                
+        div.content-imagen
+          img.app(src='https://lavabox.pe/assets/new_logo.png')

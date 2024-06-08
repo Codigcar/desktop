@@ -1,0 +1,316 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: >-
+  ms-app-poc-svc
+
+Transform:
+- AWS::Serverless-2016-10-31
+
+Globals:
+  Function:
+    Tracing: Active
+  Api:
+    TracingEnabled: True
+
+Resources:
+  contractAuthorizerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handler.handler
+      Runtime: nodejs16.x
+      CodeUri: dist/functions/contract-authorizer
+      Architectures:
+        - x86_64
+      MemorySize: 128
+      Timeout: 100
+      Description: Función lambda que busca una oferta relacionada a un cliente y procede a crear el evento de contrato.
+      Environment:
+        Variables:
+          COGNITO_USER_POOL_ID: us-east-1_ao9xAS1FA
+          CONTRACT_EVENT_STORE_TABLE_NAME: dyn-dev-matrix-contract-events-01
+          DYNAMO_LEADS_VIEW_TABLE_NAME: dyn-dev-matrix-leads-view-01
+          POWERTOOLS_SERVICE_NAME: matrix-function-contract-cmd-svc
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /me/offer/{leadId}/contract
+            Method: POST
+            
+  createCustomerRequestedFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handler.handler
+      Runtime: nodejs16.x
+      CodeUri: dist/functions/create-customer-requested
+      Architectures:
+        - x86_64
+      MemorySize: 128
+      Timeout: 100
+      Description: Función lambda que recibe la confirmación de aceptación de oferta. Verifica si el cliente no ha sido creado y procede a enviar el mensaje para creación de cliente.
+      Environment:
+        Variables:
+          CONTRACT_EVENT_STORE_TABLE_NAME: dyn-dev-matrix-contract-events-01
+          CUSTOMER_EVENT_STORE_TABLE_NAME: dyn-dev-matrix-customer-events-01
+          DYNAMO_LEADS_VIEW_TABLE_NAME: dyn-dev-matrix-leads-view-01
+          SECRETS_MANAGER_MSK_NAME: AmazonMSK_sm-dev-matrix-msk-01
+          MSK_TOPIC_OFFER_AUTHORIZED: com.gcredicorp.matrix.contract.offer-authorized.v1
+          MSK_TOPIC_CUSTOMER_REQUESTED: com.gcredicorp.matrix.customer.creation-requested.v1
+          MSK_BROKERS: kafka-0:29094
+          MSK_CLIENT_ID: lmb-contract-cmd_create-customer-requested-client
+          POWERTOOLS_SERVICE_NAME: matrix-function-contract-cmd-svc
+      Events:
+        MSKEvent:
+          Type: MSK
+          Properties:
+            StartingPosition: LATEST
+            Stream: arn:aws:kafka:us-east-1:459873824842:cluster/msk-dev-matrix-01/135c34df-6f7e-4357-8192-a066188e6992-25
+            Topics:
+              - com.gcredicorp.matrix.contract.offer-authorized.v1
+
+  customerCreatedFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handler.handler
+      Runtime: nodejs16.x
+      CodeUri: dist/functions/customer-created
+      Architectures:
+        - x86_64
+      MemorySize: 128
+      Timeout: 100
+      Description: Función lambda que recibe un mensaje de un topic msk con la confirmación de creación del cliente, y guarda el evento.
+      Environment:
+        Variables:
+          CONTRACT_EVENT_STORE_TABLE_NAME: dyn-dev-matrix-contract-events-01
+          MSK_TOPIC_CUSTOMER_CREATED: com.gcredicorp.matrix.customer.created.v1
+          MSK_TOPIC_CUSTOMER_VALIDATED: com.gcredicorp.matrix.contract.customer-validated.v1
+          MSK_BROKERS: kafka-0:29094
+          MSK_CLIENT_ID: lmb-contract-cmd_customer-created-client
+          POWERTOOLS_SERVICE_NAME: matrix-function-contract-cmd-svc
+      Events:
+        MSKEvent:
+          Type: MSK
+          Properties:
+            StartingPosition: LATEST
+            Stream: arn:aws:kafka:us-east-1:459873824842:cluster/msk-dev-matrix-01/135c34df-6f7e-4357-8192-a066188e6992-25
+            Topics:
+              - com.gcredicorp.matrix.customer.created.v1
+
+  createCardRequestedFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handler.handler
+      Runtime: nodejs16.x
+      CodeUri: dist/functions/create-card-requested
+      Architectures:
+        - x86_64
+      MemorySize: 128
+      Timeout: 100
+      Description: Función lambda que recibe la confirmación de validación de cliente. Verifica si el contrato existe como evento y procede a enviar el mensaje para creación de tarjeta.
+      Environment:
+        Variables:
+          CONTRACT_EVENT_STORE_TABLE_NAME: dyn-dev-matrix-contract-events-01
+          SECRETS_MANAGER_MSK_NAME: AmazonMSK_sm-dev-matrix-msk-01
+          MSK_TOPIC_CUSTOMER_VALIDATED: com.gcredicorp.matrix.contract.customer-validated.v1
+          MSK_TOPIC_CARD_REQUESTED: com.gcredicorp.matrix.card.requested.v1
+          MSK_BROKERS: kafka-0:29094
+          MSK_CLIENT_ID: lmb-contract-cmd_create-card-requested-client
+          POWERTOOLS_SERVICE_NAME: matrix-function-contract-cmd-svc
+      Events:
+        MSKEvent:
+          Type: MSK
+          Properties:
+            StartingPosition: LATEST
+            Stream: arn:aws:kafka:us-east-1:459873824842:cluster/msk-dev-matrix-01/135c34df-6f7e-4357-8192-a066188e6992-25
+            Topics:
+              - com.gcredicorp.matrix.contract.customer-validated.v1
+
+  accountCreatedFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handler.handler
+      Runtime: nodejs16.x
+      CodeUri: dist/functions/account-created
+      Architectures:
+        - x86_64
+      MemorySize: 128
+      Timeout: 100
+      Description: Función lambda que recibe el evento de creación de cuenta del servicio card-register-agg y crea el evento en el contracts event store.
+      Environment:
+        Variables:
+          CONTRACT_EVENT_STORE_TABLE_NAME: dyn-dev-matrix-contract-events-01
+          MSK_TOPIC_ACCOUNT_CREATED: com.gcredicorp.matrix.account.created.v1
+          MSK_BROKERS: kafka-0:29094
+          MSK_CLIENT_ID: lmb-contract-cmd_account-created-client
+          POWERTOOLS_SERVICE_NAME: matrix-function-contract-cmd-svc
+      Events:
+        MSKEvent:
+          Type: MSK
+          Properties:
+            StartingPosition: LATEST
+            Stream: arn:aws:kafka:us-east-1:459873824842:cluster/msk-dev-matrix-01/135c34df-6f7e-4357-8192-a066188e6992-25
+            Topics:
+              - com.gcredicorp.matrix.account.created.v1
+  
+  cardEmittedFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handler.handler
+      Runtime: nodejs16.x
+      CodeUri: dist/functions/card-emitted
+      Architectures:
+        - x86_64
+      MemorySize: 128
+      Timeout: 100
+      Description: Función lambda que recibe el evento de emisión de tarjeta del servicio card-register-agg y crea el evento en el contracts event store.
+      Environment:
+        Variables:
+          CONTRACT_EVENT_STORE_TABLE_NAME: dyn-dev-matrix-contract-events-01
+          MSK_TOPIC_CARD_EMITTED: com.gcredicorp.matrix.card.emitted.v1
+          MSK_BROKERS: kafka-0:29094
+          MSK_CLIENT_ID: lmb-contract-cmd_card-emitted-client
+          POWERTOOLS_SERVICE_NAME: matrix-function-contract-cmd-svc
+      Events:
+        MSKEvent:
+          Type: MSK
+          Properties:
+            StartingPosition: LATEST
+            Stream: arn:aws:kafka:us-east-1:459873824842:cluster/msk-dev-matrix-01/135c34df-6f7e-4357-8192-a066188e6992-25
+            Topics:
+              - com.gcredicorp.matrix.card.emitted.v1
+
+  documentRequestedFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handler.handler
+      Runtime: nodejs16.x
+      CodeUri: dist/functions/document-requested
+      Architectures:
+        - x86_64
+      MemorySize: 128
+      Timeout: 100
+      Description: Función lambda que recibe la confirmación de aceptación de oferta y envía el mensaje para creación de documento.
+      Environment:
+        Variables:
+          PRODUCT_OFFER_TABLE_NAME: dyn-dev-matrix-product-offers-01
+          BUCKET_DOCUMENTSRV: dev-documentsrv-sup-deploymentbucket
+          SECRETS_MANAGER_MSK_NAME: AmazonMSK_sm-dev-matrix-msk-01
+          MSK_TOPIC_OFFER_AUTHORIZED: com.gcredicorp.matrix.contract.offer-authorized.v1
+          MSK_TOPIC_DOCUMENT_TEMPLATE_RENDER_REQUESTED: com.gcredicorp.matrix.document-template.render-requested.v1
+          MSK_BROKERS: kafka-0:29094
+          MSK_CLIENT_ID: lmb-contract-cmd_document-requested-client
+          POWERTOOLS_SERVICE_NAME: matrix-function-contract-cmd-svc
+      Events:
+        MSKEvent:
+          Type: MSK
+          Properties:
+            StartingPosition: LATEST
+            Stream: arn:aws:kafka:us-east-1:459873824842:cluster/msk-dev-matrix-01/135c34df-6f7e-4357-8192-a066188e6992-25
+            Topics:
+              - com.gcredicorp.matrix.contract.offer-authorized.v1
+
+  documentCreatedFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handler.handler
+      Runtime: nodejs16.x
+      CodeUri: dist/functions/document-created
+      Architectures:
+        - x86_64
+      MemorySize: 128
+      Timeout: 100
+      Description: Función lambda que recibe el evento de emisión generación de documento y crea el evento en el contracts event store.
+      Environment:
+        Variables:
+          CONTRACT_EVENT_STORE_TABLE_NAME: dyn-dev-matrix-contract-events-01
+          MSK_TOPIC_DOCUMENT_TEMPLATE_RENDER_COMPLETED: com.gcredicorp.matrix.document-template.render-completed.v1
+          MSK_BROKERS: kafka-0:29094
+          MSK_CLIENT_ID: lmb-contract-cmd_document-created-client
+          POWERTOOLS_SERVICE_NAME: matrix-function-contract-cmd-svc
+      Events:
+        MSKEvent:
+          Type: MSK
+          Properties:
+            StartingPosition: LATEST
+            Stream: arn:aws:kafka:us-east-1:459873824842:cluster/msk-dev-matrix-01/135c34df-6f7e-4357-8192-a066188e6992-25
+            Topics:
+              - com.gcredicorp.matrix.document-template.render-completed.v1
+
+
+  offerAcquisitionCompletedFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handler.handler
+      Runtime: nodejs16.x
+      CodeUri: dist/functions/offer-acquisition-completed
+      Architectures:
+        - x86_64
+      MemorySize: 128
+      Timeout: 100
+      Description: Función lambda que recibe un mensaje de 3 topics msk (account, card y document) y guarda el evento de contratación realizada.
+      Environment:
+        Variables:
+          CONTRACT_EVENT_STORE_TABLE_NAME: dyn-dev-matrix-contract-events-01
+          PRODUCT_OFFER_TABLE_NAME: dyn-dev-matrix-product-offers-01
+          MSK_BROKERS: kafka-0:29094
+          MSK_CLIENT_ID: lmb-contract-cmd_offer-acquisition-completed-client
+          POWERTOOLS_SERVICE_NAME: matrix-function-contract-cmd-svc
+          MSK_TOPIC_ACCOUNT_CREATED: com.gcredicorp.matrix.contract.account-created.v1
+          MSK_TOPIC_CARD_EMITTED: com.gcredicorp.matrix.contract.card-emitted.v1
+          MSK_TOPIC_DOCUMENT_CREATED: com.gcredicorp.matrix.contract.document-created.v1
+      Events:
+        MSKEvent:
+          Type: MSK
+          Properties:
+            StartingPosition: LATEST
+            Stream: arn:aws:kafka:us-east-1:459873824842:cluster/msk-dev-matrix-01/135c34df-6f7e-4357-8192-a066188e6992-25
+            Topics:
+              - com.gcredicorp.matrix.contract.account-created.v1
+        MSKEvent:
+          Type: MSK
+          Properties:
+            StartingPosition: LATEST
+            Stream: arn:aws:kafka:us-east-1:459873824842:cluster/msk-dev-matrix-01/135c34df-6f7e-4357-8192-a066188e6992-25
+            Topics:
+              - com.gcredicorp.matrix.contract.card-created.v1
+        MSKEvent:
+          Type: MSK
+          Properties:
+            StartingPosition: LATEST
+            Stream: arn:aws:kafka:us-east-1:459873824842:cluster/msk-dev-matrix-01/135c34df-6f7e-4357-8192-a066188e6992-25
+            Topics:
+              - com.gcredicorp.matrix.contract.document-created.v1
+
+  rollBackFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handler.handler
+      Runtime: nodejs16.x
+      CodeUri: dist/functions/rollback
+      Architectures:
+        - x86_64
+      MemorySize: 128
+      Timeout: 100
+      Description: Función lambda que recibe la confirmación de validación de cliente. Verifica si el contrato existe como evento y procede a enviar el mensaje para creación de tarjeta.
+      Environment:
+        Variables:
+          CONTRACT_EVENT_STORE_TABLE_NAME: dyn-dev-matrix-contract-events-01
+          CUSTOMER_EVENT_STORE_TABLE_NAME: dyn-dev-matrix-customer-events-01
+          SECRETS_MANAGER_MSK_NAME: AmazonMSK_sm-dev-matrix-msk-01
+          MSK_TOPIC_CARD_REGISTER_FAILED: com.gcredicorp.matrix.card-register.failed.v1
+          MSK_TOPIC_CUSTOMER_CREATION_FAILED: com.gcredicorp.matrix.customer.creation-failed.v1
+          MSK_TOPIC_DOCUMENT_TEMPLATE_RENDER_FAILED: com.gcredicorp.matrix.document-template.render-failed.v1
+          MSK_BROKERS: kafka-0:29094
+          MSK_CLIENT_ID: lmb-dev-matrix-contract-cmd_rollback-01
+          POWERTOOLS_SERVICE_NAME: matrix-function-contract-cmd-svc
+      Events:
+        MSKEvent:
+          Type: MSK
+          Properties:
+            StartingPosition: LATEST
+            Stream: arn:aws:kafka:us-east-1:459873824842:cluster/msk-dev-matrix-01/135c34df-6f7e-4357-8192-a066188e6992-25
+            Topics:
+              - com.gcredicorp.matrix.contract.customer-validated.v1
+Outputs:
+  WebEndpoint:
+    Description: "API Gateway endpoint URL for Prod stage"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/local/"

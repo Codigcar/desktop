@@ -1,0 +1,42 @@
+html(lang='en')
+  head
+    link(rel="stylesheet", href="/css/email.css", data inline)
+    title ¡Bienvenido a LavaBox 😊!
+  body
+    div.content-email
+      div.content-logo
+      img.logo(src='https://lavabox.pe/assets/logo-text.png')
+
+      div.content-description2
+        p.text ¡Hola #{name}, pronto tu vida será más fácil!
+
+        div
+          div.content-footer4
+            p.description2 Por favor confirma tu cuenta haciendo clic en el botón y empieza a disfrutar de Lavabox. 
+          div
+            a(class='click' href=`http://${host}/auth/confirmation/${token}`) Confirmar Cuenta
+
+    div.footer-8
+      p.text ¿Qué ofrecemos?
+
+      div.content-imagen
+        div.column
+          img.imagen-pago-left(src='https://lavabox.pe/assets/register.png') 
+
+    div.footer-10
+      p.text ¿Como colocar tu primer pedido?
+      p.description * Coloque sus artículos en un casillero disponible.
+      p.description * Envíe su pedido a través de nuestra aplicación ingresando el número de casillero que eligió y seleccionando el tipo de pedido apropiado.
+      p.description * Desde ahí nosotros nos encargaremos del resto. Relájate y disfruta de la experiencia Lavabox.
+
+    div.footer-18
+      div.content-column
+        p.text-footer-12 Disfruta de tu tiempo libre.
+    img.footer-content-img7(src='https://lavabox.pe/assets/footer.png')
+
+    div.test
+      div.content-footer3
+        p.text-footer-3 Enviado para, 
+        p.text-color-footer-3 #{email} 
+      div.content-imagen
+        img.logo-footer(src='https://lavabox.pe/assets/new_logo.png')

@@ -1,0 +1,17 @@
+{
+  "eventSource":"aws:kafka",
+  "eventSourceArn":"arn:aws:kafka:sa-east-1:123456789012:cluster/vpc-2priv-2pub/751d2973-a626-431c-9d4e-d7975eb44dd7-2",
+  "records":{
+     "com.gcredicorp.matrix.customer.created.v1-0":[
+        {
+           "topic":"com.gcredicorp.matrix.customer.created.v1",
+           "partition":0,
+           "offset":15,
+           "timestamp":1545084650987,
+           "timestampType":"CREATE_TIME",
+           "key":"abcDEFghiJKLmnoPQRstuVWXyz1235==",
+           "value":"eyJkYXRhIjp7InBheWxvYWQiOnsicHJvZmVzc2lvbiI6ImMiLCJsYXN0TmFtZSI6IkdVSVNBRE8iLCJlbWFpbF92ZXJpZmllZCI6ImZhbHNlIiwib2NjdXBhdGlvbiI6InIiLCJkb2N1bWVudCI6eyJkb2N1bWVudElzc3VlQXQiOiIxOTkzLTEyLTA3VDAwOjAwOjAwWiIsImRvY3VtZW50TnVtYmVyIjoiNDY2ODcxMzgifSwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoidHJ1ZSIsIm5hbWUiOiJMVUlTIEFMQkVSVE8iLCJwaG9uZV9udW1iZXIiOiIrNTE5NjYzNzg0MTIiLCJsb2NhdGlvbiI6eyJhZGRyZXNzIjoiSlIgTEFTIFBFUkxBUyAxMjMiLCJwcm92aW5jZSI6IkxJTUEiLCJkaXN0cmljdCI6Ik1JUkFGTE9SRVMiLCJzdGF0ZSI6IkxJTUEiLCJwZXJ1UmVzaWRlbnQiOnRydWV9LCJpZCI6IjkwZDVlODdkLWQ2MTUtNGJlMy1hMzgyLTQ5YTBlZTA3OGE0ZCIsIndvcmtwbGFjZSI6ImEiLCJlbWFpbCI6Imx1aXMuZ3Vpc2Fkby5tYXRyaXgubnVldm9AZ21haWwuY29tIiwic3RhdHVzIjoiQUNUSVZFIn0sInNuYXBzaG90Ijp7InByb2Zlc3Npb24iOiJjIiwibGFzdE5hbWUiOiJHVUlTQURPIiwiZW1haWxfdmVyaWZpZWQiOiJmYWxzZSIsIm9jY3VwYXRpb24iOiJyIiwiZG9jdW1lbnQiOnsiZG9jdW1lbnRJc3N1ZUF0IjoiMTk5My0xMi0wN1QwMDowMDowMFoiLCJkb2N1bWVudE51bWJlciI6IjQ2Njg3MTM4In0sInBob25lX251bWJlcl92ZXJpZmllZCI6InRydWUiLCJuYW1lIjoiTFVJUyBBTEJFUlRPIiwicGhvbmVfbnVtYmVyIjoiKzUxOTY2Mzc4NDEyIiwibG9jYXRpb24iOnsiYWRkcmVzcyI6IkpSIExBUyBQRVJMQVMgMTIzIiwicHJvdmluY2UiOiJMSU1BIiwiZGlzdHJpY3QiOiJNSVJBRkxPUkVTIiwic3RhdGUiOiJMSU1BIiwicGVydVJlc2lkZW50Ijp0cnVlfSwiaWQiOiI5MGQ1ZTg3ZC1kNjE1LTRiZTMtYTM4Mi00OWEwZWUwNzhhNGQiLCJ3b3JrcGxhY2UiOiJhIiwiZW1haWwiOiJsdWlzLmd1aXNhZG8ubWF0cml4Lm51ZXZvQGdtYWlsLmNvbSIsInN0YXR1cyI6IkFDVElWRSJ9fSwiYXV0aG9yIjoidXNlcjoxYTdiOTkwMy1iMDU0LTQyZWMtYjYyZS03ZWYyNGMxZWIyODAiLCJpZCI6MSwic291cmNlIjoiY3VzdG9tZXIvOTBkNWU4N2QtZDYxNS00YmUzLWEzODItNDlhMGVlMDc4YTRkIiwidGltZSI6MTY3OTkzODQ0NjM4OCwiZGF0YUNvbnRlbnRUeXBlIjoiYXBwbGljYXRpb24vanNvbiIsInR5cGUiOiJjb20uZ2NyZWRpY29ycC5tYXRyaXguY3VzdG9tZXIuY3JlYXRlZC52MSIsInRyYW5zYWN0aW9uIjoiMmYzNjFjMjctMjJmOS00NGI1LWIzMTItMWFmMzY5NjNiNmMxIiwiZGF0YUVuY29kaW5nVHlwZSI6ImlkZW50aXR5In0="
+        }
+     ]
+  }
+}

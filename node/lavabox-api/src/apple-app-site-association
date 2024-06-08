@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+    {
+      "appID": "4N73QT26N3.com.thinkway.lavaboxlavanderia",
+      "paths": ["*"]
+    },
+    {
+     "appID": "4N73QT26N3.whiz.pe.lavabox",
+     "paths": ["*"]
+    }
+    ]
+  }
+}

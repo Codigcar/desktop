@@ -1,0 +1,9 @@
+.webpack
+.serverless
+app/dist
+node_modules
+data*.json
+package-lock.json
+schema*.json
+serverless.yml
+webpack.config.js

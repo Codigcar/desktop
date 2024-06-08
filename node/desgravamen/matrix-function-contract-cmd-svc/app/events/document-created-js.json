@@ -1,0 +1,17 @@
+{
+  "eventSource": "aws:kafka",
+  "eventSourceArn": "arn:aws:kafka:sa-east-1:123456789012:cluster/vpc-2priv-2pub/751d2973-a626-431c-9d4e-d7975eb44dd7-2",
+  "records": {
+    "com.gcredicorp.matrix.document-template.render-completed.v1": [
+      {
+        "topic": "com.gcredicorp.matrix.document-template.render-completed.v1",
+        "partition": 0,
+        "offset": 15,
+        "timestamp": 1545084650987,
+        "timestampType": "CREATE_TIME",
+        "key": "abcDEFghiJKLmnoPQRstuVWXyz1235==",
+        "value": "eyJzMyI6eyJrZXkiOiIyMDIzMDMzMV9sZWFkLzQ2Njg3MTM4LWNyZWRpdGNhcmRfNjY2LnBkZiIsInR5cGUiOiJwZGYiLCJidWNrZXQiOiJzMy1kZXYtbWF0cml4LWNvbnRyYWN0LWRvY3VtZW50cy0wMSJ9LCJ0eXBlIjoiY29tLmdjcmVkaWNvcnAubWF0cml4LmRvY3VtZW50LXRlbXBsYXRlLnJlbmRlci1jb21wbGV0ZWQudjEiLCJ0cmFuc2FjdGlvbiI6IjEtNjQyNzAzZDMtNGVjZWZkNDgwYzIyYjYwZDdlNGI1NmY1In0="
+      }
+    ]
+  }
+}

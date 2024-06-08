@@ -1,0 +1,58 @@
+name: Pipeline
+
+on:
+  push:
+    branches:
+      - develop
+      - release
+      - staging
+      - main
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+    branches:
+      - develop
+      - release
+      - staging
+      - main
+
+env:
+  AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
+  GITHUB_REF_NAME: ${{ secrets.GITHUB_REF_NAME }}
+  GITHUB_BASE_REF: ${{ secrets.GITHUB_BASE_REF }}
+  GITHUB_HEAD_REF: ${{ secrets.GITHUB_HEAD_REF }}
+  NODEJS_VERSION: node:16.19.1-alpine3.17
+
+jobs:
+  Pipeline:
+    name: Default
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Reusing Workflows
+      uses: actions/checkout@v3
+      with:
+        repository: MATRIXMVP/matrix-script-shelltool
+        ref: main
+        token: ${{secrets.GITHUBSL_TOKEN}}
+        path: .shelltool/
+
+    - name: Build
+      uses: ./.shelltool/workflows/function
+      with:
+        AWS_DEFAULT_REGION: ${AWS_DEFAULT_REGION}
+        AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+        AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+        GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}
+        GITHUB_REF_NAME: ${GITHUB_REF_NAME}
+        GITHUB_BASE_REF: ${GITHUB_BASE_REF}
+        GITHUB_HEAD_REF: ${GITHUB_HEAD_REF}

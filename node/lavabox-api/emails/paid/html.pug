@@ -1,0 +1,32 @@
+html(lang='en')
+  head
+    link(rel="stylesheet", href="/css/email.css", data inline)
+    title ¡Tu pago fue realizado con éxito!
+  body
+    div.content-email
+      div.content-logo
+      img.logo(src='https://lavabox.pe/assets/logo-text.png')
+      
+      div.content-description
+          p.text ¡Muchas gracias por el pago, #{name}!
+          div
+            p.description Muy pronto nos contactaremos contigo cuando tu pedido esté en un casillero de tu edificio y te enviaremos el número de casillero y contraseña.
+            p.description ¡Relájate y disfruta del tiempo extra que Lavabox te da!
+            
+      div.content-imagen
+        div.column
+          img.imagen-pago-left(src='https://lavabox.pe/assets/paid.png')       
+          
+          
+            
+    div.footer-18
+        div.content-column
+          p.text-footer-12 Disfruta de tu tiempo libre.
+    img.footer-content-img7(src='https://lavabox.pe/assets/footer.png')  
+            
+    div.test
+        div.content-footer3
+          p.text-footer-3 Enviado para, 
+          p.text-color-footer-3 #{email} 
+        div.content-imagen
+          img.logo-footer(src='https://lavabox.pe/assets/new_logo.png')     

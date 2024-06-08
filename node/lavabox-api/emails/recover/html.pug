@@ -1,0 +1,33 @@
+html(lang='en')
+  head
+    link(rel="stylesheet", href="/css/email.css", data inline)
+    title Recuperar Contraseña
+  body
+    div.content-email
+      div.content-logo
+      img.logo(src='https://lavabox.pe/assets/logo-text.png')
+      
+      div.content-description
+          p.text ¡Recupera tu contraseña!
+          
+          div
+            div.content-footer3
+              p.text-footer-3-1 Para recuperar su contraseña entre al siguiente link 
+              p.text-color-footer-5 
+                a( class='text-color-footer-5' href=`${process.env.WEB_URL}/recuperar_contrasena/${token}`) aquí!
+            p.text-footer-10 Si no puedes ver acceder al link copia el siguiente link y pégalo en tu buscador:
+            P.text-color-footer-4 #{process.env.WEB_URL}/recuperar_contrasena/#{token}
+            
+          img.portada(src='https://lavabox.pe/assets/image58.png')
+            
+      div.footer-15
+        div.content-column
+          p.text-footer-12 Disfruta de tu tiempo libre.
+      img.footer-content-img4(src='https://lavabox.pe/assets/footer.png') 
+            
+      div.test1
+        div.content-footer3
+          p.text-footer-3 Enviado para, 
+          p.text-color-footer-3 #{email} 
+        div.content-imagen
+          img.logo-footer(src='https://lavabox.pe/assets/new_logo.png') 

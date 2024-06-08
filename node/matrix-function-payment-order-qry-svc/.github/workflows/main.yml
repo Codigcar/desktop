@@ -1,0 +1,50 @@
+name: Pipeline
+
+on:
+  push:
+    branches:
+      - develop
+      - release
+      - main
+      - staging
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+    branches:
+      - develop
+      - release
+      - main
+      - staging
+
+env:
+  AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  NODEJS_VERSION: node:16.17.0-alpine3.16
+
+jobs:
+  Pipeline:
+    name: Default
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Reusing Workflows
+        uses: actions/checkout@v3
+        with:
+          repository: MATRIXMVP/matrix-script-shelltool
+          ref: main
+          token: ${{secrets.GITHUBSL_TOKEN}}
+          path: .shelltool/
+
+      - name: Build
+        uses: ./.shelltool/workflows/function
+        with:
+          AWS_DEFAULT_REGION: ${AWS_DEFAULT_REGION}
+          AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+          AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+          NODEJS_VERSION: ${NODEJS_VERSION}
