@@ -1,0 +1,26 @@
+image: node:14
+cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - .npm/
+before_script:
+  - npm ci --cache .npm --prefer-offline
+deploy:
+  stage: deploy
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - apt-get update && apt-get install -y rsync
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan $HOSTNAME >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - npm ci --cache .npm --prefer-offline
+    - npm run build:prd
+    - ssh tp2adminuser@$HOSTNAME 'cd ~ && mkdir -p tesis-api'
+    - rsync -avuz --exclude-from './.dockerignore' . tp2adminuser@$HOSTNAME:~/tesis-api
+    - ssh tp2adminuser@$HOSTNAME 'bash -s' < ./scripts/setup.sh
+  only:
+    - master 
