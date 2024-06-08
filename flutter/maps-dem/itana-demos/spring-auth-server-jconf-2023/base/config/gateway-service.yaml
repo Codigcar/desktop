@@ -1,0 +1,42 @@
+server:
+  port: 8072
+
+# Habilitar todos los endpoints de Spring Boot Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    enabled-by_default: true
+    health:
+      show-details: always
+
+logging.level.com.abc: DEBUG
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+
+
+spring:
+  cloud:
+    gateway:
+      discovery.locator:
+        enabled: true
+        lowerCaseServiceId: true
+      routes:
+        - id: mis-clientes-route
+          uri: lb://clientes
+          predicates:
+            - Path=/abc-customers/**
+          filters:
+            - RewritePath=/abc-customers/(?<path>.*), /$\{path}
+        - id: mis-prestamos-route
+          uri: lb://prestamos
+          predicates:
+            - Path=/abc-lendings/**
+          filters:
+            - RewritePath=/abc-lendings/(?<path>.*), /$\{path}

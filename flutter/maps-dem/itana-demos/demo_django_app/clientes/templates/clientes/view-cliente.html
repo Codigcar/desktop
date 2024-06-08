@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Consulta de Cliente</h1>
+  <div class="card w-75">
+    <img src="{{cliente.imagen_avatar.url}}" style="width:30%;" class="bg-info rounded-circle rounded mx-auto d-block" alt="...">
+    <div class="card-body">
+      <div class="mb-3 row">
+        <label for="cod_cliente" class="col-sm-2 col-form-label">Cod. Cliente</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext" id="cod_cliente" value="{{cliente.cod_cliente}}">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="nombres" class="col-sm-2 col-form-label">Nombres</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext" id="nombres" value="{{cliente.nombres}}">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="apellidos" class="col-sm-2 col-form-label">Apellidos</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext" id="apellidos" value="{{cliente.apellidos}}">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="email" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext" id="email" value="{{cliente.email}}">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="fecha_nacimiento" class="col-sm-2 col-form-label">Fecha Nacimiento</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext" id="fecha_nacimiento" value="{{cliente.fecha_nacimiento |date:"M d, Y"}}">
+        </div>
+      </div>
+      <a href="{% url "adm-clientes" %}" class="btn btn-primary">Salir</a>
+    </div>
+  </div>
+
+
+
+  
+  <!-- Footer -->
+  {% include "clientes/includes/footer.html" %}
+
+{% endblock %}

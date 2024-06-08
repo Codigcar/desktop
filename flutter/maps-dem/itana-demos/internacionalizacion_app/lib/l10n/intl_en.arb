@@ -1,0 +1,8 @@
+{
+    "datosUsuario": "User Data",
+    "nombre": "First Name",
+    "apellido": "Last Name",
+    "fechaNacimiento": "Date of Birth",
+    "registrar": "Register",
+    "usuarioRegistrado": "{usuario} was successfully registered"
+}

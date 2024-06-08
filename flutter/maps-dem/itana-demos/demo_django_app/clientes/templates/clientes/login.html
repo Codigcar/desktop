@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="./login" method="POST">
+  {% csrf_token %}
+  <div class="fieldWrapper">
+    {{ form.username.errors }}
+    <label class="form-label" for="{{ form.username.id_for_label }}">Usuario:</label>
+    {{ form.username }}
+  </div>
+  <div class="fieldWrapper">
+    {{ form.password.errors }}
+    <label class="form-label" for="{{ form.password.id_for_label }}">Password:</label>
+    {{ form.password }}
+  </div>
+  <button type="submit" class="btn btn-primary">Ingresar</button>
+</form>
+
+  <!-- Footer -->
+  {% include "clientes/includes/footer.html" %}
+
+
+{% endblock %}

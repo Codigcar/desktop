@@ -1,0 +1,16 @@
+.sidenav-container{
+    height: 100%;
+    width: 100%;
+}
+
+.item{
+    color: black;
+}
+
+.sidenav{
+    width: 15%;
+}
+
+mat-list-item:hover{
+    background-color: #F4F4F9;
+}

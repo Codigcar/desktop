@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="header">
+    <div class="text-header"> Test</div>
+  </div>
+  <div class="content">
+    <div class="container-form">
+      
+    <form id="diagnosticoForm">
+
+      <mat-form-field *ngIf="visible" class="example-full-width"> 
+        <mat-label>Nombre</mat-label>
+        <input matInput type="text" [(ngModel)]="nombre" name="nombre">
+      </mat-form-field>
+       <div *ngFor="let number of numbers">
+        Hola {{number}}
+      </div> 
+    </form>
+    <button mat-raised-button color="primary" (click)="show()">Mostrar Nombre</button>  
+    <button mat-raised-button color="primary" [class.margin-left]="true" (click)="changeVisible()">{{visible ? 'Ocultar input': 'Mostrar input'}}</button>   
+    <button mat-raised-button color="primary" [ngClass]="true?'margin-top': 'margin-left'" >Test</button>
+    <button mat-raised-button color="primary" [ngStyle]="{'background': 'red','margin-left':'10px'}">Test</button>
+    </div>
+  </div>
+
+  
+</div>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "268909214499",
+    "firebase_url": "https://fir-funciones.firebaseio.com",
+    "project_id": "fir-funciones",
+    "storage_bucket": "fir-funciones.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268909214499:android:80355d5bef217e1979aa96",
+        "android_client_info": {
+          "package_name": "pe.upc.callbacks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "268909214499-67v6gqikomhad2fh2jk85tadc9clirl8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjb9OE4A4Ml80hO-69r5mzunZdeT3aAX0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "268909214499-67v6gqikomhad2fh2jk85tadc9clirl8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

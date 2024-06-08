@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/theming";
+@include mat-core();
+
+$theme-colors: (
+    50: #e8ebee,
+    100: #c6cdd4,
+    200: #ffb343,
+    300: #7a8a9a,
+    400: #5e7184,
+    500: #41586e,
+    600: #f38d08,
+    700: #13ecda,
+    800: #2a3d51,
+    900: #1c2d3f,
+    A100: #82baff,
+    A200: #4f9eff,
+    A400: #1c83ff,
+    A700: #0275ff,
+    contrast: (
+        50: #000000,
+        100: #000000,
+        200: #000000,
+        300: #000000,
+        400: #ffffff,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
+        A100: #000000,
+        A200: #000000,
+        A400: #ffffff,
+        A700: #ffffff,
+    ),
+);
+
+$primary-theme-color: mat-palette($theme-colors, 600);
+$accent-theme-color: mat-palette($theme-colors, 700);
+$warn-theme-color: mat-palette($mat-red);
+
+$layout-theme-color: mat-light-theme($primary-theme-color, $accent-theme-color, $warn-theme-color);
+
+@include angular-material-theme($layout-theme-color);
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

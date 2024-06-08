@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+  
+
+<h1>Administracion de Clientes</h1>
+<a class="btn btn-primary" href="{% url "crear-cliente" %}" role="button">Registrar Cliente</a>
+<a class="btn btn-primary" href="{% url "logout" %}" role="button">Salir</a>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Cod. Cliente</th>
+      <th scope="col">Nombres</th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">Email</th>
+      <th scope="col">Fecha Nacimiento</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for cliente in clientes%}
+      <tr>
+        <th scope="row">{{cliente.cod_cliente}}</th>
+        <td>{{cliente.nombres}}</td>
+        <td>{{cliente.apellidos}}</td>
+        <td>{{cliente.email}}</td>
+        <td>{{cliente.fecha_nacimiento}}</td>
+        <td>
+          <a href="{% url "ver-cliente" cliente.cod_cliente %}">
+            Ir a ver cliente
+          </a>
+        </td>
+      </tr>
+    {%endfor%}
+  </tbody>
+</table>
+
+
+  <!-- Footer -->
+  {% include "clientes/includes/footer.html" %}
+
+
+{% endblock %}
+

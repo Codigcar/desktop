@@ -1,0 +1,30 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+
+    <!-- Bootstrap css-->
+    <link rel="stylesheet" type="text/css" href="{% static "/bootstrap.min.css" %}">
+</head>
+
+<body style="padding: 10px;">
+    <h1>Productos App</h1>
+    <hr>
+
+    {% block content %}
+
+    {% endblock content %}
+
+    <!-- Bootstrap js-->
+    <script src="{% static "/js/bootstrap.bundle.min.js" %}"></script>
+
+</body>
+
+</html>

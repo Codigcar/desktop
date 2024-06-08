@@ -1,0 +1,39 @@
+<mat-toolbar color="primary">
+  <span>Sports App</span>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+
+  <mat-sidenav #sidenav mode="side" [opened]="true" class="sidenav">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Futbol
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list role="list">
+          <mat-list-item role="listitem" routerLink="futbol/jugadores/adm">Jugadores</mat-list-item>
+          <mat-list-item role="listitem" routerLink="futbol/equipos/adm">Equipos</mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Basket
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list role="list">
+          <mat-list-item role="listitem">Equipos</mat-list-item>
+          <mat-list-item role="listitem">Estadios</mat-list-item>
+          <mat-list-item role="listitem">Paises</mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

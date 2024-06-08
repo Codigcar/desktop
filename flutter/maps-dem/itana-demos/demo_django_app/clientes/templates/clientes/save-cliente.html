@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <div class="card" style="width: 52rem;">
+    <div class="card-body">
+      <h5 class="card-title">Registrar Cliente</h5>
+      
+      <form action="./save" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="fieldWrapper">
+          {{ form.nombres.errors }}
+          <label class="form-label" for="{{ form.nombres.id_for_label }}">Nombres:</label>
+          {{ form.nombres }}
+        </div>
+        <div class="fieldWrapper">
+          {{ form.apellidos.errors }}
+          <label class="form-label" for="{{ form.apellidos.id_for_label }}">Apellidos:</label>
+          {{ form.apellidos }}
+        </div>
+        <div class="fieldWrapper">
+          {{ form.email.errors }}
+          <label class="form-label" for="{{ form.email.id_for_label }}">Email:</label>
+          {{ form.email }}
+        </div>
+        <div class="fieldWrapper">
+          {{ form.imagen_avatar.errors }}
+          <label class="form-label" for="{{ form.imagen_avatar.id_for_label }}">Avatar:</label>
+          {{ form.imagen_avatar }}
+        </div>
+
+        <!-- 
+        <div class="mb-3">
+          <label for="idNombres" class="form-label">Nombres</label>
+          <input type="text" class="form-control" id="idNombres" name="nombres">
+          <div id="nombresAyuda" class="form-text">Ingrese sus dos nombres.</div>
+        </div>
+        {% if has_error %}
+          <p>Debe completar todos los datos</p>
+        {% endif %}
+        -->
+        </br>
+        <button type="submit" class="btn btn-primary">Registrar</button>
+      </form>
+
+    </div>
+  </div>
+  
+
+
+{% endblock content %}
+
+
+

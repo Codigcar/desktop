@@ -1,0 +1,83 @@
+
+<div class="row d-flex justify-content-center">
+  <div class="card">
+    <h1 class="justify-content-center">Crear cuenta</h1>
+    <br />
+
+    <form [formGroup]="registerForm">
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example1">Email *</label>
+        <input
+          [class.border-danger]="registerForm.controls.email.errors"
+          formControlName="email"
+          type="email"
+          class="form-control"/>
+        <div *ngIf="registerForm.controls.email.getError('required')" class="requisito">
+          - El campo es requerido
+        </div>
+      </div>
+
+      <div class="form-outline mb-4">
+        <label class="form-label">Contraseña *</label>
+        <div class="row">
+          <div class="col-11">
+            <input [type]="ocultarContrasenia ? 'password' : 'text'"
+            [class.border-danger]="registerForm.controls.contrasenia.errors"
+            formControlName="contrasenia"
+            class="form-control" type="password"/>
+          </div>
+          <div class="col-1 icono">
+            <i [ngClass]="{'bi bi-eye-slash': ocultarContrasenia, 
+            'bi bi-eye': !ocultarContrasenia}" 
+            (click)="ocultarContrasenia = !ocultarContrasenia"></i>
+          </div>
+        </div>
+        
+        <div *ngIf="registerForm.controls.contrasenia.getError('onlyNumbers')"
+          class="requisito">
+          - Sólo se permiten caracteres numéricos
+        </div>
+        <div *ngIf="registerForm.controls.contrasenia.getError('minlength') ||
+            !registerForm.controls.contrasenia.value" class="requisito">
+          - Mínimo 8 caracteres
+        </div>
+        <div *ngIf="registerForm.controls.contrasenia.getError('required')" class="requisito">
+          - El campo es requerido
+        </div>
+      </div>
+
+      <div class="form-outline mb-4">
+        <label class="form-label">Confirmar contraseña *</label>
+        <div class="row">
+          <div class="col-11">
+            <input [type]="ocultarConfirmacionContrasenia ? 'password' : 'text'"
+            [class.border-danger]="registerForm.errors || registerForm.controls.confirmacionContrasenia.errors"
+            formControlName="confirmacionContrasenia"
+            class="form-control"
+            />
+          </div>
+          <div class="col-1 icono">
+            <i [ngClass]="{'bi bi-eye-slash': ocultarConfirmacionContrasenia, 
+            'bi bi-eye': !ocultarConfirmacionContrasenia}" 
+            (click)="ocultarConfirmacionContrasenia = !ocultarConfirmacionContrasenia"></i>
+          </div>
+        </div>
+
+        <div
+          *ngIf="registerForm.controls.confirmacionContrasenia.getError('required')" class="requisito">
+          - El campo es requerido
+        </div>
+        <div *ngIf="registerForm.getError('mustBeEqual')" class="requisito">
+          - No coincide con la contraseña
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="btn btn-primary btn-block mb-4"
+        [disabled]="!registerForm.valid">
+        Registrar
+      </button>
+    </form>
+  </div>
+</div>

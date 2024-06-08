@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "601405345282",
+    "project_id": "jardines-de-la-paz-2c6d4",
+    "storage_bucket": "jardines-de-la-paz-2c6d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:601405345282:android:a2e65516fd6e6cada5e11b",
+        "android_client_info": {
+          "package_name": "com.funjar.jardines_de_la_paz"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7pGzaiKpeejyhmPUmIVPfdprSYSqnmew"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
