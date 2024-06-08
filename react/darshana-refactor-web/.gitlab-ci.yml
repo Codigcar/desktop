@@ -1,0 +1,43 @@
+before_script:
+  - apt-get update -qq
+  - apt-get install -qq git
+  # Setup SSH deploy keys
+  - 'which ssh-agent || ( apt-get install -qq openssh-client )'
+  - eval $(ssh-agent -s)
+  - ssh-add <(echo "$SSH_PRIVATE_KEY_WHIZ")
+  - mkdir -p ~/.ssh
+  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    
+deploy_staging:
+  stage: deploy
+  environment:
+    name: dev
+    url: $PROJECT_URL
+  script:
+    - ssh $SERVER_USER_WHIZ@$SERVER_HOST_2_WHIZ 
+        "cd $PROJECT_ROOT && 
+        sudo git pull origin develop && 
+        npm ci && 
+        sudo aws s3api get-object --bucket $BUCKET_DEVOPS_DEV --key $PROJECT_NAME.env .env &&
+        sudo npm run build &&
+        sudo pm2 restart $PROJECT_ID &&
+        exit"
+  only:
+    - develop
+
+deploy_prod:
+  stage: deploy
+  environment:
+    name: prod
+    url: $PROJECT_URL_PROD
+  script:
+     - ssh $SERVER_USER_DARSHANA@$SERVER_HOST_DARSHANA
+      "cd $PROJECT_ROOT_PROD && 
+      sudo git pull origin master && 
+      npm ci && 
+      aws s3api get-object --bucket $BUCKET_DEVOPS_PROD --key $PROJECT_NAME_PROD.env .env &&
+      sudo npm run build &&
+      sudo PM2_HOME=/root/.pm2 pm2 restart $PROJECT_ID_PROD &&
+      exit"
+  only:
+    - master

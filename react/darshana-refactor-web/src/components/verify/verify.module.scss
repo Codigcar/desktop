@@ -1,0 +1,120 @@
+@import '@styles/settings';
+.verifyGreen {
+  color: $brand-1;
+}
+.verifyDescription {
+  margin-top: 16px;
+}
+.text {
+  color: $c-1;
+}
+.title {
+  font-size: 24px;
+  color: $c-1;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 16px;
+  color: $c-1;
+  font-size: 400;
+  line-height: 1.5;
+  margin: 34px 0px 0px 0px;
+}
+
+.description2 {
+  font-size: 16px;
+  color: $c-1;
+  font-size: 400;
+  line-height: 1.5;
+  margin: 0px 0px 24px 0px;
+}
+
+.title2 {
+  font-size: 16px;
+  color: $brand-1;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.container {
+  margin-top: 30px;
+}
+.customUpload {
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  width: 100%;
+  background: #f2f2f2;
+  color: rgba(0, 0, 0, 0.6);
+}
+.inputUpload {
+  display: none;
+}
+.cinput {
+  width: 48%;
+  input {
+    background: #f2f2f2 !important;
+  }
+}
+.card {
+  padding: 16px;
+  max-width: 240px;
+
+  .title2 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .descriptioncard {
+    color: #7f8d98;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .benefits {
+    font-size: 16px;
+    color: $c-1;
+    line-height: 1.5;
+    font-weight: 900;
+    margin-top: 16px;
+  }
+
+  .list {
+    margin-left: 16px;
+    list-style: disc;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-block: 16px;
+  }
+
+  .price {
+    font-size: 24px;
+    color: $c-1;
+    line-height: 1.5;
+    font-weight: 900;
+  }
+}
+
+.active {
+  border-radius: 16px;
+  border: 2px solid $brand-1;
+}
+.activeTab {
+  font-weight: 700;
+  color: $brand-1;
+  border-bottom: 1px solid $brand-1;
+}
+.select {
+  font-size: 16px;
+  color: $brand-1;
+  font-weight: 700;
+  margin-top: 16px;
+}
+
+// input[type='checkbox'] {
+//   accent-color: green;
+// }

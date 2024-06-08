@@ -1,0 +1,30 @@
+@import "styles/scss";
+
+.home {
+  &__title {
+    color: $color-text-title;
+  }
+  &__cards{
+      display: flex;
+      justify-content: space-between;
+    &__card {
+        padding: 4rem 2rem;
+        background: $color-primary-opacity;
+        border-radius: 10px;
+        width: 45%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-text{
+            color: $color-text-naranja;
+            font-size: 2rem;
+            font-weight: 700;
+            padding-right: 2rem;
+        }
+        &-img{
+            min-width: 50%;
+        }
+    }
+  }
+}
+

@@ -1,0 +1,29 @@
+@import "styles/scss";
+
+.card {
+  background: $color-primary-opacity;
+  padding: 2rem 2rem 3rem 2rem;
+  border-radius: 20px;
+  &__title {
+    color: $color-text-naranja;
+    text-transform: uppercase;
+
+  }
+  div {
+    p {
+      color: white;
+      font-weight: bold;
+    }
+  }
+}
+
+.header__title {
+  margin: 2rem 0rem;
+}
+
+.indicaciones {
+  color: $color-text-naranja;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 500;
+}

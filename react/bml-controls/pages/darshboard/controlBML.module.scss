@@ -1,0 +1,30 @@
+@import "styles/scss";
+
+.header {
+  &__title {
+    color: $color-text-title;
+    &-2 {
+      color: white;
+    }
+  }
+  &__filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $color-text-naranja;
+    margin: 2rem 0rem;
+  }
+}
+
+.card{
+    border-radius: 20px;
+    background-color: $color-primary-opacity;
+    padding: 1rem 3rem 2rem 3rem;
+    margin-top: 60px;
+}
+
+.description {
+    color: white;
+
+}
+

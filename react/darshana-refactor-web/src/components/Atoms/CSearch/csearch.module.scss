@@ -1,0 +1,24 @@
+@import '../../../styles/settings';
+@import '../../../styles/grid';
+
+.dropdown{
+    border-radius: 16px;
+    box-shadow: 0 8px 8px 0 rgba(26, 52, 71, 0.16);
+    padding: 0 .5rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10;
+    z-index: 9;
+    margin: 0 1rem;
+    background-color: #FFFFFF;
+    &__item{
+        border-bottom: 1px solid #F1F0EB;
+        padding: .5rem 0;
+        cursor: pointer;
+        
+    }
+}
+.relative{
+    position: relative;
+}

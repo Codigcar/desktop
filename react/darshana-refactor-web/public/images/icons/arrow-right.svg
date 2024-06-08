@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/1. Outline/1. Basic/0.Icon 2</title>
+    <g id="1.-guest-user" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.1.2.0-Darshana-Guest-User" transform="translate(-144.000000, -109.000000)" fill="#1A3447">
+            <g id="back-to-page" transform="translate(144.000000, 96.000000)">
+                <g id="Icons/1.-Outline/1.-Basic/0.Icon-2" transform="translate(0.000000, 13.000000)">
+                    <g id="Icons/1.-Outline/1.-Basic/0.Icon" transform="translate(8.000000, 8.000000) scale(-1, 1) translate(-8.000000, -8.000000) ">
+                        <path d="M7.99997787,11.7192982 C7.7610174,11.7192982 7.52208643,11.6266303 7.33990047,11.441684 L1.60685573,5.61888713 C1.2421592,5.24848501 1.2421592,4.64794147 1.60685573,4.2776892 C1.97140471,3.90743693 2.56257958,3.90743693 2.92730562,4.2776892 L7.99997787,9.43002194 L13.0726796,4.27786902 C13.4373762,3.90761675 14.028492,3.90761675 14.3930115,4.27786902 C14.7578851,4.64812129 14.7578851,5.24866483 14.3930115,5.61906695 L8.66005527,11.4418638 C8.47778078,11.6268401 8.23884981,11.7192982 7.99997787,11.7192982 Z" id="arrow-left" transform="translate(8.000000, 7.859649) rotate(90.000000) translate(-8.000000, -7.859649) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,217 @@
+$prefixCls: rc-collapse;
+$text-color: white;
+$borderStyle: 1px solid #d9d9d9;
+
+// #arrow {
+
+//   .right($w, $h, $color) {
+//     border-top: $w solid transparent;
+//     border-bottom: $w solid transparent;
+//     border-left: $h solid $olor;
+//   }
+
+//   .bottom(@w, @h, @color) {
+//     border-left: @w solid transparent;
+//     border-right: @w solid transparent;
+//     border-top: @h solid @color;
+//   }
+// }
+
+.rc-collapse {
+  background-color: #f7931e;
+  direction: rtl;
+  overflow-y: scroll;
+  text-align: end;
+  padding-left: 40px;
+  // border-radius: 3px;
+  // border: $borderStyle;
+  &:-webkit-scrollbar-track {
+    background: red;
+    border-radius: 0x;
+  }
+  &-anim-active {
+    transition: height 0.2s ease-out;
+  }
+
+  & > &-item {
+    border-top: $borderStyle;
+    &:first-child {
+      border-top: none;
+    }
+
+    > .rc-collapse-header {
+      display: flex;
+      align-items: center;
+      // justify-content: flex-end;
+      flex-direction: row-reverse;
+      // line-height: 100px;
+      padding: 10px 0 10px 10px;
+      color: $text-color;
+      cursor: pointer;
+      font-family: NexaBold;
+      font-size: 24px;
+      font-weight: normal;
+      .arrow {
+        display: inline-block;
+        content: '\20';
+        // #arrow > .common();
+        // #arrow > .right(3px, 4px, #666);
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+
+      .rc-collapse-extra {
+        margin: 0 16px 0 auto;
+      }
+      @media (min-width: 1200px) {
+      }
+      @media screen and (min-width: 1400px) {
+      }
+      @media screen and (min-width: 1600px) {
+      }
+      @media screen and (min-width: 1900px) {
+        font-size: 40px;
+      }
+      @media screen and (min-width: 2040px) {
+        font-size: 40px;
+      }
+      @media screen and (min-width: 3800px) {
+      }
+    }
+    .rc-collapse-header-collapsible-only {
+      cursor: default;
+      .rc-collapse-header-text {
+        cursor: pointer;
+      }
+      .rc-collapse-expand-icon {
+        cursor: pointer;
+      }
+    }
+    .rc-collapse-icon-collapsible-only {
+      cursor: default;
+      .rc-collapse-expand-icon {
+        cursor: pointer;
+      }
+    }
+  }
+
+  & > &-item-disabled > .rc-collapse-header {
+    cursor: not-allowed;
+    color: #999;
+    background-color: #f7931e;
+  }
+
+  &-content {
+    font-family: NexaLight;
+    // overflow-y: scroll;
+    overflow: hidden;
+    color: $text-color;
+    padding: 0 16px;
+
+    // height: 400px !important;
+    @media (min-width: 1200px) {
+      font-size: 16px;
+    }
+
+    @media (min-width: 1400px) {
+      font-size: 18px;
+    }
+    @media (min-width: 1600px) {
+      font-size: 22px;
+    }
+
+    @media screen and (min-width: 2040px) {
+      font-size: 24x;
+    }
+    @media (min-width: 3400px) {
+      font-size: 30px;
+    }
+    // & > &-box {
+    //   margin-top: 16px;
+    //   margin-bottom: 16px;
+    // }
+
+    // &-inactive {
+    //   display: none;
+    // }
+    &-active {
+      // height: 600px !important;
+      // display: none;
+    }
+  }
+
+  &-item:last-child {
+    > .rc-collapse-content {
+      border-radius: 0 0 3px 3px;
+    }
+  }
+
+  & > &-item-active {
+    > .rc-collapse-header {
+      .arrow {
+        position: relative;
+        top: 2px;
+        // #arrow > .bottom(3px, 4px, #666);
+        margin-right: 6px;
+      }
+    }
+  }
+}
+.rc-collapse {
+  &::-webkit-scrollbar {
+    background-color: red;
+    width: 14px;
+  }
+
+  /* Estilos barra (thumb) de scroll */
+  &::-webkit-scrollbar-thumb {
+    background: rgba($color: #ffffff, $alpha: 0.6);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background-color: red;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba($color: #ffffff, $alpha: 0.6);
+  }
+
+  /* Estilos track de scroll */
+  &::-webkit-scrollbar-track {
+    background: #f7931e;
+    border-radius: 8x;
+  }
+
+  &::-webkit-scrollbar-track:hover,
+  &::-webkit-scrollbar-track:active {
+    background: #f7931e;
+  }
+}
+/* Tamaño del scroll */
+
+.container-grid {
+  // height: 200px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  p {
+    margin-block: 14px;
+  }
+  @media (min-width: 1200px) {
+    grid-template-columns: 2fr 3fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+.desktop {
+  display: none;
+  @media (min-width: 1200px) {
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+.mobile {
+  @media (min-width: 1200px) {
+    display: none;
+  }
+}

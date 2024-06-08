@@ -1,0 +1,15 @@
+@import "styles/scss";
+
+.footer {
+    margin-top: 20px;
+    background: $color-primary-opacity;
+    // background-color: green;
+    display: flex;
+    align-items: center;
+    // width: 91%;
+    // margin: auto;
+    padding: 0rem 6rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

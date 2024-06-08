@@ -1,0 +1,16 @@
+@import "styles/scss";
+.header {
+    &__title {
+      color: $color-text-title;
+      &-2{
+          color: white;
+      }
+    }
+    &__filters {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $color-text-naranja;
+      margin: 2rem 0rem;
+    }
+  }

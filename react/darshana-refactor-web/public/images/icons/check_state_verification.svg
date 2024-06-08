@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="72px" height="72px" viewBox="0 0 32 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>
+		icon/check_state
+	</title>
+	<g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+		<g id="icon/check_state">
+			<circle id="Oval-Copy" stroke="#19A79B" stroke-width="2.5" cx="17" cy="17" r="15.25">
+			</circle>
+			<g id="Status/Check/1.Outline" transform="translate(9.500000, 12.166667)" fill="#19A79B">
+				<path d="M13.577411,0.244077682 C13.9028479,-0.0813592274 14.4304854,-0.0813592274 14.7559223,0.244077682 C15.0563256,0.544480984 15.0794336,1.01717353 14.8252462,1.34408287 L14.7559223,1.42258898 L5.58925565,10.5892557 C5.28885235,10.889659 4.8161598,10.9127669 4.48925046,10.6585795 L4.41074435,10.5892557 L0.244077682,6.42258898 C-0.0813592274,6.09715207 -0.0813592274,5.56951459 0.244077682,5.24407768 C0.544480984,4.94367438 1.01717353,4.92056643 1.34408287,5.17475384 L1.42258898,5.24407768 L5,8.82083333 L13.577411,0.244077682 Z" id="Path">
+				</path>
+			</g>
+		</g>
+	</g>
+</svg>

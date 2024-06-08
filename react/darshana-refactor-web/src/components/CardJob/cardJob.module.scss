@@ -1,0 +1,75 @@
+@import '@styles/settings';
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 24px;
+
+  @media (max-width: 600px) {
+    padding: 16px;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+
+  picture {
+    display: flex;
+    margin-right: 24px;
+
+    span {
+      border-radius: 50%;
+    }
+  }
+
+  .logoCorp {
+    flex-shrink: 0;
+  }
+}
+
+.headerOptions {
+}
+
+.HeaderInformation {
+  b {
+    @media (max-width: 600px) {
+      display: block;
+      width: calc(100% - 40px);
+    }
+  }
+  p {
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.44px;
+  }
+
+  .company {
+    margin-block: 4px;
+    color: rgba($c-1, 0.56);
+  }
+
+  .location {
+    color: $c-2;
+  }
+  .title {
+    // width: calc(100% - 32px);
+  }
+}
+
+.cardBody {
+  margin-block: 16px;
+  letter-spacing: 0.5px;
+  .paragraph {
+    overflow: hidden;
+  }
+}
+
+.cardFooter {
+  font-size: 14px;
+  color: $c-2;
+  letter-spacing: 0.44px;
+  margin-top: auto;
+}

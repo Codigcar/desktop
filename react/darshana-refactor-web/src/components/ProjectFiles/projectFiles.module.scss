@@ -1,0 +1,207 @@
+@import '../../styles/settings';
+@import '../../styles/grid';
+
+.projectFilesContainer {
+  padding: 0 32px 40px 32px;
+  margin-bottom: 16px;
+  @media (max-width: 600px) {
+    margin-bottom: 120px;
+  }
+  .projectFilesTable {
+    @media (max-width: 600px) {
+      display: none;
+    }
+    margin-bottom: 24px;
+    table {
+      width: 100%;
+
+      thead {
+        height: 40px;
+        border-bottom: 1px solid $beige;
+        tr {
+          th {
+            text-align: left;
+            vertical-align: middle;
+            color: $gray;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: bold;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          height: 80px;
+          border-bottom: 1px solid $beige;
+          td {
+            text-align: left;
+            vertical-align: middle;
+            font-size: 16px;
+            line-height: 24px;
+            color: $c-2;
+
+            .file {
+              display: flex;
+              flex-direction: row;
+
+              .fileDescription {
+                margin-left: 16px;
+                display: flex;
+                flex-direction: column;
+              }
+            }
+
+            .icons {
+              display: flex;
+              flex-direction: row;
+
+              i {
+                cursor: pointer;
+                margin-right: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .projectFilesUpload {
+    margin-bottom: 16px;
+
+    h1 {
+      @media (max-width: 600px) {
+        padding-top: 24px;
+      }
+      margin-bottom: 16px;
+    }
+  }
+
+  .projectFilesLink {
+    h1 {
+      margin-bottom: 16px;
+    }
+
+    .inputLink {
+      @media (max-width: 600px) {
+        flex-direction: column;
+        width: 296px;
+        div {
+          margin: 5px 10px !important;
+          button {
+            margin-top: 8px !important;
+          }
+        }
+      }
+      // width: 376px;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      // align-items: center;
+      div {
+        margin: 0px 10px;
+        button {
+          margin-top: 32px;
+        }
+      }
+      input {
+        background-color: $white;
+        border: 1px solid $c-2;
+        padding-right: 40px;
+      }
+    }
+
+    .inputLink > i {
+      position: absolute;
+      display: block;
+      color: $c-2;
+      transform: translate(0, -50%);
+      top: 50%;
+      pointer-events: none;
+      width: 40px;
+      text-align: center;
+      font-style: normal;
+      right: 0;
+      height: 100%;
+      border-radius: 0 21.5px 21.5px 0;
+      background-color: $c-1;
+      padding-top: 8px;
+    }
+  }
+  .projectfilesMobile {
+    @media (max-width: 600px) {
+      display: block;
+      .fileContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        .separator {
+          background-color: #f1f0eb;
+          height: 1px;
+          width: 100%;
+          margin-top: 24px;
+          margin-bottom: 24px;
+        }
+        .row {
+          display: flex;
+          margin-left: 0;
+        }
+        .fileRow {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 2px;
+        }
+        .fileDescription {
+          margin-left: 16px;
+          h3 {
+            width: 200px;
+          }
+          // width: 80%;
+        }
+        .download {
+          margin-top: 20px;
+        }
+      }
+    }
+    display: none;
+  }
+}
+.buttonQuit {
+  background-color: $c-1;
+  border-radius: 22.5px;
+  width: 288px;
+  height: 40px;
+  color: $white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.buttonReturn {
+  border: 1.5px solid $c-1;
+  border-radius: 22.5px;
+  width: 288px;
+  height: 40px;
+  color: $c-1;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+}
+.modalContainer .ActionContainer {
+  width: 416px;
+  align-items: unset;
+  justify-content: space-evenly;
+}
+@media (min-width: 800px) {
+  .buttonQuit {
+    width: 161px;
+  }
+
+  .buttonReturn {
+    width: 161px;
+  }
+}

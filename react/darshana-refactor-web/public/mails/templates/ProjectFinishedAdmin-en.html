@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Darshana email template</title>
+		<style type="text/css">
+			@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+			body {
+				margin: 0;
+			}
+			table {
+				border-spacing: 0;
+			}
+			img {
+				border: 0;
+			}
+			.wrapper {
+				width: 100%;
+				table-layout: fixed;
+				background-color: #ffffff;
+				padding-bottom: 60px;
+			}
+			a {
+				color: #fff !important;
+				cursor: pointer;
+			}
+			.main {
+				padding: 20px;
+				text-align: center;
+				width: 90%;
+				margin: 0 auto;
+				max-width: 100%;
+				background-color: #ffffff;
+				font-family: 'Lato', sans-serif;
+				color: #7f8d98;
+				box-shadow: 0 0 25px rgba(0, 0, 0, .15);
+			}
+			td {
+				padding: 0;
+				min-width: 265px;
+				height: 40px;
+			}
+			.content {
+				text-align: center;
+				margin: 0 auto;
+			}
+			.button {
+				cursor: pointer;
+				padding: 10px 20px;
+				color: #ffffff;
+				font-weight: bold;
+				font-size: 18px;
+				border-radius: 22.5px;
+				border: none;
+				opacity: 1;
+				background-color: rgba(26,52,71, 1);
+			}
+
+			.logo .logo-link {
+				margin: 0 auto;
+			}
+			.link {
+				margin: 0 10px;
+			}
+
+		</style>
+</head>
+<body>
+	<center class="wrapper">
+		<table class="main" width="100%">
+			<tr>
+				<td style="padding:14px 0 4px;">
+<!-- LOGO -->
+					<table width="100%" style="padding: 0 30px 30px 30px;">
+						<tr>
+							<td class="logo">
+								<a href="<%=WEB_URL%>" class="logo-link"><img src="<%=WEB_URL%>/mails/img/logo.png" alt="Darshana logo"></a>
+							</td>
+						</tr>
+					</table>
+					<table width="100%" class="" style="background-color: #F1F0EB; border-radius: 35px;"> 
+<!-- BANNER -->
+						<tr>
+							<td class="">
+								<img style="width:100%;" src="<%=WEB_URL%>/mails/img/Banner2x.png" alt="Darshana logo">
+							</td>
+						</tr>
+<!-- CONTENT -->
+						<tr>
+							<td>
+								<table class="content" style="padding: 15px 0 30px;">
+									<tr>
+										<td>
+											<h1 style="color: #1A3447;">Finished Project</h1>
+										</td>
+									</tr>
+
+									<tr>
+										<td>
+											Hello admin, then project <%=project.name%> of recruiter <%=recruiter.person.name%> <%=recruiter.person.last_name%> has finished. Here is a table with the talents and amounts to be paid to each one.
+										</td>
+									</tr>
+<!-- TABLES AND COLUMNS -->
+									<tr>
+										<td>
+											<table class="content" style="padding: 15px;">
+												<tbody>
+													<tr>
+														<td style="background-color: #19A79B; color: #ffffff;">Talent Name</td>
+														<td style="background-color: #19A79B; color: #ffffff;">Price Proposal</td>
+													</tr>
+													<% talents.forEach(function (talent) { %>
+														<tr>
+																<td style="background-color: #ffffff">
+																	<%=talent.person.name%> <%=talent.person.last_name%>
+																</td>
+																<td style="background-color: #ffffff">
+																	<%=talent.price_proposal%>
+																</td>
+														</tr>
+													<% }) %>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+
+									<tr>
+										<td>
+											<a href="<%=WEB_URL%>" class="button">Go to Darshana</a>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+<!-- LINKS -->
+					<tr>
+						<td style="padding:20px 0;">
+							<a class="link" href="https://www.facebook.com/darshanaio"><img src="<%=WEB_URL%>/mails/img/facebook.svg" alt=""></a>
+							<a class="link" href="https://twitter.com/darshanaio"><img src="<%=WEB_URL%>/mails/img/twitter.svg" alt=""></a>
+							<a class="link" href="<%=WEB_URL%>"><img src="<%=WEB_URL%>/mails/img/Web.svg" alt=""></a>
+						</td>
+					</tr>
+<!-- COPYRIGHT -->
+					<tr>
+						<td>
+							Copyright c 2022 Darshana. All rights reserved.
+						</td>
+					</tr>
+<!-- CANCEL SUB -->
+					<tr>
+						<td>
+							Tired of receiving this mails? <a href=""> Cancel subscription.</a>
+						</td>
+					</tr>
+				</td>
+			</tr>
+		</table>
+	</center>
+</body>
+</html>

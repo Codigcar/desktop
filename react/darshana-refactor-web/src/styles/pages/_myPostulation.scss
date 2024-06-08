@@ -1,0 +1,67 @@
+#myPostulation {
+  .return-to {
+    margin-block: 8px;
+  }
+
+  .nav-tabs {
+    margin-block: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba($gray, 0.32);
+  }
+  .container section {
+    padding-bottom: 24px;
+  }
+
+  .content-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 32px;
+    margin-bottom: 56px;
+    .skeleton {
+      height: 150px;
+      width: 748px;
+    }
+    @media (max-width: 767px) {
+      flex-direction: column;
+      .skeleton {
+        height: 150px;
+        width: 380px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      width: calc(50% - 16px);
+      height: auto;
+      min-height: 166px;
+
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+    }
+  }
+  .form-control{
+    background-color: #fff;
+    width: 90%;
+    margin-left: 20px;
+    @media (min-width:1024px) {
+      display: none;
+    }
+  }
+  .buttons-tabs{
+    display: none;
+    @media (min-width:1024px) {
+      display: block;
+    margin-inline: unset;
+    margin-right: 90px;
+    height: 40px;
+    }
+  }
+  .container-button{
+    margin-block: 24px;
+  }
+}

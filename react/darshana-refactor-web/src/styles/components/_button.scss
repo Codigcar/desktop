@@ -1,0 +1,127 @@
+a.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 700;
+  color: $c-1;
+  width: auto;
+  height: 40px;
+  padding-inline: 40px;
+  border-radius: 22.5px;
+
+  &.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > span {
+      margin-right: 8px !important;
+    }
+  }
+
+  &--full {
+    width: 100%;
+  }
+
+  &--primary {
+    background-color: $c-1;
+    color: $white;
+
+    &--white {
+      background-color: $white;
+      color: $c-1;
+    }
+  }
+
+  &--return {
+    color: $c-1;
+    padding-inline: 0px;
+
+    & > span {
+      vertical-align: middle;
+
+      &:is([style]) {
+        margin-right: 8px !important;
+      }
+    }
+
+    &.icon-right {
+      & > span {
+        &:is([style]) {
+          margin-left: 8px !important;
+          margin-right: 0 !important;
+        }
+      }
+    }
+  }
+
+  &--stroke {
+    border: 1.5px solid $c-1;
+    color: $c-1;
+  }
+}
+
+.button-center {
+  text-align: center;
+}
+
+.buttons-Scroll {
+  @extend .buttons-tabs;
+  max-width: 456px;
+  margin-inline: auto;
+  margin: 26px auto;
+}
+
+.buttons-Scroll-job {
+  width: fit-content;
+}
+
+.buttons-tabs {
+  background-color: $c-5;
+  display: flex;
+  width: max-content;
+  border-radius: 20px;
+
+  .btn {
+    min-width: 152px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+
+    &.active {
+      background-color: $brand-1;
+      color: $white;
+    }
+  }
+}
+
+.continueButtonPost {
+  background-color: #eaeaea;
+  border-radius: 22.5px;
+  width: 222px;
+  height: 40px;
+  color: #c6c6c6;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  border: none;
+}
+
+.disable {
+  opacity: 0.5;
+}
+
+.no-padding-inline {
+  padding-inline: 0;
+}
+
+.activeBtn {
+  background-color: $c-1 !important;
+  color: $white !important;
+}

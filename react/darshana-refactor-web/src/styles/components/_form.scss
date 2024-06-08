@@ -1,0 +1,162 @@
+.form-group {
+  margin-bottom: 16px;
+
+  &.error {
+    .form-control {
+      border-color: $red;
+    }
+  }
+
+  .input-icon {
+    position: relative;
+
+    // input {
+    //   color: $c-1;
+    // }
+  }
+  .input-icon > i {
+    position: absolute;
+    display: block;
+    color: $c-2;
+    transform: translate(0, -50%);
+    top: 50%;
+    pointer-events: none;
+    width: 48px;
+    text-align: center;
+    font-style: normal;
+  }
+
+  .icon-left {
+    input {
+      padding-left: 40px;
+    }
+  }
+
+  .icon-right {
+    input {
+      padding-right: 12px;
+    }
+
+    i {
+      right: 0;
+    }
+  }
+
+  span {
+    margin-left: 32px;
+    font-weight: 400;
+    color: $c-2;
+  }
+}
+
+.form-label {
+  padding-left: 16px;
+  display: block;
+  color: $c-1;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+  margin-bottom: 8px;
+}
+
+.form-control {
+  background-color: $beige;
+  color: rgba($c-1, 1);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  width: 100%;
+  height: 40px;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 21.5px;
+  transition: $t-1;
+  -moz-appearance: textfield;
+}
+
+.recommended-text {
+  color: rgba($c-1, 0.32);
+  font-weight: bold;
+  font-size: .8rem;
+}
+
+.form-select {
+  background-image: url('/images/icons/arrow-down.svg');
+  background-repeat: no-repeat;
+  background-position: center right 16px;
+  padding-right: 48px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-group-check {
+  display: flex;
+  align-items: center;
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  input {
+    position: absolute;
+    // visibility: hidden;
+    // opacity: 0;
+  }
+
+  .form-box-check {
+    display: inline-block;
+    position: relative;
+    background-color: $c-3;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin: 4px;
+    transition: $t-1;
+  }
+
+  .form-label-check {
+    font-size: 16px;
+    color: $gray;
+    margin-left: 8px;
+    letter-spacing: 0.57px;
+    cursor: pointer;
+
+    a {
+      color: $gray;
+      text-decoration: underline;
+    }
+  }
+
+  input[type='checkbox']:checked + .form-box-check {
+    background-color: $brand-1;
+
+    &:after {
+      content: '';
+      display: block;
+      background: url('/images/icons/check.svg') center;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+textarea.form-control {
+  height: auto;
+  padding: 24px;
+}
+
+.message-error {
+  color: $red;
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding-left: 9px;
+}
+.border-error {
+  border: 1px solid $red !important;
+}

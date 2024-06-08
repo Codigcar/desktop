@@ -1,0 +1,265 @@
+@import '@styles/settings';
+@import '@styles/grid';
+.form {
+  // margin-top: 24px;
+  // margin-bottom: 48px;
+  // padding-bottom: 24px;
+  background-color: $white;
+}
+.ProjectImage {
+  // background-image: url('../../../../public/images/bg-project.png');
+  // background-size: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 160px;
+}
+.containerDetail {
+  padding: 32px 20px 0px;
+  display: flex;
+  flex-direction: column;
+  // set styles default
+  .titleModal {
+    color: #1a3447;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: -32px;
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(85, 85, 85, 0.32);
+  }
+  .ProseMirror:focus {
+    border: none;
+    outline: 0px solid $c-3;
+  }
+
+  .ProseMirror > * + * {
+    margin-top: 0.75em;
+  }
+
+  .ProseMirror ul,
+  .ProseMirror ol {
+    padding: 0 2rem;
+    list-style: circle;
+  }
+
+  .ProseMirror h1,
+  .ProseMirror h2,
+  .ProseMirror h3,
+  .ProseMirror h4,
+  .ProseMirror h5,
+  .ProseMirror h6 {
+    line-height: 1.1;
+  }
+
+  .ProseMirror code {
+    background-color: rgba(#616161, 0.1);
+    color: #616161;
+  }
+
+  .ProseMirror pre {
+    background: #0d0d0d;
+    color: #fff;
+    font-family: 'JetBrainsMono', monospace;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+  }
+  .ProseMirror code {
+    color: inherit;
+    padding: 0;
+    background: none;
+    font-size: 0.8rem;
+  }
+
+  .ProseMirror img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .ProseMirror blockquote {
+    padding-left: 1rem;
+    border-left: 3px solid #999999;
+  }
+
+  .ProseMirror hr {
+    border: none;
+    border-top: 3px solid #999999;
+    margin: 2rem 0;
+  }
+
+  .ProseMirror em {
+    font-style: italic;
+  }
+  .ProseMirror ul {
+    list-style-type: circle;
+  }
+  .ProseMirror ol {
+    list-style-type: decimal;
+  }
+  .ProseMirror h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1a3447;
+  }
+  .ProseMirror h2 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #1a3447;
+  }
+  .ProseMirror h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1a3447;
+  }
+
+  .ProseMirror p.is-editor-empty:first-child::before {
+    color: #adb5bd;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+  }
+  /* ............................ */
+}
+.rowDetail {
+  margin-bottom: 16px;
+}
+.titleDetail {
+  color: $c-1;
+  font-size: 24px;
+  line-height: 24px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+.SubHeadDetail {
+  color: $c-2;
+  font-size: 16px;
+  letter-spacing: 0.44px;
+  line-height: 16px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+.iconsDetail {
+  display: none;
+}
+.subTitleDetail {
+  display: block;
+  color: $c-1;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 16px 0px 16px;
+  + p {
+    color: #555555;
+    line-height: 24px;
+  }
+}
+.ulDetail {
+  margin-left: 24px;
+  line-height: 32px;
+}
+.liDetail {
+  list-style-type: disc;
+  color: $gray;
+}
+.containerSkills {
+  display: flex;
+  flex-wrap: wrap;
+}
+.skill {
+  display: block;
+  background-color: #eaeaea;
+  border-radius: 22.5px;
+  width: auto;
+  color: $c-1;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  border: none;
+  padding: 0px 20px;
+  margin: 8px 8px 8px 0px;
+}
+.continueButtonPost,
+.sendProposeButton,
+.returnButton,
+.sendButton {
+  display: block;
+  background-color: $c-1;
+  border-radius: 22.5px;
+  width: 288px;
+  height: 40px;
+  color: $white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  border: none;
+  margin-inline: auto;
+}
+.sendButton {
+  width: 144px;
+}
+.returnButton {
+  width: 144px;
+  color: $c-1;
+  background-color: $white;
+  border: 2px solid $c-1;
+}
+.sendProposeButton {
+  color: $c-1;
+  background-color: $white;
+  border: 2px solid $c-1;
+  margin-top: 32px;
+}
+.header {
+  display: flex;
+  align-items: center;
+}
+.cardImg {
+  margin-right: 18px;
+}
+.img {
+  border-radius: 150px;
+}
+.modalContainer {
+  width: 640px !important;
+  height: 288px;
+  align-items: unset;
+  // justify-content: space-evenly;
+}
+.modalContainer .ActionContainer {
+  width: 400px;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+}
+@media (min-width: 800px) {
+  .form {
+    width: auto;
+    border-radius: 24px;
+    // margin: 24px 64px 48px;
+  }
+  .ProjectImage {
+    height: 240px;
+    border-radius: 24px 24px 0px 0px;
+  }
+  .rowDetail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .iconsDetail {
+    display: flex;
+    width: 134px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  .titleDetail {
+    font-size: 32px;
+  }
+  .continueButtonPost,
+  .sendProposeButton {
+    height: 40px;
+    width: 192px;
+  }
+}

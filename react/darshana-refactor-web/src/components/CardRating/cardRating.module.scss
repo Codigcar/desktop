@@ -1,0 +1,132 @@
+@import '@styles/settings';
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 90% !important;
+  padding: 24px;
+
+  // @media (max-width: 600px) {
+  //   width: % !important;
+  // }
+  @media (min-width: 1024px) {
+    width: 45% !important;
+  }
+  @media (min-width: 1536px) {
+    width: 30% !important;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+
+  picture {
+    display: flex;
+    margin-right: 24px;
+
+    span {
+      border-radius: 50%;
+    }
+  }
+
+  .logoCorp {
+    flex-shrink: 0;
+  }
+}
+
+.headerOptions {
+}
+
+.HeaderInformation {
+  b {
+    @media (max-width: 600px) {
+      display: block;
+      width: calc(100% - 40px);
+    }
+  }
+  p {
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.44px;
+  }
+
+  .company {
+    margin-block: 4px;
+    color: rgba($c-1, 0.56);
+  }
+
+  .location {
+    color: $c-2;
+  }
+  .title {
+    // width: calc(100% - 32px);
+  }
+}
+.options {
+  top: 20px;
+  // right: 8px !important;
+  .visible {
+    margin: 0 !important;
+    padding-right: 0px !important;
+  }
+}
+.cardBody {
+  margin-block: 16px;
+  letter-spacing: 0.5px;
+  .paragraph {
+    overflow: hidden;
+  }
+}
+
+.cardFooter {
+  font-size: 14px;
+  color: $c-2;
+  letter-spacing: 0.44px;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footerLink {
+  display: flex;
+  gap: 10px;
+  h1{
+    font-size: 20px;
+    color:#0A3C4C;
+  }
+}
+.project {
+  color: $brand-1;
+  font-weight: 700;
+  padding-bottom: 16px;
+}
+.edit {
+  display: none;
+  @media (min-width: 764px) {
+    border: 1px solid black;
+    padding: 4px 12px;
+    border-radius: 48px;
+    display: flex;
+    align-items: center;
+  }
+}
+.continueButtonPost {
+  background-color: $c-1;
+  border-radius: 22.5px;
+  width: 288px;
+  height: 48px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  border: none;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.modalDescription{
+  color: #7f8d98;
+  font-size: 22px;
+}

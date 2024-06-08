@@ -1,0 +1,439 @@
+@import '../../styles/settings';
+@import '../../styles/grid';
+
+.projectBoardContainer {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  gap: 32px;
+  margin-bottom: 120px;
+  @media (min-width: 600px) {
+    grid-template-rows: repeat(3, auto);
+    margin-bottom: 64px;
+  }
+
+  .boardColumn {
+    border: 1px solid $c-5;
+    border-radius: 24px;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    // min-height: 808px;
+
+    .columnHeader {
+      padding: 16px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid $c-5;
+
+      .headerTitle {
+        display: flex;
+        flex-direction: row;
+
+        h1 {
+          margin-left: 8px;
+        }
+      }
+      .headerIcon {
+        margin-left: 24px;
+        cursor: pointer;
+      }
+    }
+
+    .columnBody {
+      // padding: 16px;
+
+      .boardCard {
+        margin-bottom: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(10, 60, 76, 0.24);
+        padding: 16px;
+        @media (min-width: 800px) {
+          flex-direction: row;
+          align-items: center;
+        }
+        .cardHeader {
+          padding: 16px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          gap: 16px;
+          .headerInformation {
+            display: flex;
+            flex-direction: row;
+
+            .headerTitle {
+              margin-left: 16px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            }
+
+            picture {
+              display: block;
+              width: 48px;
+              height: 48px;
+              // margin-right: 24px;
+              border-radius: 50%;
+              overflow: hidden;
+            }
+
+            .logo {
+              flex-shrink: 0;
+            }
+          }
+          /* Inicio Tooltip */
+          .tooltip {
+            position: relative;
+            display: inline-block;
+          }
+          .tooltip .tiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #f2f2f2;
+            color: #0a3c4c;
+            font-size: 12px;
+            text-align: center;
+            line-height: normal;
+            border-radius: 8px;
+            padding: 6px 0;
+            position: absolute;
+            z-index: 1;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          }
+          // .tooltip .tiptext::after {
+          //   content: '';
+          //   position: absolute;
+          //   border-width: 5px;
+          //   border-style: solid;
+          // }
+          .tooltip:hover .tiptext {
+            visibility: visible;
+          }
+          .tooltip.bottom .tiptext {
+            margin-left: -60px;
+            top: 60%;
+            left: 50%;
+          }
+          // .tooltip.bottom .tiptext::after {
+          //   margin-left: -5px;
+          //   bottom: 100%;
+          //   left: 50%;
+          //   border-color: transparent transparent #2e2e2e transparent;
+          // }
+          /* Fin tooltip */
+        }
+        .headerIcons {
+          gap: 8px;
+        }
+        .cardFooter {
+          padding: 16px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+          height: 160px;
+          @media (min-width: 800px) {
+            flex-direction: row;
+            width: 536px;
+            height: 50px;
+            select {
+              margin-top: -16px;
+            }
+          }
+          .footerLink {
+            display: flex;
+            justify-content: center;
+
+            picture {
+              margin-right: 16px;
+            }
+          }
+
+          .footerIcons {
+            display: flex;
+            gap: 24px;
+            width: 120px;
+          }
+        }
+
+        picture {
+          cursor: pointer;
+        }
+      }
+
+      .cardSpacer,
+      .cardDragging {
+        opacity: 0;
+      }
+      .emptyTalent {
+        padding-top: 40px;
+        height: 112px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.modalCard {
+  padding: 10px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  .modalCardHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media (min-width: 600px) {
+      flex-direction: row;
+    }
+    .modalCardInformation {
+      display: flex;
+      flex-direction: row;
+
+      .headerTitle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .headerTitleName {
+          display: flex;
+          flex-direction: row;
+        }
+
+        .title {
+          margin-right: 20px;
+        }
+
+        picture {
+          cursor: pointer;
+        }
+      }
+
+      .profilePicture {
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin-right: 24px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .logo {
+        flex-shrink: 0;
+      }
+    }
+
+    .modalCardActions {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-block: 8px;
+      a {
+        display: block;
+        margin-top: 8px;
+      }
+      picture {
+        cursor: pointer;
+        margin-right: 24px;
+        flex-shrink: 0;
+        margin-top: 8px;
+      }
+      @media (min-width: 600px) {
+        margin-top: 0px;
+        // justify-content: center;
+      }
+    }
+  }
+
+  .modalCardBody {
+    display: flex;
+    flex-direction: column;
+    .updatedApplication {
+      color: $brand-1;
+      font-weight: 500;
+    }
+    h1 {
+      margin-top: 24px;
+    }
+    p {
+      margin-top: 8px;
+      color: $c-2;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: left;
+    }
+    .container {
+      width: 50%;
+    }
+    .cardRow {
+      display: flex;
+      margin-top: 8px;
+      // justify-content: space-evenly;
+      gap: 20px;
+      @media (min-width: 600px) {
+        margin-top: 0px;
+        justify-content: flex-start;
+        gap: 20px;
+      }
+      .cardContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        @media (min-width: 600px) {
+          flex-direction: row;
+        }
+      }
+      h1,
+      p {
+        margin: 0;
+        text-align: center;
+      }
+      h1 {
+        font-size: 14px;
+        color: $c-2;
+        padding-top: 4px;
+      }
+
+      p {
+        color: $brand-1;
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
+    @media (max-width: 600px) {
+      flex-direction: column;
+      .container {
+        width: 100%;
+      }
+    }
+  }
+
+  .modalTitle {
+    color: #1a1a1a;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 16px;
+    font-weight: bold;
+  }
+  
+  .modalSubTitle {
+    color: #7f8d98;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .modalSelectTitle {
+    color: #1a3447;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+
+  .modalButtons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+.modalTitle {
+  color: $c-1;
+  font-size: 24px;
+  font-weight: 700;
+}
+.modalBody{
+  font-size: 15px;
+}
+.modalDescription {
+  color: black;
+  font-size: 24px;
+  padding: 0px 16px;
+  margin-bottom: 8px;
+}
+.modalContainer {
+  border-radius: 16px !important;
+
+  .modalIcon {
+    border-color: white;
+    background-color: #f1f0eb;
+    border-radius: 100%;
+    width: 72px;
+    height: 72px;
+  }
+}
+.ActionContainer{
+  flex-wrap: wrap;
+  // flex-direction: column;
+  gap: 18px;
+}
+.buttonQuit {
+  background-color: $c-1;
+  border-radius: 22.5px;
+  width: 288px;
+  height: 40px;
+  color: $white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.buttonYes {
+  background-color: $c-1;
+  border-radius: 22.5px;
+  width: 232px;
+  height: 40px;
+  color: $white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  @media (min-width: 600px) {
+    width: 208px;
+  }
+}
+.buttonNo {
+  border: 1.5px solid $c-1;
+  border-radius: 22.5px;
+  width: 232px;
+  height: 40px;
+  color: $c-1;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  @media (min-width: 600px) {
+    width: 208px;
+  }
+}
+.buttonReturn {
+  border: 1.5px solid $c-1;
+  border-radius: 22.5px;
+  width: 288px;
+  height: 40px;
+  color: $c-1;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+}
+ .selectInvitateModal{
+  display: block !important;
+  background-color: #f1f0eb !important;
+}
+.resume{
+  align-items: center;
+  gap:16px;
+  margin-left: 16px;
+  margin-bottom: 24px;
+}

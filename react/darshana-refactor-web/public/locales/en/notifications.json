@@ -1,0 +1,46 @@
+{
+  "JOB_APPLICATION_NEW": "New job application!",
+  "JOB_APPLICATION_NEW_DESCRIPTION": "Talent {{person_name}} has applied to your job {{project_name}}.",
+  "PROJ_APPLICATION_NEW": "New project application!",
+  "PROJ_APPLICATION_NEW_DESCRIPTION": "Talent {{person_name}} has applied to your project {{project_name}}.",
+  "PROJ_REQ_END": "End of project requested",
+  "PROJ_REQ_END_DESCRIPTION": "Talent {{person_name}} has requested end of project for {{project_name}}.",
+  "PROJ_UPLOADED_FILE": "New uploaded file",
+  "PROJ_UPLOADED_FILE_DESCRIPTION": "Talent {{person_name}} has uploaded a file.",
+
+  "PROJ_HIRED_TALENT": "Congratulations! You've been hired to a project",
+  "PROJ_HIRED_TALENT_DESCRIPTION": "You've been hired to project {{project_name}}.",
+  "JOB_HIRED_TALENT": "Congratulations! You've been hired to a job",
+  "JOB_HIRED_TALENT_DESCRIPTION": "You've been hired to job {{project_name}}.",
+
+  "PROJ_UNHIRED_TALENT": "Unhired",
+  "PROJ_UNHIRED_TALENT_DESCRIPTION": "You've been unhired from project {{project_name}}.",
+  "JOB_UNHIRED_TALENT": "Unhired",
+  "JOB_UNHIRED_TALENT_DESCRIPTION": "You've been unhired from job {{project_name}}",
+
+  "JOB_INV_NEW": "Job invitation!",
+  "JOB_INV_NEW_DESCRIPTION": "You've been invited to be part of job {{project_name}}.",
+  "PROJ_INV_NEW": "Project invitation!",
+  "PROJ_INV_NEW_DESCRIPTION": "You've been invited to be part of project {{project_name}}.",
+
+  "PROJ_START": "Project started!",
+  "PROJ_START_DESCRIPTION": "Project {{project_name}} has just started, good luck!",
+  "PROJ_END": "Congratulations! Project finished successfully",
+  "PROJ_END_DESCRIPTION": "Project {{project_name}} has been finished.",
+  "JOB_END": "Congratulations! Job finished successfully",
+  "JOB_END_DESCRIPTION": "Job {{project_name}} has been finished.",
+
+  "NEW_MESSAGE": "You have a new message!",
+  "NEW_MESSAGE_DESCRIPTION": "You have a new message from {{person_name}}",
+
+  "NOTIFICATIONS_EMPTY":"You haven't received any new notification yet...",
+
+  "PROJ_FROM_POSTULATION_TO_SELECT_TALENT": "Congratulations! You've been selected to a project",
+  "PROJ_FROM_POSTULATION_TO_SELECT_TALENT_DESCRIPTION": "You've been selected to project {{project_name}}.",
+  "JOB_FROM_POSTULATION_TO_SELECT_TALENT": "Congratulations! You've been selected to a job",
+  "JOB_FROM_POSTULATION_TO_SELECT_TALENT_DESCRIPTION": "You've been selected to job {{project_name}}.",
+  "PROJ_APP_UPDATED_BY_USER":"Application Update",
+  "PROJ_APP_UPDATED_BY_USER_DESCRIPTION":"{{person_name}} has updated his/her application to your project {{project_name}}.",
+  "PROJ_APP_COUNTER_PROPOSAL_BY_USER":"Application Reply",
+  "PROJ_APP_COUNTER_PROPOSAL_BY_USER_DESCRIPTION":"{{person_name}} has replied your application to the project {{project_name}}."
+}

@@ -1,0 +1,261 @@
+#message {
+  padding-bottom: 55px;
+
+  .btn--return {
+    margin-block: 8px;
+  }
+
+  .page-title {
+    margin-bottom: 32px;
+  }
+
+  &-container {
+    @extend %box;
+    display: flex;
+    height: 800px;
+
+    .header-navbar {
+      display: flex;
+      align-items: center;
+      height: 73px;
+      border-bottom: 1px solid $c-3;
+    }
+
+    #side-contacts {
+      max-width: 304px;
+      flex-shrink: 0;
+      border-right: 1px solid $c-3;
+
+      .header-navbar {
+        padding: 16px 24px;
+
+        label.form-label {
+          display: none;
+        }
+
+        .form-group {
+          margin-bottom: 0;
+        }
+      }
+
+      .contact-list {
+        height: calc(100% - 73px);
+        overflow-y: auto;
+
+        .contact-item {
+          display: flex;
+          align-items: center;
+          padding: 16px 24px;
+          border-bottom: 1px solid $c-3;
+          cursor: pointer;
+
+          picture {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+          }
+
+          .data {
+            width: calc(100% - 56px);
+            margin-left: 16px;
+
+            .name {
+              position: relative;
+              width: 100%;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              overflow: hidden;
+
+              
+            }
+
+            .after {
+              content: '';
+              background-color: $brand-1;
+              position: absolute;
+              top: 50%;
+              right: 0;
+              display: inline-block;
+              width: 8px;
+              height: 8px;
+              border-radius: 50%;
+              margin-left: 16px;
+              transform: translateY(-2px);
+            }
+
+            .last-message {
+              font-size: 14px;
+              color: $c-2;
+            }
+          }
+
+          &.active {
+            background-color: lighten($verde-resalte, 10%);
+          }
+        }
+      }
+    }
+
+    #main-message {
+      width: 100%;
+
+      .header-navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 32px 16px;
+
+        .user {
+          display: flex;
+          align-items: flex-end;
+
+          picture {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+          }
+
+          .name {
+            margin-bottom: 4px;
+            margin-left: 16px;
+          }
+        }
+
+        .more {
+          position: relative;
+
+          .options {
+            position: absolute;
+            right: 0;
+            background-color: $white;
+            width: 150px;
+            border-radius: 16px 0 16px 16px;
+            margin-top: 8px;
+            box-shadow: 0 4px 16px 0 rgba($c-1, 0.16);
+            z-index: 1;
+
+            li {
+              a {
+                display: block;
+                padding: 8px 18px;
+              }
+
+              &:not(:last-child) {
+                border-bottom: 1px solid $beige;
+              }
+            }
+          }
+        }
+      }
+
+      .message-send-box {
+        height: calc(100% - 73px);
+
+        .message-box-container {
+          height: calc(100% - 73px);
+          overflow-y: auto;
+        }
+
+        .message-box {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          height: auto;
+          padding: 16px 32px;
+
+          .message-row {
+            display: flex;
+
+            &:not(:last-child) {
+              margin-bottom: 24px;
+            }
+          }
+
+          .message {
+            position: relative;
+            max-width: 485px;
+            width: 100%;
+            line-height: 20px;
+            padding: 14px 16px;
+
+            &:after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              width: 0;
+              height: 0;
+            }
+          }
+
+          .message-contact {
+            justify-content: flex-start;
+
+            .message {
+              background-color: $c-7;
+              color: $c-2;
+              margin-left: 16px;
+              border-radius: 16px 16px 16px 0;
+
+              &:after {
+                left: -16px;
+                border-right: 8px solid $c-7;
+                border-top: 8px solid transparent;
+                border-left: 8px solid transparent;
+                border-bottom: 8px solid $c-7;
+              }
+            }
+
+            .btn-alert {
+              margin-right: 16px;
+            }
+          }
+
+          .message-user {
+            justify-content: flex-end;
+
+            .message {
+              background-color: $brand-1;
+              color: $white;
+              margin-right: 16px;
+              border-radius: 16px 16px 0 16px;
+
+              &:after {
+                right: -16px;
+                border-right: 8px solid transparent;
+                border-top: 8px solid transparent;
+                border-left: 8px solid $brand-1;
+                border-bottom: 8px solid $brand-1;
+              }
+            }
+
+            .btn-alert {
+              margin-left: 16px;
+            }
+          }
+        }
+
+        .send-message {
+          padding: 16px 32px;
+          border-top: 1px solid $c-3;
+
+          .form-control {
+            background-color: $white;
+            border: 1px solid $c-2;
+          }
+
+          .btn-end {
+            background-color: $c-1;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 16px;
+          }
+        }
+      }
+    }
+  }
+}

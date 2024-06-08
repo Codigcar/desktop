@@ -1,0 +1,21 @@
+#page-error {
+  .container {
+    padding-top: 152px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+  }
+  .text-40,
+  .text-48 {
+    margin-top: 64px;
+    margin-bottom: 32px;
+  }
+  .text-48 {
+    font-size: 48px;
+    font-weight: 900;
+  }
+  .btn--primary {
+    margin-bottom: 150px;
+  }
+}

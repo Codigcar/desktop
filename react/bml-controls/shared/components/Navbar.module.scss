@@ -1,0 +1,30 @@
+@import "styles/scss";
+
+.navbar {
+  display: flex;
+  // width: 91%;
+  // margin: auto;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: $color-text-navbar;
+  background-color: $color-primary-opacity;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 1.3rem 0rem;
+
+  &__items {
+    width: 90%;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

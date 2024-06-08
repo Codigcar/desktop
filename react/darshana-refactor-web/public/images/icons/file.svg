@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/positive/file</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Files/File/1.Outline" fill="#1A3447" transform="translate(4.000000, 2.000000)">
+            <path d="M9,0 L16,7 L16,18 C16,19.0543618 15.1841222,19.9181651 14.1492623,19.9945143 L14,20 L2,20 C0.945638205,20 0.0818348781,19.1841222 0.00548573643,18.1492623 L0,18 L0,2 C0,0.945638205 0.815877791,0.0818348781 1.85073766,0.00548573643 L2,0 L9,0 Z M7,2 L2,2 L2,18 L14,18 L14,9 L8,9 C7.48716416,9 7.06449284,8.61395981 7.00672773,8.11662113 L7,8 L7,2 Z M13.171,7 L9,2.83 L9,7 L13.171,7 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>

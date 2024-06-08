@@ -1,0 +1,14 @@
+@import '@styles/settings';
+
+.tag {
+  background-color: var(--bg-tag);
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 16px;
+  border-radius: 16px;
+
+  &--close {
+    display: flex;
+    margin-left: 8px;
+  }
+}

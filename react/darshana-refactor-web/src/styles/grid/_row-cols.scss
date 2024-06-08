@@ -1,0 +1,39 @@
+.row {
+  @include make-row();
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@include make-grid-columns();
+
+// .row {
+// 	display: flex;
+// 	flex-wrap: wrap;
+
+// 	> [class*="col-"] {
+// 		&:first-of-type {
+// 			padding-left: 0 !important;
+// 		}
+// 		&:last-of-type {
+// 			padding-right: 0 !important;
+// 		}
+// 	}
+// }
+
+// .container {
+//   @include make-container();
+// }

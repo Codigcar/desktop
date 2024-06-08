@@ -1,0 +1,247 @@
+@import '../../styles/settings';
+@import '../../styles/grid';
+
+.form {
+  background-color: $white;
+  padding: 16px;
+  margin-top: 16px;
+  margin-bottom: 184px;
+}
+.containerDiv{
+  display: flex;
+}
+.formControl {
+  background-color: $beige;
+  color: $c-1;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  width: 100%;
+  height: 40px;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 21.5px;
+  transition: $t-1;
+}
+
+.inputIcon {
+  position: relative;
+}
+
+.inputIcon > i {
+  position: absolute;
+  display: block;
+  color: $c-2;
+  transform: translate(0, -50%);
+  top: 50%;
+  pointer-events: none;
+  width: 48px;
+  text-align: center;
+  font-style: normal;
+}
+
+.inputIcon > .remuneration {
+  padding-left: 40px;
+  color: $c-1;
+}
+
+.continueButtons,
+.containerButtons {
+  align-self: flex-end;
+  background-color: $white;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+  padding: 16px 16px 24px;
+}
+
+.continueHeader {
+  display: none;
+}
+.confirmButton{
+  background-color: $c-1;
+  border-radius: 22.5px;
+  width: 310px;
+  height: 40px;
+  color: $white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  border: none;
+  margin-top:16px;
+  @media (min-width:400px) {
+    width: 375px;
+  }
+}
+.continueButtonPost {
+  background-color: $c-1;
+  border-radius: 22.5px;
+  width: 100%;
+  height: 40px;
+  color: $white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  border: none;
+  // margin-bottom: 16px;
+}
+
+.modalContainer .continueButtonPost {
+  display: block;
+  background-color: $c-1;
+  border-radius: 22.5px;
+  width: 336px;
+  height: 40px;
+  color: $white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  border: none;
+}
+
+.modalContainer .modalIcon {
+  border: none;
+  background-color: $beige;
+  border-radius: 100%;
+  width: 72px;
+  height: 72px;
+}
+
+.continueButtonPreview {
+  border: 1.5px solid $c-1;
+  border-radius: 22.5px;
+  width: 100%;
+  height: 40px;
+  color: $c-1;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+/* tooogle start*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  margin: 0px 8px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: $brand-1;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px $brand-1;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(16px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* toogle end */
+
+.buttonDelete {
+  display: inline-block;
+  color: $red;
+  font-weight: bold;
+  border-radius: 22.5px;
+  padding: 2px 0px;
+  border: 1.5px solid $red;
+  width: 100%;
+  height: 40px;
+  margin-top: 16px;
+}
+@media (min-width: 600px) {
+  .form {
+    width: 100%;
+    border-radius: 24px;
+    margin: 24px 0 64px;
+  }
+
+  .continueButtons,
+  .containerButtons {
+    position: static;
+    width: 100%;
+    // padding: 0;
+  }
+
+  .continueHeader {
+    font-size: 16px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .continueButtonPost,
+  .continueButtonPreview,
+  .buttonDelete {
+    height: 40px;
+    max-width: 352px;
+    width: 100%;
+    font-weight: bold;
+  }
+
+  .continueButtonPreview {
+    margin-top: 16px;
+    font-weight: bold;
+  }
+
+  .buttonDelete {
+    margin-top: 24px;
+    font-weight: bold;
+  }
+
+  .modalContainer .continueButtonPost {
+    width: 192px;
+  }
+}

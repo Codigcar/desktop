@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="13px" viewBox="0 0 18 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>español</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="18" height="12" rx="2"></rect>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="footer/reclutador" transform="translate(-1184.000000, -92.000000)">
+            <g id="Group" transform="translate(1184.000000, 87.000000)">
+                <g id="español" transform="translate(0.000000, 5.500000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Rectangle" fill="#D8D8D8" xlink:href="#path-1"></use>
+                    <image id="Bandera_de_España_(sin_escudo).svg" mask="url(#mask-2)" x="0" y="0" width="18" height="12" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACFCAYAAAAenrcsAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAyKADAAQAAAABAAAAhQAAAAA7OKFtAAADBUlEQVR4Ae3dsQ2CABRFUTCEBQwFK7iuc7COK1i5gA0m1nAX4FjyKk7+Tegct2XdBz8CBA4FbodPPSRA4C8gEIdAIAQEEjgmAgJxAwRCQCCBYyIgEDdAIAQEEjgmAgJxAwRCQCCBYyIgEDdAIAQEEjgmAgJxAwRCQCCBYyIgEDdAIAQEEjgmAgJxAwRCQCCBYyIgEDdAIAQEEjgmAgJxAwRCQCCBYyIgEDdAIAQEEjgmAgJxAwRCQCCBYyIgEDdAIAQEEjgmAgJxAwRCQCCBYyIgEDdAIAQEEjgmAgJxAwRCYHw/Z3+gE0CmawtM98f32gLenkAI+MQKHBMBgbgBAiEgkMAxERCIGyAQAgIJHBMBgbgBAiEgkMAxERCIGyAQAgIJHBMBgbgBAiEgkMAxERCIGyAQAgIJHBMBgbgBAiEgkMAxERCIGyAQAgIJHBMBgbgBAiEgkMAxERCIGyAQAgIJHBMBgbgBAiEgkMAxERCIGyAQAgIJHBMBgbgBAiEgkMAxERCIGyAQAgIJHBMBgbgBAiEgkMAxERCIGyAQAgIJHBMBgbgBAiEgkMAxERCIGyAQAgIJHBMBgbgBAiEgkMAxERCIGyAQAgIJHBMBgbgBAiEgkMAxERCIGyAQAgIJHBMBgbgBAiEgkMAxERCIGyAQAgIJHBMBgbgBAiEgkMAxERCIGyAQAgIJHBMBgbgBAiEgkMAxERCIGyAQAgIJHBMBgbgBAiEgkMAxERCIGyAQAgIJHBMBgbgBAiEgkMAxERCIGyAQAtPnNcdsInBtgXFb1v3aBN6ewLmAT6xzGwuBQSCOgEAICCRwTAQE4gYIhIBAAsdEQCBugEAICCRwTAQE4gYIhIBAAsdEQCBugEAICCRwTAQE4gYIhIBAAsdEQCBugEAICCRwTAQE4gYIhIBAAsdEQCBugEAICCRwTAQE4gYIhIBAAsdEQCBugEAICCRwTAQE4gYIhIBAAsdEQCBugEAICCRwTAQE4gYIhIBAAsdEQCBugEAICCRwTAQE4gYIhMAP3hsKP5QX/K4AAAAASUVORK5CYII="></image>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

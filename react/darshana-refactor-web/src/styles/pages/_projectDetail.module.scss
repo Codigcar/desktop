@@ -1,0 +1,253 @@
+@import '../settings';
+@import '../grid';
+
+.returnTo {
+  margin-block: 8px;
+}
+
+.scrollTabs {
+  overflow-x: auto;
+  margin-top: 32px;
+  scroll-snap-type: x mandatory;
+  width: auto;
+}
+.scroll {
+  scroll-snap-align: start;
+}
+
+.continueButtonPost {
+  background-color: $c-6;
+  border-radius: 22.5px;
+  width: 336px;
+  height: 48px;
+  color: #c6c6c6;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  border: none;
+}
+.disabled {
+  cursor: not-allowed;
+}
+.loading {
+  cursor: wait;
+}
+.return {
+  padding-left: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  cursor: pointer;
+  width: 128px;
+}
+
+.return span {
+  color: #1a3447;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 40px;
+  text-align: left;
+  margin-bottom: 4px;
+  margin-left: 8px;
+}
+.ActionContainer {
+  display: flex;
+  align-items: center !important;
+}
+.ActionContainerRating {
+  display: flex;
+  align-items: center !important;
+  flex-direction: row-reverse !important;
+  margin-top: 48px !important;
+}
+.modalTitle{
+line-height: 32px;
+}
+.ActionContainerQualification {
+  display: flex;
+  flex-direction: column !important;
+  gap: 16px;
+  align-items: center !important;
+}
+.buttonQuit {
+  background-color: $c-1;
+  border-radius: 22.5px;
+  width: 192px;
+  height: 40px;
+  color: $white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  margin: 0px 8px;
+}
+.buttonGoTalent {
+  background-color: $c-1;
+  border-radius: 22.5px;
+  width: 192px;
+  height: 40px;
+  color: $white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  margin: 0px 8px;
+  @media (min-width:680px) {
+    width: 256px;
+  }
+}
+.buttonReturn {
+  border: 1.5px solid $c-1;
+  border-radius: 22.5px;
+  width: 192px;
+  height: 40px;
+  color: $c-1;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  margin: 0px 8px;
+}
+.buttonReturnQualification {
+  border: 1.5px solid $c-1;
+  border-radius: 22.5px;
+  width: 192px;
+  height: 40px;
+  color: $c-1;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  margin: 0px 8px;
+  @media (min-width:680px) {
+    width: 256px;
+  }
+}
+.dragTitle {
+  display: none;
+}
+.proposalTalent {
+  padding-left: 12px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 128px;
+  border-radius: 24px;
+
+  background-color: #19a79b;
+  color: white;
+  z-index: 10;
+  position: absolute;
+  font-size: 12px;
+  top: 316px;
+  padding-bottom: 5px;
+  justify-content: flex-end;
+  div {
+    width: 95%;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+
+    p {
+      text-align: center;
+    }
+    .containerInfo {
+      display: flex;
+      flex-direction: column;
+      p {
+        font-weight: 900;
+      }
+    }
+  }
+  b {
+    text-align: center;
+  }
+}
+.slideBottom {
+  animation: slideBottom 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes slideBottom {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+@keyframes slideProposalMobile {
+  from {
+    margin-top: 50px;
+  }
+  to {
+    margin-top: 120px;
+  }
+}
+@keyframes slideProposalDesktop {
+  from {
+    margin-top: 50px;
+  }
+  to {
+    margin-top: 92px;
+  }
+}
+.proposal {
+  /* animation-duration: 1s;
+  animation-name: slideProposal; */
+
+  animation: slideProposalMobile 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  /*  margin-top: 120px !important; */
+}
+@media (min-width: 768px) {
+  .dragTitle {
+    margin-top: -14px;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+  }
+  .returnTo {
+    margin-block: 24px;
+  }
+
+  .continueButtonPost {
+    height: 40px;
+    width: 222px;
+  }
+
+  .return {
+    padding-left: 64px;
+    width: 200px;
+  }
+
+  .scrollTabs {
+    overflow: unset;
+    width: fit-content;
+  }
+  .proposalTalent {
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: row;
+    font-size: 16px;
+    top: 24px;
+    padding-left: 0px;
+    padding-bottom: 10px;
+    div {
+      width: 70%;
+      margin-bottom: 8px;
+      .containerInfo {
+        flex-direction: row;
+        p {
+          margin-left: 10px;
+          font-weight: 900;
+        }
+      }
+    }
+  }
+  .proposal {
+    animation-duration: 1s;
+    animation-name: slideProposalDesktop;
+    /*     margin-top: 88px !important;
+ */
+  }
+}

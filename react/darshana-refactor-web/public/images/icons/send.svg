@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="20px" viewBox="0 0 21 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/ send</title>
+    <g id="3.Reclutador" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.11.0.0-Darshana-reclutador" transform="translate(-1315.000000, -978.000000)">
+            <g id="Group-5" transform="translate(64.000000, 208.000000)">
+                <g id="Group-7" transform="translate(303.000000, 743.000000)">
+                    <g id="Group-6" transform="translate(937.000000, 17.000000)">
+                        <g id="icon/-send" transform="translate(18.000000, 20.000000) rotate(45.000000) translate(-18.000000, -20.000000) translate(6.000000, 8.000000)">
+                            <polygon id="Path" points="0 0 24 0 24 24 0 24"></polygon>
+                            <line x1="10" y1="14" x2="21" y2="3" id="Path" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
+                            <path d="M21,3 L14.5,21 C14.4104035,21.1955155 14.2150671,21.3208712 14,21.3208712 C13.7849329,21.3208712 13.5895965,21.1955155 13.5,21 L10,14 L3,10.5 C2.80448445,10.4104035 2.67912878,10.2150671 2.67912878,10 C2.67912878,9.7849329 2.80448445,9.58959648 3,9.5 L21,3" id="Path" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

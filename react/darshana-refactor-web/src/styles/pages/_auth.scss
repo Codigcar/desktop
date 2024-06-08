@@ -1,0 +1,420 @@
+#header-auth {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 72px;
+  border-bottom: 1px solid rgba($c-4, 0.05);
+  z-index: 1;
+
+  @media (max-width: 767px) {
+    position: sticky;
+    top: 0;
+    background-color: $white;
+    text-align: center;
+    height: 56px;
+  }
+}
+
+#auth {
+  background-color: $white;
+  // display: flex;
+  // flex: 1 0 auto;
+  min-height: 100vh;
+
+  .container-full {
+    height: 100vh;
+
+    // @media (max-width: 767px) {
+    //   padding-top: 56px;
+    // }
+  }
+
+  .row {
+    height: 100%;
+
+    @media (max-width: 767px) {
+      display: flex;
+      flex-direction: column-reverse;
+      height: auto;
+    }
+  }
+
+  .col-information {
+    background-color: $white;
+  }
+
+  .limit-box {
+    max-width: 640px;
+    width: 100%;
+    // padding-left: 80px;
+    // padding-left: 10.323%;
+    padding-top: 72px;
+    padding-left: min(80px, 11.628%);
+    margin-left: auto;
+    margin-bottom: 72px;
+
+    @media (max-width: 767px) {
+      max-width: 100%;
+      padding-block: 24px;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+
+    &-content {
+      margin-top: 24px;
+
+      @media (max-width: 767px) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .message-wallet {
+    // font-size: 8px;
+    padding-top: 8px;
+    padding-left: 30px;
+  }
+
+  .btn--return {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .form-container {
+    max-width: 432px;
+    margin-top: 72px;
+
+    @media (max-width: 767px) {
+      max-width: 100%;
+      margin-top: 0;
+    }
+
+    .title {
+      color: $brand-1;
+      margin-bottom: 8px;
+
+      @media (max-width: 767px) {
+        text-align: center;
+      }
+    }
+
+    .description {
+      @media (max-width: 767px) {
+        text-align: center;
+      }
+    }
+
+    .form {
+      margin-top: 56px;
+
+      @media (max-width: 767px) {
+        margin-top: 16px;
+      }
+
+      .continue-with {
+        margin-top: 16px;
+
+        @media (max-width: 767px) {
+          margin-top: 16px;
+        }
+
+        .button-groups {
+          display: flex;
+          gap: 32px;
+          margin-block: 32px;
+
+          @media (max-width: 767px) {
+            margin-top: 16px;
+            margin-bottom: 24px;
+          }
+
+          .btn {
+            // width: 50%;
+          }
+        }
+
+        p {
+          color: $c-2;
+
+          a {
+            color: $c-1;
+            text-decoration: underline;
+          }
+        }
+
+        .text-with {
+          position: relative;
+          text-align: center;
+
+          &:before {
+            content: '';
+            background-color: $c-2;
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+          }
+
+          span {
+            position: relative;
+            display: inline-block;
+            background-color: $white;
+            padding-inline: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .background-image {
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+
+    @media (max-width: 767px) {
+      height: 200px;
+    }
+
+    @media (max-width: 376px) {
+      height: 120px;
+    }
+
+    .back-arrow {
+      display: block;
+      margin-top: 16px;
+
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+
+  &.login {
+    .form-container {
+      margin-top: 0px;
+
+      .title {
+        margin-top: 24px;
+      }
+
+      .form {
+        margin-top: 8px;
+
+        @media (max-width: 767px) {
+          margin-top: 16px;
+        }
+
+        .forgot {
+          text-align: center;
+          margin-block: 24px;
+
+          @media (max-width: 767px) {
+            margin-top: 16px;
+          }
+
+          a {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .message-wallet {
+      font-size: 12.5px;
+      padding-top: 0px;
+      padding-left: 0px;
+    }
+  }
+
+  &.create-account {
+    .form-container {
+      margin-top: 8px;
+
+      .form {
+        margin-top: 24px;
+      }
+
+      button.btn--full {
+        margin-top: 40px;
+
+        @media (max-width: 767px) {
+          margin-top: 32px;
+        }
+      }
+    }
+  }
+
+  &.forgot-password {
+    .form-container {
+      max-width: 480px;
+
+      @media (max-width: 767px) {
+        max-width: 100%;
+      }
+
+      button.btn {
+        margin-top: 96px;
+
+        @media (max-width: 767px) {
+          margin-top: 32px;
+        }
+      }
+    }
+  }
+
+  &.change-password {
+    .form-container {
+      button.btn {
+        margin-top: 56px;
+
+        @media (max-width: 767px) {
+          margin-top: 32px;
+        }
+      }
+    }
+  }
+
+  &.otp {
+    .container {
+      .title {
+        color: #19a79b;
+        font-weight: 900;
+        height: 56px;
+      }
+
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 54px;
+
+      @media (min-width: 769px) {
+        margin-top: 0;
+        justify-content: center;
+      }
+
+      .send-email {
+        cursor: pointer;
+        color: #0a3c4c;
+        font-size: 18px;
+        line-height: 24px;
+        text-align: center;
+        text-decoration: underline;
+        font-weight: 900;
+        margin-bottom: 16px;
+      }
+
+      .disable {
+        background-color: #eaeaea;
+        cursor: not-allowed;
+        color: #636262;
+      }
+
+      .btn--primary {
+        width: 300px;
+        height: 48px;
+
+        @media (mint-width: 768px) {
+          width: 400px;
+        }
+      }
+
+      .message-account {
+        font-size: 18px;
+        text-align: center;
+      }
+
+      .email {
+        color: #19a79b;
+        font-weight: 900;
+        text-align: center;
+      }
+    }
+
+    .verification-container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 54px;
+
+      .title {
+        color: #19a79b;
+        font-size: 28px;
+        font-weight: 900;
+        line-height: 40px;
+      }
+
+      .body {
+        font-size: 20px;
+        text-align: center;
+        width: 90%;
+        max-width: 420px;
+        height: 70px;
+        line-height: 24px;
+        margin-bottom: 48px;
+        margin-top: 24px;
+      }
+
+      .btn--primary {
+        height: 48px;
+        font-size: 24px;
+      }
+
+      @media (min-width: 769px) {
+        margin-top: 0;
+        justify-content: center;
+
+        .title {
+          font-size: 40px;
+        }
+      }
+    }
+
+    .otp-container {
+      margin-block: 32px;
+      max-width: 500px;
+
+      .error {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        color: red;
+      }
+    }
+
+    .container-otp {
+      // width: 400px;
+
+      gap: 10px;
+
+      div {
+        justify-content: center;
+      }
+    }
+
+    .input-otp {
+      font-size: 40px;
+      width: 64px !important;
+      height: 64px;
+      color: $brand-1;
+      border: 2 px solid $c-1;
+      border-radius: 8px;
+    }
+
+    .disabled-otp {
+      background-color: #f2f2f2;
+      border: 2px solid #c6c6c6;
+      border-radius: 8px;
+      width: 64px;
+      height: 64px;
+    }
+
+    .focus-otp {
+      border: 2px solid $brand-1;
+    }
+  }
+}

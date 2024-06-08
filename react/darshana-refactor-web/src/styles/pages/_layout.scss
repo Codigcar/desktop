@@ -1,0 +1,117 @@
+body {
+  background-color: $c-3;
+  font: {
+    family: 'Lato', sans-serif;
+    weight: 400;
+    style: normal;
+    size: 16px;
+  }
+  color: $c-1;
+  line-height: 24px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+a {
+  color: inherit;
+}
+
+b,
+strong {
+  font-weight: 700;
+
+  &.black {
+    font-weight: 900;
+  }
+}
+
+.text-48 {
+  font-size: 48px;
+  line-height: 56px;
+
+  @media (max-width: 600px) {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+.text-40 {
+  font-size: 40px;
+  line-height: 48px;
+
+  @media (max-width: 600px) {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+.text-32 {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.text-24 {
+  font-size: 24px;
+  line-height: 32px;
+
+  @media (max-width: 600px) {
+    font-size: 20px;
+  }
+}
+
+.text-20 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.text-16 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.text-14 {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.text-12 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.c-brand-1 {
+  color: $brand-1 !important;
+}
+
+.c-1 {
+  color: $c-1;
+}
+
+.c-2 {
+  color: $c-2 !important;
+}
+
+.c-gray {
+  color: $gray !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+%box {
+  background-color: $white;
+  border-radius: 24px;
+}
+.text-bold{
+  font-weight: bold;
+}

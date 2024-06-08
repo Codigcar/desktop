@@ -1,0 +1,64 @@
+@import '@styles/settings';
+
+.card {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 24px;
+  padding-bottom: 32px;
+  @media (min-width: 768px) {
+    width: 48%;
+    //flex-direction: row;
+    min-height: 215px;
+    height: auto;
+  }
+}
+.cardHighLight {
+  position: relative;
+  display: flex;
+  width: 98%;
+  min-height: 215px;
+  text-align: left;
+  padding: 24px;
+  padding-bottom: 32px;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    width: 48%;
+    // flex-direction: row;
+    min-height: 215px;
+    height: auto;
+  }
+}
+.cardHeader {
+  display: flex;
+  align-items: center;
+
+  picture {
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin-right: 24px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .logo {
+    flex-shrink: 0;
+  }
+}
+
+.HeaderInformation {
+  .profession {
+    color: rgba($c-1, 0.56);
+    letter-spacing: 0.5;
+  }
+}
+
+.HeaderOptions {
+  top: 24px;
+}
+
+.cardBody {
+  margin-top: 16px;
+  margin-bottom: 32px;
+}

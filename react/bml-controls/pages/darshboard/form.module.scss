@@ -1,0 +1,236 @@
+@import "styles/scss";
+
+.header {
+  &__title {
+    color: $color-text-title;
+    &-2{
+        color: white;
+    }
+  }
+  &__filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $color-text-naranja;
+    margin: 2rem 0rem;
+  }
+}
+
+.categories {
+  &__category {
+  }
+  &__subcategory {
+    background-color: $color-primary-opacity;
+    padding: 3rem 3rem;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+  }
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__niveles {
+      display: flex;
+      // margin-left: 40px;
+    }
+  }
+}
+
+.container input[type=radio] {
+  opacity: 1;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  accent-color: $color-text-naranja;
+}
+
+// tooltip
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 320px;
+  background-color: red;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+// tooltip nivel 2
+
+.tooltip-2 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip-2 .tooltiptext-2 {
+  visibility: hidden;
+  width: 320px;
+  background-color: #f2994a;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip-2 .tooltiptext-2::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltip-2:hover .tooltiptext-2 {
+  visibility: visible;
+}
+
+// tooltip nivel 3
+
+.tooltip-3 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip-3 .tooltiptext-3 {
+  visibility: hidden;
+  width: 320px;
+  background-color: #ffe500;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip-3 .tooltiptext-3::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltip-3:hover .tooltiptext-3 {
+  visibility: visible;
+}
+
+// tooltip nivel 4
+
+.tooltip-4 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip-4 .tooltiptext-4 {
+  visibility: hidden;
+  width: 320px;
+  background-color: #548150;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: -100px;
+  margin-left: -60px;
+}
+
+.tooltip-4 .tooltiptext-4::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltip-4:hover .tooltiptext-4 {
+  visibility: visible;
+}
+
+// tooltip nivel 5
+
+.tooltip-5 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip-5 .tooltiptext-5 {
+  visibility: hidden;
+  width: 320px;
+  background-color: #00ff19;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: -100px;
+  margin-left: -60px;
+}
+
+.tooltip-5 .tooltiptext-5::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltip-5:hover .tooltiptext-5 {
+  visibility: visible;
+}

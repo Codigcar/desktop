@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Darshana email template</title>
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+    body {
+      margin: 0;
+    }
+
+    table {
+      border-spacing: 0;
+    }
+
+    td {
+      padding: 0;
+    }
+
+    img {
+      border: 0;
+    }
+
+    .wrapper {
+      width: 100%;
+      table-layout: fixed;
+      background-color: #ffffff;
+      padding-bottom: 60px;
+    }
+
+    a {
+      color: #ffffff !important;
+      cursor: pointer;
+    }
+
+    .main {
+      padding: 20px;
+      padding-bottom: 56px;
+      text-align: center;
+      /* width: 90%; */
+      margin: 0 auto;
+      max-width: 100%;
+      background-color: #ffffff;
+      font-family: 'Lato', sans-serif;
+      color: #1A3447;
+      box-shadow: 0 0 25px rgba(0, 0, 0, .15);
+    }
+
+    .content {
+      text-align: center;
+      margin: 0 auto;
+      color: #1A3447;
+    }
+
+    .button {
+      display: block;
+      text-decoration: none;
+      cursor: pointer;
+      margin: 30px 24px;
+      padding: 10px 30px;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 22.5px;
+      border: none;
+      opacity: 1;
+      background-color: #19A79B;
+    }
+
+    .logo .logo-link {
+      margin: 0 auto;
+    }
+
+    .link {
+      margin: 0 10px;
+    }
+
+    .cancel-subscription {
+      color: #19A79B !important;
+      font-weight: bold;
+    }
+
+    .otp {
+      color: #1A3447;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: 2rem;
+      /* background-color: red; */
+      height: 140px;
+    }
+
+    .message {
+      height: 32px;
+    }
+
+    .discord {
+      color: #0909e3 !important
+    }
+  </style>
+</head>
+
+<body>
+  <center class="wrapper">
+    <table class="main" width="80%">
+      <tr>
+        <td style="padding:14px 0 4px;">
+          <!-- LOGO -->
+          <table width="100%" style="padding: 0 30px 30px 30px;">
+            <tr>
+              <td class="logo">
+                <a href="<%=WEB_URL%>" class="logo-link"><img src="<%=WEB_URL%>/mails/img/logo.png"
+                    alt="Darshana logo"></a>
+              </td>
+            </tr>
+          </table>
+          <table width="100%" class="" style="background-color: #F2F2F2; border-radius: 35px;">
+            <!-- BANNER -->
+            <!-- <tr>
+              <td class="">
+                <img style="width:100%;" src="<%=WEB_URL%>/mails/img/banner-complete-profile.png"
+                  alt="Darshana complete profile">
+              </td>
+            </tr> -->
+            <!-- CONTENT -->
+            <tr>
+              <td style="padding:10px 15px 10px;">
+                <table class="content" style="padding: 15px 0 30px;">
+                  <!-- <tr>
+
+                    <h1 style="color: #19A79B;font-size: 40px;font-weight: 900;margin-block: 8px;">¡No olvides
+                      completar
+                    </h1>
+                    <h1 style="color: #19A79B;font-size: 40px;font-weight: 900;margin-block: 8px;">los datos de tu
+                      perfil!</h1>
+
+                  </tr> -->
+                  <tr>
+                    <p>
+                      Hola <%=talent.person.name%>
+                        <%=talent.person.last_name%>,
+                    </p>
+                    <p>Apreciamos tu interés y el tiempo que dedicaste a para postular al proyecto <%=project_name%>.
+                    </p>
+                    <p>Este mail es para informarte que el puesto para el proyecto ya ha sido cubierto.</p>
+                    <p>
+                      Continuamente publicamos trabajos y proyectos nuevos, así que no dejes de revisar nuestra app para
+                      encontrar nuevas oportunidades.
+                    </p>
+                    <p>Gracias por considerarnos en tu búsqueda!</p>
+                    <p>Saludos,</p>
+                    <div>
+                      <p>Equipo de Darshana</p>
+                      <p>
+                        <img src="<%=WEB_URL%>/mails/img/logo.png" alt="Darshana logo">
+                      </p>
+                      <p style="margin-bottom:40px">
+                        <img decoding="async" src="<%=WEB_URL%>/mails/img/igR.png" alt="ig">
+                        <img decoding="async" src="<%=WEB_URL%>/mails/img/twitterR.png" alt="twitter">
+                        @darshanaio | <a href="https://discord.gg/darshana" target="_blank"
+                          class="discord">https://discord.gg/darshana</a>
+                      </p>
+                    </div>
+                  </tr>
+
+                  <tr>
+                    <p>*Por favor, no responda a este mensaje. Esta dirección de correo electrónico no está siendo
+                      monitoreada para respuestas</p>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!-- LINKS -->
+      <tr>
+        <td style="padding:20px 0;">
+          <a class="link" href="https://www.facebook.com/darshanaio"><img decoding="async"
+              src="<%=WEB_URL%>/mails/img/facebook.png" alt="facebook"></a>
+          <a class="link" href="https://twitter.com/darshanaio"><img src="<%=WEB_URL%>/mails/img/twitter.png"
+              alt="twitter"></a>
+          <a class="link" href="<%=WEB_URL%>"><img src="<%=WEB_URL%>/mails/img/Web.png" alt="web"></a>
+        </td>
+      </tr>
+      <!-- COPYRIGHT -->
+      <tr>
+        <td style="padding:10px 0 20px;">
+          Copyright c 2023 Darshana. Todos los derechos reservados.
+        </td>
+      </tr>
+      <!-- CANCEL SUB -->
+      <tr>
+        <td>
+          ¿Cansado de recibir estos correos? <a href="" class="cancel-subscription"> Cancela la subscripción.</a>
+        </td>
+      </tr>
+      </td>
+      </tr>
+    </table>
+  </center>
+</body>
+
+</html>

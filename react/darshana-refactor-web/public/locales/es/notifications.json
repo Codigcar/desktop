@@ -1,0 +1,48 @@
+{
+  "JOB_APPLICATION_NEW": "¡Tienes un nuevo postulante a tu empleo!",
+  "JOB_APPLICATION_NEW_DESCRIPTION": "El talento {{person_name}} ha postulado a tu empleo {{project_name}}.",
+  "PROJ_APPLICATION_NEW": "¡Tienes un nuevo postulante a tu proyecto!",
+  "PROJ_APPLICATION_NEW_DESCRIPTION": "El talento {{person_name}} ha postulado a tu proyecto {{project_name}}.",
+  "PROJ_UPLOADED_FILE": "Nuevo archivo subido",
+  "PROJ_UPLOADED_FILE_DESCRIPTION": "El talento {{person_name}} ha subido un archivo.",
+
+  "PROJ_REQ_END": "Se ha solicitado finalizar un proyecto",
+  "PROJ_REQ_END_DESCRIPTION": "El talento {{person_name}} ha solicitado finalizar el proyecto {{project_name}}.",
+
+  "PROJ_HIRED_TALENT": "¡Felicidades! haz sido contratado a un proyecto",
+  "PROJ_HIRED_TALENT_DESCRIPTION": "Haz sido contratado al proyecto {{project_name}}.",
+  "JOB_HIRED_TALENT": "¡Felicidades! haz sido contratado a un empleo",
+  "JOB_HIRED_TALENT_DESCRIPTION": "Haz sido contratado al empleo {{project_name}}.",
+
+  "PROJ_UNHIRED_TALENT": "Ya no estás contratado",
+  "PROJ_UNHIRED_TALENT_DESCRIPTION": "Haz dejado de estar contratado para el projecto {{project_name}}.",
+  "JOB_UNHIRED_TALENT": "Ya no estás contratado",
+  "JOB_UNHIRED_TALENT_DESCRIPTION": "Haz dejado de estar contratado para el empleo {{project_name}}.",
+
+  "JOB_INV_NEW": "¡Te acaban de invitar a un empleo!",
+  "JOB_INV_NEW_DESCRIPTION": "Haz sido invitado para participar al empleo {{project_name}}.",
+  "PROJ_INV_NEW": "¡Te acaban de invitar a un proyecto!",
+  "PROJ_INV_NEW_DESCRIPTION": "Haz sido invitado para participar al proyecto {{project_name}}.",
+
+  "PROJ_START": "¡Ha iniciado un nuevo proyecto!",
+  "PROJ_START_DESCRIPTION": "El proyecto {{project_name}} acaba de iniciarse, te deseamos mucha suerte.",
+  "PROJ_END": "¡Felicidades! acabas de finalizar un proyecto",
+  "PROJ_END_DESCRIPTION": "El proyecto {{project_name}} ha sido finalizado.",
+  "JOB_END": "¡Felicidades! acabas de finalizar un trabajo",
+  "JOB_END_DESCRIPTION": "El trabajo {{project_name}} ha finalizado.",
+
+  "NEW_MESSAGE": "¡Tienes un nuevo mensaje!",
+  "NEW_MESSAGE_DESCRIPTION": "Tienes un nuevo mensaje de {{person_name}}",
+
+  "NOTIFICATIONS_EMPTY": "Aún no recibes nuevas notificaciones...",
+
+  "PROJ_FROM_POSTULATION_TO_SELECT_TALENT": "¡Felicidades! haz sido seleccionado a un proyecto",
+  "PROJ_FROM_POSTULATION_TO_SELECT_TALENT_DESCRIPTION": "Haz sido seleccionado al proyecto {{project_name}}.",
+  "JOB_FROM_POSTULATION_TO_SELECT_TALENT": "¡Felicidades! haz sido seleccionado a un empleo",
+  "JOB_FROM_POSTULATION_TO_SELECT_TALENT_DESCRIPTION": "Haz sido seleccionado al empleo {{project_name}}.",
+  "PROJ_APP_UPDATED_BY_USER":"Actualización de la aplicación",
+  "PROJ_APP_UPDATED_BY_USER_DESCRIPTION":"{{person_name}} ha actualizado su aplicación a su proyecto {{project_name}}.",
+  "PROJ_APP_COUNTER_PROPOSAL_BY_USER":"Respuesta de la aplicación",
+  "PROJ_APP_COUNTER_PROPOSAL_BY_USER_DESCRIPTION":"{{person_name}} ha respondido su solicitud al proyecto {{project_name}}."
+
+}

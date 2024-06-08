@@ -1,0 +1,414 @@
+@import '@styles/settings';
+
+#header {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 72px;
+  border-bottom: 1px solid rgba($c-4, 0.05);
+  // background-color: $beige;
+
+  @media (max-width: 767px) {
+    background-color: $white;
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 56px;
+    z-index: 50;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 600px) {
+      padding-right: 0px;
+    }
+  }
+
+  .hamburger {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    padding: 5px 2px;
+    z-index: 1;
+
+    span {
+      position: absolute;
+      left: calc(50% - 10px);
+      display: block;
+      background-color: $c-1;
+      width: calc(100% - 4px);
+      height: 2px;
+      border-radius: 1px;
+      transform: rotate(0deg);
+      transition: $t-2;
+
+      &:nth-child(1) {
+        top: 5px;
+      }
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: 11px;
+      }
+      &:nth-child(4) {
+        top: 17px;
+      }
+    }
+
+    &.open {
+      span {
+        &:nth-child(1),
+        &:nth-child(4) {
+          top: 11px;
+          width: 0%;
+          left: 50%;
+        }
+
+        &:nth-child(2) {
+          transform: rotate(45deg);
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .logo {
+    display: block;
+
+    @media (max-width: 767px) {
+      margin-inline: auto;
+    }
+  }
+
+  nav {
+    display: flex;
+
+    @media (max-width: 767px) {
+      // display: none;
+      background-color: $beige;
+      position: fixed;
+      top: 56px;
+      left: 0;
+      flex-direction: column;
+      width: 100%;
+      height: calc(100vh - 56px);
+      padding-inline: 16px;
+      padding-bottom: 32px;
+      transform: translateX(-100%);
+      transition: $t-1;
+      z-index: 1;
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+    }
+
+    .menuList {
+      @media (max-width: 767px) {
+        display: block;
+      }
+
+      li {
+        margin-right: 40px;
+
+        @media (max-width: 767px) {
+          margin-right: 0;
+        }
+
+        a {
+          @media (max-width: 767px) {
+            display: block;
+            padding-block: 16px;
+            border-bottom: 1px solid $c-5;
+          }
+        }
+      }
+    }
+
+    .menuOptions {
+      gap:16px;
+      @media (max-width: 767px) {
+        margin-top: auto;
+        margin-bottom: 72px;
+        .note {
+          margin-bottom: 24px;
+        }
+
+        .buttons {
+          display: flex;
+          flex-direction: column;
+
+          a {
+            margin-top: 16px;
+          }
+        }
+      }
+      .btnGpt{
+        background-color: $brand-1;
+        color: #fff;
+      }
+    }
+  }
+
+  &.secondary {
+    nav {
+      .menuList {
+        li {
+          a {
+            color: $white;
+          }
+        }
+      }
+
+      .menuOptions {
+        li {
+          a {
+            color: $c-1;
+          }
+        }
+      }
+    }
+  }
+
+  &.core,
+  .jobBoard {
+    @media (min-width: 768px) {
+      position: relative;
+    }
+
+    .headerOptions {
+      display: flex;
+      .MenuProfile {
+        position: absolute;
+        width: 0px;
+        ul {
+          color: $c-1;
+          background-color: white;
+          border-radius: 16px 0 16px 16px;
+          display: flex;
+          flex-direction: column;
+          padding-left: 0;
+          align-items: flex-start;
+          justify-content: space-evenly;
+          height: 120px;
+          z-index: 10;
+          width: calc(100vw - 32px);
+          position: fixed;
+          right: 16px;
+          left: 16px;
+          top: 56px;
+        }
+
+        .menuOptionsList {
+          width: 100%;
+          padding: 5px 0px 5px 24px;
+        }
+
+        .menuOptionsList:not(:last-child) {
+          border-bottom: solid 1px $beige;
+        }
+      }
+
+      button:first-child {
+        margin-right: 16px;
+      }
+
+      .profileIcon {
+        margin-left: 10px;
+      }
+    }
+    .profileIcon {
+      .notificationPoint {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: #ff0000;
+        border-radius: 10px;
+      }
+      .MenuNotification {
+        position: absolute;
+        z-index: 40;
+        // width: calc(100vw - 32px);
+        height: 600px;
+        ul {
+          overflow-y: scroll;
+          height: 300px;
+          color: $c-1;
+          background-color: white;
+          border-radius: 16px 0 16px 16px;
+          display: flex;
+          flex-direction: column;
+          // padding-top: 330px;
+          padding-left: 0;
+          align-items: flex-start;
+          justify-content: space-evenly;
+          // height: 120px;
+          // z-index: 10;
+          width: calc(100vw - 32px);
+          position: fixed;
+          right: 16px;
+          left: 16px;
+          top: 56px;
+        }
+        .menuOptionsList {
+          width: 100%;
+          padding: 5px 0px 5px 24px;
+          .date {
+            color: rgba($c-1, 0.48);
+            margin-top: 10px;
+          }
+        }
+
+        .menuOptionsList:not(:last-child) {
+          border-bottom: solid 1px $beige;
+        }
+      }
+    }
+    .MenuNotificationMovil {
+      overflow-y: scroll;
+      background: white;
+      position: fixed;
+      z-index: 40;
+      top: 60px;
+      height: 632px;
+      ul li {
+        cursor: pointer;
+        padding: 5px 6px 5px 6px;
+      }
+      // padding: 5px 0px 5px 24px;
+      .noReadIt {
+        background-color: #c5f9f4;
+        width: 100%;
+        cursor: pointer;
+        padding: 5px 6px 5px 6px;
+      }
+
+      .noReadIt:not(:last-child) {
+        border-bottom: solid 1px $beige;
+        cursor: pointer;
+        padding: 5px 6px 5px 6px;
+      }
+    }
+    nav {
+      .menuList {
+        li {
+          &:not(:last-child) {
+            margin-right: 32px;
+
+            @media (max-width: 767px) {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+      .menuOptions {
+        @media (max-width: 767px) {
+          display: none;
+        }
+
+        li {
+          padding-left: 24px;
+          a,
+          button {
+            display: flex;
+          }
+          .MenuNotification {
+            position: absolute;
+            z-index: 40;
+            width: 0;
+            ul {
+              color: $c-1;
+              background-color: white;
+              border-radius: 16px 0 16px 16px;
+              display: flex;
+              flex-direction: column;
+              width: 530px;
+              align-items: flex-start;
+              position: relative;
+              top: 10px;
+              right: 516px;
+              justify-content: space-evenly;
+              z-index: 30;
+              padding: 5px 0px;
+            }
+          }
+
+          .noReadIt {
+            background-color: #c5f9f4;
+            width: 100%;
+            padding: 5px 0px 5px 24px;
+          }
+
+          .noReadIt:not(:last-child) {
+            border-bottom: solid 1px $beige;
+          }
+
+          .MenuProfile {
+            position: absolute;
+            ul {
+              color: $c-1;
+              background-color: white;
+              border-radius: 16px 0 16px 16px;
+              display: flex;
+              flex-direction: column;
+              width: 130px;
+              align-items: flex-start;
+              position: relative;
+              top: 10px;
+              right: 106px;
+              justify-content: space-evenly;
+              height: 120px;
+              z-index: 30;
+            }
+          }
+          .notificationPoint {
+            display: block;
+            width: 10px;
+            height: 10px;
+            background: #ff0000;
+            border-radius: 10px;
+            position: absolute;
+            /* left: 10px; */
+            margin-left: 22px;
+          }
+        }
+
+        .menuOptionsList {
+          width: 100%;
+          padding: 5px 0px 5px 24px;
+        }
+
+        .menuOptionsList:not(:last-child) {
+          border-bottom: solid 1px $beige;
+        }
+      }
+    }
+  }
+  &.jobBoard {
+    position: absolute;
+    color: white;
+  }
+  &.openMenu {
+    nav {
+      transform: translateX(0);
+    }
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+.date {
+  color: rgba($c-1, 0.48);
+  margin-top: 10px;
+
+  @media (max-width: 600px) {
+    margin-top: 32px;
+    margin-bottom: 8px;
+  }
+}

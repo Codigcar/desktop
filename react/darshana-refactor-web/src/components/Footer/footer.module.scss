@@ -1,0 +1,123 @@
+@import '@styles/settings';
+
+#footer {
+  background-color: $c-1;
+
+  .content {
+    padding-block: 48px;
+
+    @media (max-width: 767px) {
+      padding: 32px 0 56px;
+    }
+
+    .contentLogo {
+      display: flex;
+      justify-content: space-between;
+
+      @media (max-width: 767px) {
+        margin-bottom: 32px;
+      }
+    }
+
+    .menuTitle {
+      color: $c-2;
+      margin-bottom: 24px;
+
+      @media (max-width: 767px) {
+        margin-bottom: 8px;
+      }
+    }
+
+    .menuList {
+      @media (max-width: 767px) {
+        margin-bottom: 24px;
+      }
+
+      li {
+        margin-bottom: 8px;
+
+        a {
+          color: $white;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .followLinks {
+      display: flex;
+
+      li {
+        display: flex;
+
+        &:not(:last-child) {
+          margin-right: 16px;
+        }
+      }
+    }
+
+    .colLanguage {
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+
+    .language {
+      li {
+        a {
+          display: block;
+          padding: 10px 8px;
+          border-radius: 4px;
+
+          span {
+            display: block !important;
+          }
+        }
+
+        &:first-child {
+          position: relative;
+          padding-right: 8px;
+
+          &::after {
+            content: '';
+            display: inline-block;
+            background-color: rgba($white, 0.1);
+            position: absolute;
+            top: 4px;
+            right: 0;
+            width: 1px;
+            height: calc(100% - 8px);
+          }
+        }
+
+        &:last-child {
+          padding-left: 8px;
+        }
+      }
+
+      &.desktop {
+        display: flex;
+      }
+
+      &.mobile {
+        display: flex;
+
+        @media (min-width: 768px) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .copy {
+    text-align: center;
+    font-size: 14px;
+    color: rgba($white, 0.5);
+    padding-block: 16px;
+    border-top: 1px solid rgba($white, 0.1);
+
+    @media (min-width: 768px) {
+      font-size: 12px;
+      font-weight: 300;
+    }
+  }
+}
