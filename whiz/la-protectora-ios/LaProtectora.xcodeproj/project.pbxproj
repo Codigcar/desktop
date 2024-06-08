@@ -1,0 +1,1760 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9EB49B95279EF68F0080F0D8 /* LinkDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB49B94279EF68F0080F0D8 /* LinkDataMapper.swift */; };
+		9EB49B97279F062D0080F0D8 /* LinkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB49B96279F062D0080F0D8 /* LinkData.swift */; };
+		9EB49B99279F0B0E0080F0D8 /* RestPronostikRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB49B98279F0B0E0080F0D8 /* RestPronostikRepository.swift */; };
+		9EB49B9B279F1C470080F0D8 /* GetLinkDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB49B9A279F1C470080F0D8 /* GetLinkDataUseCase.swift */; };
+		9EB49B9D279F1D640080F0D8 /* GetLinkDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB49B9C279F1D640080F0D8 /* GetLinkDataInteractor.swift */; };
+		9EB49B9F279F22200080F0D8 /* GetEncryptedLinkUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB49B9E279F22200080F0D8 /* GetEncryptedLinkUseCase.swift */; };
+		9EB49BA1279F22860080F0D8 /* GetEncryptedLinkInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB49BA0279F22860080F0D8 /* GetEncryptedLinkInteractor.swift */; };
+		9EBBFFAC27A0AFBB003CA2FD /* QuoterLinkDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBBFFAB27A0AFBB003CA2FD /* QuoterLinkDataMapper.swift */; };
+		9EBBFFAE27A0B01A003CA2FD /* QuoterLinkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBBFFAD27A0B01A003CA2FD /* QuoterLinkData.swift */; };
+		9EBBFFB027A0B0E4003CA2FD /* RestQuoterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBBFFAF27A0B0E4003CA2FD /* RestQuoterRepository.swift */; };
+		9EBBFFB227A0B171003CA2FD /* GetQuoterLinkDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBBFFB127A0B171003CA2FD /* GetQuoterLinkDataUseCase.swift */; };
+		9EBBFFB427A0B1A0003CA2FD /* GetQuoterLinkDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBBFFB327A0B1A0003CA2FD /* GetQuoterLinkDataInteractor.swift */; };
+		9ED7372D276C477A009EE0A8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9ED7372C276C477A009EE0A8 /* Kingfisher */; };
+		9ED7372F276C51B6009EE0A8 /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED7372E276C51B6009EE0A8 /* GifImage.swift */; };
+		A900D53524D4D656004E3102 /* MyInsunrances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A900D53424D4D655004E3102 /* MyInsunrances.swift */; };
+		A9198D3224E7052900112832 /* NetworkAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9198D3124E7052900112832 /* NetworkAPIClient.swift */; };
+		A9198D3424E7306600112832 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9198D3324E7306600112832 /* User.swift */; };
+		A9198D3724E73D3F00112832 /* UserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9198D3624E73D3F00112832 /* UserMapper.swift */; };
+		A926DC0C24DC5CEF00F39555 /* MoreMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A926DC0B24DC5CEF00F39555 /* MoreMenuView.swift */; };
+		A926DC0E24DC8EC000F39555 /* PersonalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A926DC0D24DC8EC000F39555 /* PersonalData.swift */; };
+		A926DC1024DCAA6E00F39555 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A926DC0F24DCAA6E00F39555 /* WebView.swift */; };
+		A926DC1424DDC07000F39555 /* Enums+Typealiase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A926DC1324DDC07000F39555 /* Enums+Typealiase.swift */; };
+		A926DC1624DDE9DE00F39555 /* InsuranceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A926DC1524DDE9DE00F39555 /* InsuranceCardView.swift */; };
+		A926DC1824DDF50F00F39555 /* Endoso.swift in Sources */ = {isa = PBXBuildFile; fileRef = A926DC1724DDF50F00F39555 /* Endoso.swift */; };
+		A926DC1A24DDF73400F39555 /* Prima.swift in Sources */ = {isa = PBXBuildFile; fileRef = A926DC1924DDF73400F39555 /* Prima.swift */; };
+		A926DC1C24DDF9B100F39555 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = A926DC1B24DDF9B100F39555 /* Document.swift */; };
+		A93829152566FEBD00118D09 /* CDNBlogStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93829142566FEBD00118D09 /* CDNBlogStorageRepository.swift */; };
+		A93C892324FEAC2C002841BE /* GetExecutivesRiskGroupUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C892224FEAC2C002841BE /* GetExecutivesRiskGroupUseCase.swift */; };
+		A93C892524FEAC95002841BE /* GetExecutivesRiskGroupInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C892424FEAC95002841BE /* GetExecutivesRiskGroupInteractor.swift */; };
+		A93C892724FEAD94002841BE /* ExecutivesRiskGroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C892624FEAD94002841BE /* ExecutivesRiskGroupsView.swift */; };
+		A93C892924FEBE40002841BE /* RestExecutiveRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C892824FEBE40002841BE /* RestExecutiveRepository.swift */; };
+		A93C892B24FEBE88002841BE /* Executive.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C892A24FEBE88002841BE /* Executive.swift */; };
+		A93C892D24FEBF53002841BE /* GetAccountExecutivesListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C892C24FEBF53002841BE /* GetAccountExecutivesListUseCase.swift */; };
+		A93C892F24FEC317002841BE /* GetSinisterExecutivesListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C892E24FEC317002841BE /* GetSinisterExecutivesListUseCase.swift */; };
+		A93C893124FEC437002841BE /* ExecutiveMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C893024FEC437002841BE /* ExecutiveMapper.swift */; };
+		A93C893324FEC67C002841BE /* GetAccountExecutiveListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C893224FEC67C002841BE /* GetAccountExecutiveListInteractor.swift */; };
+		A93C893524FEC6CF002841BE /* GetSinisterExecutivesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C893424FEC6CF002841BE /* GetSinisterExecutivesListInteractor.swift */; };
+		A93C893724FED85C002841BE /* GetContactCenterDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C893624FED85C002841BE /* GetContactCenterDataUseCase.swift */; };
+		A93C893924FED8BB002841BE /* RestContactCenterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C893824FED8BB002841BE /* RestContactCenterRepository.swift */; };
+		A93C893B24FED93F002841BE /* ContactCenterMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C893A24FED93F002841BE /* ContactCenterMapper.swift */; };
+		A93C893D24FEDA26002841BE /* GetContactCenterDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C893C24FEDA26002841BE /* GetContactCenterDataInteractor.swift */; };
+		A948E46F2547371100AC6E14 /* BlogFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948E46E2547371100AC6E14 /* BlogFeedView.swift */; };
+		A948FFC724F0475F00A21F47 /* GetEndososUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFC624F0475F00A21F47 /* GetEndososUseCase.swift */; };
+		A948FFC924F05A2C00A21F47 /* EndosoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFC824F05A2C00A21F47 /* EndosoMapper.swift */; };
+		A948FFCB24F05BB100A21F47 /* GetEndososInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFCA24F05BB100A21F47 /* GetEndososInteractor.swift */; };
+		A948FFCD24F05C2B00A21F47 /* RestEndosoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFCC24F05C2B00A21F47 /* RestEndosoRepository.swift */; };
+		A948FFD324F42F6100A21F47 /* GetPrimasUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFD224F42F6100A21F47 /* GetPrimasUseCase.swift */; };
+		A948FFD524F42F8B00A21F47 /* RestPrimaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFD424F42F8B00A21F47 /* RestPrimaRepository.swift */; };
+		A948FFD724F42FA200A21F47 /* GetPrimasInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFD624F42FA200A21F47 /* GetPrimasInteractor.swift */; };
+		A948FFD924F42FE300A21F47 /* PrimaMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFD824F42FE300A21F47 /* PrimaMapper.swift */; };
+		A948FFDB24F43E4100A21F47 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFDA24F43E4100A21F47 /* Coupon.swift */; };
+		A948FFDD24F45E7D00A21F47 /* GetCouponsListUserCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFDC24F45E7D00A21F47 /* GetCouponsListUserCase.swift */; };
+		A948FFDF24F45E9200A21F47 /* GetCouponsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFDE24F45E9200A21F47 /* GetCouponsListInteractor.swift */; };
+		A948FFE124F45EDE00A21F47 /* RestCouponRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFE024F45EDE00A21F47 /* RestCouponRepository.swift */; };
+		A948FFE324F45F0900A21F47 /* CouponMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFE224F45F0900A21F47 /* CouponMapper.swift */; };
+		A948FFE524F4719E00A21F47 /* DocumentMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFE424F4719E00A21F47 /* DocumentMapper.swift */; };
+		A948FFE724F471C400A21F47 /* RestDocumentRespository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFE624F471C400A21F47 /* RestDocumentRespository.swift */; };
+		A948FFE924F471DB00A21F47 /* GetDocumentsListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFE824F471DB00A21F47 /* GetDocumentsListUseCase.swift */; };
+		A948FFEB24F471F000A21F47 /* GetPolizaDocumentsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFEA24F471F000A21F47 /* GetPolizaDocumentsListInteractor.swift */; };
+		A948FFED24F472E900A21F47 /* SiniestroInfoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFEC24F472E900A21F47 /* SiniestroInfoMapper.swift */; };
+		A948FFEF24F4808F00A21F47 /* SiniestroInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFEE24F4808F00A21F47 /* SiniestroInfo.swift */; };
+		A948FFF124F480B500A21F47 /* Risk.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFF024F480B500A21F47 /* Risk.swift */; };
+		A948FFF324F4827600A21F47 /* GetSiniestroInfoListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFF224F4827600A21F47 /* GetSiniestroInfoListUseCase.swift */; };
+		A948FFF524F4830700A21F47 /* GetSiniestroInfoListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFF424F4830700A21F47 /* GetSiniestroInfoListInteractor.swift */; };
+		A948FFF724F483B800A21F47 /* RestSiniestroInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948FFF624F483B800A21F47 /* RestSiniestroInfoRepository.swift */; };
+		A949F3F624DB337500C66847 /* RiskGroupListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A949F3F524DB337500C66847 /* RiskGroupListView.swift */; };
+		A949F3F824DB341600C66847 /* HeaderTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A949F3F724DB341600C66847 /* HeaderTabBar.swift */; };
+		A949F3FA24DB38D000C66847 /* InsuranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A949F3F924DB38D000C66847 /* InsuranceView.swift */; };
+		A949F3FC24DB3A1700C66847 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A949F3FB24DB3A1700C66847 /* HeaderView.swift */; };
+		A949F3FE24DB5B3B00C66847 /* LPCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A949F3FD24DB5B3B00C66847 /* LPCard.swift */; };
+		A949F40024DB5B6F00C66847 /* BigTitleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A949F3FF24DB5B6F00C66847 /* BigTitleRow.swift */; };
+		A949F40224DB5B8300C66847 /* SmallRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A949F40124DB5B8300C66847 /* SmallRow.swift */; };
+		A949F40424DB5BAA00C66847 /* SmallTitleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A949F40324DB5BAA00C66847 /* SmallTitleRow.swift */; };
+		A949F40624DB5BC400C66847 /* BigRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A949F40524DB5BC400C66847 /* BigRow.swift */; };
+		A949F40824DB885A00C66847 /* InsuranceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A949F40724DB885A00C66847 /* InsuranceListView.swift */; };
+		A949F40B24DB98BF00C66847 /* SiniestroCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A949F40A24DB98BF00C66847 /* SiniestroCategories.swift */; };
+		A949F40D24DB9B2D00C66847 /* SiniestroListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A949F40C24DB9B2D00C66847 /* SiniestroListView.swift */; };
+		A949F40F24DB9BD200C66847 /* SiniestroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A949F40E24DB9BD200C66847 /* SiniestroView.swift */; };
+		A94A008524EF269700A6C681 /* LazyLoadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94A008424EF269700A6C681 /* LazyLoadedView.swift */; };
+		A94C15642568536A003ACDCD /* BlogCategoryFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94C15632568536A003ACDCD /* BlogCategoryFeed.swift */; };
+		A94C156925685385003ACDCD /* BlogCategoryFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94C156825685385003ACDCD /* BlogCategoryFeedView.swift */; };
+		A94C156E256853A1003ACDCD /* SubcategoryFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94C156D256853A1003ACDCD /* SubcategoryFeed.swift */; };
+		A94C15732568583A003ACDCD /* HTMLViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94C15722568583A003ACDCD /* HTMLViewer.swift */; };
+		A94C15782568584F003ACDCD /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94C15772568584F003ACDCD /* ArticleDetailView.swift */; };
+		A94C157D2568586C003ACDCD /* SubcategoryFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94C157C2568586C003ACDCD /* SubcategoryFeedView.swift */; };
+		A94C158225685893003ACDCD /* BlogFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94C158125685893003ACDCD /* BlogFeed.swift */; };
+		A94C1587256858BC003ACDCD /* ArticleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94C1586256858BC003ACDCD /* ArticleCard.swift */; };
+		A94C158C2568590E003ACDCD /* HighlightedArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94C158B2568590E003ACDCD /* HighlightedArticle.swift */; };
+		A96269E624F4B9C0007E3032 /* TabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96269E524F4B9C0007E3032 /* TabbedView.swift */; };
+		A96269E824F59C0F007E3032 /* VehicleInfoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96269E724F59C0F007E3032 /* VehicleInfoMapper.swift */; };
+		A96269EA24F59FE4007E3032 /* RestVehicleInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96269E924F59FE4007E3032 /* RestVehicleInfoRepository.swift */; };
+		A96269EC24F5A070007E3032 /* GetVehicleInfoListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96269EB24F5A070007E3032 /* GetVehicleInfoListUseCase.swift */; };
+		A96269EE24F5A0B1007E3032 /* GetVehicleInfoListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96269ED24F5A0B1007E3032 /* GetVehicleInfoListInteractor.swift */; };
+		A96269F024F5A3A0007E3032 /* InsuredInfoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96269EF24F5A3A0007E3032 /* InsuredInfoMapper.swift */; };
+		A96269F224F5A4FF007E3032 /* RestInsuredInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96269F124F5A4FF007E3032 /* RestInsuredInfoRepository.swift */; };
+		A96269F424F5A5F1007E3032 /* GetInsuredInfoListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96269F324F5A5F1007E3032 /* GetInsuredInfoListUseCase.swift */; };
+		A96269F624F5A653007E3032 /* GetInsuredInfoListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96269F524F5A653007E3032 /* GetInsuredInfoListInteractor.swift */; };
+		A96269F824F5B371007E3032 /* SiniestroGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96269F724F5B371007E3032 /* SiniestroGroup.swift */; };
+		A96269FA24F5B452007E3032 /* SiniestroGroupMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96269F924F5B452007E3032 /* SiniestroGroupMapper.swift */; };
+		A96269FC24F5B796007E3032 /* GetSiniestroGroupListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96269FB24F5B796007E3032 /* GetSiniestroGroupListUseCase.swift */; };
+		A96269FE24F5B83C007E3032 /* RestSiniestroGroupRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96269FD24F5B83C007E3032 /* RestSiniestroGroupRepository.swift */; };
+		A9626A0024F5C5ED007E3032 /* GetSiniestroGroupListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96269FF24F5C5ED007E3032 /* GetSiniestroGroupListInteractor.swift */; };
+		A9626A0224F5D9B4007E3032 /* SiniestroCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9626A0124F5D9B4007E3032 /* SiniestroCard.swift */; };
+		A9626A0424F5E957007E3032 /* SiniestroCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9626A0324F5E957007E3032 /* SiniestroCardModel.swift */; };
+		A9626A0624F5EC4D007E3032 /* SiniestroCardModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9626A0524F5EC4D007E3032 /* SiniestroCardModelMapper.swift */; };
+		A9626A0824F5ECC1007E3032 /* RestSiniestroCardModelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9626A0724F5ECC1007E3032 /* RestSiniestroCardModelRepository.swift */; };
+		A9626A0A24F5F1B6007E3032 /* GetSiniestroCardModelListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9626A0924F5F1B6007E3032 /* GetSiniestroCardModelListUseCase.swift */; };
+		A9626A0C24F5F223007E3032 /* GetSiniestroCardModelListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9626A0B24F5F223007E3032 /* GetSiniestroCardModelListInteractor.swift */; };
+		A96439DF24D8A58E001491A7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96439DE24D8A58E001491A7 /* HomeView.swift */; };
+		A96439E524D8B71E001491A7 /* Signika-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A96439E124D8B71E001491A7 /* Signika-Light.otf */; };
+		A96439E624D8B71E001491A7 /* Signika-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A96439E224D8B71E001491A7 /* Signika-Bold.otf */; };
+		A96439E724D8B71E001491A7 /* Signika-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A96439E324D8B71E001491A7 /* Signika-Regular.otf */; };
+		A96439E824D8B71E001491A7 /* Signika-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A96439E424D8B71E001491A7 /* Signika-Semibold.otf */; };
+		A96439EB24D9C5A5001491A7 /* SOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96439EA24D9C5A5001491A7 /* SOSView.swift */; };
+		A96439ED24D9DF56001491A7 /* FloatingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96439EC24D9DF56001491A7 /* FloatingRow.swift */; };
+		A96439EF24D9E1C1001491A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A96439EE24D9E1C1001491A7 /* Assets.xcassets */; };
+		A96439F124D9E61E001491A7 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96439F024D9E61E001491A7 /* ViewModifiers.swift */; };
+		A96439F324D9F779001491A7 /* InsuredVehiclesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96439F224D9F779001491A7 /* InsuredVehiclesList.swift */; };
+		A9806A7F24D4898C00696A51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9806A7E24D4898C00696A51 /* AppDelegate.swift */; };
+		A9806A8124D4898C00696A51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9806A8024D4898C00696A51 /* SceneDelegate.swift */; };
+		A9806A8324D4898C00696A51 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9806A8224D4898C00696A51 /* MainView.swift */; };
+		A9806A8824D4898E00696A51 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9806A8724D4898E00696A51 /* Preview Assets.xcassets */; };
+		A9806A8B24D4898E00696A51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9806A8924D4898E00696A51 /* LaunchScreen.storyboard */; };
+		A9806A9624D4898F00696A51 /* La_ProtectoraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9806A9524D4898F00696A51 /* La_ProtectoraTests.swift */; };
+		A9806AA124D4898F00696A51 /* La_ProtectoraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9806AA024D4898F00696A51 /* La_ProtectoraUITests.swift */; };
+		A9806AAF24D48E2800696A51 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9806AAE24D48E2800696A51 /* LoginView.swift */; };
+		A9806AB124D4910700696A51 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9806AB024D4910700696A51 /* Helpers.swift */; };
+		A9806AB824D4ABC200696A51 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9806AB224D4ABC100696A51 /* TextView.swift */; };
+		A9806AB924D4ABC200696A51 /* AlertCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9806AB324D4ABC100696A51 /* AlertCard.swift */; };
+		A9806ABA24D4ABC200696A51 /* CustomGridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9806AB424D4ABC100696A51 /* CustomGridStack.swift */; };
+		A9806ABB24D4ABC200696A51 /* PaginatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9806AB524D4ABC100696A51 /* PaginatedView.swift */; };
+		A9806ABC24D4ABC200696A51 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9806AB624D4ABC100696A51 /* ImagePicker.swift */; };
+		A9806ABD24D4ABC200696A51 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9806AB724D4ABC200696A51 /* ActivityIndicator.swift */; };
+		A9806AC124D4AC0D00696A51 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = A9806AC024D4AC0D00696A51 /* Resolver */; };
+		A9806AC624D4CF1200696A51 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9806AC524D4CF1200696A51 /* RegisterView.swift */; };
+		A9806AC824D4CF3100696A51 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9806AC724D4CF3100696A51 /* SigninView.swift */; };
+		A9806ACA24D4CF4400696A51 /* PasswordRecoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9806AC924D4CF4400696A51 /* PasswordRecoveryView.swift */; };
+		A9806ACC24D4CF5600696A51 /* PhoneNumberValidationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9806ACB24D4CF5600696A51 /* PhoneNumberValidationView.swift */; };
+		A9806ACE24D4CF6C00696A51 /* LabeledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9806ACD24D4CF6C00696A51 /* LabeledTextField.swift */; };
+		A9806AD024D4CF7D00696A51 /* ValidatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9806ACF24D4CF7D00696A51 /* ValidatedTextField.swift */; };
+		A9806AD224D4CF8F00696A51 /* LPButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9806AD124D4CF8F00696A51 /* LPButton.swift */; };
+		A9806AD424D4CFA300696A51 /* LPIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9806AD324D4CFA300696A51 /* LPIconButton.swift */; };
+		A9806AD624D4CFB800696A51 /* LoginViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9806AD524D4CFB800696A51 /* LoginViewViewModel.swift */; };
+		A9818D3524F98C0E008E14C7 /* InsuredVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818D3424F98C0E008E14C7 /* InsuredVehicle.swift */; };
+		A9818D3724F98CA2008E14C7 /* GetInsuredVehiclesListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818D3624F98CA2008E14C7 /* GetInsuredVehiclesListUseCase.swift */; };
+		A9818D3924F98CEE008E14C7 /* GetInsuredVehicleListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818D3824F98CEE008E14C7 /* GetInsuredVehicleListInteractor.swift */; };
+		A9818D3B24F98E4D008E14C7 /* RestInsuredVehicleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818D3A24F98E4D008E14C7 /* RestInsuredVehicleRepository.swift */; };
+		A9818D3D24F98EA1008E14C7 /* InsuredVehicleMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818D3C24F98EA1008E14C7 /* InsuredVehicleMapper.swift */; };
+		A9818D3F24F99F6F008E14C7 /* SiniestroType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818D3E24F99F6F008E14C7 /* SiniestroType.swift */; };
+		A9818D4124F9A1FE008E14C7 /* SiniestroTypeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818D4024F9A1FE008E14C7 /* SiniestroTypeMapper.swift */; };
+		A9818D4324F9A27D008E14C7 /* RestSiniestroTypeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818D4224F9A27D008E14C7 /* RestSiniestroTypeRepository.swift */; };
+		A9818D4524F9A31B008E14C7 /* GetSiniestroTypeListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818D4424F9A31B008E14C7 /* GetSiniestroTypeListUseCase.swift */; };
+		A9818D4724F9A362008E14C7 /* GetSiniestroTypeListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818D4624F9A362008E14C7 /* GetSiniestroTypeListInteractor.swift */; };
+		A9818D4A24F9ABE4008E14C7 /* SinisterRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818D4824F9ABE4008E14C7 /* SinisterRegistration.swift */; };
+		A9818D4C24F9AF70008E14C7 /* RestSinisterRegistrationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818D4B24F9AF70008E14C7 /* RestSinisterRegistrationRepository.swift */; };
+		A9818D4E24F9C7EA008E14C7 /* RegisterSinisterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818D4D24F9C7EA008E14C7 /* RegisterSinisterUseCase.swift */; };
+		A9818D5024F9C808008E14C7 /* RegisterSinisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818D4F24F9C808008E14C7 /* RegisterSinisterInteractor.swift */; };
+		A9818D5624FD5192008E14C7 /* GetUbigeoDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818D5524FD5192008E14C7 /* GetUbigeoDataUseCase.swift */; };
+		A9818D5824FD520C008E14C7 /* UbigeoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818D5724FD520C008E14C7 /* UbigeoData.swift */; };
+		A9818D5A24FD5257008E14C7 /* RestUbigeoDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818D5924FD5257008E14C7 /* RestUbigeoDataRepository.swift */; };
+		A9818D5C24FD543D008E14C7 /* GetUbigeoDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818D5B24FD543D008E14C7 /* GetUbigeoDataInteractor.swift */; };
+		A9818D5E24FD8601008E14C7 /* PersonalDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818D5D24FD8601008E14C7 /* PersonalDataViewModel.swift */; };
+		A98EA79424E3061300DF6C92 /* ExecutivesCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98EA79324E3061300DF6C92 /* ExecutivesCategoriesView.swift */; };
+		A98EA79624E3091300DF6C92 /* ExecutivesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98EA79524E3091300DF6C92 /* ExecutivesList.swift */; };
+		A9A0598625646C900009897C /* BlogAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0598525646C900009897C /* BlogAPIClient.swift */; };
+		A9A0598F2564743B0009897C /* RestBlogPostRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0598E2564743B0009897C /* RestBlogPostRepository.swift */; };
+		A9A05994256474730009897C /* BlogPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A05993256474730009897C /* BlogPost.swift */; };
+		A9A05999256478BD0009897C /* BlogPostMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A05998256478BD0009897C /* BlogPostMapper.swift */; };
+		A9A059A82565B6350009897C /* BlogCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A059A72565B6350009897C /* BlogCategory.swift */; };
+		A9A059AD2565B6650009897C /* BlogSubCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A059AC2565B6650009897C /* BlogSubCategory.swift */; };
+		A9A059B22565B8940009897C /* BlogSubCategoryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A059B12565B8940009897C /* BlogSubCategoryMapper.swift */; };
+		A9A059B72565BBE20009897C /* RestBlogSubCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A059B62565BBE20009897C /* RestBlogSubCategoryRepository.swift */; };
+		A9A059BC2565E0920009897C /* GetFeaturedBlogPostUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A059BB2565E0920009897C /* GetFeaturedBlogPostUseCase.swift */; };
+		A9C5334724EAE50F00E157A9 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5334624EAE50F00E157A9 /* RequestManager.swift */; };
+		A9C5334924EAE5EC00E157A9 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5334824EAE5EC00E157A9 /* AuthManager.swift */; };
+		A9C5334B24EAEB2E00E157A9 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5334A24EAEB2E00E157A9 /* Loader.swift */; };
+		A9C5334D24ECBFD900E157A9 /* SecureLabeledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5334C24ECBFD900E157A9 /* SecureLabeledTextField.swift */; };
+		A9C5334F24EDDCA500E157A9 /* EmptyStateNotAllowed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5334E24EDDCA500E157A9 /* EmptyStateNotAllowed.swift */; };
+		A9C5335424EEE2BC00E157A9 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5335324EEE2BC00E157A9 /* Repositories.swift */; };
+		A9C5335624EEE3EF00E157A9 /* GetRiskGroupUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5335524EEE3EF00E157A9 /* GetRiskGroupUseCase.swift */; };
+		A9C5335824EEE4BD00E157A9 /* GetRiskGroupInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5335724EEE4BD00E157A9 /* GetRiskGroupInteractor.swift */; };
+		A9C5335A24EEE8DB00E157A9 /* RestRiskGroupRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5335924EEE8DB00E157A9 /* RestRiskGroupRepository.swift */; };
+		A9C5335D24EEEA6500E157A9 /* RiskGroupMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5335C24EEEA6500E157A9 /* RiskGroupMapper.swift */; };
+		A9C5335F24EEEB3100E157A9 /* RiskGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5335E24EEEB3100E157A9 /* RiskGroup.swift */; };
+		A9C5336124EEED5900E157A9 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5336024EEED5900E157A9 /* Mapper.swift */; };
+		A9C5336324EEFBD800E157A9 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5336224EEFBD800E157A9 /* Cache.swift */; };
+		A9C5336624EF01F300E157A9 /* Insurance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5336524EF01F300E157A9 /* Insurance.swift */; };
+		A9C5336824EF084800E157A9 /* InsuranceMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5336724EF084800E157A9 /* InsuranceMapper.swift */; };
+		A9C5336A24EF091D00E157A9 /* GetInsurancesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5336924EF091D00E157A9 /* GetInsurancesUseCase.swift */; };
+		A9C5336C24EF095C00E157A9 /* GetInsurancesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5336B24EF095C00E157A9 /* GetInsurancesInteractor.swift */; };
+		A9C5336E24EF0A8300E157A9 /* RestInsuranceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5336D24EF0A8300E157A9 /* RestInsuranceRepository.swift */; };
+		A9C6F60E24F6C5AB00F358F5 /* SiniestroMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C6F60D24F6C5AB00F358F5 /* SiniestroMapper.swift */; };
+		A9C6F61024F6CAA000F358F5 /* GetSiniestroUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C6F60F24F6CAA000F358F5 /* GetSiniestroUseCase.swift */; };
+		A9C6F61224F6CE3100F358F5 /* RestSiniestroRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C6F61124F6CE3100F358F5 /* RestSiniestroRepository.swift */; };
+		A9C6F61424F6D6B000F358F5 /* GetSiniestroDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C6F61324F6D6B000F358F5 /* GetSiniestroDetailInteractor.swift */; };
+		A9C6F61624F7409B00F358F5 /* FollowUpMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C6F61524F7409B00F358F5 /* FollowUpMapper.swift */; };
+		A9C6F61824F7427E00F358F5 /* RestFollowUpRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C6F61724F7427E00F358F5 /* RestFollowUpRepository.swift */; };
+		A9C6F61A24F7432C00F358F5 /* GetFollowUpListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C6F61924F7432C00F358F5 /* GetFollowUpListUseCase.swift */; };
+		A9C6F61C24F7437200F358F5 /* GetFollowUpListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C6F61B24F7437200F358F5 /* GetFollowUpListInteractor.swift */; };
+		A9C6F61E24F74EC700F358F5 /* GetSiniestroDocumentListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C6F61D24F74EC700F358F5 /* GetSiniestroDocumentListInteractor.swift */; };
+		A9D0FE54256EDE1600BE2181 /* RestBlogCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D0FE53256EDE1600BE2181 /* RestBlogCategoryRepository.swift */; };
+		A9D0FE59256EDEBD00BE2181 /* BlogCategoryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D0FE58256EDEBD00BE2181 /* BlogCategoryMapper.swift */; };
+		A9D0FE5E256EE01D00BE2181 /* GetBlogCategoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D0FE5D256EE01D00BE2181 /* GetBlogCategoriesUseCase.swift */; };
+		A9D0FE66256EE0A800BE2181 /* GetBlogCategoriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D0FE65256EE0A800BE2181 /* GetBlogCategoriesInteractor.swift */; };
+		A9D0FE6B256EE1A900BE2181 /* BlogCategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D0FE6A256EE1A900BE2181 /* BlogCategoryCard.swift */; };
+		A9E4AC82256C026C00022B32 /* GetRecentBlogPostsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4AC81256C026C00022B32 /* GetRecentBlogPostsInteractor.swift */; };
+		A9E4AC87256C027D00022B32 /* GetRecentCategoryBlogPostsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4AC86256C027D00022B32 /* GetRecentCategoryBlogPostsInteractor.swift */; };
+		A9E4AC8C256C029C00022B32 /* GetRecentCategoryBlogPostsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4AC8B256C029C00022B32 /* GetRecentCategoryBlogPostsUseCase.swift */; };
+		A9E4AC91256C02AE00022B32 /* GetRecentBlogPostsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4AC90256C02AE00022B32 /* GetRecentBlogPostsUseCase.swift */; };
+		A9EB0B0024E3B9B400894301 /* Mocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EB0AFF24E3B9B400894301 /* Mocker.swift */; };
+		A9EB0B0224E3B9DF00894301 /* FollowUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EB0B0124E3B9DF00894301 /* FollowUp.swift */; };
+		A9EB0B0524E3BA2500894301 /* FollowUpCardViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EB0B0424E3BA2500894301 /* FollowUpCardViewData.swift */; };
+		A9EB0B0724E3BA3D00894301 /* VehicleInfoCardViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EB0B0624E3BA3D00894301 /* VehicleInfoCardViewData.swift */; };
+		A9EB0B0924E3BA5D00894301 /* SiniestroCardViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EB0B0824E3BA5D00894301 /* SiniestroCardViewData.swift */; };
+		A9EB0B0C24E3BABE00894301 /* PrimaCardViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EB0B0B24E3BABE00894301 /* PrimaCardViewData.swift */; };
+		A9EB0B0E24E3BAD100894301 /* EndososCardViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EB0B0D24E3BAD100894301 /* EndososCardViewData.swift */; };
+		A9EB0B1024E3BAE300894301 /* DocumentCardViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EB0B0F24E3BAE300894301 /* DocumentCardViewData.swift */; };
+		A9EB0B1224E3BB2200894301 /* InsuredInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EB0B1124E3BB2200894301 /* InsuredInfo.swift */; };
+		A9EB0B1424E3BB8800894301 /* InsuredInfoCardViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EB0B1324E3BB8800894301 /* InsuredInfoCardViewData.swift */; };
+		A9EB0B1624E3BDCB00894301 /* VehicleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EB0B1524E3BDCB00894301 /* VehicleInfo.swift */; };
+		A9EB0B1824E3C06A00894301 /* Siniestro.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EB0B1724E3C06A00894301 /* Siniestro.swift */; };
+		A9EB0B1A24E459F100894301 /* ContactCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EB0B1924E459F100894301 /* ContactCenter.swift */; };
+		A9EB0B1C24E45AF700894301 /* AssistanceCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EB0B1B24E45AF700894301 /* AssistanceCenterView.swift */; };
+		A9EF291B2566071100D64DEC /* GetBlogSubbCategoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF291A2566071100D64DEC /* GetBlogSubbCategoriesUseCase.swift */; };
+		A9EF29202566071900D64DEC /* GetBlogPostsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF291F2566071900D64DEC /* GetBlogPostsUseCase.swift */; };
+		A9EF29252566074100D64DEC /* GetFeaturedBlogPostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF29242566074100D64DEC /* GetFeaturedBlogPostInteractor.swift */; };
+		A9EF292A2566075700D64DEC /* GetBlogSubbCategoriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF29292566075700D64DEC /* GetBlogSubbCategoriesInteractor.swift */; };
+		A9EF292F2566076C00D64DEC /* GetBlogPostsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF292E2566076C00D64DEC /* GetBlogPostsInteractor.swift */; };
+		A9FBC093254343D500D30B3D /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FBC092254343D500D30B3D /* LocalNotificationManager.swift */; };
+		A9FCAE15250FF34E00ECEAFD /* InsuranceViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FCAE14250FF34E00ECEAFD /* InsuranceViewPage.swift */; };
+		A9FCAE17250FF3AC00ECEAFD /* InputAccesoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FCAE16250FF3AC00ECEAFD /* InputAccesoryView.swift */; };
+		A9FCAE1925100EFE00ECEAFD /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FCAE1825100EFE00ECEAFD /* SearchBar.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A9806A9224D4898F00696A51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9806A7324D4898C00696A51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9806A7A24D4898C00696A51;
+			remoteInfo = "La Protectora";
+		};
+		A9806A9D24D4898F00696A51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9806A7324D4898C00696A51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9806A7A24D4898C00696A51;
+			remoteInfo = "La Protectora";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9EB49B94279EF68F0080F0D8 /* LinkDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDataMapper.swift; sourceTree = "<group>"; };
+		9EB49B96279F062D0080F0D8 /* LinkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkData.swift; sourceTree = "<group>"; };
+		9EB49B98279F0B0E0080F0D8 /* RestPronostikRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestPronostikRepository.swift; sourceTree = "<group>"; };
+		9EB49B9A279F1C470080F0D8 /* GetLinkDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLinkDataUseCase.swift; sourceTree = "<group>"; };
+		9EB49B9C279F1D640080F0D8 /* GetLinkDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLinkDataInteractor.swift; sourceTree = "<group>"; };
+		9EB49B9E279F22200080F0D8 /* GetEncryptedLinkUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEncryptedLinkUseCase.swift; sourceTree = "<group>"; };
+		9EB49BA0279F22860080F0D8 /* GetEncryptedLinkInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEncryptedLinkInteractor.swift; sourceTree = "<group>"; };
+		9EBBFFAB27A0AFBB003CA2FD /* QuoterLinkDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoterLinkDataMapper.swift; sourceTree = "<group>"; };
+		9EBBFFAD27A0B01A003CA2FD /* QuoterLinkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoterLinkData.swift; sourceTree = "<group>"; };
+		9EBBFFAF27A0B0E4003CA2FD /* RestQuoterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestQuoterRepository.swift; sourceTree = "<group>"; };
+		9EBBFFB127A0B171003CA2FD /* GetQuoterLinkDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetQuoterLinkDataUseCase.swift; sourceTree = "<group>"; };
+		9EBBFFB327A0B1A0003CA2FD /* GetQuoterLinkDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetQuoterLinkDataInteractor.swift; sourceTree = "<group>"; };
+		9ED7372E276C51B6009EE0A8 /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
+		A900D53424D4D655004E3102 /* MyInsunrances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInsunrances.swift; sourceTree = "<group>"; };
+		A9198D3124E7052900112832 /* NetworkAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIClient.swift; sourceTree = "<group>"; };
+		A9198D3324E7306600112832 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A9198D3624E73D3F00112832 /* UserMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapper.swift; sourceTree = "<group>"; };
+		A926DC0B24DC5CEF00F39555 /* MoreMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreMenuView.swift; sourceTree = "<group>"; };
+		A926DC0D24DC8EC000F39555 /* PersonalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalData.swift; sourceTree = "<group>"; };
+		A926DC0F24DCAA6E00F39555 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		A926DC1324DDC07000F39555 /* Enums+Typealiase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enums+Typealiase.swift"; sourceTree = "<group>"; };
+		A926DC1524DDE9DE00F39555 /* InsuranceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceCardView.swift; sourceTree = "<group>"; };
+		A926DC1724DDF50F00F39555 /* Endoso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endoso.swift; sourceTree = "<group>"; };
+		A926DC1924DDF73400F39555 /* Prima.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prima.swift; sourceTree = "<group>"; };
+		A926DC1B24DDF9B100F39555 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		A93829102566E91300118D09 /* IVO La Protectora Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "IVO La Protectora Dev.entitlements"; sourceTree = "<group>"; };
+		A93829142566FEBD00118D09 /* CDNBlogStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDNBlogStorageRepository.swift; sourceTree = "<group>"; };
+		A93C892224FEAC2C002841BE /* GetExecutivesRiskGroupUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetExecutivesRiskGroupUseCase.swift; sourceTree = "<group>"; };
+		A93C892424FEAC95002841BE /* GetExecutivesRiskGroupInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetExecutivesRiskGroupInteractor.swift; sourceTree = "<group>"; };
+		A93C892624FEAD94002841BE /* ExecutivesRiskGroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutivesRiskGroupsView.swift; sourceTree = "<group>"; };
+		A93C892824FEBE40002841BE /* RestExecutiveRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestExecutiveRepository.swift; sourceTree = "<group>"; };
+		A93C892A24FEBE88002841BE /* Executive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Executive.swift; sourceTree = "<group>"; };
+		A93C892C24FEBF53002841BE /* GetAccountExecutivesListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountExecutivesListUseCase.swift; sourceTree = "<group>"; };
+		A93C892E24FEC317002841BE /* GetSinisterExecutivesListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSinisterExecutivesListUseCase.swift; sourceTree = "<group>"; };
+		A93C893024FEC437002841BE /* ExecutiveMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutiveMapper.swift; sourceTree = "<group>"; };
+		A93C893224FEC67C002841BE /* GetAccountExecutiveListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountExecutiveListInteractor.swift; sourceTree = "<group>"; };
+		A93C893424FEC6CF002841BE /* GetSinisterExecutivesListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSinisterExecutivesListInteractor.swift; sourceTree = "<group>"; };
+		A93C893624FED85C002841BE /* GetContactCenterDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetContactCenterDataUseCase.swift; sourceTree = "<group>"; };
+		A93C893824FED8BB002841BE /* RestContactCenterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestContactCenterRepository.swift; sourceTree = "<group>"; };
+		A93C893A24FED93F002841BE /* ContactCenterMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCenterMapper.swift; sourceTree = "<group>"; };
+		A93C893C24FEDA26002841BE /* GetContactCenterDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetContactCenterDataInteractor.swift; sourceTree = "<group>"; };
+		A948E46E2547371100AC6E14 /* BlogFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogFeedView.swift; sourceTree = "<group>"; };
+		A948FFC624F0475F00A21F47 /* GetEndososUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEndososUseCase.swift; sourceTree = "<group>"; };
+		A948FFC824F05A2C00A21F47 /* EndosoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndosoMapper.swift; sourceTree = "<group>"; };
+		A948FFCA24F05BB100A21F47 /* GetEndososInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEndososInteractor.swift; sourceTree = "<group>"; };
+		A948FFCC24F05C2B00A21F47 /* RestEndosoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestEndosoRepository.swift; sourceTree = "<group>"; };
+		A948FFD224F42F6100A21F47 /* GetPrimasUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPrimasUseCase.swift; sourceTree = "<group>"; };
+		A948FFD424F42F8B00A21F47 /* RestPrimaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestPrimaRepository.swift; sourceTree = "<group>"; };
+		A948FFD624F42FA200A21F47 /* GetPrimasInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPrimasInteractor.swift; sourceTree = "<group>"; };
+		A948FFD824F42FE300A21F47 /* PrimaMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaMapper.swift; sourceTree = "<group>"; };
+		A948FFDA24F43E4100A21F47 /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
+		A948FFDC24F45E7D00A21F47 /* GetCouponsListUserCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCouponsListUserCase.swift; sourceTree = "<group>"; };
+		A948FFDE24F45E9200A21F47 /* GetCouponsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCouponsListInteractor.swift; sourceTree = "<group>"; };
+		A948FFE024F45EDE00A21F47 /* RestCouponRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestCouponRepository.swift; sourceTree = "<group>"; };
+		A948FFE224F45F0900A21F47 /* CouponMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponMapper.swift; sourceTree = "<group>"; };
+		A948FFE424F4719E00A21F47 /* DocumentMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentMapper.swift; sourceTree = "<group>"; };
+		A948FFE624F471C400A21F47 /* RestDocumentRespository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestDocumentRespository.swift; sourceTree = "<group>"; };
+		A948FFE824F471DB00A21F47 /* GetDocumentsListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDocumentsListUseCase.swift; sourceTree = "<group>"; };
+		A948FFEA24F471F000A21F47 /* GetPolizaDocumentsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPolizaDocumentsListInteractor.swift; sourceTree = "<group>"; };
+		A948FFEC24F472E900A21F47 /* SiniestroInfoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiniestroInfoMapper.swift; sourceTree = "<group>"; };
+		A948FFEE24F4808F00A21F47 /* SiniestroInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiniestroInfo.swift; sourceTree = "<group>"; };
+		A948FFF024F480B500A21F47 /* Risk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Risk.swift; sourceTree = "<group>"; };
+		A948FFF224F4827600A21F47 /* GetSiniestroInfoListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSiniestroInfoListUseCase.swift; sourceTree = "<group>"; };
+		A948FFF424F4830700A21F47 /* GetSiniestroInfoListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSiniestroInfoListInteractor.swift; sourceTree = "<group>"; };
+		A948FFF624F483B800A21F47 /* RestSiniestroInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestSiniestroInfoRepository.swift; sourceTree = "<group>"; };
+		A949F3F524DB337500C66847 /* RiskGroupListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskGroupListView.swift; sourceTree = "<group>"; };
+		A949F3F724DB341600C66847 /* HeaderTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTabBar.swift; sourceTree = "<group>"; };
+		A949F3F924DB38D000C66847 /* InsuranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceView.swift; sourceTree = "<group>"; };
+		A949F3FB24DB3A1700C66847 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		A949F3FD24DB5B3B00C66847 /* LPCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LPCard.swift; path = LaProtectora/CommonViews/LPCard.swift; sourceTree = SOURCE_ROOT; };
+		A949F3FF24DB5B6F00C66847 /* BigTitleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigTitleRow.swift; sourceTree = "<group>"; };
+		A949F40124DB5B8300C66847 /* SmallRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallRow.swift; sourceTree = "<group>"; };
+		A949F40324DB5BAA00C66847 /* SmallTitleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallTitleRow.swift; sourceTree = "<group>"; };
+		A949F40524DB5BC400C66847 /* BigRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigRow.swift; sourceTree = "<group>"; };
+		A949F40724DB885A00C66847 /* InsuranceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceListView.swift; sourceTree = "<group>"; };
+		A949F40A24DB98BF00C66847 /* SiniestroCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiniestroCategories.swift; sourceTree = "<group>"; };
+		A949F40C24DB9B2D00C66847 /* SiniestroListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiniestroListView.swift; sourceTree = "<group>"; };
+		A949F40E24DB9BD200C66847 /* SiniestroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiniestroView.swift; sourceTree = "<group>"; };
+		A94A008424EF269700A6C681 /* LazyLoadedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyLoadedView.swift; sourceTree = "<group>"; };
+		A94C15632568536A003ACDCD /* BlogCategoryFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogCategoryFeed.swift; sourceTree = "<group>"; };
+		A94C156825685385003ACDCD /* BlogCategoryFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogCategoryFeedView.swift; sourceTree = "<group>"; };
+		A94C156D256853A1003ACDCD /* SubcategoryFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryFeed.swift; sourceTree = "<group>"; };
+		A94C15722568583A003ACDCD /* HTMLViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLViewer.swift; sourceTree = "<group>"; };
+		A94C15772568584F003ACDCD /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
+		A94C157C2568586C003ACDCD /* SubcategoryFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryFeedView.swift; sourceTree = "<group>"; };
+		A94C158125685893003ACDCD /* BlogFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogFeed.swift; sourceTree = "<group>"; };
+		A94C1586256858BC003ACDCD /* ArticleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCard.swift; sourceTree = "<group>"; };
+		A94C158B2568590E003ACDCD /* HighlightedArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedArticle.swift; sourceTree = "<group>"; };
+		A96269E524F4B9C0007E3032 /* TabbedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbedView.swift; sourceTree = "<group>"; };
+		A96269E724F59C0F007E3032 /* VehicleInfoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleInfoMapper.swift; sourceTree = "<group>"; };
+		A96269E924F59FE4007E3032 /* RestVehicleInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestVehicleInfoRepository.swift; sourceTree = "<group>"; };
+		A96269EB24F5A070007E3032 /* GetVehicleInfoListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetVehicleInfoListUseCase.swift; sourceTree = "<group>"; };
+		A96269ED24F5A0B1007E3032 /* GetVehicleInfoListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetVehicleInfoListInteractor.swift; sourceTree = "<group>"; };
+		A96269EF24F5A3A0007E3032 /* InsuredInfoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuredInfoMapper.swift; sourceTree = "<group>"; };
+		A96269F124F5A4FF007E3032 /* RestInsuredInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestInsuredInfoRepository.swift; sourceTree = "<group>"; };
+		A96269F324F5A5F1007E3032 /* GetInsuredInfoListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInsuredInfoListUseCase.swift; sourceTree = "<group>"; };
+		A96269F524F5A653007E3032 /* GetInsuredInfoListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInsuredInfoListInteractor.swift; sourceTree = "<group>"; };
+		A96269F724F5B371007E3032 /* SiniestroGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiniestroGroup.swift; sourceTree = "<group>"; };
+		A96269F924F5B452007E3032 /* SiniestroGroupMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiniestroGroupMapper.swift; sourceTree = "<group>"; };
+		A96269FB24F5B796007E3032 /* GetSiniestroGroupListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSiniestroGroupListUseCase.swift; sourceTree = "<group>"; };
+		A96269FD24F5B83C007E3032 /* RestSiniestroGroupRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestSiniestroGroupRepository.swift; sourceTree = "<group>"; };
+		A96269FF24F5C5ED007E3032 /* GetSiniestroGroupListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSiniestroGroupListInteractor.swift; sourceTree = "<group>"; };
+		A9626A0124F5D9B4007E3032 /* SiniestroCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiniestroCard.swift; sourceTree = "<group>"; };
+		A9626A0324F5E957007E3032 /* SiniestroCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiniestroCardModel.swift; sourceTree = "<group>"; };
+		A9626A0524F5EC4D007E3032 /* SiniestroCardModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiniestroCardModelMapper.swift; sourceTree = "<group>"; };
+		A9626A0724F5ECC1007E3032 /* RestSiniestroCardModelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestSiniestroCardModelRepository.swift; sourceTree = "<group>"; };
+		A9626A0924F5F1B6007E3032 /* GetSiniestroCardModelListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSiniestroCardModelListUseCase.swift; sourceTree = "<group>"; };
+		A9626A0B24F5F223007E3032 /* GetSiniestroCardModelListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSiniestroCardModelListInteractor.swift; sourceTree = "<group>"; };
+		A96439DE24D8A58E001491A7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A96439E124D8B71E001491A7 /* Signika-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Light.otf"; sourceTree = "<group>"; };
+		A96439E224D8B71E001491A7 /* Signika-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Bold.otf"; sourceTree = "<group>"; };
+		A96439E324D8B71E001491A7 /* Signika-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Regular.otf"; sourceTree = "<group>"; };
+		A96439E424D8B71E001491A7 /* Signika-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Semibold.otf"; sourceTree = "<group>"; };
+		A96439EA24D9C5A5001491A7 /* SOSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSView.swift; sourceTree = "<group>"; };
+		A96439EC24D9DF56001491A7 /* FloatingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingRow.swift; sourceTree = "<group>"; };
+		A96439EE24D9E1C1001491A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A96439F024D9E61E001491A7 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		A96439F224D9F779001491A7 /* InsuredVehiclesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuredVehiclesList.swift; sourceTree = "<group>"; };
+		A9666BC925001FB800BE3A1F /* ConfigDev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigDev.xcconfig; sourceTree = "<group>"; };
+		A9666BCA25001FC300BE3A1F /* ConfigProd.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigProd.xcconfig; sourceTree = "<group>"; };
+		A9806A7B24D4898C00696A51 /* IVO La Protectora Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IVO La Protectora Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9806A7E24D4898C00696A51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A9806A8024D4898C00696A51 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A9806A8224D4898C00696A51 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		A9806A8724D4898E00696A51 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A9806A8A24D4898E00696A51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A9806A8C24D4898E00696A51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9806A9124D4898F00696A51 /* LaProtectoraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LaProtectoraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9806A9524D4898F00696A51 /* La_ProtectoraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = La_ProtectoraTests.swift; sourceTree = "<group>"; };
+		A9806A9724D4898F00696A51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9806A9C24D4898F00696A51 /* LaProtectoraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LaProtectoraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9806AA024D4898F00696A51 /* La_ProtectoraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = La_ProtectoraUITests.swift; sourceTree = "<group>"; };
+		A9806AA224D4898F00696A51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9806AAE24D48E2800696A51 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A9806AB024D4910700696A51 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		A9806AB224D4ABC100696A51 /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		A9806AB324D4ABC100696A51 /* AlertCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertCard.swift; sourceTree = "<group>"; };
+		A9806AB424D4ABC100696A51 /* CustomGridStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomGridStack.swift; sourceTree = "<group>"; };
+		A9806AB524D4ABC100696A51 /* PaginatedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginatedView.swift; sourceTree = "<group>"; };
+		A9806AB624D4ABC100696A51 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		A9806AB724D4ABC200696A51 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		A9806AC524D4CF1200696A51 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		A9806AC724D4CF3100696A51 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
+		A9806AC924D4CF4400696A51 /* PasswordRecoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryView.swift; sourceTree = "<group>"; };
+		A9806ACB24D4CF5600696A51 /* PhoneNumberValidationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberValidationView.swift; sourceTree = "<group>"; };
+		A9806ACD24D4CF6C00696A51 /* LabeledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledTextField.swift; sourceTree = "<group>"; };
+		A9806ACF24D4CF7D00696A51 /* ValidatedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatedTextField.swift; sourceTree = "<group>"; };
+		A9806AD124D4CF8F00696A51 /* LPButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPButton.swift; sourceTree = "<group>"; };
+		A9806AD324D4CFA300696A51 /* LPIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPIconButton.swift; sourceTree = "<group>"; };
+		A9806AD524D4CFB800696A51 /* LoginViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewViewModel.swift; sourceTree = "<group>"; };
+		A9818D3424F98C0E008E14C7 /* InsuredVehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuredVehicle.swift; sourceTree = "<group>"; };
+		A9818D3624F98CA2008E14C7 /* GetInsuredVehiclesListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInsuredVehiclesListUseCase.swift; sourceTree = "<group>"; };
+		A9818D3824F98CEE008E14C7 /* GetInsuredVehicleListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInsuredVehicleListInteractor.swift; sourceTree = "<group>"; };
+		A9818D3A24F98E4D008E14C7 /* RestInsuredVehicleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestInsuredVehicleRepository.swift; sourceTree = "<group>"; };
+		A9818D3C24F98EA1008E14C7 /* InsuredVehicleMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuredVehicleMapper.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		A9818D3E24F99F6F008E14C7 /* SiniestroType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiniestroType.swift; sourceTree = "<group>"; };
+		A9818D4024F9A1FE008E14C7 /* SiniestroTypeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiniestroTypeMapper.swift; sourceTree = "<group>"; };
+		A9818D4224F9A27D008E14C7 /* RestSiniestroTypeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestSiniestroTypeRepository.swift; sourceTree = "<group>"; };
+		A9818D4424F9A31B008E14C7 /* GetSiniestroTypeListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSiniestroTypeListUseCase.swift; sourceTree = "<group>"; };
+		A9818D4624F9A362008E14C7 /* GetSiniestroTypeListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSiniestroTypeListInteractor.swift; sourceTree = "<group>"; };
+		A9818D4924F9ABE4008E14C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = LaProtectora/Base.lproj/SinisterRegistration.swift; sourceTree = SOURCE_ROOT; };
+		A9818D4B24F9AF70008E14C7 /* RestSinisterRegistrationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestSinisterRegistrationRepository.swift; sourceTree = "<group>"; };
+		A9818D4D24F9C7EA008E14C7 /* RegisterSinisterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSinisterUseCase.swift; sourceTree = "<group>"; };
+		A9818D4F24F9C808008E14C7 /* RegisterSinisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSinisterInteractor.swift; sourceTree = "<group>"; };
+		A9818D5524FD5192008E14C7 /* GetUbigeoDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUbigeoDataUseCase.swift; sourceTree = "<group>"; };
+		A9818D5724FD520C008E14C7 /* UbigeoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UbigeoData.swift; sourceTree = "<group>"; };
+		A9818D5924FD5257008E14C7 /* RestUbigeoDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestUbigeoDataRepository.swift; sourceTree = "<group>"; };
+		A9818D5B24FD543D008E14C7 /* GetUbigeoDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUbigeoDataInteractor.swift; sourceTree = "<group>"; };
+		A9818D5D24FD8601008E14C7 /* PersonalDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataViewModel.swift; sourceTree = "<group>"; };
+		A98EA79324E3061300DF6C92 /* ExecutivesCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutivesCategoriesView.swift; sourceTree = "<group>"; };
+		A98EA79524E3091300DF6C92 /* ExecutivesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutivesList.swift; sourceTree = "<group>"; };
+		A9A0598525646C900009897C /* BlogAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogAPIClient.swift; sourceTree = "<group>"; };
+		A9A0598E2564743B0009897C /* RestBlogPostRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestBlogPostRepository.swift; sourceTree = "<group>"; };
+		A9A05993256474730009897C /* BlogPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPost.swift; sourceTree = "<group>"; };
+		A9A05998256478BD0009897C /* BlogPostMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPostMapper.swift; sourceTree = "<group>"; };
+		A9A059A72565B6350009897C /* BlogCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogCategory.swift; sourceTree = "<group>"; };
+		A9A059AC2565B6650009897C /* BlogSubCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogSubCategory.swift; sourceTree = "<group>"; };
+		A9A059B12565B8940009897C /* BlogSubCategoryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogSubCategoryMapper.swift; sourceTree = "<group>"; };
+		A9A059B62565BBE20009897C /* RestBlogSubCategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestBlogSubCategoryRepository.swift; sourceTree = "<group>"; };
+		A9A059BB2565E0920009897C /* GetFeaturedBlogPostUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFeaturedBlogPostUseCase.swift; sourceTree = "<group>"; };
+		A9C5334624EAE50F00E157A9 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		A9C5334824EAE5EC00E157A9 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		A9C5334A24EAEB2E00E157A9 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		A9C5334C24ECBFD900E157A9 /* SecureLabeledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureLabeledTextField.swift; sourceTree = "<group>"; };
+		A9C5334E24EDDCA500E157A9 /* EmptyStateNotAllowed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateNotAllowed.swift; sourceTree = "<group>"; };
+		A9C5335324EEE2BC00E157A9 /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
+		A9C5335524EEE3EF00E157A9 /* GetRiskGroupUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRiskGroupUseCase.swift; sourceTree = "<group>"; };
+		A9C5335724EEE4BD00E157A9 /* GetRiskGroupInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRiskGroupInteractor.swift; sourceTree = "<group>"; };
+		A9C5335924EEE8DB00E157A9 /* RestRiskGroupRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestRiskGroupRepository.swift; sourceTree = "<group>"; };
+		A9C5335C24EEEA6500E157A9 /* RiskGroupMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskGroupMapper.swift; sourceTree = "<group>"; };
+		A9C5335E24EEEB3100E157A9 /* RiskGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskGroup.swift; sourceTree = "<group>"; };
+		A9C5336024EEED5900E157A9 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		A9C5336224EEFBD800E157A9 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		A9C5336524EF01F300E157A9 /* Insurance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insurance.swift; sourceTree = "<group>"; };
+		A9C5336724EF084800E157A9 /* InsuranceMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceMapper.swift; sourceTree = "<group>"; };
+		A9C5336924EF091D00E157A9 /* GetInsurancesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInsurancesUseCase.swift; sourceTree = "<group>"; };
+		A9C5336B24EF095C00E157A9 /* GetInsurancesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInsurancesInteractor.swift; sourceTree = "<group>"; };
+		A9C5336D24EF0A8300E157A9 /* RestInsuranceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestInsuranceRepository.swift; sourceTree = "<group>"; };
+		A9C6F60D24F6C5AB00F358F5 /* SiniestroMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiniestroMapper.swift; sourceTree = "<group>"; };
+		A9C6F60F24F6CAA000F358F5 /* GetSiniestroUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSiniestroUseCase.swift; sourceTree = "<group>"; };
+		A9C6F61124F6CE3100F358F5 /* RestSiniestroRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestSiniestroRepository.swift; sourceTree = "<group>"; };
+		A9C6F61324F6D6B000F358F5 /* GetSiniestroDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSiniestroDetailInteractor.swift; sourceTree = "<group>"; };
+		A9C6F61524F7409B00F358F5 /* FollowUpMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowUpMapper.swift; sourceTree = "<group>"; };
+		A9C6F61724F7427E00F358F5 /* RestFollowUpRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestFollowUpRepository.swift; sourceTree = "<group>"; };
+		A9C6F61924F7432C00F358F5 /* GetFollowUpListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowUpListUseCase.swift; sourceTree = "<group>"; };
+		A9C6F61B24F7437200F358F5 /* GetFollowUpListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowUpListInteractor.swift; sourceTree = "<group>"; };
+		A9C6F61D24F74EC700F358F5 /* GetSiniestroDocumentListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSiniestroDocumentListInteractor.swift; sourceTree = "<group>"; };
+		A9D0FE53256EDE1600BE2181 /* RestBlogCategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestBlogCategoryRepository.swift; sourceTree = "<group>"; };
+		A9D0FE58256EDEBD00BE2181 /* BlogCategoryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogCategoryMapper.swift; sourceTree = "<group>"; };
+		A9D0FE5D256EE01D00BE2181 /* GetBlogCategoriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBlogCategoriesUseCase.swift; sourceTree = "<group>"; };
+		A9D0FE65256EE0A800BE2181 /* GetBlogCategoriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBlogCategoriesInteractor.swift; sourceTree = "<group>"; };
+		A9D0FE6A256EE1A900BE2181 /* BlogCategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogCategoryCard.swift; sourceTree = "<group>"; };
+		A9E4AC81256C026C00022B32 /* GetRecentBlogPostsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecentBlogPostsInteractor.swift; sourceTree = "<group>"; };
+		A9E4AC86256C027D00022B32 /* GetRecentCategoryBlogPostsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecentCategoryBlogPostsInteractor.swift; sourceTree = "<group>"; };
+		A9E4AC8B256C029C00022B32 /* GetRecentCategoryBlogPostsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecentCategoryBlogPostsUseCase.swift; sourceTree = "<group>"; };
+		A9E4AC90256C02AE00022B32 /* GetRecentBlogPostsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecentBlogPostsUseCase.swift; sourceTree = "<group>"; };
+		A9EB0AFF24E3B9B400894301 /* Mocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocker.swift; sourceTree = "<group>"; };
+		A9EB0B0124E3B9DF00894301 /* FollowUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowUp.swift; sourceTree = "<group>"; };
+		A9EB0B0424E3BA2500894301 /* FollowUpCardViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowUpCardViewData.swift; sourceTree = "<group>"; };
+		A9EB0B0624E3BA3D00894301 /* VehicleInfoCardViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleInfoCardViewData.swift; sourceTree = "<group>"; };
+		A9EB0B0824E3BA5D00894301 /* SiniestroCardViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiniestroCardViewData.swift; sourceTree = "<group>"; };
+		A9EB0B0B24E3BABE00894301 /* PrimaCardViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaCardViewData.swift; sourceTree = "<group>"; };
+		A9EB0B0D24E3BAD100894301 /* EndososCardViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndososCardViewData.swift; sourceTree = "<group>"; };
+		A9EB0B0F24E3BAE300894301 /* DocumentCardViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCardViewData.swift; sourceTree = "<group>"; };
+		A9EB0B1124E3BB2200894301 /* InsuredInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuredInfo.swift; sourceTree = "<group>"; };
+		A9EB0B1324E3BB8800894301 /* InsuredInfoCardViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuredInfoCardViewData.swift; sourceTree = "<group>"; };
+		A9EB0B1524E3BDCB00894301 /* VehicleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleInfo.swift; sourceTree = "<group>"; };
+		A9EB0B1724E3C06A00894301 /* Siniestro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Siniestro.swift; sourceTree = "<group>"; };
+		A9EB0B1924E459F100894301 /* ContactCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCenter.swift; sourceTree = "<group>"; };
+		A9EB0B1B24E45AF700894301 /* AssistanceCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistanceCenterView.swift; sourceTree = "<group>"; };
+		A9EF291A2566071100D64DEC /* GetBlogSubbCategoriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBlogSubbCategoriesUseCase.swift; sourceTree = "<group>"; };
+		A9EF291F2566071900D64DEC /* GetBlogPostsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBlogPostsUseCase.swift; sourceTree = "<group>"; };
+		A9EF29242566074100D64DEC /* GetFeaturedBlogPostInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFeaturedBlogPostInteractor.swift; sourceTree = "<group>"; };
+		A9EF29292566075700D64DEC /* GetBlogSubbCategoriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBlogSubbCategoriesInteractor.swift; sourceTree = "<group>"; };
+		A9EF292E2566076C00D64DEC /* GetBlogPostsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBlogPostsInteractor.swift; sourceTree = "<group>"; };
+		A9FBC092254343D500D30B3D /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		A9FCAE14250FF34E00ECEAFD /* InsuranceViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceViewPage.swift; sourceTree = "<group>"; };
+		A9FCAE16250FF3AC00ECEAFD /* InputAccesoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAccesoryView.swift; sourceTree = "<group>"; };
+		A9FCAE1825100EFE00ECEAFD /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A9806A7824D4898C00696A51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9ED7372D276C477A009EE0A8 /* Kingfisher in Frameworks */,
+				A9806AC124D4AC0D00696A51 /* Resolver in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9806A8E24D4898F00696A51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9806A9924D4898F00696A51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9ED7372B276C477A009EE0A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A900D53224D4D248004E3102 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A9806AD524D4CFB800696A51 /* LoginViewViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A900D53324D4D255004E3102 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A9806AD324D4CFA300696A51 /* LPIconButton.swift */,
+				A9806ACF24D4CF7D00696A51 /* ValidatedTextField.swift */,
+				A9806ACD24D4CF6C00696A51 /* LabeledTextField.swift */,
+				A9806ACB24D4CF5600696A51 /* PhoneNumberValidationView.swift */,
+				A9806AC924D4CF4400696A51 /* PasswordRecoveryView.swift */,
+				A9806AC724D4CF3100696A51 /* SigninView.swift */,
+				A9806AC524D4CF1200696A51 /* RegisterView.swift */,
+				A900D53424D4D655004E3102 /* MyInsunrances.swift */,
+				A9C5334C24ECBFD900E157A9 /* SecureLabeledTextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A9198D3024E6FFF100112832 /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				A9198D3524E73D3100112832 /* Mappers */,
+				A9C5336424EEFC9100E157A9 /* APIClient&Cache */,
+				A9C5334624EAE50F00E157A9 /* RequestManager.swift */,
+				A9C5334824EAE5EC00E157A9 /* AuthManager.swift */,
+				A9FBC092254343D500D30B3D /* LocalNotificationManager.swift */,
+				A9C5335B24EEE8E800E157A9 /* RESTRepositoriesImplementations */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		A9198D3524E73D3100112832 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				A9198D3624E73D3F00112832 /* UserMapper.swift */,
+				A9C5335C24EEEA6500E157A9 /* RiskGroupMapper.swift */,
+				A9C5336024EEED5900E157A9 /* Mapper.swift */,
+				A9C5336724EF084800E157A9 /* InsuranceMapper.swift */,
+				A948FFC824F05A2C00A21F47 /* EndosoMapper.swift */,
+				A948FFD824F42FE300A21F47 /* PrimaMapper.swift */,
+				A948FFE224F45F0900A21F47 /* CouponMapper.swift */,
+				A948FFE424F4719E00A21F47 /* DocumentMapper.swift */,
+				A948FFEC24F472E900A21F47 /* SiniestroInfoMapper.swift */,
+				A96269E724F59C0F007E3032 /* VehicleInfoMapper.swift */,
+				A96269EF24F5A3A0007E3032 /* InsuredInfoMapper.swift */,
+				A96269F924F5B452007E3032 /* SiniestroGroupMapper.swift */,
+				A9626A0524F5EC4D007E3032 /* SiniestroCardModelMapper.swift */,
+				A9C6F60D24F6C5AB00F358F5 /* SiniestroMapper.swift */,
+				A9C6F61524F7409B00F358F5 /* FollowUpMapper.swift */,
+				A9818D3C24F98EA1008E14C7 /* InsuredVehicleMapper.swift */,
+				A9818D4024F9A1FE008E14C7 /* SiniestroTypeMapper.swift */,
+				A93C893024FEC437002841BE /* ExecutiveMapper.swift */,
+				A93C893A24FED93F002841BE /* ContactCenterMapper.swift */,
+				A9A05998256478BD0009897C /* BlogPostMapper.swift */,
+				A9A059B12565B8940009897C /* BlogSubCategoryMapper.swift */,
+				A9D0FE58256EDEBD00BE2181 /* BlogCategoryMapper.swift */,
+				9EB49B94279EF68F0080F0D8 /* LinkDataMapper.swift */,
+				9EBBFFAB27A0AFBB003CA2FD /* QuoterLinkDataMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		A926DC0A24DC5CC800F39555 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				A9818D5F24FD8620008E14C7 /* ViewModels */,
+				A926DC0B24DC5CEF00F39555 /* MoreMenuView.swift */,
+				A948E46E2547371100AC6E14 /* BlogFeedView.swift */,
+				A94C157C2568586C003ACDCD /* SubcategoryFeedView.swift */,
+				A926DC0D24DC8EC000F39555 /* PersonalData.swift */,
+				A98EA79324E3061300DF6C92 /* ExecutivesCategoriesView.swift */,
+				A98EA79524E3091300DF6C92 /* ExecutivesList.swift */,
+				A9EB0B1B24E45AF700894301 /* AssistanceCenterView.swift */,
+				A93C892624FEAD94002841BE /* ExecutivesRiskGroupsView.swift */,
+				A94C156825685385003ACDCD /* BlogCategoryFeedView.swift */,
+				A94C15722568583A003ACDCD /* HTMLViewer.swift */,
+				A94C15772568584F003ACDCD /* ArticleDetailView.swift */,
+				A94C1586256858BC003ACDCD /* ArticleCard.swift */,
+				A94C158B2568590E003ACDCD /* HighlightedArticle.swift */,
+				A9D0FE6A256EE1A900BE2181 /* BlogCategoryCard.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		A926DC1124DDC04200F39555 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A9C5335224EEDF3300E157A9 /* Repositories */,
+				A9C5335124EEDF2900E157A9 /* Interactors */,
+				A9C5335024EEDF0D00E157A9 /* UseCases */,
+				A926DC1224DDC04E00F39555 /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		A926DC1224DDC04E00F39555 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A926DC1324DDC07000F39555 /* Enums+Typealiase.swift */,
+				A926DC1724DDF50F00F39555 /* Endoso.swift */,
+				A926DC1924DDF73400F39555 /* Prima.swift */,
+				A926DC1B24DDF9B100F39555 /* Document.swift */,
+				A9EB0B0124E3B9DF00894301 /* FollowUp.swift */,
+				A9EB0B1124E3BB2200894301 /* InsuredInfo.swift */,
+				A9EB0B1524E3BDCB00894301 /* VehicleInfo.swift */,
+				A9EB0B1724E3C06A00894301 /* Siniestro.swift */,
+				A9EB0B1924E459F100894301 /* ContactCenter.swift */,
+				A9198D3324E7306600112832 /* User.swift */,
+				A9C5335E24EEEB3100E157A9 /* RiskGroup.swift */,
+				A9C5336524EF01F300E157A9 /* Insurance.swift */,
+				A948FFDA24F43E4100A21F47 /* Coupon.swift */,
+				A948FFEE24F4808F00A21F47 /* SiniestroInfo.swift */,
+				A948FFF024F480B500A21F47 /* Risk.swift */,
+				A96269F724F5B371007E3032 /* SiniestroGroup.swift */,
+				A9626A0324F5E957007E3032 /* SiniestroCardModel.swift */,
+				A9818D3424F98C0E008E14C7 /* InsuredVehicle.swift */,
+				A9818D3E24F99F6F008E14C7 /* SiniestroType.swift */,
+				A9818D4824F9ABE4008E14C7 /* SinisterRegistration.swift */,
+				A9818D5724FD520C008E14C7 /* UbigeoData.swift */,
+				A93C892A24FEBE88002841BE /* Executive.swift */,
+				A9A05993256474730009897C /* BlogPost.swift */,
+				A9A059A72565B6350009897C /* BlogCategory.swift */,
+				A9A059AC2565B6650009897C /* BlogSubCategory.swift */,
+				9EB49B96279F062D0080F0D8 /* LinkData.swift */,
+				9EBBFFAD27A0B01A003CA2FD /* QuoterLinkData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A949F3EF24DB13DC00C66847 /* SOS */ = {
+			isa = PBXGroup;
+			children = (
+				A96439EA24D9C5A5001491A7 /* SOSView.swift */,
+				A96439F224D9F779001491A7 /* InsuredVehiclesList.swift */,
+			);
+			path = SOS;
+			sourceTree = "<group>";
+		};
+		A949F3F024DB13EA00C66847 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A949F3F424DB337500C66847 /* Insurances */,
+				A926DC0A24DC5CC800F39555 /* More */,
+				A949F40924DB98AD00C66847 /* Siniestros */,
+				A949F3EF24DB13DC00C66847 /* SOS */,
+				A9806AD724D4D07900696A51 /* Login&Register */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		A949F3F424DB337500C66847 /* Insurances */ = {
+			isa = PBXGroup;
+			children = (
+				A9EB0B0A24E3BA8D00894301 /* ViewData */,
+				A949F3F524DB337500C66847 /* RiskGroupListView.swift */,
+				A949F40724DB885A00C66847 /* InsuranceListView.swift */,
+				A949F3F924DB38D000C66847 /* InsuranceView.swift */,
+				A926DC1524DDE9DE00F39555 /* InsuranceCardView.swift */,
+				A9FCAE14250FF34E00ECEAFD /* InsuranceViewPage.swift */,
+			);
+			name = Insurances;
+			path = LaProtectora/Features/Insurances;
+			sourceTree = SOURCE_ROOT;
+		};
+		A949F40924DB98AD00C66847 /* Siniestros */ = {
+			isa = PBXGroup;
+			children = (
+				A9EB0B0324E3BA1100894301 /* ViewData */,
+				A949F40A24DB98BF00C66847 /* SiniestroCategories.swift */,
+				A949F40C24DB9B2D00C66847 /* SiniestroListView.swift */,
+				A949F40E24DB9BD200C66847 /* SiniestroView.swift */,
+				A9626A0124F5D9B4007E3032 /* SiniestroCard.swift */,
+			);
+			path = Siniestros;
+			sourceTree = "<group>";
+		};
+		A96439E024D8B6FF001491A7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A96439EE24D9E1C1001491A7 /* Assets.xcassets */,
+				A96439E924D8B724001491A7 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A96439E924D8B724001491A7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A96439E224D8B71E001491A7 /* Signika-Bold.otf */,
+				A96439E124D8B71E001491A7 /* Signika-Light.otf */,
+				A96439E324D8B71E001491A7 /* Signika-Regular.otf */,
+				A96439E424D8B71E001491A7 /* Signika-Semibold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A9806A7224D4898C00696A51 = {
+			isa = PBXGroup;
+			children = (
+				A9806A7D24D4898C00696A51 /* LaProtectora */,
+				A9806A9424D4898F00696A51 /* LaProtectoraTests */,
+				A9806A9F24D4898F00696A51 /* LaProtectoraUITests */,
+				A9806A7C24D4898C00696A51 /* Products */,
+				9ED7372B276C477A009EE0A8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A9806A7C24D4898C00696A51 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A9806A7B24D4898C00696A51 /* IVO La Protectora Dev.app */,
+				A9806A9124D4898F00696A51 /* LaProtectoraTests.xctest */,
+				A9806A9C24D4898F00696A51 /* LaProtectoraUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A9806A7D24D4898C00696A51 /* LaProtectora */ = {
+			isa = PBXGroup;
+			children = (
+				A93829102566E91300118D09 /* IVO La Protectora Dev.entitlements */,
+				A9806A7E24D4898C00696A51 /* AppDelegate.swift */,
+				A9806A8024D4898C00696A51 /* SceneDelegate.swift */,
+				A9806A8224D4898C00696A51 /* MainView.swift */,
+				A96439DE24D8A58E001491A7 /* HomeView.swift */,
+				A926DC1124DDC04200F39555 /* Domain */,
+				A9198D3024E6FFF100112832 /* DataLayer */,
+				A949F3F024DB13EA00C66847 /* Features */,
+				A9806AB024D4910700696A51 /* Helpers.swift */,
+				A9806ABE24D4ABCB00696A51 /* CommonViews */,
+				A96439E024D8B6FF001491A7 /* Resources */,
+				A9806A8924D4898E00696A51 /* LaunchScreen.storyboard */,
+				A9806A8C24D4898E00696A51 /* Info.plist */,
+				A9666BC925001FB800BE3A1F /* ConfigDev.xcconfig */,
+				A9666BCA25001FC300BE3A1F /* ConfigProd.xcconfig */,
+				A9806A8624D4898E00696A51 /* Preview Content */,
+				9ED7372E276C51B6009EE0A8 /* GifImage.swift */,
+			);
+			path = LaProtectora;
+			sourceTree = "<group>";
+		};
+		A9806A8624D4898E00696A51 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A9806A8724D4898E00696A51 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A9806A9424D4898F00696A51 /* LaProtectoraTests */ = {
+			isa = PBXGroup;
+			children = (
+				A9806A9524D4898F00696A51 /* La_ProtectoraTests.swift */,
+				A9806A9724D4898F00696A51 /* Info.plist */,
+			);
+			path = LaProtectoraTests;
+			sourceTree = "<group>";
+		};
+		A9806A9F24D4898F00696A51 /* LaProtectoraUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A9806AA024D4898F00696A51 /* La_ProtectoraUITests.swift */,
+				A9806AA224D4898F00696A51 /* Info.plist */,
+			);
+			path = LaProtectoraUITests;
+			sourceTree = "<group>";
+		};
+		A9806ABE24D4ABCB00696A51 /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+				A949F40324DB5BAA00C66847 /* SmallTitleRow.swift */,
+				A949F3FF24DB5B6F00C66847 /* BigTitleRow.swift */,
+				A949F40124DB5B8300C66847 /* SmallRow.swift */,
+				A949F3FD24DB5B3B00C66847 /* LPCard.swift */,
+				A949F3F724DB341600C66847 /* HeaderTabBar.swift */,
+				A96439EC24D9DF56001491A7 /* FloatingRow.swift */,
+				A9806AD124D4CF8F00696A51 /* LPButton.swift */,
+				A96439F024D9E61E001491A7 /* ViewModifiers.swift */,
+				A9806AB724D4ABC200696A51 /* ActivityIndicator.swift */,
+				A9806AB324D4ABC100696A51 /* AlertCard.swift */,
+				A9806AB424D4ABC100696A51 /* CustomGridStack.swift */,
+				A9806AB624D4ABC100696A51 /* ImagePicker.swift */,
+				A9806AB524D4ABC100696A51 /* PaginatedView.swift */,
+				A9C5334A24EAEB2E00E157A9 /* Loader.swift */,
+				A9C5334E24EDDCA500E157A9 /* EmptyStateNotAllowed.swift */,
+				A94A008424EF269700A6C681 /* LazyLoadedView.swift */,
+				A96269E524F4B9C0007E3032 /* TabbedView.swift */,
+				A9806AB224D4ABC100696A51 /* TextView.swift */,
+				A949F3FB24DB3A1700C66847 /* HeaderView.swift */,
+				A949F40524DB5BC400C66847 /* BigRow.swift */,
+				A926DC0F24DCAA6E00F39555 /* WebView.swift */,
+				A9FCAE16250FF3AC00ECEAFD /* InputAccesoryView.swift */,
+				A9FCAE1825100EFE00ECEAFD /* SearchBar.swift */,
+			);
+			path = CommonViews;
+			sourceTree = "<group>";
+		};
+		A9806AD724D4D07900696A51 /* Login&Register */ = {
+			isa = PBXGroup;
+			children = (
+				A9806AD824D4D0B600696A51 /* MainView */,
+				A900D53224D4D248004E3102 /* ViewModels */,
+				A900D53324D4D255004E3102 /* Views */,
+			);
+			path = "Login&Register";
+			sourceTree = "<group>";
+		};
+		A9806AD824D4D0B600696A51 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				A9806AAE24D48E2800696A51 /* LoginView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		A9818D5F24FD8620008E14C7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A9818D5D24FD8601008E14C7 /* PersonalDataViewModel.swift */,
+				A94C15632568536A003ACDCD /* BlogCategoryFeed.swift */,
+				A94C156D256853A1003ACDCD /* SubcategoryFeed.swift */,
+				A94C158125685893003ACDCD /* BlogFeed.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A9C5335024EEDF0D00E157A9 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				A96269EB24F5A070007E3032 /* GetVehicleInfoListUseCase.swift */,
+				A9C5335524EEE3EF00E157A9 /* GetRiskGroupUseCase.swift */,
+				A9C5336924EF091D00E157A9 /* GetInsurancesUseCase.swift */,
+				A948FFC624F0475F00A21F47 /* GetEndososUseCase.swift */,
+				A948FFD224F42F6100A21F47 /* GetPrimasUseCase.swift */,
+				A948FFDC24F45E7D00A21F47 /* GetCouponsListUserCase.swift */,
+				A948FFE824F471DB00A21F47 /* GetDocumentsListUseCase.swift */,
+				A948FFF224F4827600A21F47 /* GetSiniestroInfoListUseCase.swift */,
+				A96269F324F5A5F1007E3032 /* GetInsuredInfoListUseCase.swift */,
+				A96269FB24F5B796007E3032 /* GetSiniestroGroupListUseCase.swift */,
+				A9626A0924F5F1B6007E3032 /* GetSiniestroCardModelListUseCase.swift */,
+				A9C6F60F24F6CAA000F358F5 /* GetSiniestroUseCase.swift */,
+				A9C6F61924F7432C00F358F5 /* GetFollowUpListUseCase.swift */,
+				A9818D3624F98CA2008E14C7 /* GetInsuredVehiclesListUseCase.swift */,
+				A9818D4424F9A31B008E14C7 /* GetSiniestroTypeListUseCase.swift */,
+				A9818D4D24F9C7EA008E14C7 /* RegisterSinisterUseCase.swift */,
+				A9818D5524FD5192008E14C7 /* GetUbigeoDataUseCase.swift */,
+				A93C892224FEAC2C002841BE /* GetExecutivesRiskGroupUseCase.swift */,
+				A93C892C24FEBF53002841BE /* GetAccountExecutivesListUseCase.swift */,
+				A93C892E24FEC317002841BE /* GetSinisterExecutivesListUseCase.swift */,
+				A93C893624FED85C002841BE /* GetContactCenterDataUseCase.swift */,
+				A9A059BB2565E0920009897C /* GetFeaturedBlogPostUseCase.swift */,
+				A9EF291F2566071900D64DEC /* GetBlogPostsUseCase.swift */,
+				A9EF291A2566071100D64DEC /* GetBlogSubbCategoriesUseCase.swift */,
+				A9E4AC90256C02AE00022B32 /* GetRecentBlogPostsUseCase.swift */,
+				A9E4AC8B256C029C00022B32 /* GetRecentCategoryBlogPostsUseCase.swift */,
+				A9D0FE5D256EE01D00BE2181 /* GetBlogCategoriesUseCase.swift */,
+				9EB49B9A279F1C470080F0D8 /* GetLinkDataUseCase.swift */,
+				9EB49B9E279F22200080F0D8 /* GetEncryptedLinkUseCase.swift */,
+				9EBBFFB127A0B171003CA2FD /* GetQuoterLinkDataUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		A9C5335124EEDF2900E157A9 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				A9C5335724EEE4BD00E157A9 /* GetRiskGroupInteractor.swift */,
+				A9C5336B24EF095C00E157A9 /* GetInsurancesInteractor.swift */,
+				A948FFCA24F05BB100A21F47 /* GetEndososInteractor.swift */,
+				A948FFD624F42FA200A21F47 /* GetPrimasInteractor.swift */,
+				A948FFDE24F45E9200A21F47 /* GetCouponsListInteractor.swift */,
+				A948FFEA24F471F000A21F47 /* GetPolizaDocumentsListInteractor.swift */,
+				A948FFF424F4830700A21F47 /* GetSiniestroInfoListInteractor.swift */,
+				A96269ED24F5A0B1007E3032 /* GetVehicleInfoListInteractor.swift */,
+				A96269F524F5A653007E3032 /* GetInsuredInfoListInteractor.swift */,
+				A96269FF24F5C5ED007E3032 /* GetSiniestroGroupListInteractor.swift */,
+				A9626A0B24F5F223007E3032 /* GetSiniestroCardModelListInteractor.swift */,
+				A9C6F61324F6D6B000F358F5 /* GetSiniestroDetailInteractor.swift */,
+				A9C6F61B24F7437200F358F5 /* GetFollowUpListInteractor.swift */,
+				A9C6F61D24F74EC700F358F5 /* GetSiniestroDocumentListInteractor.swift */,
+				A9818D3824F98CEE008E14C7 /* GetInsuredVehicleListInteractor.swift */,
+				A9818D4624F9A362008E14C7 /* GetSiniestroTypeListInteractor.swift */,
+				A9818D4F24F9C808008E14C7 /* RegisterSinisterInteractor.swift */,
+				A9818D5B24FD543D008E14C7 /* GetUbigeoDataInteractor.swift */,
+				A93C892424FEAC95002841BE /* GetExecutivesRiskGroupInteractor.swift */,
+				A93C893224FEC67C002841BE /* GetAccountExecutiveListInteractor.swift */,
+				A93C893424FEC6CF002841BE /* GetSinisterExecutivesListInteractor.swift */,
+				A93C893C24FEDA26002841BE /* GetContactCenterDataInteractor.swift */,
+				A9EF29242566074100D64DEC /* GetFeaturedBlogPostInteractor.swift */,
+				A9EF292E2566076C00D64DEC /* GetBlogPostsInteractor.swift */,
+				A9E4AC86256C027D00022B32 /* GetRecentCategoryBlogPostsInteractor.swift */,
+				A9EF29292566075700D64DEC /* GetBlogSubbCategoriesInteractor.swift */,
+				A9E4AC81256C026C00022B32 /* GetRecentBlogPostsInteractor.swift */,
+				A9D0FE65256EE0A800BE2181 /* GetBlogCategoriesInteractor.swift */,
+				9EB49B9C279F1D640080F0D8 /* GetLinkDataInteractor.swift */,
+				9EB49BA0279F22860080F0D8 /* GetEncryptedLinkInteractor.swift */,
+				9EBBFFB327A0B1A0003CA2FD /* GetQuoterLinkDataInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		A9C5335224EEDF3300E157A9 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				A9C5335324EEE2BC00E157A9 /* Repositories.swift */,
+				A9EB0AFF24E3B9B400894301 /* Mocker.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		A9C5335B24EEE8E800E157A9 /* RESTRepositoriesImplementations */ = {
+			isa = PBXGroup;
+			children = (
+				A9C5335924EEE8DB00E157A9 /* RestRiskGroupRepository.swift */,
+				A9C5336D24EF0A8300E157A9 /* RestInsuranceRepository.swift */,
+				A948FFCC24F05C2B00A21F47 /* RestEndosoRepository.swift */,
+				A948FFD424F42F8B00A21F47 /* RestPrimaRepository.swift */,
+				A948FFE024F45EDE00A21F47 /* RestCouponRepository.swift */,
+				A948FFE624F471C400A21F47 /* RestDocumentRespository.swift */,
+				A948FFF624F483B800A21F47 /* RestSiniestroInfoRepository.swift */,
+				A96269E924F59FE4007E3032 /* RestVehicleInfoRepository.swift */,
+				A96269F124F5A4FF007E3032 /* RestInsuredInfoRepository.swift */,
+				A96269FD24F5B83C007E3032 /* RestSiniestroGroupRepository.swift */,
+				A9626A0724F5ECC1007E3032 /* RestSiniestroCardModelRepository.swift */,
+				A9C6F61124F6CE3100F358F5 /* RestSiniestroRepository.swift */,
+				A9C6F61724F7427E00F358F5 /* RestFollowUpRepository.swift */,
+				A9818D3A24F98E4D008E14C7 /* RestInsuredVehicleRepository.swift */,
+				A9818D4224F9A27D008E14C7 /* RestSiniestroTypeRepository.swift */,
+				A9818D4B24F9AF70008E14C7 /* RestSinisterRegistrationRepository.swift */,
+				A9818D5924FD5257008E14C7 /* RestUbigeoDataRepository.swift */,
+				A93C892824FEBE40002841BE /* RestExecutiveRepository.swift */,
+				A93C893824FED8BB002841BE /* RestContactCenterRepository.swift */,
+				A9A0598E2564743B0009897C /* RestBlogPostRepository.swift */,
+				A9A059B62565BBE20009897C /* RestBlogSubCategoryRepository.swift */,
+				A9D0FE53256EDE1600BE2181 /* RestBlogCategoryRepository.swift */,
+				9EB49B98279F0B0E0080F0D8 /* RestPronostikRepository.swift */,
+				9EBBFFAF27A0B0E4003CA2FD /* RestQuoterRepository.swift */,
+			);
+			path = RESTRepositoriesImplementations;
+			sourceTree = "<group>";
+		};
+		A9C5336424EEFC9100E157A9 /* APIClient&Cache */ = {
+			isa = PBXGroup;
+			children = (
+				A9C5336224EEFBD800E157A9 /* Cache.swift */,
+				A9A0598525646C900009897C /* BlogAPIClient.swift */,
+				A9198D3124E7052900112832 /* NetworkAPIClient.swift */,
+				A93829142566FEBD00118D09 /* CDNBlogStorageRepository.swift */,
+			);
+			path = "APIClient&Cache";
+			sourceTree = "<group>";
+		};
+		A9EB0B0324E3BA1100894301 /* ViewData */ = {
+			isa = PBXGroup;
+			children = (
+				A9EB0B0424E3BA2500894301 /* FollowUpCardViewData.swift */,
+			);
+			path = ViewData;
+			sourceTree = "<group>";
+		};
+		A9EB0B0A24E3BA8D00894301 /* ViewData */ = {
+			isa = PBXGroup;
+			children = (
+				A9EB0B0624E3BA3D00894301 /* VehicleInfoCardViewData.swift */,
+				A9EB0B0F24E3BAE300894301 /* DocumentCardViewData.swift */,
+				A9EB0B0824E3BA5D00894301 /* SiniestroCardViewData.swift */,
+				A9EB0B0B24E3BABE00894301 /* PrimaCardViewData.swift */,
+				A9EB0B0D24E3BAD100894301 /* EndososCardViewData.swift */,
+				A9EB0B1324E3BB8800894301 /* InsuredInfoCardViewData.swift */,
+			);
+			path = ViewData;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A9806A7A24D4898C00696A51 /* LaProtectora */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9806AA524D4898F00696A51 /* Build configuration list for PBXNativeTarget "LaProtectora" */;
+			buildPhases = (
+				A9806A7724D4898C00696A51 /* Sources */,
+				A9806A7824D4898C00696A51 /* Frameworks */,
+				A9806A7924D4898C00696A51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LaProtectora;
+			packageProductDependencies = (
+				A9806AC024D4AC0D00696A51 /* Resolver */,
+				9ED7372C276C477A009EE0A8 /* Kingfisher */,
+			);
+			productName = "La Protectora";
+			productReference = A9806A7B24D4898C00696A51 /* IVO La Protectora Dev.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A9806A9024D4898F00696A51 /* LaProtectoraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9806AA824D4898F00696A51 /* Build configuration list for PBXNativeTarget "LaProtectoraTests" */;
+			buildPhases = (
+				A9806A8D24D4898F00696A51 /* Sources */,
+				A9806A8E24D4898F00696A51 /* Frameworks */,
+				A9806A8F24D4898F00696A51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A9806A9324D4898F00696A51 /* PBXTargetDependency */,
+			);
+			name = LaProtectoraTests;
+			productName = "La ProtectoraTests";
+			productReference = A9806A9124D4898F00696A51 /* LaProtectoraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A9806A9B24D4898F00696A51 /* LaProtectoraUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9806AAB24D4898F00696A51 /* Build configuration list for PBXNativeTarget "LaProtectoraUITests" */;
+			buildPhases = (
+				A9806A9824D4898F00696A51 /* Sources */,
+				A9806A9924D4898F00696A51 /* Frameworks */,
+				A9806A9A24D4898F00696A51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A9806A9E24D4898F00696A51 /* PBXTargetDependency */,
+			);
+			name = LaProtectoraUITests;
+			productName = "La ProtectoraUITests";
+			productReference = A9806A9C24D4898F00696A51 /* LaProtectoraUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A9806A7324D4898C00696A51 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1200;
+				ORGANIZATIONNAME = Whiz;
+				TargetAttributes = {
+					A9806A7A24D4898C00696A51 = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					A9806A9024D4898F00696A51 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = A9806A7A24D4898C00696A51;
+					};
+					A9806A9B24D4898F00696A51 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = A9806A7A24D4898C00696A51;
+					};
+				};
+			};
+			buildConfigurationList = A9806A7624D4898C00696A51 /* Build configuration list for PBXProject "LaProtectora" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A9806A7224D4898C00696A51;
+			packageReferences = (
+				A9806ABF24D4AC0D00696A51 /* XCRemoteSwiftPackageReference "Resolver" */,
+				A9806AC224D4ACBA00696A51 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
+			productRefGroup = A9806A7C24D4898C00696A51 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A9806A7A24D4898C00696A51 /* LaProtectora */,
+				A9806A9024D4898F00696A51 /* LaProtectoraTests */,
+				A9806A9B24D4898F00696A51 /* LaProtectoraUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A9806A7924D4898C00696A51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9806A8B24D4898E00696A51 /* LaunchScreen.storyboard in Resources */,
+				A96439E724D8B71E001491A7 /* Signika-Regular.otf in Resources */,
+				A96439E824D8B71E001491A7 /* Signika-Semibold.otf in Resources */,
+				A9806A8824D4898E00696A51 /* Preview Assets.xcassets in Resources */,
+				A96439EF24D9E1C1001491A7 /* Assets.xcassets in Resources */,
+				A96439E624D8B71E001491A7 /* Signika-Bold.otf in Resources */,
+				A96439E524D8B71E001491A7 /* Signika-Light.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9806A8F24D4898F00696A51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9806A9A24D4898F00696A51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A9806A7724D4898C00696A51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9626A0A24F5F1B6007E3032 /* GetSiniestroCardModelListUseCase.swift in Sources */,
+				A9818D3924F98CEE008E14C7 /* GetInsuredVehicleListInteractor.swift in Sources */,
+				A96439ED24D9DF56001491A7 /* FloatingRow.swift in Sources */,
+				A949F40224DB5B8300C66847 /* SmallRow.swift in Sources */,
+				A9C5335A24EEE8DB00E157A9 /* RestRiskGroupRepository.swift in Sources */,
+				A93C892F24FEC317002841BE /* GetSinisterExecutivesListUseCase.swift in Sources */,
+				A9806ABB24D4ABC200696A51 /* PaginatedView.swift in Sources */,
+				9EB49B99279F0B0E0080F0D8 /* RestPronostikRepository.swift in Sources */,
+				A9C5334724EAE50F00E157A9 /* RequestManager.swift in Sources */,
+				A9626A0C24F5F223007E3032 /* GetSiniestroCardModelListInteractor.swift in Sources */,
+				A93C892324FEAC2C002841BE /* GetExecutivesRiskGroupUseCase.swift in Sources */,
+				A96439EB24D9C5A5001491A7 /* SOSView.swift in Sources */,
+				A9818D4524F9A31B008E14C7 /* GetSiniestroTypeListUseCase.swift in Sources */,
+				A9806A7F24D4898C00696A51 /* AppDelegate.swift in Sources */,
+				A9818D3F24F99F6F008E14C7 /* SiniestroType.swift in Sources */,
+				A9818D4724F9A362008E14C7 /* GetSiniestroTypeListInteractor.swift in Sources */,
+				A9806AD024D4CF7D00696A51 /* ValidatedTextField.swift in Sources */,
+				A949F40D24DB9B2D00C66847 /* SiniestroListView.swift in Sources */,
+				A9818D5824FD520C008E14C7 /* UbigeoData.swift in Sources */,
+				A900D53524D4D656004E3102 /* MyInsunrances.swift in Sources */,
+				A948FFE324F45F0900A21F47 /* CouponMapper.swift in Sources */,
+				A9C6F61824F7427E00F358F5 /* RestFollowUpRepository.swift in Sources */,
+				A9EB0B0224E3B9DF00894301 /* FollowUp.swift in Sources */,
+				A926DC0C24DC5CEF00F39555 /* MoreMenuView.swift in Sources */,
+				A96269F624F5A653007E3032 /* GetInsuredInfoListInteractor.swift in Sources */,
+				A949F3FA24DB38D000C66847 /* InsuranceView.swift in Sources */,
+				9EBBFFB227A0B171003CA2FD /* GetQuoterLinkDataUseCase.swift in Sources */,
+				A9EF292A2566075700D64DEC /* GetBlogSubbCategoriesInteractor.swift in Sources */,
+				A9806AD224D4CF8F00696A51 /* LPButton.swift in Sources */,
+				A9FCAE1925100EFE00ECEAFD /* SearchBar.swift in Sources */,
+				A94C15732568583A003ACDCD /* HTMLViewer.swift in Sources */,
+				A9FCAE17250FF3AC00ECEAFD /* InputAccesoryView.swift in Sources */,
+				A9EB0B1824E3C06A00894301 /* Siniestro.swift in Sources */,
+				9EB49B95279EF68F0080F0D8 /* LinkDataMapper.swift in Sources */,
+				A96269FE24F5B83C007E3032 /* RestSiniestroGroupRepository.swift in Sources */,
+				A9C6F60E24F6C5AB00F358F5 /* SiniestroMapper.swift in Sources */,
+				A9E4AC87256C027D00022B32 /* GetRecentCategoryBlogPostsInteractor.swift in Sources */,
+				A9C5335D24EEEA6500E157A9 /* RiskGroupMapper.swift in Sources */,
+				9EB49B9D279F1D640080F0D8 /* GetLinkDataInteractor.swift in Sources */,
+				A9198D3424E7306600112832 /* User.swift in Sources */,
+				A9C6F61424F6D6B000F358F5 /* GetSiniestroDetailInteractor.swift in Sources */,
+				A926DC0E24DC8EC000F39555 /* PersonalData.swift in Sources */,
+				A948FFED24F472E900A21F47 /* SiniestroInfoMapper.swift in Sources */,
+				A9C5336624EF01F300E157A9 /* Insurance.swift in Sources */,
+				A9626A0224F5D9B4007E3032 /* SiniestroCard.swift in Sources */,
+				A98EA79624E3091300DF6C92 /* ExecutivesList.swift in Sources */,
+				A9D0FE54256EDE1600BE2181 /* RestBlogCategoryRepository.swift in Sources */,
+				A96439DF24D8A58E001491A7 /* HomeView.swift in Sources */,
+				A9C6F61024F6CAA000F358F5 /* GetSiniestroUseCase.swift in Sources */,
+				A9806AC824D4CF3100696A51 /* SigninView.swift in Sources */,
+				A93829152566FEBD00118D09 /* CDNBlogStorageRepository.swift in Sources */,
+				A9A05999256478BD0009897C /* BlogPostMapper.swift in Sources */,
+				A9C5334B24EAEB2E00E157A9 /* Loader.swift in Sources */,
+				A949F40424DB5BAA00C66847 /* SmallTitleRow.swift in Sources */,
+				A9EB0B1424E3BB8800894301 /* InsuredInfoCardViewData.swift in Sources */,
+				A9EF29202566071900D64DEC /* GetBlogPostsUseCase.swift in Sources */,
+				A96269EE24F5A0B1007E3032 /* GetVehicleInfoListInteractor.swift in Sources */,
+				A9C5336A24EF091D00E157A9 /* GetInsurancesUseCase.swift in Sources */,
+				9EBBFFB027A0B0E4003CA2FD /* RestQuoterRepository.swift in Sources */,
+				A948FFDD24F45E7D00A21F47 /* GetCouponsListUserCase.swift in Sources */,
+				A9818D4E24F9C7EA008E14C7 /* RegisterSinisterUseCase.swift in Sources */,
+				A9818D3524F98C0E008E14C7 /* InsuredVehicle.swift in Sources */,
+				A9EB0B1C24E45AF700894301 /* AssistanceCenterView.swift in Sources */,
+				A9C5335624EEE3EF00E157A9 /* GetRiskGroupUseCase.swift in Sources */,
+				A948FFC724F0475F00A21F47 /* GetEndososUseCase.swift in Sources */,
+				A9806ACE24D4CF6C00696A51 /* LabeledTextField.swift in Sources */,
+				A948FFE724F471C400A21F47 /* RestDocumentRespository.swift in Sources */,
+				A948FFCD24F05C2B00A21F47 /* RestEndosoRepository.swift in Sources */,
+				A948FFD524F42F8B00A21F47 /* RestPrimaRepository.swift in Sources */,
+				A96439F124D9E61E001491A7 /* ViewModifiers.swift in Sources */,
+				9EBBFFB427A0B1A0003CA2FD /* GetQuoterLinkDataInteractor.swift in Sources */,
+				A949F3FE24DB5B3B00C66847 /* LPCard.swift in Sources */,
+				A948FFE924F471DB00A21F47 /* GetDocumentsListUseCase.swift in Sources */,
+				A9806AB924D4ABC200696A51 /* AlertCard.swift in Sources */,
+				A9818D4C24F9AF70008E14C7 /* RestSinisterRegistrationRepository.swift in Sources */,
+				A9626A0624F5EC4D007E3032 /* SiniestroCardModelMapper.swift in Sources */,
+				A9A059B72565BBE20009897C /* RestBlogSubCategoryRepository.swift in Sources */,
+				A9EB0B0024E3B9B400894301 /* Mocker.swift in Sources */,
+				A9806A8124D4898C00696A51 /* SceneDelegate.swift in Sources */,
+				A94C158C2568590E003ACDCD /* HighlightedArticle.swift in Sources */,
+				9EB49B9F279F22200080F0D8 /* GetEncryptedLinkUseCase.swift in Sources */,
+				9EBBFFAC27A0AFBB003CA2FD /* QuoterLinkDataMapper.swift in Sources */,
+				A94C156925685385003ACDCD /* BlogCategoryFeedView.swift in Sources */,
+				A948FFF724F483B800A21F47 /* RestSiniestroInfoRepository.swift in Sources */,
+				A96269EC24F5A070007E3032 /* GetVehicleInfoListUseCase.swift in Sources */,
+				A94C158225685893003ACDCD /* BlogFeed.swift in Sources */,
+				A949F40824DB885A00C66847 /* InsuranceListView.swift in Sources */,
+				9ED7372F276C51B6009EE0A8 /* GifImage.swift in Sources */,
+				A9EB0B0C24E3BABE00894301 /* PrimaCardViewData.swift in Sources */,
+				A949F3F824DB341600C66847 /* HeaderTabBar.swift in Sources */,
+				A94C156E256853A1003ACDCD /* SubcategoryFeed.swift in Sources */,
+				A9A0598F2564743B0009897C /* RestBlogPostRepository.swift in Sources */,
+				A93C892524FEAC95002841BE /* GetExecutivesRiskGroupInteractor.swift in Sources */,
+				A9806AD424D4CFA300696A51 /* LPIconButton.swift in Sources */,
+				A9806AAF24D48E2800696A51 /* LoginView.swift in Sources */,
+				A9C5334F24EDDCA500E157A9 /* EmptyStateNotAllowed.swift in Sources */,
+				A94C157D2568586C003ACDCD /* SubcategoryFeedView.swift in Sources */,
+				A96269E824F59C0F007E3032 /* VehicleInfoMapper.swift in Sources */,
+				A948FFE524F4719E00A21F47 /* DocumentMapper.swift in Sources */,
+				A949F40F24DB9BD200C66847 /* SiniestroView.swift in Sources */,
+				A96269FC24F5B796007E3032 /* GetSiniestroGroupListUseCase.swift in Sources */,
+				A9806ABD24D4ABC200696A51 /* ActivityIndicator.swift in Sources */,
+				A9D0FE6B256EE1A900BE2181 /* BlogCategoryCard.swift in Sources */,
+				A9EB0B0924E3BA5D00894301 /* SiniestroCardViewData.swift in Sources */,
+				9EB49BA1279F22860080F0D8 /* GetEncryptedLinkInteractor.swift in Sources */,
+				A9C5335424EEE2BC00E157A9 /* Repositories.swift in Sources */,
+				A949F40B24DB98BF00C66847 /* SiniestroCategories.swift in Sources */,
+				A926DC1824DDF50F00F39555 /* Endoso.swift in Sources */,
+				A9818D5C24FD543D008E14C7 /* GetUbigeoDataInteractor.swift in Sources */,
+				A9818D3724F98CA2008E14C7 /* GetInsuredVehiclesListUseCase.swift in Sources */,
+				9EB49B9B279F1C470080F0D8 /* GetLinkDataUseCase.swift in Sources */,
+				A948FFD924F42FE300A21F47 /* PrimaMapper.swift in Sources */,
+				A9818D4124F9A1FE008E14C7 /* SiniestroTypeMapper.swift in Sources */,
+				A926DC1024DCAA6E00F39555 /* WebView.swift in Sources */,
+				A96269F824F5B371007E3032 /* SiniestroGroup.swift in Sources */,
+				A93C892724FEAD94002841BE /* ExecutivesRiskGroupsView.swift in Sources */,
+				A9806AB824D4ABC200696A51 /* TextView.swift in Sources */,
+				A9D0FE66256EE0A800BE2181 /* GetBlogCategoriesInteractor.swift in Sources */,
+				A9A0598625646C900009897C /* BlogAPIClient.swift in Sources */,
+				A9E4AC91256C02AE00022B32 /* GetRecentBlogPostsUseCase.swift in Sources */,
+				A9EB0B1A24E459F100894301 /* ContactCenter.swift in Sources */,
+				A9C5334D24ECBFD900E157A9 /* SecureLabeledTextField.swift in Sources */,
+				A9626A0024F5C5ED007E3032 /* GetSiniestroGroupListInteractor.swift in Sources */,
+				A93C892B24FEBE88002841BE /* Executive.swift in Sources */,
+				A9C5334924EAE5EC00E157A9 /* AuthManager.swift in Sources */,
+				A9FBC093254343D500D30B3D /* LocalNotificationManager.swift in Sources */,
+				A9C5335F24EEEB3100E157A9 /* RiskGroup.swift in Sources */,
+				A948FFC924F05A2C00A21F47 /* EndosoMapper.swift in Sources */,
+				A9EB0B1624E3BDCB00894301 /* VehicleInfo.swift in Sources */,
+				A9806AB124D4910700696A51 /* Helpers.swift in Sources */,
+				A9818D5624FD5192008E14C7 /* GetUbigeoDataUseCase.swift in Sources */,
+				A9806ABC24D4ABC200696A51 /* ImagePicker.swift in Sources */,
+				A9818D4324F9A27D008E14C7 /* RestSiniestroTypeRepository.swift in Sources */,
+				A9A059A82565B6350009897C /* BlogCategory.swift in Sources */,
+				9EBBFFAE27A0B01A003CA2FD /* QuoterLinkData.swift in Sources */,
+				A9FCAE15250FF34E00ECEAFD /* InsuranceViewPage.swift in Sources */,
+				A949F40624DB5BC400C66847 /* BigRow.swift in Sources */,
+				A9EB0B0E24E3BAD100894301 /* EndososCardViewData.swift in Sources */,
+				A9818D3D24F98EA1008E14C7 /* InsuredVehicleMapper.swift in Sources */,
+				A9626A0424F5E957007E3032 /* SiniestroCardModel.swift in Sources */,
+				A9818D5024F9C808008E14C7 /* RegisterSinisterInteractor.swift in Sources */,
+				A926DC1424DDC07000F39555 /* Enums+Typealiase.swift in Sources */,
+				A93C893124FEC437002841BE /* ExecutiveMapper.swift in Sources */,
+				A96439F324D9F779001491A7 /* InsuredVehiclesList.swift in Sources */,
+				A9C5336824EF084800E157A9 /* InsuranceMapper.swift in Sources */,
+				A9818D3B24F98E4D008E14C7 /* RestInsuredVehicleRepository.swift in Sources */,
+				A9198D3224E7052900112832 /* NetworkAPIClient.swift in Sources */,
+				A94A008524EF269700A6C681 /* LazyLoadedView.swift in Sources */,
+				A9C5336124EEED5900E157A9 /* Mapper.swift in Sources */,
+				A9EF292F2566076C00D64DEC /* GetBlogPostsInteractor.swift in Sources */,
+				A9C5336E24EF0A8300E157A9 /* RestInsuranceRepository.swift in Sources */,
+				A949F3F624DB337500C66847 /* RiskGroupListView.swift in Sources */,
+				A926DC1624DDE9DE00F39555 /* InsuranceCardView.swift in Sources */,
+				A96269F024F5A3A0007E3032 /* InsuredInfoMapper.swift in Sources */,
+				A949F40024DB5B6F00C66847 /* BigTitleRow.swift in Sources */,
+				A93C892D24FEBF53002841BE /* GetAccountExecutivesListUseCase.swift in Sources */,
+				A9C5336324EEFBD800E157A9 /* Cache.swift in Sources */,
+				A93C893D24FEDA26002841BE /* GetContactCenterDataInteractor.swift in Sources */,
+				A9EB0B1224E3BB2200894301 /* InsuredInfo.swift in Sources */,
+				A9E4AC82256C026C00022B32 /* GetRecentBlogPostsInteractor.swift in Sources */,
+				A93C893324FEC67C002841BE /* GetAccountExecutiveListInteractor.swift in Sources */,
+				A96269F224F5A4FF007E3032 /* RestInsuredInfoRepository.swift in Sources */,
+				A96269E624F4B9C0007E3032 /* TabbedView.swift in Sources */,
+				A9806ACA24D4CF4400696A51 /* PasswordRecoveryView.swift in Sources */,
+				A926DC1A24DDF73400F39555 /* Prima.swift in Sources */,
+				A96269F424F5A5F1007E3032 /* GetInsuredInfoListUseCase.swift in Sources */,
+				A9626A0824F5ECC1007E3032 /* RestSiniestroCardModelRepository.swift in Sources */,
+				A9818D5A24FD5257008E14C7 /* RestUbigeoDataRepository.swift in Sources */,
+				A94C15642568536A003ACDCD /* BlogCategoryFeed.swift in Sources */,
+				A9A059BC2565E0920009897C /* GetFeaturedBlogPostUseCase.swift in Sources */,
+				A9EF291B2566071100D64DEC /* GetBlogSubbCategoriesUseCase.swift in Sources */,
+				A9C6F61C24F7437200F358F5 /* GetFollowUpListInteractor.swift in Sources */,
+				A948FFF524F4830700A21F47 /* GetSiniestroInfoListInteractor.swift in Sources */,
+				A9C5336C24EF095C00E157A9 /* GetInsurancesInteractor.swift in Sources */,
+				A9806AD624D4CFB800696A51 /* LoginViewViewModel.swift in Sources */,
+				A9A059AD2565B6650009897C /* BlogSubCategory.swift in Sources */,
+				A9818D5E24FD8601008E14C7 /* PersonalDataViewModel.swift in Sources */,
+				A948FFD324F42F6100A21F47 /* GetPrimasUseCase.swift in Sources */,
+				A948FFEB24F471F000A21F47 /* GetPolizaDocumentsListInteractor.swift in Sources */,
+				A9C6F61624F7409B00F358F5 /* FollowUpMapper.swift in Sources */,
+				A9A05994256474730009897C /* BlogPost.swift in Sources */,
+				A96269EA24F59FE4007E3032 /* RestVehicleInfoRepository.swift in Sources */,
+				A949F3FC24DB3A1700C66847 /* HeaderView.swift in Sources */,
+				A926DC1C24DDF9B100F39555 /* Document.swift in Sources */,
+				A93C892924FEBE40002841BE /* RestExecutiveRepository.swift in Sources */,
+				A9E4AC8C256C029C00022B32 /* GetRecentCategoryBlogPostsUseCase.swift in Sources */,
+				A9C5335824EEE4BD00E157A9 /* GetRiskGroupInteractor.swift in Sources */,
+				A9198D3724E73D3F00112832 /* UserMapper.swift in Sources */,
+				A948FFEF24F4808F00A21F47 /* SiniestroInfo.swift in Sources */,
+				A9806AC624D4CF1200696A51 /* RegisterView.swift in Sources */,
+				A9806ABA24D4ABC200696A51 /* CustomGridStack.swift in Sources */,
+				A948E46F2547371100AC6E14 /* BlogFeedView.swift in Sources */,
+				A9EB0B1024E3BAE300894301 /* DocumentCardViewData.swift in Sources */,
+				A948FFDF24F45E9200A21F47 /* GetCouponsListInteractor.swift in Sources */,
+				A948FFF324F4827600A21F47 /* GetSiniestroInfoListUseCase.swift in Sources */,
+				A9EB0B0524E3BA2500894301 /* FollowUpCardViewData.swift in Sources */,
+				A948FFCB24F05BB100A21F47 /* GetEndososInteractor.swift in Sources */,
+				A93C893B24FED93F002841BE /* ContactCenterMapper.swift in Sources */,
+				A948FFF124F480B500A21F47 /* Risk.swift in Sources */,
+				A93C893524FEC6CF002841BE /* GetSinisterExecutivesListInteractor.swift in Sources */,
+				A948FFD724F42FA200A21F47 /* GetPrimasInteractor.swift in Sources */,
+				A9C6F61224F6CE3100F358F5 /* RestSiniestroRepository.swift in Sources */,
+				A948FFE124F45EDE00A21F47 /* RestCouponRepository.swift in Sources */,
+				A9C6F61E24F74EC700F358F5 /* GetSiniestroDocumentListInteractor.swift in Sources */,
+				9EB49B97279F062D0080F0D8 /* LinkData.swift in Sources */,
+				A94C1587256858BC003ACDCD /* ArticleCard.swift in Sources */,
+				A9806A8324D4898C00696A51 /* MainView.swift in Sources */,
+				A9D0FE59256EDEBD00BE2181 /* BlogCategoryMapper.swift in Sources */,
+				A94C15782568584F003ACDCD /* ArticleDetailView.swift in Sources */,
+				A9818D4A24F9ABE4008E14C7 /* SinisterRegistration.swift in Sources */,
+				A93C893724FED85C002841BE /* GetContactCenterDataUseCase.swift in Sources */,
+				A9806ACC24D4CF5600696A51 /* PhoneNumberValidationView.swift in Sources */,
+				A96269FA24F5B452007E3032 /* SiniestroGroupMapper.swift in Sources */,
+				A948FFDB24F43E4100A21F47 /* Coupon.swift in Sources */,
+				A9A059B22565B8940009897C /* BlogSubCategoryMapper.swift in Sources */,
+				A9D0FE5E256EE01D00BE2181 /* GetBlogCategoriesUseCase.swift in Sources */,
+				A9EF29252566074100D64DEC /* GetFeaturedBlogPostInteractor.swift in Sources */,
+				A98EA79424E3061300DF6C92 /* ExecutivesCategoriesView.swift in Sources */,
+				A93C893924FED8BB002841BE /* RestContactCenterRepository.swift in Sources */,
+				A9C6F61A24F7432C00F358F5 /* GetFollowUpListUseCase.swift in Sources */,
+				A9EB0B0724E3BA3D00894301 /* VehicleInfoCardViewData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9806A8D24D4898F00696A51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9806A9624D4898F00696A51 /* La_ProtectoraTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9806A9824D4898F00696A51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9806AA124D4898F00696A51 /* La_ProtectoraUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A9806A9324D4898F00696A51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A9806A7A24D4898C00696A51 /* LaProtectora */;
+			targetProxy = A9806A9224D4898F00696A51 /* PBXContainerItemProxy */;
+		};
+		A9806A9E24D4898F00696A51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A9806A7A24D4898C00696A51 /* LaProtectora */;
+			targetProxy = A9806A9D24D4898F00696A51 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A9806A8924D4898E00696A51 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9806A8A24D4898E00696A51 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A9818D4824F9ABE4008E14C7 /* SinisterRegistration.swift */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9818D4924F9ABE4008E14C7 /* Base */,
+			);
+			name = SinisterRegistration.swift;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A9806AA324D4898F00696A51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A9806AA424D4898F00696A51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A9806AA624D4898F00696A51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9666BC925001FB800BE3A1F /* ConfigDev.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "LaProtectora/IVO La Protectora Dev.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 95;
+				DEVELOPMENT_ASSET_PATHS = "\"LaProtectora/Preview Content\"";
+				DEVELOPMENT_TEAM = HS2HJ27PLP;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = LaProtectora/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.1.4;
+				PRODUCT_BUNDLE_IDENTIFIER = pe.whiz.laprotectora.dev;
+				PRODUCT_NAME = "IVO La Protectora Dev";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A9806AA724D4898F00696A51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9666BCA25001FC300BE3A1F /* ConfigProd.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "LaProtectora/IVO La Protectora Dev.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 95;
+				DEVELOPMENT_ASSET_PATHS = "\"LaProtectora/Preview Content\"";
+				DEVELOPMENT_TEAM = MSY25KXG3Z;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = LaProtectora/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.1.4;
+				PRODUCT_BUNDLE_IDENTIFIER = laprotectora;
+				PRODUCT_NAME = "IVO La Protectora";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		A9806AA924D4898F00696A51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HS2HJ27PLP;
+				INFOPLIST_FILE = "La ProtectoraTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.whiz.La-ProtectoraTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LaProtectora.app/LaProtectora";
+			};
+			name = Debug;
+		};
+		A9806AAA24D4898F00696A51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HS2HJ27PLP;
+				INFOPLIST_FILE = "La ProtectoraTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.whiz.La-ProtectoraTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LaProtectora.app/LaProtectora";
+			};
+			name = Release;
+		};
+		A9806AAC24D4898F00696A51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HS2HJ27PLP;
+				INFOPLIST_FILE = "La ProtectoraUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.whiz.La-ProtectoraUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "La Protectora";
+			};
+			name = Debug;
+		};
+		A9806AAD24D4898F00696A51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HS2HJ27PLP;
+				INFOPLIST_FILE = "La ProtectoraUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.whiz.La-ProtectoraUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "La Protectora";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A9806A7624D4898C00696A51 /* Build configuration list for PBXProject "LaProtectora" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9806AA324D4898F00696A51 /* Debug */,
+				A9806AA424D4898F00696A51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9806AA524D4898F00696A51 /* Build configuration list for PBXNativeTarget "LaProtectora" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9806AA624D4898F00696A51 /* Debug */,
+				A9806AA724D4898F00696A51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9806AA824D4898F00696A51 /* Build configuration list for PBXNativeTarget "LaProtectoraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9806AA924D4898F00696A51 /* Debug */,
+				A9806AAA24D4898F00696A51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9806AAB24D4898F00696A51 /* Build configuration list for PBXNativeTarget "LaProtectoraUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9806AAC24D4898F00696A51 /* Debug */,
+				A9806AAD24D4898F00696A51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A9806ABF24D4AC0D00696A51 /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Resolver.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.4;
+			};
+		};
+		A9806AC224D4ACBA00696A51 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9ED7372C276C477A009EE0A8 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A9806AC224D4ACBA00696A51 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		A9806AC024D4AC0D00696A51 /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A9806ABF24D4AC0D00696A51 /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = A9806A7324D4898C00696A51 /* Project object */;
+}

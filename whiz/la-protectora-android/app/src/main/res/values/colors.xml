@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#cfd8dc</color>
+    <color name="colorPrimaryDark">#cfd8dc</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="login_texto_plomo">#86858a</color>
+    <color name="red">#D71920</color>
+    <color name="black">#000000</color>
+
+    <color name="gray">#cfd8dc</color>
+    <color name="grayLight">#A3eceff1</color>
+
+    <color name="green">#19D792</color>
+    <color name="producto_detalle_rotulo">#86858a</color>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimen100">100dp</dimen>
+    <dimen name="dimen24">24dp</dimen>
+    <dimen name="dimen28">28dp</dimen>
+    <dimen name="radiusDetailAuth">27dp</dimen>
+    <dimen name="dimen16">16dp</dimen>
+    <dimen name="text24">24sp</dimen>
+    <dimen name="dimen36">36dp</dimen>
+    <dimen name="dimen12">12dp</dimen>
+    <dimen name="dimen8">8dp</dimen>
+    <dimen name="text14">14sp</dimen>
+    <dimen name="dimen20">20dp</dimen>
+    <dimen name="text32">32sp</dimen>
+    <dimen name="dimen4">4dp</dimen>
+    <dimen name="text18">18sp</dimen>
+    <dimen name="text16">16sp</dimen>
+    <dimen name="text12">12sp</dimen>
+    <dimen name="text8">8sp</dimen>
+    <dimen name="text22">22sp</dimen>
+    <dimen name="text10">10sp</dimen>
+</resources>

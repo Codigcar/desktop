@@ -1,0 +1,15 @@
+//
+//  ConfigProd.xcconfig
+//  LaProtectora
+//
+//  Created by Rolando Rodriguez on 9/2/20.
+//  Copyright © 2020 Whiz. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+SERVER_DOMAINNAME = aws3.laprotectora.com.pe
+ACCESS_TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ3c191c2VyIjoibGFwcm90ZWN0b3JhIiwid3NfcGFzc3dvcmQiOiJ3c3ByMHQzY3QwcmEiLCJpYXQiOjE1OTkwNzUwMzd9.hUP_IQzyT1NjAtFmxdXuN9wGaFbmujJxMgFbCjK9EvI
+BLOG_DOMAINNAME=blog.laprotectora.com.pe
+CDN_PATH=cdn.whiz.pe/api/v2/image/

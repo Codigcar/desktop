@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".feature.auth.AuthActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/loginConstraint"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/background_detail_auth"
+            android:elevation="15dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topDetailGuideLine">
+
+
+        <TextView
+                android:id="@+id/titleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen24"
+                android:fontFamily="@font/signika_bold"
+                android:text="@string/welcome"
+                android:textColor="@color/login_texto_plomo"
+                android:textSize="@dimen/text24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dniLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen16"
+                android:hint="DNI"
+                app:boxStrokeColor="#808B96"
+                app:layout_constraintEnd_toStartOf="@+id/endDetailGuideLine2"
+                app:layout_constraintStart_toStartOf="@+id/startDetailGuideLine2"
+                app:layout_constraintTop_toBottomOf="@+id/titleText"
+                app:startIconDrawable="@drawable/ic_dni">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dniText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwrodtextField"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Contraseña"
+                app:boxStrokeColor="#808B96"
+                app:endIconMode="password_toggle"
+                app:layout_constraintEnd_toStartOf="@+id/endDetailGuideLine2"
+                app:layout_constraintStart_toStartOf="@+id/startDetailGuideLine2"
+                app:layout_constraintTop_toBottomOf="@+id/dniLayout"
+                app:startIconDrawable="@drawable/ic_password"
+                app:suffixTextColor="#808B96">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white"
+                    android:inputType="textPassword" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+                android:id="@+id/forgotPasswordText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/signika_semibold"
+                android:paddingStart="@dimen/dimen16"
+                android:paddingTop="14dp"
+                android:paddingEnd="@dimen/dimen16"
+                android:paddingBottom="14dp"
+                android:text="No recuerdo mi contraseña"
+                android:textColor="@color/login_texto_plomo"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/endDetailGuideLine2"
+                app:layout_constraintStart_toStartOf="@+id/startDetailGuideLine2"
+                app:layout_constraintTop_toBottomOf="@+id/passwrodtextField" />
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/sigInButton2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen16"
+                android:layout_marginEnd="@dimen/dimen16"
+                android:backgroundTint="@color/red"
+                android:padding="12dp"
+                android:text="Ingresar"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/endDetailGuideLine2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/startDetailGuideLine2"
+                app:layout_constraintTop_toBottomOf="@+id/forgotPasswordText" />
+
+        <LinearLayout
+                android:id="@+id/registerLinearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@+id/endDetailGuideLine2"
+                app:layout_constraintStart_toStartOf="@+id/startDetailGuideLine2"
+                app:layout_constraintTop_toBottomOf="@id/sigInButton2">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:fontFamily="@font/signika_semibold"
+                    android:text="@string/signUp"
+                    android:textSize="14sp" />
+
+            <ImageView
+                    android:layout_width="9dp"
+                    android:layout_height="16dp"
+                    app:srcCompat="@drawable/ic_arrow" />
+        </LinearLayout>
+
+
+        <LinearLayout
+                android:id="@+id/insureButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/endDetailGuideLine2"
+                app:layout_constraintHorizontal_bias="0.277"
+                app:layout_constraintStart_toStartOf="@+id/startDetailGuideLine2"
+                app:layout_constraintTop_toBottomOf="@+id/registerLinearLayout"
+                app:layout_constraintVertical_bias="0.8">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/security" />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seguros" />
+        </LinearLayout>
+
+
+        <LinearLayout
+                android:id="@+id/telfButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/endDetailGuideLine2"
+                app:layout_constraintHorizontal_bias="0.492"
+                app:layout_constraintStart_toEndOf="@+id/insureButton"
+                app:layout_constraintTop_toBottomOf="@+id/registerLinearLayout"
+                app:layout_constraintVertical_bias="0.8">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/cellphone" />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Llámanos" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/startDetailGuideLine2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="41dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/endDetailGuideLine2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.9" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/registerConstraint"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/background_detail_auth"
+            android:elevation="15dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topDetailGuideLine">
+
+        <ImageView
+                android:id="@+id/backLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_back_arrow"
+                android:tint="@color/login_texto_plomo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+                android:id="@+id/titleText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen24"
+                android:fontFamily="@font/signika_bold"
+                android:text="@string/signUp"
+                android:textColor="@color/login_texto_plomo"
+                android:textSize="@dimen/text24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/endDetailGuideLine"
+                app:layout_constraintStart_toStartOf="@+id/startDetailGuideLine"
+                app:layout_constraintTop_toBottomOf="@+id/titleText2">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/dniLayout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Número de Documento"
+                        app:boxStrokeColor="#808B96">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/dniText2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/white"
+                            android:inputType="number" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/nameLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nombres"
+                        app:boxStrokeColor="#808B96"
+                        app:startIconDrawable="@drawable/ic_person">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/nameText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/white" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/lastNameLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Apellidos"
+                        app:boxStrokeColor="#808B96"
+                        app:startIconDrawable="@drawable/ic_person">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/lastNameText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/white" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/emailLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="E-mail"
+                        app:boxStrokeColor="#808B96"
+                        app:startIconDrawable="@drawable/ic_email">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/emailText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/white" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/passwrodtextField2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:hint="Contraseña"
+                        app:boxStrokeColor="#808B96"
+                        app:endIconMode="password_toggle"
+                        app:startIconDrawable="@drawable/ic_password"
+                        app:suffixTextColor="#808B96">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/passwordText2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/white"
+                            android:inputType="textPassword" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                        android:id="@+id/linearLayout3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+
+                    <com.suke.widget.SwitchButton
+                            android:id="@+id/switch_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    <TextView
+                            android:id="@+id/termsButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:text="@string/condiciones"
+                            android:textAllCaps="true"
+                            android:textColor="@color/producto_detalle_rotulo"
+                            android:textSize="10sp" />
+                </LinearLayout>
+
+
+                <com.google.android.material.button.MaterialButton
+                        android:id="@+id/sigUpButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen16"
+                        android:layout_marginEnd="@dimen/dimen16"
+                        android:backgroundTint="@color/red"
+                        android:padding="@dimen/dimen12"
+                        android:text="Ingresar"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        app:cornerRadius="8dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/startDetailGuideLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.10" />
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/endDetailGuideLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.9" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/recoveryPasswordConstraint"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/background_detail_auth"
+            android:elevation="15dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topDetailGuideLine">
+
+
+        <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.12"
+                app:srcCompat="@drawable/ic_candado" />
+
+        <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/signika_bold"
+                android:text="A todos nos pasa"
+                android:textColor="@color/login_texto_plomo"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+        <TextView
+                android:id="@+id/textView25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/signika_light"
+                android:text="Para obtener una nueva contraseña, ingresa \nel e-mail con el que te registraste para enviártela."
+                android:textAlignment="center"
+                android:textColor="@color/login_texto_plomo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+        <EditText
+                android:id="@+id/emailrecoveryText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/signika_light"
+                android:hint="Ingresar email"
+                android:textSize="@dimen/text16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/endRecoveryGuideLine"
+                app:layout_constraintStart_toStartOf="@+id/startRecoveryGuideLine"
+                app:layout_constraintTop_toBottomOf="@+id/textView25"
+                app:layout_constraintVertical_bias="0.075" />
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/recoveryButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/red"
+                android:padding="12dp"
+                android:text="Solicitar contraseña"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text14"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/endRecoveryGuideLine"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="@+id/startRecoveryGuideLine"
+                app:layout_constraintTop_toBottomOf="@+id/emailrecoveryText"
+                app:layout_constraintVertical_bias="0.176" />
+
+        <TextView
+                android:id="@+id/loginButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/signika_semibold"
+                android:padding="@dimen/dimen8"
+                android:text="Iniciar sesión"
+                android:textColor="@color/login_texto_plomo"
+                android:textSize="@dimen/text18"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/endRecoveryGuideLine"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="@+id/startRecoveryGuideLine"
+                app:layout_constraintTop_toBottomOf="@+id/recoveryButton"
+                app:layout_constraintVertical_bias="0.156" />
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/startRecoveryGuideLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.10" />
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/endRecoveryGuideLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.9" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/smsConstraint"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/background_detail_auth"
+            android:elevation="15dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topDetailGuideLine">
+
+
+        <ImageView
+                android:id="@+id/keyImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.12"
+                app:srcCompat="@drawable/ic_candado" />
+
+        <TextView
+                android:id="@+id/textView30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/signika_bold"
+                android:text="Verificación SMS"
+                android:textColor="@color/login_texto_plomo"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/keyImage" />
+
+        <TextView
+                android:id="@+id/textView31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/signika_light"
+                android:text="La Protectora enviará un código a través de un \núnico mensaje SMS, para verificar tu\nnúmero de celular"
+                android:textAlignment="center"
+                android:textColor="@color/login_texto_plomo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+        <EditText
+                android:id="@+id/telfSmsText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/signika_light"
+                android:hint="Ingresar Teléfono"
+                android:inputType="number"
+                android:maxLength="9"
+                android:textSize="@dimen/text16"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/endSmsGuideLine"
+                app:layout_constraintStart_toStartOf="@+id/startSmsGuideLine"
+                app:layout_constraintTop_toBottomOf="@+id/textView31"
+                app:layout_constraintVertical_bias="0.075" />
+
+        <EditText
+                android:id="@+id/codeSmsText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/signika_light"
+                android:hint="Ingresar Codigo"
+                android:textSize="@dimen/text16"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/endSmsGuideLine"
+                app:layout_constraintStart_toStartOf="@+id/startSmsGuideLine"
+                app:layout_constraintTop_toBottomOf="@+id/textView31"
+                app:layout_constraintVertical_bias="0.075" />
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/smsButton"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:backgroundTint="@color/red"
+                android:text="Obtener código"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text14"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/endSmsGuideLine"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="@+id/startSmsGuideLine"
+                app:layout_constraintTop_toBottomOf="@+id/telfSmsText"
+                app:layout_constraintVertical_bias="0.176" />
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/codeButton"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:backgroundTint="@color/red"
+                android:text="Validar Código"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text14"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/endSmsGuideLine"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="@+id/startSmsGuideLine"
+                app:layout_constraintTop_toBottomOf="@+id/codeSmsText"
+                app:layout_constraintVertical_bias="0.176" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/startSmsGuideLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.10" />
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/endSmsGuideLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.9" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Image de atras -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/gradientGuideLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dimen24"
+                android:layout_marginTop="@dimen/dimen28"
+                android:layout_marginEnd="@dimen/dimen24"
+                android:src="@drawable/image_auth"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/logoProtectora"
+                app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+                android:id="@+id/logoProtectora"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/dimen24"
+                android:src="@drawable/logo_completo"
+                app:layout_constraintBottom_toTopOf="@+id/guideline3"
+                app:layout_constraintEnd_toStartOf="@id/endGuideLine"
+                app:layout_constraintStart_toStartOf="@+id/startGuideLine"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/startGuideLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.15" />
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/endGuideLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.85" />
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.34" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen100"
+            android:background="@drawable/gradient_detail_auth"
+            app:layout_constraintBottom_toTopOf="@+id/gradientGuideLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.8" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topDetailGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gradientGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4008208" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

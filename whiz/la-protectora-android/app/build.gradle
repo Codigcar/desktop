@@ -1,0 +1,111 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
+def BASE_URL_DEV = '"' + dev + '"' ?: "No base url"
+def BASE_URL_PROD = '"' + prod + '"' ?: "No base url"
+
+android {
+
+    android {
+        ndkVersion "21.4.7075529"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('/Users/ccastiro/Desktop/desktop/whiz/la-protectora-android/laprotectora.jks')
+            // storeFile file('/Users/williamquispeherrera/Documents/keysApps/laprotectora.jks')
+            keyPassword '50gl@21m'
+            storePassword '50gl@21m'
+            keyAlias 'la protectora'
+        }
+    }
+    compileSdkVersion 33
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "pe.com.protectora"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 52
+        versionName '2.7.3'
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.release
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", BASE_URL_PROD
+        }
+
+        debug {
+            buildConfigField "String", "BASE_URL", BASE_URL_DEV
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'com.google.firebase:firebase-crashlytics:17.2.1'
+    implementation 'com.google.firebase:firebase-analytics:17.5.0'
+    implementation 'com.google.firebase:firebase-analytics:17.5.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.work:work-runtime:2.1.0-alpha02'
+
+    //lifeCycle
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0-alpha07'
+
+    //Network
+    implementation 'com.squareup.retrofit2:retrofit:2.7.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.6.0'
+
+    //UI
+    implementation 'com.github.zcweng:switch-button:0.0.3@aar'
+    implementation 'com.sdsmdg.harjot:materialshadows:1.2.5'
+    implementation 'com.google.android.material:material:1.3.0-alpha02'
+    implementation 'com.github.zcweng:switch-button:0.0.3@aar'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.romandanylyk:pageindicatorview:1.0.3'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'es.voghdev.pdfviewpager:library:1.0.6'
+
+
+    // Koin
+    implementation "org.koin:koin-android:2.1.5"
+    implementation "org.koin:koin-android-scope:2.1.5"
+    implementation "org.koin:koin-android-viewmodel:2.1.5"
+    implementation 'com.airbnb.android:lottie:3.4.1'
+
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation "org.java-websocket:Java-WebSocket:1.5.1"
+
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.17'
+
+}

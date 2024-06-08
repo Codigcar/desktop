@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">IVO La Protectora</string>
+
+    <string name="welcome">Bienvenidos</string>
+    <string name="signUp">Regístrate</string>
+
+    <!-- Error -->
+    <string name="default_error_message">Ocurrió un error, por favor reincie la aplicación</string>
+    <string name="connection_message">No hay conexión a internet. Asegúrese de que la conexión Wi-Fi o los datos móviles estén encendidos, e intente de nuevo.</string>
+    <string name="time_out_message">La conexión Wi-Fi es demasiado lenta o los datos moviles se terminarón, revise que la conexión que utiliza le proporcione internet</string>
+    <string name="connection_lost_message">La conexión a internet se ha perdido</string>
+    <string name="socket_error">Hubo un error en el servidor</string>
+    <string name="login_tabs_register">Regístrate</string>
+
+    <string name="happy_birthday"><b>¡Feliz Cumpleaños!</b></string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="rationale_cell_phone">Se necesita permisos de llamada</string>
+    <string name="condiciones">Antes de dar click en aceptar. Confírmanos que estás de acuerdo y nos autorizas al tratamiento de tus datos personales y remisión de información sobre nuestros servicios y productos conforme a las condiciones adjuntas.<b>Ver Aquí</b></string>
+</resources>
