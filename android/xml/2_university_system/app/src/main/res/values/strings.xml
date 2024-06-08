@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">university_system</string>
+    <string name="upc_movil">UPC Movil</string>
+    <string name="bg">bg</string>
+    <string name="system_student">SYSTEM STUDENT</string>
+    <string name="ic_google">ic_google</string>
+    <string name="statics">Statics</string>
+</resources>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">basic_widgets</string>
+    <string name="hola">My first Compose Text</string>
+</resources>

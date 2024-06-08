@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  tools:ignore="MissingConstraints">
+
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        tools:ignore="UselessParent">
+
+            <ImageView android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:src="@drawable/bg_gradient"
+                       android:contentDescription="@string/bg"
+            />
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:orientation="horizontal"
+                          android:layout_marginHorizontal="30sp"
+                          android:layout_marginTop="30sp"
+            >
+
+                <LinearLayout android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                >
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="@string/upc_movil"
+                              android:textColor="@color/white"
+                              android:textSize="22sp"
+                    />
+
+                    <Space android:layout_width="wrap_content"
+                           android:layout_height="1sp"
+                           tools:ignore="SmallSp"/>
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="@string/system_student"
+                              android:textColor="@color/white"
+                              android:textSize="16sp"
+                    />
+                </LinearLayout>
+                <Space android:layout_width="0dp"
+                       android:layout_height="0sp"
+                       android:layout_weight="1"
+                />
+                <ImageView android:layout_width="80sp"
+                           android:layout_height="80sp"
+                           android:src="@drawable/ic_google"
+                           android:contentDescription="@string/ic_google"
+                />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <GridLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2"
+                    android:rowCount="5"
+                    android:layout_marginTop="-90dp"
+        >
+            <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="20dp"
+                    android:layout_columnWeight="1"
+                    app:cardCornerRadius="15dp"
+                    android:layout_margin="20dp"
+            >
+                <FrameLayout android:layout_width="wrap_content"
+                             android:layout_height="match_parent"
+                             android:layout_gravity="center"
+                >
+                    <LinearLayout android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="vertical"
+                                  android:padding="20dp"
+                    >
+
+                        <ImageView android:layout_width="50sp"
+                                   android:layout_height="50sp"
+                                   android:src="@drawable/ic_google"
+                                   android:contentDescription="@string/ic_google"
+                        />
+                        <TextView android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/statics"
+                        />
+
+                    </LinearLayout>
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="20dp"
+                    android:layout_columnWeight="1"
+                    app:cardCornerRadius="15dp"
+                    android:layout_margin="20dp"
+            >
+                <FrameLayout android:layout_width="wrap_content"
+                             android:layout_height="match_parent"
+                             android:layout_gravity="center"
+                >
+                    <LinearLayout android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="vertical"
+                                  android:padding="20dp"
+                    >
+
+                        <ImageView android:layout_width="50sp"
+                                   android:layout_height="50sp"
+                                   android:src="@drawable/ic_google"
+                                   android:contentDescription="@string/ic_google"
+                        />
+                        <TextView android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/statics"
+                        />
+
+                    </LinearLayout>
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="20dp"
+                    android:layout_columnWeight="1"
+                    app:cardCornerRadius="15dp"
+                    android:layout_margin="20dp"
+            >
+                <FrameLayout android:layout_width="wrap_content"
+                             android:layout_height="match_parent"
+                             android:layout_gravity="center"
+                >
+                    <LinearLayout android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="vertical"
+                                  android:padding="20dp"
+                    >
+
+                        <ImageView android:layout_width="50sp"
+                                   android:layout_height="50sp"
+                                   android:src="@drawable/ic_google"
+                                   android:contentDescription="@string/ic_google"
+                        />
+                        <TextView android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/statics"
+                        />
+
+                    </LinearLayout>
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="20dp"
+                    android:layout_columnWeight="1"
+                    app:cardCornerRadius="15dp"
+                    android:layout_margin="20dp"
+            >
+                <FrameLayout android:layout_width="wrap_content"
+                             android:layout_height="match_parent"
+                             android:layout_gravity="center"
+                >
+                    <LinearLayout android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="vertical"
+                                  android:padding="20dp"
+                    >
+
+                        <ImageView android:layout_width="50sp"
+                                   android:layout_height="50sp"
+                                   android:src="@drawable/ic_google"
+                                   android:contentDescription="@string/ic_google"
+                        />
+                        <TextView android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/statics"
+                        />
+
+                    </LinearLayout>
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="20dp"
+                    android:layout_columnWeight="1"
+                    app:cardCornerRadius="15dp"
+                    android:layout_margin="20dp"
+            >
+                <FrameLayout android:layout_width="wrap_content"
+                             android:layout_height="match_parent"
+                             android:layout_gravity="center"
+                >
+                    <LinearLayout android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="vertical"
+                                  android:padding="20dp"
+                    >
+
+                        <ImageView android:layout_width="50sp"
+                                   android:layout_height="50sp"
+                                   android:src="@drawable/ic_google"
+                                   android:contentDescription="@string/ic_google"
+                        />
+                        <TextView android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/statics"
+                        />
+
+                    </LinearLayout>
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="20dp"
+                    android:layout_columnWeight="1"
+                    app:cardCornerRadius="15dp"
+                    android:layout_margin="20dp"
+            >
+                <FrameLayout android:layout_width="wrap_content"
+                             android:layout_height="match_parent"
+                             android:layout_gravity="center"
+                >
+                    <LinearLayout android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="vertical"
+                                  android:padding="20dp"
+                    >
+
+                        <ImageView android:layout_width="50sp"
+                                   android:layout_height="50sp"
+                                   android:src="@drawable/ic_google"
+                                   android:contentDescription="@string/ic_google"
+                        />
+                        <TextView android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/statics"
+                        />
+
+                    </LinearLayout>
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="20dp"
+                    android:layout_columnWeight="1"
+                    app:cardCornerRadius="15dp"
+                    android:layout_margin="20dp"
+            >
+                <FrameLayout android:layout_width="wrap_content"
+                             android:layout_height="match_parent"
+                             android:layout_gravity="center"
+                >
+                    <LinearLayout android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="vertical"
+                                  android:padding="20dp"
+                    >
+
+                        <ImageView android:layout_width="50sp"
+                                   android:layout_height="50sp"
+                                   android:src="@drawable/ic_google"
+                                   android:contentDescription="@string/ic_google"
+                        />
+                        <TextView android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/statics"
+                        />
+
+                    </LinearLayout>
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="20dp"
+                    android:layout_columnWeight="1"
+                    app:cardCornerRadius="15dp"
+                    android:layout_margin="20dp"
+            >
+                <FrameLayout android:layout_width="wrap_content"
+                             android:layout_height="match_parent"
+                             android:layout_gravity="center"
+                >
+                    <LinearLayout android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="vertical"
+                                  android:padding="20dp"
+                    >
+
+                        <ImageView android:layout_width="50sp"
+                                   android:layout_height="50sp"
+                                   android:src="@drawable/ic_google"
+                                   android:contentDescription="@string/ic_google"
+                        />
+                        <TextView android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/statics"
+                        />
+
+                    </LinearLayout>
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="20dp"
+                    android:layout_columnWeight="1"
+                    app:cardCornerRadius="15dp"
+                    android:layout_margin="20dp"
+            >
+                <FrameLayout android:layout_width="wrap_content"
+                             android:layout_height="match_parent"
+                             android:layout_gravity="center"
+                >
+                    <LinearLayout android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="vertical"
+                                  android:padding="20dp"
+                    >
+
+                        <ImageView android:layout_width="50sp"
+                                   android:layout_height="50sp"
+                                   android:src="@drawable/ic_google"
+                                   android:contentDescription="@string/ic_google"
+                        />
+                        <TextView android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/statics"
+                        />
+
+                    </LinearLayout>
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </GridLayout>
+    </LinearLayout>
+
+
+</ScrollView>
