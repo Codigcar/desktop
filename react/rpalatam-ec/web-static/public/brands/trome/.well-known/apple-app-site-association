@@ -1,0 +1,19 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": {
+      "JBGR56T3X4.com.eeec.Trome": {
+        "paths": []
+      },
+      "JBGR56T3X4.com.eeec.Trome.dev": {
+        "paths": []
+      }
+    }
+  },
+  "webcredentials": {
+    "apps": [
+      "JBGR56T3X4.com.eeec.Trome",
+      "JBGR56T3X4.com.eeec.Trome.dev"
+    ]
+  }
+}

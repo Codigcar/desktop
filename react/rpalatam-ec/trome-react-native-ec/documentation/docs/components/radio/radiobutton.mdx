@@ -1,0 +1,57 @@
+---
+title: Radio
+slug: radio
+---
+
+El componente Radio es la representación de un input radio.
+
+## Uso
+
+```jsx
+<Radio value="red" />
+<Radio value="green">
+  <Text>Green</Green>
+</Radio>
+```
+
+## Props
+
+### `value`
+
+Texto que describe el valor del Radio.
+
+| Tipo   | Requerido |
+| ------ | --------- |
+| string | si        |
+
+### `checked`
+
+Indica si el Radio está seleccionado.
+
+| Tipo    | Requerido |
+| ------- | --------- |
+| boolean | no        |
+
+### `color`
+
+Cambia el color del thumb.
+
+| Tipo                                                                    | Requerido |
+| ----------------------------------------------------------------------- | --------- |
+| [ColorValue](https://reactnative.dev/docs/colors#color-representations) | no        |
+
+### `disabled`
+
+No se puede seleccionar y la opacidad del componente disminuye a 50%.
+
+| Tipo    | Requerido |
+| ------- | --------- |
+| boolean | no        |
+
+### `style`
+
+Agregar y/o sobrescribe los estilos por defecto.
+
+| Tipo                                                                         | Requerido |
+| ---------------------------------------------------------------------------- | --------- |
+| StyleSheet([ViewStyle](https://reactnative.dev/docs/view-style-props#props)) | no        |

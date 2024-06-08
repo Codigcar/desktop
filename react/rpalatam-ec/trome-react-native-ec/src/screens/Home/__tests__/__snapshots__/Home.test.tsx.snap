@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Mount screen 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    onLayout={[Function]}
+    pointerEvents="box-none"
+    style={
+      Array [
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {},
+      ]
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#FFCB05",
+          "display": "flex",
+          "flex": 1,
+          "overflow": "hidden",
+        },
+      ]
+    }
+  >
+    <RNCSafeAreaView
+      edges={
+        Array [
+          "top",
+        ]
+      }
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#FFCB05",
+            "display": "flex",
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "overflow": "hidden",
+          },
+          undefined,
+        ]
+      }
+    >
+      <RNCWebView
+        allowsFullscreenVideo={true}
+        allowsInlineMediaPlayback={true}
+        cacheEnabled={true}
+        injectedJavaScriptBeforeContentLoaded="
+  window.__REACT_NATIVE_CONTEXT_TOPICS__ = true;
+  window.__REACT_NATIVE_SCREENS_AUTH_SIGNWALL__ = true;
+  window.__REACT_NATIVE_SCREENS_PAYWALL_MODAL__ = true;
+  window.__REACT_NATIVE_SCREENS_STORY__ = true;
+  true;
+"
+        injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+        injectedJavaScriptForMainFrameOnly={true}
+        javaScriptEnabled={true}
+        mediaPlaybackRequiresUserAction={true}
+        messagingEnabled={true}
+        onContentProcessDidTerminate={[Function]}
+        onHttpError={[Function]}
+        onLoadingError={[Function]}
+        onLoadingFinish={[Function]}
+        onLoadingProgress={[Function]}
+        onLoadingStart={[Function]}
+        onMessage={[Function]}
+        onShouldStartLoadWithRequest={[Function]}
+        source={
+          Object {
+            "uri": "https://pwa.dev.elcomercio.pe/#?version=50",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#ffffff",
+            },
+            Object {
+              "flex": 1,
+              "opacity": 0.99,
+            },
+          ]
+        }
+        testID="home-screen"
+        textInteractionEnabled={true}
+        useSharedProcessPool={true}
+      />
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;

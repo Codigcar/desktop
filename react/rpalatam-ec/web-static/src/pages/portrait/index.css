@@ -1,0 +1,28 @@
+.e-list-news-breakpoint {
+  height: 105px;
+}
+
+/* Peru21 */
+.peru21 .is-header.is-primary .is-icon {
+  color: #FFF;
+}
+.peru21 .categories-menu-indicator {
+  background-color: #0E6DC1;
+}
+.peru21.night-mode .categories-menu-indicator {
+  background-color: #ffca06;
+}
+/* .peru21 .categories-menu .categories-menu-inner .categories-menu-item:first-child span {
+  color: #1d65aa;
+  font-weight: 600;
+} */
+/* .peru21 .categories-menu-indicator.indicator-accent {
+  background-color: #1d65aa;
+} */
+
+/* .peru21.night-mode .categories-menu .categories-menu-inner .categories-menu-item:first-child span {
+  color: #ffca06
+} */
+/* .peru21.night-mode .categories-menu-indicator.indicator-accent {
+  background-color: #ffca06;
+} */

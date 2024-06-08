@@ -1,0 +1,24 @@
+.story-view {
+  height: 100vh;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.story-view .wrap-new-placeholder {
+  padding-top: 0;
+}
+
+.story-view .wrap-view-new {
+  height: 100vh;
+  padding-top: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  will-change: scroll-position;
+  -webkit-overflow-scrolling: touch;
+}
+
+.zoom-xs .story-view .eNew { font-size: 0.75em; }
+.zoom-s .story-view .eNew { font-size: 0.875em; }
+.zoom-m .story-view .eNew { font-size: 1em; }
+.zoom-l .story-view .eNew { font-size: 1.125em; }
+.zoom-xl .story-view .eNew { font-size: 1.25em; }

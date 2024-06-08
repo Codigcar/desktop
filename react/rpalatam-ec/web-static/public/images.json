@@ -1,0 +1,34 @@
+{
+  "sizes": [
+    {
+      "format": "webp",
+      "width": 120,
+      "suffix": "small"
+    },
+    {
+      "width": 160,
+      "suffix": "medium"
+    },
+    {
+      "width": 240,
+      "suffix": "small2x"
+    },
+    {
+      "width": 320,
+      "suffix": "medium2x"
+    },
+    {
+      "width": 480,
+      "suffix": "small3x",
+      "height": 320
+    },
+    {
+      "width": 640,
+      "suffix": "medium3x"
+    },
+    {
+      "width": 720,
+      "suffix": "large"
+    }
+  ]
+}

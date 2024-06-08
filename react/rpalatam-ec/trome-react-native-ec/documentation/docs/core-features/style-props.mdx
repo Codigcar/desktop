@@ -1,0 +1,257 @@
+---
+sidebar_position: 1
+title: Style Props
+---
+
+Los estilos basados en propiedades aportan un camino simple para estilizar los componentes, disminuyendo el tiempo de desarrollo e incrementando la comprensión y mantenibilidad. 
+
+## Referencia
+
+A continuación la lista de propiedas soportadas y sus valores esperados.
+
+### Background Color
+
+```jsx
+// bg="coolGray-500" hace referencia al valor `Theme.colors["coolGray-500"]`
+<Box bg="coolGray-500">Box with background</Box>
+```
+
+| Prop                    | Propiedad Stylesheet | Tipo            |
+| ----------------------- | -------------------- | --------------- |
+| `bg`, `backgroundColor` | `backgroundColor`    | Theme['colors'] |
+
+### Color
+
+```jsx
+// color="text" hace referencia al valor `Theme.colors["text"]`
+<Text color="text">Text with color</Text>
+```
+
+| Prop    | Propiedad Stylesheet | Tipo            |
+| ------- | -------------------- | --------------- |
+| `color` | `color`              | Theme['colors'] |
+
+### Spacing
+
+```jsx
+// m="1" hace referencia al valor `Theme.spacing["0.5"]`
+<Box m="0.5">Margin</Box>
+
+// pt="2" hace referencia al valor `Theme.spacing["2"]`
+<Box pt="2">Padding</Box>
+```
+
+| Prop                      | Propiedad Stylesheet | Tipo             |
+| ------------------------- | -------------------- | ---------------- |
+| `m`, `margin`             | `margin`             | Theme['spacing'] |
+| `mt`, `marginTop`         | `marginTop`          | Theme['spacing'] |
+| `mr`, `marginRight`       | `marginRight`        | Theme['spacing'] |
+| `mb`, `marginBottom`      | `marginBottom`       | Theme['spacing'] |
+| `ml`, `marginLeft`        | `marginLeft`         | Theme['spacing'] |
+| `mx`, `marginHorizontal`  | `marginHorizontal`   | Theme['spacing'] |
+| `my`, `marginVertical`    | `marginVertical`     | Theme['spacing'] |
+| `ms`, `marginStart`       | `marginStart`        | Theme['spacing'] |
+| `me`, `marginEnd`         | `marginEnd`          | Theme['spacing'] |
+| `p`, `padding`            | `padding`            | Theme['spacing'] |
+| `pt`, `paddingTop`        | `paddingTop`         | Theme['spacing'] |
+| `pr`, `paddingRight`      | `paddingRight`       | Theme['spacing'] |
+| `pb`, `paddingBottom`     | `paddingBottom`      | Theme['spacing'] |
+| `pl`, `paddingLeft`       | `paddingLeft`        | Theme['spacing'] |
+| `px`, `paddingHorizontal` | `paddingHorizontal`  | Theme['spacing'] |
+| `py`, `paddingVertical`   | `paddingVertical`    | Theme['spacing'] |
+| `ps`, `paddingStart`      | `paddingStart`       | Theme['spacing'] |
+| `pe`, `paddingEnd`        | `paddingEnd`         | Theme['spacing'] |
+
+### Opacity
+
+```jsx
+<Box opacity={0.3}>Translucent Box</Box>
+```
+
+| Prop      | Propiedad Stylesheet | Tipo   |
+| --------- | -------------------- | ------ |
+| `opacity` | `opacity`            | number |
+
+### Layout
+
+```jsx
+<Box width="100%" height={200}>
+  0
+</Box>
+
+<Box width="100%" height={50} flex={1} flexDirection="row" justifyContent="space-between">
+  <Box width={20} height={50}>
+    1
+  </Box>
+  <Box width={50} height={30} maxHeight={50}>
+    2
+  </Box>
+  <Box width={30} maxWidth={40} height={50}>
+    3
+  </Box>
+</Box>
+```
+
+| Prop                | Propiedad Stylesheet | Tipo                                                                                                 |
+| ------------------- | -------------------- | ---------------------------------------------------------------------------------------------------- |
+| `width`             | `width`              | <t>número \| texto</t>                                                                              |
+| `height`            | `height`             | <t>número \| texto</t>                                                                              |
+| `minWidth`          | `minWidth`           | <t>número \| texto</t>                                                                              |
+| `maxWidth`          | `maxWidth`           | <t>número \| texto</t>                                                                              |
+| `minHeight`         | `minHeight`          | <t>número \| texto</t>                                                                              |
+| `maxHeight`         | `maxHeight`          | <t>número \| texto</t>                                                                              |
+| `overflow`          | `overflow`           | <t>'visible' \| 'hidden' \| 'scroll' </t>                                                            |
+| `aspectRatio`       | `aspectRatio`        | <t>número</t>                                                                                        |
+| `alignContent`      | `alignContent`       | <t>'flex-start' \| 'flex-end' \| 'center' \| 'stretch' \| 'space-between' \| 'space-around'</t>      |
+| `alignItems`        | `alignItems`         | <t>'flex-start' \| 'flex-end' \| 'center' \| 'stretch' \| 'baseline' </t>                            |
+| `alignSelf`         | `alignSelf`          | <t>'auto' \| 'flex-start' \| 'flex-end' \| 'center' \| 'stretch' \| 'baseline' </t>                  |
+| `justifyContent`    | `justifyContent`     | <t>'flex-start' \| 'flex-end' \| 'center' \| 'space-between' \| 'space-around' \| 'space-evenly'</t> |
+| `flex`              | `flex`               | <t>número </t>                                                                                       |
+| `flexBasis`         | `flexBasis`          | <t>número \| texto</t>                                                                              |
+| `flexDirection`     | `flexDirection`      | <t>'row' \| 'column' \| 'row-reverse' \| 'column-reverse' </t>                                       |
+| `flexGrow`          | `flexGrow`           | <t>número</t>                                                                                        |
+| `flexShrink`        | `flexShrink`         | <t>número</t>                                                                                        |
+| `flexWrap`          | `flexWrap`           | <t>'wrap' \| 'nowrap' \| 'wrap-reverse' </t>                                                         |
+
+### Position
+
+```jsx
+<Box
+  top={20}
+  alignItems="center"
+  justifyContent="center"
+  width="100%"
+  position="absolute"
+>
+  Absolute box
+</Box>
+```
+
+| Prop       | Propiedad Stylesheet | Tipo                             |
+| ---------- | -------------------- | -------------------------------- |
+| `position` | `position`           | <t>'absolute' \| 'relative' </t> |
+| `top`      | `top`                | <t>número \| texto</t>           |
+| `right`    | `right`              | <t>número \| texto</t>           |
+| `bottom`   | `bottom`             | <t>número \| texto</t>           |
+| `left`     | `left`               | <t>número \| texto</t>           |
+| `start`    | `start`              | <t>número \| texto</t>           |
+| `end`      | `end`                | <t>número \| texto</t>           |
+| `zIndex`   | `zIndex`             | <t>Theme['zIndices']</t>         |
+
+### Border
+
+```jsx
+// borderColor="white" hace referencia al valor `theme.colors["white"]`
+// borderRadius="lg" hace referencia al valor `theme.borderRadii["lg"]`
+<Box
+  borderStyle="solid"
+  borderWidth={2}
+  borderColor="white"
+  borderRadius="lg"
+>
+  Border
+</Box>
+```
+
+| Prop                      | Propiedad Stylesheet      | Tipo                                   |
+| ------------------------- | ------------------------- | -------------------------------------- |
+| `borderBottomWidth`       | `borderBottomWidth`       | <t>número</t>                          |
+| `borderLeftWidth`         | `borderLeftWidth`         | <t>número</t>                          |
+| `borderRightWidth`        | `borderRightWidth`        | <t>número</t>                          |
+| `borderStyle`             | `borderStyle`             | <t>'solid' \| 'dotted' \| 'dashed'</t> |
+| `borderTopWidth`          | `borderTopWidth`          | <t>número</t>                          |
+| `borderStartWidth`        | `borderStartWidth`        | <t>número</t>                          |
+| `borderEndWidth`          | `borderEndWidth`          | <t>número</t>                          |
+| `borderWidth`             | `borderWidth`             | <t>número</t>                          |
+| `borderColor`             | `borderColor`             | <t>Theme['colors']</t>                 |
+| `borderTopColor`          | `borderTopColor`          | <t>Theme['colors']</t>                 |
+| `borderRightColor`        | `borderRightColor`        | <t>Theme['colors']</t>                 |
+| `borderLeftColor`         | `borderLeftColor`         | <t>Theme['colors']</t>                 |
+| `borderBottomColor`       | `borderBottomColor`       | <t>Theme['colors']</t>                 |
+| `borderStartColor`        | `borderStartColor`        | <t>Theme['colors']</t>                 |
+| `borderEndColor`          | `borderEndColor`          | <t>Theme['colors']</t>                 |
+| `borderRadius`            | `borderRadius`            | <t>Theme['borderRadii']</t>            |
+| `borderBottomLeftRadius`  | `borderBottomLeftRadius`  | <t>Theme['borderRadii']</t>            |
+| `borderBottomRightRadius` | `borderBottomRightRadius` | <t>Theme['borderRadii']</t>            |
+| `borderTopLeftRadius`     | `borderTopLeftRadius`     | <t>Theme['borderRadii']</t>            |
+| `borderTopRightRadius`    | `borderTopRightRadius`    | <t>Theme['borderRadii']</t>            |
+| `borderBottomStartRadius` | `borderBottomStartRadius` | <t>Theme['borderRadii']</t>            |
+| `borderBottomEndRadius`   | `borderBottomEndRadius`   | <t>Theme['borderRadii']</t>            |
+| `borderTopStartRadius`    | `borderTopStartRadius`    | <t>Theme['borderRadii']</t>            |
+| `borderTopEndRadius`      | `borderTopEndRadius`      | <t>Theme['borderRadii']</t>            |
+
+### Text Shadow
+
+```jsx
+// textShadowColor="black" hace referencia al valor `Theme.colors["black"]`
+<Text
+  textShadowColor="black"
+  textShadowOffset={{ width: 0, height: 2 }}
+  textShadowRadius={4}
+>
+  Text with shadow
+</Text>
+```
+
+| Prop               | Propiedad Stylesheet | Tipo                              |
+| ------------------ | -------------------- | --------------------------------- |
+| `textShadowColor`  | `textShadowColor`    | Theme['colors']                   |
+| `textShadowOffset` | `textShadowOffset`   | { width: number, height: number } |
+| `textShadowRadius` | `textShadowRadius`   | number                            |
+
+### Typography
+
+```jsx
+<Text
+  lineHeight={12}
+  textAlign="center"
+  textDecorationLine="underline"
+>
+  This is a demo text
+</Text>
+```
+
+| Prop                  | Propiedad Stylesheet  | Tipo                                                                |
+| --------------------- | --------------------- | ------------------------------------------------------------------- |
+| `fontFamily`          | `fontFamily`          | Theme['fontFamily']                                                 |
+| `fontSize`            | `fontSize`            | Theme['fontSize']                                                   |
+| `fontStyle`           | `fontStyle`           | 'normal' \| 'italic'                                                |
+| `fontWeight`          | `fontWeight`          | Theme['fontWeight']                                                 |
+| `letterSpacing`       | `letterSpacing`       | Theme['letterSpacing']                                              |
+| `lineHeight`          | `lineHeight`          | Theme['lineHeight']                                                 |
+| `textAlign`           | `textAlign`           | 'auto' \| 'left' \| 'right' \| 'center' \| 'justify'                |
+| `textDecorationLine`  | `textDecorationLine`  | 'none' \| 'underline' \| 'line-through' \| 'underline line-through' |
+| `textDecorationStyle` | `textDecorationStyle` | 'solid' \| 'double' \| 'dotted' \| 'dashed'                         |
+| `textTransform`       | `textTransform`       | 'none' \| 'capitalize' \| 'uppercase' \| 'lowercase'                |
+
+### Shadow
+
+```jsx
+// shadowColor="coolGray-100" hace referencia al valor `theme.colors["coolGray-100"]`
+<Box
+  shadowOffset={{width: 20, height: 10}}
+  shadowColor="coolGray-100"
+  shadowRadius={13}
+  shadowOpacity={0.7}
+>
+  Custom Shadow box
+</Box>
+```
+
+| Prop            | Propiedad Stylesheet | Tipo                                     |
+| --------------- | -------------------- | ---------------------------------------- |
+| `elevation`     | `elevation`          | <t>número</t>                            |
+| `shadowColor`   | `shadowColor`        | <t>Theme['colors']</t>                   |
+| `shadowOffset`  | `shadowOffset`       | <t>{ width: número; height: número }</t> |
+| `shadowOpacity` | `shadowOpacity`      | <t>número</t>                            |
+| `shadowRadius`  | `shadowRadius`       | <t>número</t>                            |
+
+### Visible
+
+```jsx
+<Box visible={false}>Hidden view</Box>
+```
+
+| Prop      | Propiedad Stylesheet | Tipo    |
+| --------- | -------------------- | ------- |
+| `visible` | `visible`            | boolean |

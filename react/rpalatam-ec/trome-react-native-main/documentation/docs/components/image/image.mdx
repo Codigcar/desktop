@@ -1,0 +1,24 @@
+---
+title: Image
+---
+
+El componente Image es una abstracción del componente [FastImage](https://github.com/DylanVann/react-native-fast-image),
+agregando el beneficio de poder mostrar un placeholder antes que la imagen esté cargada para ser mostrada.
+
+## Uso
+
+```jsx
+<Image source={{ uri }} resizeMode="cover" {...rest} />
+```
+
+## Props
+
+### `placeholderEnabled`
+
+Permite deshabilitar el placeholder de carga de la imagen con un valor booleano. La opción predeterminada permite mostrar el placeholder.
+
+| Tipo    | Requerido | Por defecto |
+| ------- | --------- | ----------- |
+| boolean | no        | true        |
+
+### [FastImage Props](https://github.com/DylanVann/react-native-fast-image#properties)

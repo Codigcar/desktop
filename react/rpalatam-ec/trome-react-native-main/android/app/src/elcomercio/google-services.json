@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "690467688102",
+    "firebase_url": "https://el-comercio--sandbox.firebaseio.com",
+    "project_id": "el-comercio--sandbox",
+    "storage_bucket": "el-comercio--sandbox.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:690467688102:android:13e3db47f3dd4ba94b6e67",
+        "android_client_info": {
+          "package_name": "com.gec.elcomercio.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "690467688102-temg7uc2l910h8dmlg32vo74d5hlm57n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgy_hHKDhKrVtEna7Yh0ViZLFVQudBd_4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "690467688102-temg7uc2l910h8dmlg32vo74d5hlm57n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "690467688102-n955q81svn1nsch9nsdhgugroklg374m.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.elcomercio.ElComercioiPhone.dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,118 @@
+.category-list {
+  opacity: 1;
+  transition: opacity 500ms ease-out;
+}
+.category-list.hide {
+  opacity: 0.25;
+}
+
+.category-list::before,
+.peru21 .category-list.category-list-opinion::after {
+  content: '';
+  width: 100%;
+  height: 8px;
+  background-color: rgba(112, 110, 117, 0.1);
+  display: block;
+}
+
+.category-list .list-title button {
+  font-family: 'Merriweather', serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1.5;
+  text-transform: capitalize;
+}
+
+.category-list__header {
+  padding: 20px 15px 0 15px;
+}
+
+.category-list .list-title::after {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 40px;
+  background-color: #0065af;
+  margin-top: 10px;
+}
+
+.category-list .list-title button {
+  color: #393d40;
+}
+
+.night-mode .category-list .list-title button {
+  color: #fff;
+}
+
+@media (min-width: 640px) {
+  .category-list .list-title {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+}
+
+.notification-active-category {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.notification-active-category button {
+  color: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* GESTION */
+.gestion .category-list .list-title::after {
+  background-color: #841b24;
+}
+.gestion .category-list__header {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+}
+.gestion .category-list .category-list__header .is-icon {
+  color: #393d40;
+}
+.night-mode.gestion .category-list .category-list__header .is-icon {
+  color: #ffffff;
+}
+
+/*TROME*/
+.trome .category-list__header {
+  padding-top: 0;
+}
+
+.trome .category-list::before {
+  height: 1px;
+  background-color: #000000;
+}
+
+.trome.night-mode .category-list::before {
+  background-color: #888888;
+}
+
+.trome .category-list .list-title::after {
+  display: none;
+}
+
+.trome .category-list .list-title {
+  text-align: center;
+}
+
+.trome .category-list .list-title button {
+  background-color: #000000;
+  color: #ffffff;
+  display: inline-block;
+  font-family: 'Encode Sans Condensed', sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  padding: 0.25em 1em;
+  text-transform: uppercase;
+}
+
+.trome.night-mode .category-list .list-title button {
+  background-color: #888888;
+}

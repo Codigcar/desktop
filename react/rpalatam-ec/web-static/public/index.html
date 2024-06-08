@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover, shrink-to-fit=no, minimal-ui"
+    />
+    <meta name="robots" content="noindex" />
+    <meta name="googlebot" content="noindex" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link
+      rel="preconnect"
+      href="https://www.googletagmanager.com"
+      crossorigin
+    />
+    <link
+      rel="preconnect"
+      href="https://www.google-analytics.com"
+      crossorigin
+    />
+
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title></title>
+    <style>
+      html {
+        font-family: system-ui, sans-serif;
+      }
+
+      * {
+        position: relative;
+
+        /* -webkit-user-select: none; */
+        /* user-select: none; */
+
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      *,
+      ::after,
+      ::before {
+        box-sizing: border-box;
+      }
+
+      html,
+      body,
+      div,
+      span,
+      applet,
+      object,
+      iframe,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      blockquote,
+      pre,
+      a,
+      abbr,
+      acronym,
+      address,
+      big,
+      cite,
+      code,
+      del,
+      dfn,
+      em,
+      img,
+      ins,
+      kbd,
+      q,
+      s,
+      samp,
+      small,
+      strike,
+      strong,
+      sub,
+      sup,
+      tt,
+      var,
+      b,
+      u,
+      i,
+      center,
+      dl,
+      dt,
+      dd,
+      ol,
+      ul,
+      li,
+      fieldset,
+      form,
+      label,
+      legend,
+      table,
+      caption,
+      tbody,
+      tfoot,
+      thead,
+      tr,
+      th,
+      td,
+      article,
+      aside,
+      canvas,
+      details,
+      embed,
+      figure,
+      figcaption,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      output,
+      ruby,
+      section,
+      summary,
+      time,
+      mark,
+      audio,
+      video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+      }
+      /* HTML5 display-role reset for older browsers */
+      article,
+      aside,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      section {
+        display: block;
+      }
+      body {
+        line-height: 1;
+        background-color: #ffffff;
+      }
+      ol,
+      ul {
+        list-style: none;
+      }
+      blockquote,
+      q {
+        quotes: none;
+      }
+      blockquote:before,
+      blockquote:after,
+      q:before,
+      q:after {
+        content: '';
+        content: none;
+      }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      button {
+        border: none;
+        background-color: inherit;
+        font: inherit;
+        margin: 0;
+        padding: 0;
+        outline: none;
+      }
+      body.night-mode {
+        background-color: #272727;
+      }
+      /* SPLASHSCREEN */
+      .splash-screen {
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000;
+        transition: opacity 200ms ease;
+      }
+      /* HEADER */
+      /* .e-head .is-header {
+        height: 48px;
+      } */
+      .e-head {
+        width: 100%;
+        text-align: center;
+        z-index: 1;
+        top: 0;
+        position: fixed;
+      }
+      .is-header {
+        align-items: center;
+        display: flex;
+        height: 48px;
+      }
+      .is-header.is-center {
+        justify-content: center;
+      }
+      .is-header.is-justify {
+        justify-content: space-between;
+      }
+      .is-header .logotipo {
+        display: block;
+      }
+      .is-header .logotipo img {
+        height: 24px;
+        display: block;
+        margin: 0 auto;
+      }
+      .trome .is-header .logotipo img {
+        height: 48px;
+      }
+      /* .elcomercio .is-header .logotipo img {
+        height: 35px;
+      } */
+      .is-header.is-primary .is-icon {
+        color: #000;
+      }
+      .trome .is-header.is-primary .is-icon {
+        color: #fff;
+      }
+      /* CATEGORIES */
+      .categories-menu::-webkit-scrollbar {
+        display: none;
+      }
+      .categories-menu {
+        background: #fff;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        height: 49px;
+      }
+      .night-mode .categories-menu {
+        background-color: #272727;
+      }
+      .trome.night-mode .categories-menu {
+        background-color: #181818;
+      }
+      .categories-menu-inner {
+        height: 100%;
+        font-size: 15px;
+        white-space: nowrap;
+        display: inline-block;
+        border-bottom: 1px solid rgba(133, 146, 153, 0.2);
+        min-width: 100%;
+      }
+      .categories-menu-item {
+        display: inline-block;
+        height: 100%;
+      }
+      .categories-menu-item span {
+        padding: 0 15px;
+        color: #666e75;
+        display: block;
+        transition: transform 250ms ease;
+        will-change: transform;
+        line-height: 47px;
+      }
+      .mt-2 { margin-top: 0.5rem; }
+      .font-medium { font-weight: 500; }
+      .font-semibold { font-weight: 600; }
+      .font-black { font-weight: 900; }
+      .text-xs { font-size: 0.75rem; line-height: 1rem; }
+      .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+      .text-base { font-size: 1rem; line-height: 1.5rem; }
+      .font-sans { font-family: ui-sans-serif, system-ui, sans-serif; }
+      .elcomercio .font-serif { font-family: 'Noto Serif KR', ui-serif, Georgia, serif; }
+      .night-mode .categories-menu-item span {
+        color: #adb3b8;
+      }
+      .categories-menu-item.active span {
+        color: black;
+        font-weight: 600;
+      }
+      .night-mode .categories-menu-item.active span {
+        color: white;
+      }
+      .categories-menu-item:active span {
+        transform: scale3d(0.8, 0.8, 0.8);
+      }
+      .categories-menu-indicator {
+        will-change: transition;
+        transform-origin: left bottom;
+        height: 2px;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        white-space: normal;
+        overflow: hidden;
+        transition: 250ms ease-out;
+      }
+
+      .trome .categories-menu-indicator{
+        height: 3px;
+      }
+
+      /* PLACEHOLDER */
+      .e-listnews-placeholder {
+        height: 100vh;
+        overflow: hidden;
+        padding: 125px 15px 0;
+      }
+      .gestion .e-listnews-placeholder {
+        padding: 76px 15px 0;
+      }
+      .wrap-new-placeholder {
+        width: 100vw;
+        height: 100%;
+        padding: 48px 20px 0;
+        overflow-y: hidden;
+        max-height: 100vh;
+      }
+      /* CARD IN BOX */
+      .placeholder__card-box {
+        background-color: #fff;
+        border-radius: 3px;
+        overflow: hidden;
+        padding-bottom: 0.5em;
+      }
+      /* .gestion .placeholder__card-box {
+        background-color: #F5E9DE;
+      } */
+      .placeholder__card-box footer {
+        margin: 0 20px 0 20px;
+      }
+      .placeholder__card-box .media {
+        width: 100% !important;
+        height: calc((100vw - 40px) * 0.5625) !important;
+      }
+      .placeholder__card-box .wrap-list__notice {
+        height: auto;
+      }
+      .placeholder__card-box .wrap-list__notice-text {
+        padding-left: 20px;
+        padding-right: 20px;
+        height: auto;
+      }
+
+      @keyframes fadeInOut {
+        0% {
+          opacity: 0.6;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0.6;
+        }
+      }
+
+      .placeholder.animate-inout {
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        animation-name: fadeInOut;
+        position: relative;
+      }
+      .placeholder.animate-inout .animated-background {
+        background-color: #e0e0e0;
+      }
+      .background-space {
+        height: 20px;
+      }
+      .animated-background.line {
+        height: 20px;
+        margin-bottom: 7px;
+      }
+      .animated-background.mini-line {
+        height: 10px;
+        margin-bottom: 7px;
+      }
+      .animated-background.flat-line {
+        height: 30px;
+      }
+      .animated-background.last-line {
+        width: 75%;
+      }
+      .animated-background.mid-line {
+        width: 50%;
+      }
+      .animated-background.quarter-line {
+        width: 50%;
+      }
+      .animated-background.sub-line {
+        width: 50px;
+        margin-bottom: 0;
+        margin-top: 10px;
+      }
+      .animated-background.date-line {
+        margin: 0 15px 15px 15px;
+        width: 50%;
+      }
+      .animated-background.media {
+        height: 180px;
+        margin-bottom: 20px;
+      }
+      .placeholder-card {
+        padding: 20px 0;
+      }
+      .placeholder-card + .placeholder-card {
+        border-top: 1px solid rgba(112, 110, 117, 0.2);
+      }
+      .wrap-list__notice {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+      }
+      .wrap-list__notice-text {
+        flex: 1;
+        padding-right: 10px;
+        height: 80px;
+      }
+      .wrap-list__notice-media.media {
+        height: 68px;
+        margin-bottom: 20px;
+        width: 120px;
+        border-radius: 3px;
+      }
+      .placeholder-card {
+        padding: 20px 0;
+      }
+      .placeholder-card + .placeholder-card {
+        border-top: 1px solid rgba(112, 110, 117, 0.2);
+      }
+      .wrap-list__notice {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+      }
+      .wrap-list__notice-text {
+        flex: 1;
+        padding-right: 10px;
+        height: 80px;
+      }
+      .wrap-list__notice-media.media {
+        height: 68px;
+        margin-bottom: 20px;
+        width: 120px;
+        border-radius: 3px;
+      }
+      .background-masker {
+        background: #fff;
+        position: absolute;
+      }
+    
+      /* TRASITION PAGES */
+      div.transition-group {
+        position: relative;
+      }
+      section.route-section {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        transition: background 300ms;
+        height: 100vh;
+      }
+      .fade-enter {
+        opacity: 0.01;
+      }
+      .fade-enter.fade-enter-active {
+        opacity: 1;
+        transition: opacity 300ms ease-in;
+      }
+      .fade-exit {
+        opacity: 1;
+      }
+      .fade-exit.fade-exit-active {
+        opacity: 0.01;
+        transition: opacity 300ms ease-in;
+      }
+
+      /* PAGE VIEW */
+      .h-full {
+        height: 100%;
+      }
+      .h-screen {
+        height: 100vh;
+      }
+      .min-h-screen {
+        min-height: 100vh;
+      }
+      .overflow-y-auto {
+        overflow-y: auto;
+      }
+      .overflow-scrolling-touch {
+        -webkit-overflow-scrolling: touch;
+      }
+      .pt-24 {
+        padding-top: 24px;
+      }
+      .pt-48 {
+        padding-top: 48px;
+      }
+      .px-16 {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+      .py-48 {
+        padding-top: 48px;
+        padding-bottom: 48px;
+      }
+      .pb-48 {
+        padding-bottom: 48px;
+      }
+
+      .content-page-view {
+        padding: 48px 0 0;
+        height: 100vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      /* .content-page-view::-webkit-scrollbar {
+        display: none;
+      } */
+      .transition-group-portrait {
+        position: absolute;
+        top: 0;
+        z-index: 3;
+        width: 100%;
+      }
+      .safe-area-nav-bottom {
+        max-height: calc(100vh - 48px);
+      }
+      /* Card */
+      /* @media (max-width: 600px) {
+        .e-card.card-full:not(.e-card--magazine) .e-card-multimedia-wrapper .e-card__image {
+          min-height: calc((100vw - 30px) * 0.5744);
+        }
+      } */
+      @media (min-width: 640px) {
+        .e-card__wrapper,
+        .card__ads__wrapper {
+          margin: 0 auto !important;
+        }
+      }
+      /* .peru21 .content-page-view {
+        max-height: calc(100vh - 49px);
+      } */
+      .night-mode section.route-section {
+        background-color: #272727 !important;
+      }
+      /* Support for iPhoneX */
+      @supports (padding: env(safe-area-inset-top)) and
+        (padding: env(safe-area-inset-bottom)) {
+        .safe-area-inset-top {
+          padding-top: env(safe-area-inset-top) !important;
+        }
+        .safe-area-with-ribbon,
+        .content-page-view,
+        .safe-area-pt-48,
+        .wrap-new-placeholder {
+          padding-top: calc(env(safe-area-inset-top) + 48px);
+        }
+        .e-head .is-header {
+          padding-top: env(safe-area-inset-top) !important;
+          height: calc(env(safe-area-inset-top) + 48px);
+        }
+        .safe-area-inset-bottom {
+          padding-bottom: env(safe-area-inset-bottom) !important;
+        }
+        .safe-area-py-48 {
+          padding-bottom: calc(env(safe-area-inset-bottom) + 48px);
+          padding-top: calc(env(safe-area-inset-top) + 48px);
+        }
+        .safe-area-pb {
+          padding-bottom: env(safe-area-inset-bottom);
+        }
+        .is-header {
+          height: calc(env(safe-area-inset-top) + 48px);
+        }
+        .e-listnews-placeholder {
+          padding-top: calc(env(safe-area-inset-top) + 125px);
+        }
+        .gestion .e-listnews-placeholder {
+          padding-top: calc(env(safe-area-inset-top) + 76px);
+        }
+        /* .peru21 .content-page-view {
+          max-height: calc(100vh - env(safe-area-inset-bottom) - 48px);
+        } */
+      }
+      /* GESION */
+      body.gestion,
+      .gestion section.route-section,
+      .gestion .app-menu,
+      .gestion .category-view,
+      .gestion .nav-bottom,
+      .gestion .e-ribbon,
+      .gestion .more-options-content,
+      .gestion .notice-view,
+      .gestion .register-view,
+      .gestion .lost-password-view,
+      .gestion .profile-view .internal-page,
+      .gestion .favorites-view .internal-page,
+      .gestion .authors-view,
+      .gestion .author-page,
+      .gestion .tags-view .internal-page,
+      .gestion .search-view .search,
+      .gestion .tv-program-view,
+      .gestion .login-simplified .icon-show-pass,
+      .gestion .login-simplified .input-group .label-active,
+      .gestion .is-modal__content {
+        background-color: #f5e9de;
+      }
+      .gestion .is-header.is-primary .is-icon {
+        color: #841b24;
+      }
+
+      .gestion .categories-menu {
+        background-color: #8f7a7c;
+      }
+      .gestion .categories-menu-item span {
+        color: #fff;
+      }
+
+      .gestion .placeholder.animate-inout .animated-background {
+        background-color: #f5efea;
+      }
+
+      .gestion .login-tabs {
+        background-color: #eeded2;
+      }
+      .gestion .login-tabs button.active {
+        border-color: #841b24;
+      }
+
+      /* NAV BOTTOM */
+      .gestion .nav-bottom-group .active .is-icon,
+      .gestion .nav-bottom-group .active .icon-title {
+        color: #1781a8;
+        font-weight: 600;
+      }
+      /* DARK MODE */
+      body.gestion.night-mode,
+      .gestion.night-mode section.route-section,
+      .gestion.night-mode .is-modal__content,
+      .gestion.night-mode .app-menu,
+      .gestion.night-mode .category-view,
+      .gestion.night-mode .notice-view,
+      .gestion.night-mode .profile-view .internal-page,
+      .gestion.night-mode .favorites-view .internal-page,
+      .gestion.night-mode .authors-view,
+      .gestion.night-mode .author-page,
+      .gestion.night-mode .tags-view .internal-page,
+      .gestion.night-mode .more-options-content,
+      .gestion.night-mode .login-simplified .input-group .label-active,
+      .gestion.night-mode .login-simplified .icon-show-pass,
+      .gestion.night-mode .categories-menu,
+      .gestion.night-mode .e-carousel__wrapper,
+      .gestion.night-mode .search-advanced .select2-category,
+      .gestion.night-mode input.input2,
+      .gestion.night-mode .search-advanced .select2-category:disabled,
+      .gestion.night-mode input.input2:disabled,
+      .gestion.night-mode .is-header.is-primary,
+      .gestion.night-mode .e-head.bg-brand,
+      .gestion.night-mode .hr-title span {
+        background-color: #1c2029 !important;
+      }
+      .gestion.night-mode .menu__header,
+      .gestion.night-mode .profile__header,
+      .gestion.night-mode .nav-bottom,
+      .gestion.night-mode .e-carousel,
+      .gestion.night-mode .e-ribbon,
+      .gestion.night-mode .search-view .search,
+      .gestion.night-mode .subscription__select {
+        background-color: #2e3443;
+      }
+      .gestion.night-mode .is-header.is-primary .is-icon {
+        color: #f2f2f2;
+      }
+      /* NO SHOW ADS OUT THE ROOT */
+      body > div[id^='content_ads_m'] {
+        display: none;
+      }
+    </style>
+    <script>
+      var qs = window.location.hash.substring(2)
+      function getHash(param) {
+        var v = qs.split('&')
+        for (var i = 0; i < v.length; i++) {
+          var p = v[i].split('=')
+          if (p['0'] === param) {
+            return p['1']
+          }
+        }
+        return null
+      }
+      // localhost:300/category/deporte-total/501448#?version=22
+      // the version 22 enable the links of the content news
+      var apk_version = sessionStorage.getItem('version')
+      if (
+        getHash('version') !== null &&
+        (apk_version === null || +apk_version < +getHash('version'))
+      ) {
+        apk_version = getHash('version')
+        sessionStorage.setItem('version', apk_version)
+      }
+
+      var querysString = location.search
+      var listqs = {}
+      if (querysString) {
+        let querys = querysString.substring(1).split('&')
+        querys.forEach((q) => {
+          if (q) {
+            let [qs, valueqs] = q.split(/=(.+)/)
+            listqs[qs] = valueqs
+          }
+        })
+      }
+
+      var push_url = listqs['push_url']
+      if (push_url) {
+        let url = new URL(push_url)
+        window.location.replace(url.pathname + '?ref=notification')
+      }
+
+      window.PACKAGE = { version: +apk_version }
+    </script>
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+    <div class="modal-root"></div>
+    <div class="notification-root"></div>
+    <script type="text/javascript" charset="utf-8">
+      window.__REDUX_STATE__ = {}
+    </script>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>

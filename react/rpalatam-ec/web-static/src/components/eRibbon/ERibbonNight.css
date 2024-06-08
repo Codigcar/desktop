@@ -1,0 +1,25 @@
+body.night-mode .e-ribbon {
+  background-color: #ffcb05;
+  box-shadow: #000000 0 0 3px;
+}
+
+body.night-mode .e-ribbon .icon {
+  background-color: #383838;
+}
+
+body.night-mode .e-ribbon .subtitle {
+  color: #383838;
+}
+
+body.night-mode .e-ribbon .icon-marker.marked {
+  background-color: #1f92e6;
+}
+
+body.night-mode .is-header.is-light {
+  background-color: #272727;
+}
+
+body.night-mode .is-header.is-light .is-icon,
+body.night-mode .is-header.is-light .subtitle {
+  color: #cacaca;
+}

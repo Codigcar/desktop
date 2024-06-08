@@ -1,0 +1,40 @@
+{
+  "short_name": "El Comercio",
+  "name": "El Comercio",
+  "icons": [
+    {
+      "src": "/brands/elcomercio/64x64.jpg",
+      "type": "image/jpg",
+      "sizes": "64x64"
+    },
+    {
+      "src": "/brands/elcomercio/144x144.jpg",
+      "type": "image/jpg",
+      "sizes": "144x144"
+    },
+    {
+      "src": "/brands/elcomercio/192x192.jpg",
+      "type": "image/jpg",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/brands/elcomercio/256x256.jpg",
+      "type": "image/jpg",
+      "sizes": "256x256"
+    },
+    {
+      "src": "/brands/elcomercio/384x384.jpg",
+      "type": "image/jpg",
+      "sizes": "384x384"
+    },
+    {
+      "src": "/brands/elcomercio/512x512.jpg",
+      "type": "image/jpg",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#f8d200",
+  "background_color": "#f8d200"
+}

@@ -1,0 +1,39 @@
+{
+  "short_name": "Depor",
+  "name": "Depor",
+  "icons": [
+    {
+      "src": "/brands/depor/64x64.png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "/brands/depor/144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "/brands/depor/192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/brands/depor/256x256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "/brands/depor/384x384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "/brands/depor/512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#017c34",
+  "background_color": "#017c34"
+}

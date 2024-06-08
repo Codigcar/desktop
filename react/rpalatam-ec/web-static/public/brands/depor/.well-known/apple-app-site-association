@@ -1,0 +1,19 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": {
+      "JBGR56T3X4.com.eeec.Depor": {
+        "paths": []
+      },
+      "JBGR56T3X4.com.eeec.Depor.dev": {
+        "paths": []
+      }
+    }
+  },
+  "webcredentials": {
+    "apps": [
+      "JBGR56T3X4.com.eeec.Depor",
+      "JBGR56T3X4.com.eeec.Depor.dev"
+    ]
+  }
+}

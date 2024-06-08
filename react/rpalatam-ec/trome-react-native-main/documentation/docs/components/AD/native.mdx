@@ -1,0 +1,99 @@
+---
+title: Native
+---
+
+El componente Native es un tipo de publicidad, cuyo Ad Server es Google Ad Manager [GAM](https://admanager.google.com/). La integración con GAM ([android](https://developers.google.com/ad-manager/mobile-ads-sdk/android/quick-start) y [iOS](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/quick-start)) se da con la librería [React Native Ad Manager](https://github.com/NZME/react-native-ad-manager), a la cual se le ha agregado un tipado, y el beneficio de ocupar la pantalla completa del dispositivo.
+
+## Uso
+
+```jsx
+<NativeAd adUnitID={id} />
+```
+
+:::info
+Existen otras **props** que no son mencionadas en este post ([ver documentación de la librería](https://github.com/NZME/react-native-ad-manager)).
+Antes de usar alguna propiedad no existente en el proyecto, debe agregar su tipado en el archivo `global.d.ts` del proyecto.
+
+:::
+
+## Props
+
+### `adUnitID`
+
+Este identificador debe ser previamente configurado en [GAM](https://admanager.google.com/). Para no crear falsas impresiones cuando se está desarrollando o en pruebas, el valor del `adUnitID` es cambiado a `/6499/example/native`.
+
+| Tipo   | Requerido |
+| ------ | --------- |
+| string | si        |
+
+### `adSize`
+
+Texto que indica el tamaño de cómo sera mostrará la publicidad.
+
+| Tipo   | Requerido |
+| ------ | --------- |
+| string | no        |
+
+### `testDevices`
+
+Lista de dispositivos de pruebas.
+
+| Tipo     | Requerido |
+| -------- | --------- |
+| string[] | no        |
+
+### `validAdSizes`
+
+Lista de tamaños permitidos que tendrá la publicidad.
+
+| Tipo     | Requerido |
+| -------- | --------- |
+| string[] | no        |
+
+### `onAdClosed`
+
+Indica cuando se ha cerrado la publicidad.
+
+| Tipo                     | Requerido |
+| ------------------------ | --------- |
+| (event: unknown) => void | no        |
+
+### `onAdFailedToLoad`
+
+Indica cuando ha ocurrido un error al cargar la publicidad.
+
+| Tipo                   | Requerido |
+| ---------------------- | --------- |
+| (event: Error) => void | no        |
+
+### `onAdLeftApplication`
+
+Indica que la interacción del usuario con el evento personalizado hace que el dispositivo cambie a una aplicación diferente (como un navegador web). Debe llamarse antes de que la aplicación actual se ponga en segundo plano.
+
+| Tipo                     | Requerido |
+| ------------------------ | --------- |
+| (event: unknown) => void | no        |
+
+### `onAdLoaded`
+
+Indica cuando se ha cargado con éxito la publicidad.
+
+| Tipo                     | Requerido |
+| ------------------------ | --------- |
+| (event: unknown) => void | no        |
+
+### `onAdOpened`
+
+Indica cuando se ha mostrado la publicidad con éxito.
+
+| Tipo                     | Requerido |
+| ------------------------ | --------- |
+| (event: unknown) => void | no        |
+
+### `onAppEvent`
+
+Indica el nombre del evento que se ejecutó.
+
+| Tipo                               | Requerido |
+| ---------------------------------- | --------- |
+| (event: unknown) => void,undefined | no        |

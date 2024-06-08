@@ -1,0 +1,103 @@
+elcomercio:android:firebase:
+  extends: .publish_android_job
+  stage: firebase_distribution
+  variables:
+    ANDROID_SIGN_CONFIG: 'android'
+    ANDROID_SIGN_CONFIG_ALIAS: 'androiddebugkey'
+    APP_BRAND: 'elcomercio'
+    APP_PLATFORM: 'android'
+  script:
+    - bundle exec fastlane android buildDebug
+    - bundle exec fastlane android distribute
+    - bundle exec fastlane android upload_crashlytics_symbols
+    - PLATFORM=android bash util/task-comment.sh
+
+elcomercio:ios:firebase:
+  extends: .publish_ios_job
+  stage: firebase_distribution
+  variables:
+    APP_BRAND: 'elcomercio'
+    APP_PLATFORM: 'ios'
+  script:
+    - bundle exec fastlane ios buildDebug
+    - bundle exec fastlane ios distribute
+    - PLATFORM=ios bash util/task-comment.sh
+    - PLATFORM=ios node util/app-size-report.mjs
+  artifacts:
+    paths:
+      - ios/build/app-thinning.plist
+      - ios/build/*.txt
+    expire_in: 1 week
+    when: on_success
+
+elcomercio:playstore:distribution:
+  extends: .publish_android_job
+  stage: store_internal_distribution
+  variables:
+    ANDROID_SIGN_CONFIG: $ANDROID_SIGN_CONFIG_GEC
+    ANDROID_SIGN_CONFIG_ALIAS: $ANDROID_SIGN_CONFIG_GEC
+    APP_BRAND: 'elcomercio'
+    APP_PLATFORM: 'android'
+  script:
+    - base64 -d $elcomercio_keystore > android/app/release.keystore
+    - bundle exec fastlane android buildRelease
+    - bundle exec fastlane android internal
+    - bundle exec fastlane android upload_crashlytics_symbols
+
+elcomercio:appgallery:distribution:
+  extends: .publish_android_job
+  stage: store_internal_distribution
+  variables:
+    ANDROID_SIGN_CONFIG: $ANDROID_SIGN_CONFIG_GEC
+    ANDROID_SIGN_CONFIG_ALIAS: $ANDROID_SIGN_CONFIG_GEC
+    APP_BRAND: 'elcomercio'
+    APP_PLATFORM: 'android'
+    HMS_AVAILABLE: 'true'
+  script:
+    - yarn add @hmscore/react-native-hms-analytics@6.3.2-300
+    - echo "export { default } from '@hmscore/react-native-hms-analytics'" > src/modules/hms-analytics.ts
+    - base64 -d $elcomercio_keystore > android/app/release.keystore
+    - bundle exec fastlane android buildRelease
+    - bundle exec fastlane android upload_to_appgallery
+
+elcomercio:testflight:distribution:
+  extends: .publish_ios_job
+  stage: store_internal_distribution
+  variables:
+    APP_BRAND: 'elcomercio'
+    APP_PLATFORM: 'ios'
+  script:
+    - bundle exec fastlane ios buildRelease
+    - bundle exec fastlane ios internal --verbose
+
+elcomercio:playstore:review:
+  extends: .review_playstore_job
+  variables:
+    PACKAGE_NAME: 'com.gec.elcomercio'
+
+elcomercio:appgallery:review:
+  extends: .review_appgallery_job
+  variables:
+    HUAWEI_APP_ID: '101673999'
+
+elcomercio:appstore:review:
+  extends: .review_appstore_job
+  variables:
+    APP_IDENTIFIER: 'com.elcomercio.ElComercioiPhone'
+    GIT_STRATEGY: none
+
+elcomercio:android:release:
+  extends: .release_job
+  dependencies:
+    - depor:playstore:review
+  variables:
+    APP_BRAND: 'elcomercio'
+    APP_PLATFORM: 'android'
+
+elcomercio:ios:release:
+  extends: .release_job
+  dependencies:
+    - elcomercio:appstore:review
+  variables:
+    APP_BRAND: 'elcomercio'
+    APP_PLATFORM: 'ios'

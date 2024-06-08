@@ -1,0 +1,19 @@
+{
+  "short_name": "Perú 21",
+  "name": "Perú 21",
+  "icons": [
+    {
+      "src": "/brands/peru21/64x64.png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "/brands/peru21/144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#1d65aa",
+  "background_color": "#1d65aa"
+}

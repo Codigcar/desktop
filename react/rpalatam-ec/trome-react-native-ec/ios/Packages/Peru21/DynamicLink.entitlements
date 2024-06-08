@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>aps-environment</key>
+	<string>development</string>
+	<key>com.apple.developer.applesignin</key>
+	<array>
+		<string>Default</string>
+	</array>
+	<key>com.apple.developer.associated-domains</key>
+	<array>
+		<string>applinks:elcomercio-peru21-sandbox.cdn.arcpublishing.com</string>
+		<string>applinks:peru21.pe</string>
+		<string>applinks:pwaperu21.page.link</string>
+		<string>applinks:peru21pesandbox.page.link</string>
+		<string>webcredentials:peru21.pe</string>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,39 @@
+.eBannerPremium {
+  margin-top: 6px;
+  padding: 12px;
+  line-height: 1.3;
+  background-color: #ffcd00;
+  color: #000000;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.gestion .eBannerPremium {
+  background-color: #9c8372;
+  color: #ffffff;
+}
+
+.gestion.night-mode .eBannerPremium {
+  background-color: #1980a8;
+}
+
+.btn-subscribe {
+  background-color: #111111;
+  border-radius: 6px;
+  color: #ffffff;
+  padding: 0 48px;
+  margin: 12px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  height: 40px;
+  line-height: 1;
+  transition-property: padding, background-color, color, opacity;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.gestion .btn-subscribe {
+  background-color: #9c0620;
+}

@@ -1,0 +1,513 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaywallModal should render plan 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <RCTScrollView
+    bounces={false}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "display": "flex",
+          "flex": 1,
+          "paddingTop": 16,
+        },
+      ]
+    }
+  >
+    <View>
+      <View
+        style={
+          Array [
+            Object {
+              "display": "flex",
+              "paddingHorizontal": 20,
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignSelf": "flex-end",
+                "display": "flex",
+                "marginBottom": 4,
+              },
+            ]
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            hitSlop={
+              Object {
+                "bottom": 4,
+                "left": 4,
+                "right": 4,
+                "top": 4,
+              }
+            }
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "height": 12,
+                  "width": 12,
+                },
+              ]
+            }
+          >
+            <SvgMock
+              accessibilityLabel="cerrar"
+              fill="#C1C1C1"
+            />
+          </View>
+        </View>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+                "display": "flex",
+                "fontFamily": "NotoSans",
+                "fontSize": 18,
+                "fontWeight": "700",
+                "lineHeight": 24,
+                "textAlign": "center",
+              },
+              Object {
+                "fontFamily": "NotoSans-Bold",
+              },
+            ]
+          }
+        >
+          Title
+        </Text>
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "paddingVertical": 12,
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#3C3C3C",
+                  "display": "flex",
+                  "fontFamily": "NotoSans",
+                  "fontSize": 30,
+                  "fontWeight": "300",
+                  "lineHeight": 32,
+                  "textAlign": "center",
+                },
+                Object {
+                  "fontFamily": "NotoSans-Light",
+                },
+              ]
+            }
+          >
+            Elige el plan que más te convenga
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "flexDirection": "row",
+                "justifyContent": "center",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#8E8E8E",
+                  "display": "flex",
+                  "fontFamily": "NotoSans",
+                  "fontSize": 16,
+                  "lineHeight": 24,
+                  "textAlign": "center",
+                },
+                Object {
+                  "fontFamily": "NotoSans-Regular",
+                },
+              ]
+            }
+          >
+            ¿Ya tienes una suscripción?
+             
+          </Text>
+          <View
+            accessible={true}
+            focusable={true}
+            hitSlop={
+              Object {
+                "bottom": 4,
+                "left": 4,
+                "right": 4,
+                "top": 4,
+              }
+            }
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#0089ff",
+                    "display": "flex",
+                    "fontFamily": "NotoSans",
+                    "fontSize": 16,
+                    "lineHeight": 24,
+                    "textAlign": "center",
+                  },
+                  Object {
+                    "fontFamily": "NotoSans-Regular",
+                  },
+                ]
+              }
+            >
+              Restaurar
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "display": "flex",
+                    "height": 8,
+                    "marginLeft": 4,
+                    "top": 1,
+                    "width": 8,
+                  },
+                ]
+              }
+            >
+              <SvgMock
+                fill="#1F92E6"
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#FFCB05",
+              "display": "flex",
+              "elevation": 3,
+              "marginBottom": 16,
+              "marginTop": 40,
+              "paddingBottom": 32,
+              "paddingHorizontal": 24,
+              "paddingTop": 16,
+              "shadowColor": "#050505",
+              "shadowOffset": Object {
+                "height": 3,
+                "width": 0,
+              },
+              "shadowOpacity": 0.32,
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#FFFFFF",
+                "display": "flex",
+                "fontFamily": "NotoSans",
+                "fontSize": 20,
+                "fontWeight": "900",
+                "lineHeight": 24,
+                "textAlign": "center",
+                "textTransform": "uppercase",
+              },
+              Object {
+                "fontFamily": "NotoSans-Black",
+              },
+            ]
+          }
+        >
+          Plan Digital Mensual
+        </Text>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "flexDirection": "row",
+                "justifyContent": "center",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "marginRight": 12,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "display": "flex",
+                    "top": 12,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#050505",
+                      "display": "flex",
+                      "fontFamily": "NotoSans",
+                      "fontSize": 36,
+                      "fontWeight": "900",
+                      "lineHeight": 40,
+                    },
+                    Object {
+                      "fontFamily": "NotoSans-Black",
+                    },
+                  ]
+                }
+              >
+                s/
+              </Text>
+            </View>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#050505",
+                    "display": "flex",
+                    "fontFamily": "NotoSans",
+                    "fontSize": 60,
+                    "fontWeight": "900",
+                  },
+                  Object {
+                    "fontFamily": "NotoSans-Black",
+                  },
+                ]
+              }
+            >
+              5
+            </Text>
+          </View>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#050505",
+                  "display": "flex",
+                  "fontFamily": "NotoSans",
+                  "fontSize": 20,
+                  "fontWeight": "500",
+                  "lineHeight": 24,
+                },
+                Object {
+                  "fontFamily": "NotoSans-Medium",
+                },
+              ]
+            }
+          >
+            El primer
+            
+
+            mes
+          </Text>
+        </View>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#050505",
+                "display": "flex",
+                "fontFamily": "NotoSans",
+                "fontSize": 20,
+                "lineHeight": 24,
+                "textAlign": "center",
+              },
+              Object {
+                "fontFamily": "NotoSans-Regular",
+              },
+            ]
+          }
+        >
+          Luego S/
+          20
+           al mes
+        </Text>
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "marginTop": 20,
+              },
+            ]
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#050505",
+                  "borderRadius": 6,
+                  "display": "flex",
+                  "elevation": 3,
+                  "flexDirection": "row",
+                  "flexWrap": "nowrap",
+                  "height": 48,
+                  "justifyContent": "center",
+                  "opacity": 1,
+                  "shadowColor": "#050505",
+                  "shadowOffset": Object {
+                    "height": 3,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.32,
+                  "shadowRadius": 6,
+                  "width": "100%",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#FFFFFF",
+                    "display": "flex",
+                    "fontFamily": "NotoSans",
+                    "fontSize": 18,
+                    "fontWeight": "700",
+                    "lineHeight": 28,
+                  },
+                  Object {
+                    "fontFamily": "NotoSans-Bold",
+                  },
+                ]
+              }
+            >
+              VER PLANES
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "display": "flex",
+              "marginBottom": 32,
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#3C3C3C",
+                "display": "flex",
+                "fontFamily": "NotoSans",
+                "fontSize": 20,
+                "fontWeight": "700",
+                "lineHeight": 32,
+                "textAlign": "center",
+              },
+              Object {
+                "fontFamily": "NotoSans-Bold",
+              },
+            ]
+          }
+        >
+          Contenidos exclusivos
+          
+
+          +
+          
+
+          Navegación ilimitada
+          
+
+          +
+          
+
+          Club de Suscriptores
+          
+
+          +
+          
+
+          Sin anuncios en la app
+        </Text>
+      </View>
+    </View>
+  </RCTScrollView>
+</RNCSafeAreaProvider>
+`;

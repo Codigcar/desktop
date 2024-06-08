@@ -1,0 +1,87 @@
+.is-notification {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  outline: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.is-notification__content {
+  background-color: #00a0ff;
+  padding: 12px;
+  font-size: .9em;
+  line-height: 1.5em;
+  display: flex;
+  align-items: center;
+  pointer-events: auto;
+  color: #FFF;
+  width: 100%;
+}
+
+.gestion .is-notification__content {
+   background-color: #1781a8;
+}
+
+@supports (padding: env(safe-area-inset-bottom)) {
+  .is-notification__content {
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+  }
+}
+
+.is-notification .is-icon {
+  margin-right: 12px;
+  color: #FFF;
+}
+
+.is-notification-error .is-notification__content {
+  background-color: #fff5f5;
+  color: #c53030;
+}
+.is-notification-error .is-icon {
+  color: #f56565;
+}
+.is-notification-info .is-notification__content {
+  background-color: hsl(204, 86%, 97%);
+  color: hsl(204, 86%, 30%);
+}
+.is-notification-info .is-icon {
+  color: hsl(204, 86%, 53%);
+}
+.night-mode .is-notification-info .is-notification__content {
+  background-color: hsl(204, 86%, 30%);
+  color: hsl(204, 86%, 97%);
+}
+/* .is-notification-success .is-icon {
+  color: hsl(141, 71%, 48%);
+}
+
+.is-notification-warning .is-icon {
+  color: hsl(48, 100%, 67%);
+}
+
+.is-notification-error .is-icon {
+  color: hsl(348, 100%, 61%);
+} */
+
+.bottomFade-enter {
+  transform: translateY(100%);
+}
+.bottomFade-enter-active {
+  transform: translateY(0%);
+  transition: transform 300ms ease-in;
+}
+.bottomFade-exit {
+  transform: translateY(0%);
+}
+.bottomFade-exit-active {
+  transform: translateY(100%);
+  transition: transform 300ms ease-out;
+}

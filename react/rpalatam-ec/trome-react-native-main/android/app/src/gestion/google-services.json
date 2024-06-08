@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1076244939789",
+    "firebase_url": "https://gestion--sandbox.firebaseio.com",
+    "project_id": "gestion--sandbox",
+    "storage_bucket": "gestion--sandbox.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076244939789:android:2d5d32d883b7245dc7c144",
+        "android_client_info": {
+          "package_name": "com.eeec.gestion.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1076244939789-j1rumjl48upcvk9fhn2pq3nu13r2nm5u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEq-z55PVbeH1Mfi1LaeppbafNB9TM3Sw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1076244939789-j1rumjl48upcvk9fhn2pq3nu13r2nm5u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1076244939789-hvgeqn4j85pffp98fogm9ogfbflfaps6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.eeec.Gestion.dev",
+                "app_store_id": "991224096"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

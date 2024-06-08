@@ -1,0 +1,68 @@
+---
+title: Input
+---
+
+El componente Input es una abstracción del componente [React Native TextInput](https://reactnative.dev/docs/textinput),
+agregando los siguientes beneficios: 
+
+- Componente como [prefix](#prefixcomponent)
+- Componente como [suffix](#suffixcomponent)
+- Estilos predeterminados según el `theme` de la app
+
+## Uso
+
+```jsx
+<Input
+  name="email"
+  accessibilityLabel="email"
+  autoCapitalize="none"
+  autoFocus
+  type="email"
+/>
+```
+
+## Props
+
+### `name`
+Texto que describe el nombre del input.
+
+| Tipo   | Requerido |
+| ------ | --------- |
+| string | si        |
+
+### `disabled`
+Permite deshabilitar la caja de texto con un valor booleano.
+
+| Tipo    | Requerido |
+| ------- | --------- |
+| boolean | no        |
+
+### `type`
+Determina el teclado a abrir, por ejemplo, 'email'. Esta propiedad hace referencia al [KeyboardType](https://reactnative.dev/docs/textinput/#keyboardtype) de React Native TextInput.
+
+| Tipo                                                                                      | Requerido | Por defecto |
+| ----------------------------------------------------------------------------------------- | --------- | ----------- |
+| string(`email`, `phone`, [`otros`](https://reactnative.dev/docs/textinput/#keyboardtype)) | no        | default     |
+
+### `onValueChange`
+Es un CallBack que se llama cuando cambia el texto del input. Esta propiedad reemplaza al [onChangeText](https://reactnative.dev/docs/textinput#onchangetext) de React Native TextInput.
+
+| Tipo                    | Requerido |
+| ----------------------- | --------- |
+| (value: string) => void | no        |
+
+### `PrefixComponent`
+Es un componente funcional que devuelve un JSX.
+
+| Tipo                | Requerido |
+| ------------------- | --------- |
+| React.ComponentType | no        |
+
+### `SuffixComponent`
+Es un componente funcional que devuelve un JSX.
+
+| Tipo                | Requerido |
+| ------------------- | --------- |
+| React.ComponentType | no        |
+
+### [TextInput Props](https://reactnative.dev/docs/textinput#props)

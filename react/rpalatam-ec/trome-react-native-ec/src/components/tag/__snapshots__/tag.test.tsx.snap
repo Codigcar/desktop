@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag should match with her snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#E30000",
+            "borderRadius": 4,
+            "display": "flex",
+            "marginHorizontal": 4,
+            "paddingHorizontal": 8,
+            "paddingVertical": 4,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "display": "flex",
+              "fontFamily": "NotoSans",
+              "fontSize": 12,
+              "fontWeight": "700",
+              "lineHeight": 16,
+            },
+            Object {
+              "fontFamily": "NotoSans-Bold",
+            },
+          ]
+        }
+      />
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;

@@ -1,0 +1,60 @@
+.e-follow__container {
+  display: flex;
+  align-items: center;
+}
+
+.e-follow {
+  border: 1px solid #0089ff;
+  border-radius: 18px;
+  color: #0089ff;
+  padding: 0 12px;
+  margin-right: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  height: 36px;
+  line-height: 1;
+  transition-property: padding, background-color, color, opacity;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.e-follow.active {
+  background-color: #1f92e6;
+  color: #f5f5f5;
+}
+
+.e-follow.loading {
+  opacity: 0.6;
+}
+
+.e-follow .is-icon {
+  color: #0089ff;
+  margin-right: 4px;
+}
+
+.e-follow.active .is-icon {
+  color: #f5f5f5;
+}
+
+.e-follow__notification {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #aeb3b7;
+  transition-property: background-color, opacity;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.e-follow__notification.active {
+  background-color: #1f92e6;
+}
+
+.e-follow__notification.loading {
+  opacity: 0.6;
+}

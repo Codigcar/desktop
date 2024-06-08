@@ -1,0 +1,71 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["JBGR56T3X4.com.eeec.Gestion", "JBGR56T3X4.com.eeec.Gestion.dev"],
+        "components": [
+          {
+            "/": "/economia/?*"
+          },
+          {
+            "/": "/fotogalerias/?*"
+          },
+          {
+            "/": "/gestion-tv/?*"
+          },
+          {
+            "/": "/mundo/?*"
+          },
+          {
+            "/": "/opinion/?*"
+          },
+          {
+            "/": "/peru/?*"
+          },
+          {
+            "/": "/podcast/?*"
+          },
+          {
+            "/": "/videos/?*"
+          },
+          {
+            "/": "/tecnologia/?*"
+          },
+          {
+            "/": "/tendencias/?*"
+          },
+          {
+            "/": "/tu-dinero/?*"
+          },
+          {
+            "/": "/"
+          }
+        ],
+        "appID": "JBGR56T3X4.com.eeec.Gestion",
+        "paths": [
+          "/economia/?*",
+          "/fotogalerias/?*",
+          "/gestion-tv/?*",
+          "/mundo/?*",
+          "/opinion/?*",
+          "/peru/?*",
+          "/podcast/?*",
+          "/videos/?*",
+          "/tecnologia/?*",
+          "/tendencias/?*",
+          "/tu-dinero/?*",
+          "/"
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "JBGR56T3X4.com.eeec.Gestion",
+      "JBGR56T3X4.com.eeec.Gestion.dev",
+      "JBGR56T3X4.com.elcomercio.ElComercioiPhone",
+      "JBGR56T3X4.com.elcomercio.ElComercioiPhone.dev"
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+---
+title: SelectInput
+---
+
+El componente SelectInput es una extensión de nuestro componente Select orientado a formularios. [Picker](https://github.com/react-native-picker/picker).
+
+## Uso
+
+```jsx
+<Form ref={ref} onSubmit={onSubmit}>
+  <SelectInput
+    name="genero"
+    defaultValue='Hombre'
+    options={[{ label: 'Hombre', value: 'MALE' }...]}
+    placeholder="Seleccionar"
+  />
+</Form>
+```
+
+## Props
+
+### `name`
+
+Texto que describe el nombre del SelectInput, este debe ser único dentro del scope de `Form`, link de referencia [name](https://unform-rocketseat.vercel.app/guides/complex-structures/).
+
+| Tipo   | Requerido |
+| ------ | --------- |
+| string | si        |
+
+### `options`
+
+Lista de elementos que contendrá el SelectInput.
+
+| Tipo  | Requerido |
+| ----- | --------- |
+| array | si        |
+
+### `defaultValue`
+
+Texto que le da un valor inicial al SelectInput.
+
+| Tipo   | Requerido |
+| ------ | --------- |
+| string | no        |
+
+### `placeholder`
+
+Texto que mostrará el SelectInput al no tener una opción seleccionada.
+
+| Tipo   | Requerido |
+| ------ | --------- |
+| string | no        |

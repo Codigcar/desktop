@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "845600190471",
+    "firebase_url": "https://peru21-pwa.firebaseio.com",
+    "project_id": "peru21-pwa",
+    "storage_bucket": "peru21-pwa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845600190471:android:3bf40b1e18e1add4",
+        "android_client_info": {
+          "package_name": "com.eeec.peru21"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "845600190471-8gpmcm191aa59khan36rqmg2cobv4cpp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnDwNb_YgfKRcDRDB2zABng0fluIqVkSw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "845600190471-8gpmcm191aa59khan36rqmg2cobv4cpp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "845600190471-ish1495t4oh3299bu4iv6ljr1f539tpk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.eeec.Peru21.dev",
+                "app_store_id": "991197788"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

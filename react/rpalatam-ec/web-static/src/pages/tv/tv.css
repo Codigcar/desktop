@@ -1,0 +1,346 @@
+.tv-view {
+  /* color: #242729; */
+  font-weight: 300;
+  line-height: 1.5em;
+  /* background-color: #272727; */
+}
+.tv-view > .content-page-view {
+  padding-top: 0;
+}
+
+.tv-program-view .content-page-view {
+  max-height: 100vh !important;
+}
+
+/* Portada */
+.tv-view img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/* .perutv__portada {
+  border-bottom: 1px solid rgba(112, 110, 117, .2);
+  margin-bottom: 1em;
+  padding-bottom: .5em;
+} */
+.perutv__portada {
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.47);
+}
+
+.perutv__portada-video figure {
+  background-color: #eeede5;
+}
+.perutv__portada-video button {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.perutv__portada-text {
+  padding: 20px 1em;
+  /* box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.47); */
+}
+
+.perutv__title {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.perutv__title h3 {
+  flex: 1 1;
+  font-weight: 800;
+  /* font-size: 1.65em; */
+  line-height: 1.25em;
+  text-transform: uppercase;
+  /* margin-right: .5em; */
+}
+
+.perutv__description {
+  line-height: 1.2em;
+  text-align: left;
+}
+
+.perutv__description h5 {
+  font-weight: 700;
+  margin-bottom: 0.25em;
+}
+
+.perutv__description p {
+  font-size: 0.85em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+}
+
+/* .perutv__description strong {
+  font-weight: 600;
+  font-size: 1.1em;
+} */
+
+.perutv__title a {
+  font-weight: 600;
+  font-size: 0.8em;
+  line-height: 1.25em;
+  margin-bottom: 0.25em;
+}
+
+/* New episode */
+.perutv__description .new-episode,
+.perutv__video-wrapper .new-episode,
+.card-video .new-episode {
+  background-color: #03b240;
+  font-size: 0.65em;
+  border-radius: 2px;
+  line-height: 1;
+  padding: 0.5em;
+  text-transform: uppercase;
+  color: #fff;
+  display: inline-block;
+  font-weight: 600;
+}
+.perutv__description .new-episode {
+  margin-bottom: 0.5em;
+}
+.perutv__video-wrapper .new-episode,
+.card-video .new-episode {
+  position: absolute;
+  z-index: 1;
+  left: 5px;
+  top: 5px;
+}
+
+/* Programs */
+.perutv__programs-wrapper {
+  margin-top: 1em;
+}
+.perutv__program {
+  padding: 1em 0;
+  overflow-y: hidden;
+}
+.perutv__program .perutv__title {
+  padding: 0 20px;
+  margin-bottom: 1em;
+}
+.perutv__program .perutv__title h3 {
+  line-height: 1.1em;
+}
+.perutv__program .perutv__description h5 {
+  font-size: 0.9em;
+  line-height: 1.25em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+}
+.perutv__video {
+  padding: 0 20px;
+}
+.perutv__video button {
+  display: block;
+  color: #242729;
+}
+.perutv__video-wrapper {
+  margin-bottom: 0.5em;
+  height: 112.5px;
+  overflow: hidden;
+}
+.perutv__video-wrapper img {
+  border-radius: 3px;
+}
+
+.btn-play-episode {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+/* Video Player */
+.perutv__video-player-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.perutv__video-player-wrapper .video-controls {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+@supports (padding: env(safe-area-inset-top)) {
+  .perutv__video-player-wrapper .video-controls {
+    padding-top: calc(env(safe-area-inset-top) + 10px);
+  }
+}
+.perutv__video-player-wrapper .video-controls .video-title {
+  flex: 1 1;
+  color: #fff;
+  text-align: center;
+  margin: 0 20px;
+  line-height: 1.25;
+  font-size: 0.85em;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+}
+.perutv__video-player-wrapper img {
+  max-width: 100%;
+}
+/* .perutv__video-player-wrapper  .icon-close {
+  position: absolute;
+  top: 8px;
+  right: 4px;
+  z-index: 2;
+} */
+.is-video-player .is-modal-back {
+  background-color: rgba(0, 0, 0, 1);
+}
+.perutv__iframe-video {
+  width: 100vw;
+}
+.perutv__iframe-video iframe,
+.perutv__iframe-video video {
+  width: 100%;
+  border: 0;
+  display: block;
+}
+
+/* .tv-program-view .perutv__title {
+  margin-bottom: 0;
+} */
+/* Card Video */
+.tv-program-view .perutv__program button {
+  margin: 10px 0;
+}
+.card-video {
+  display: flex;
+  align-items: flex-start;
+  /* padding: 20px 0; */
+}
+/* .card-video + .card-video {
+  border-top: 1px solid rgba(112, 110, 117, .2);
+} */
+.card-video p {
+  font-size: 0.85em;
+  font-family: 'Merriweather', serif;
+  color: #393d40;
+  line-height: 1.5em;
+  font-weight: 900;
+  flex: 1 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  text-align: left;
+}
+.card-video figure {
+  /* margin-top: .25em; */
+  width: 150px;
+  margin-right: 0.5em;
+}
+.card-video img {
+  border-radius: 3px;
+}
+
+/* Icon Video */
+.tv-view .icon-type {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  border: 2px solid #fff;
+  height: 36px;
+  width: 36px;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 32px !important;
+  background-color: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+
+.perutv__portada-video .icon-type {
+  left: 50%;
+  bottom: 50%;
+  margin-left: -18px;
+  margin-bottom: -18px;
+}
+
+/* P21 TV */
+.peru21 .tv-view {
+  /* color: #242729; */
+  color: #f2f2f2;
+  background-color: #272727;
+}
+.peru21 .perutv__video button {
+  color: #f2f2f2;
+}
+.peru21 .perutv__program .perutv__title h3 {
+  font-size: 1.5em;
+}
+.peru21 .perutv__title a {
+  /* color: #1d65aa; */
+  color: #ffca06;
+}
+
+/* GESTION TV */
+.gestion .perutv__portada {
+  background-color: #f0ddcc;
+  box-shadow: none;
+}
+.gestion .perutv__program .perutv__title h3 {
+  color: #860d1e;
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
+}
+.gestion .perutv__programs-wrapper > div + div::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background-color: rgba(112, 110, 117, 0.2);
+  /* margin: 0 20px; */
+  /* border-top: 1px solid rgba(112, 110, 117, .2); */
+}
+.gestion .tv-view .icon-type {
+  border-radius: 50%;
+}
+
+/* Night Mode */
+.night-mode .tv-view,
+.night-mode .card-video p,
+.night-mode .perutv__video button {
+  color: #f2f2f2;
+}
+.tv-program-view {
+  background-color: #fff;
+  transition: background 300ms;
+}
+.night-mode .tv-program-view {
+  background-color: #272727;
+}
+/* .night-mode.peru21 .perutv__title a {
+  color: #ffca06;
+} */
+.night-mode.gestion .perutv__portada {
+  background-color: #191919;
+}
+.night-mode.gestion .perutv__program .perutv__title h3 {
+  color: #f0ddcc;
+}

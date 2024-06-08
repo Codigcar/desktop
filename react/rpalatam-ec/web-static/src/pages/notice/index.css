@@ -1,0 +1,27 @@
+.notice-view {
+  height: 100vh;
+  background-color: #fff;
+  transition: background 300ms;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.notice-view .content-page-view {
+  max-height: 100vh;
+}
+
+.wrap-view-new {
+  position: relative;
+  height: 100vh;
+  -webkit-overflow-scrolling: touch;
+  will-change: scroll-position;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.eViewNew {
+  padding: 48px 0 35px;
+}
+
+.night-mode .notice-view {
+  background-color: #272727;
+}

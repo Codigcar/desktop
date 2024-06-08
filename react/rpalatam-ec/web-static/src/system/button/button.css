@@ -1,0 +1,81 @@
+.is-button {
+  background-color: #0089ff;
+  width: 100%;
+  border-radius: 4px;
+  line-height: 1.5;
+  color: #d3d7de;
+  font-weight: 600;
+  font-size: 0.95em;
+  padding: 1em 0;
+  letter-spacing: 0.25px;
+  transition: opacity 200ms ease;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.18);
+}
+.trome .is-button,
+.trome .login-button,
+.trome .btn__actions .btn-primary,
+.trome .profile__login-button {
+  background: linear-gradient(
+    121deg,
+    #ff8400,
+    #fb653b 22%,
+    #fd3e64 53%,
+    #e8109a 67%,
+    #a705b3 88%
+  );
+  background-color: #ff8400;
+}
+.is-button span {
+  color: #fff;
+}
+
+.is-button + .is-button {
+  margin-top: 1em;
+}
+
+/* Facebook */
+.is-button.button-fb {
+  background: #2657a4;
+}
+
+/* Google */
+.is-button.button-google {
+  background: #fff;
+  color: #99a2b2;
+}
+.button-google span {
+  color: #757575;
+}
+.button-google .logo-google-1 {
+  fill: rgb(66, 133, 244);
+}
+.button-google .logo-google-2 {
+  fill: rgb(52, 168, 83);
+}
+.button-google .logo-google-3 {
+  fill: rgb(251, 188, 4);
+}
+.button-google .logo-google-4 {
+  fill: rgb(234, 67, 53);
+}
+
+/* Social media common */
+.button-fb .is-icon,
+.button-google .is-icon {
+  font-size: 20px;
+  top: 2px;
+}
+.button-fb:disabled,
+.button-google:disabled {
+  opacity: 0.75;
+}
+
+.login-loading {
+  display: flex;
+  align-items: center;
+}
+.login-loading .is-icon {
+  font-size: 48px;
+  top: 2px;
+  color: #fff;
+}

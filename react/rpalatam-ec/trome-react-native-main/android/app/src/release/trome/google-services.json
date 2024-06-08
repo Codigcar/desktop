@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "692496270580",
+    "firebase_url": "https://trome-pwa.firebaseio.com",
+    "project_id": "trome-pwa",
+    "storage_bucket": "trome-pwa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692496270580:android:d2699079bdffcf1b",
+        "android_client_info": {
+          "package_name": "com.eeec.trome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692496270580-71ptvhuh1mb1s8gsa6bipr37dgruhjrv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDktgHAcyS-iVVhb0wY8awy_goJ5PMhxvw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "692496270580-71ptvhuh1mb1s8gsa6bipr37dgruhjrv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "692496270580-4nph52v7puhs0fvdt3ck9rrssjai7vuv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.eeec.Trome.dev",
+                "app_store_id": "991048862"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

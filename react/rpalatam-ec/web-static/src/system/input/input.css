@@ -1,0 +1,140 @@
+.input-group {
+  position: relative;
+  margin-bottom: 1em;
+  padding-top: 1em;
+}
+
+.input-group-disabled {
+  opacity: .5;
+}
+
+.input-group .input-group-content {
+  position: relative;
+  border-bottom: 1px solid rgba(112, 110, 117, .2);
+}
+
+.input-group label {
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+  line-height: 1;
+  transition: transform ease-out 300ms;
+  will-change: transform;
+  pointer-events: none;
+  font-size: .9em;
+}
+
+.input-group .label-active {
+  transform: translateY(-2em);
+  font-size: .8em;
+}
+
+.input-group input, .input-group select {
+  border: 0;
+  width: 100%;
+  outline: none;
+  margin: 0;
+  padding: .5em 0 .25em;
+  display: block;
+  font-size: 1em;
+  background-color: rgba(0,0,0,0);
+  color: #757575;
+  user-select: auto;
+}
+.input-group input[type="text"] {
+  text-transform: capitalize;
+}
+.input-group input[name="password"],
+.input-group input[name="passwordConfirm"] {
+  text-transform: none;
+}
+
+.input-group select {
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+.login-simplified .input-error.input-group .input-group-content {
+  border-color: #ff2b2b;
+}
+.login-simplified .input-error.input-group .input-group-content label {
+  color: #ff2b2b;
+}
+.input-group .error {
+  /* background-color: #ff2b2b; */
+  line-height: 1;
+  /* padding: 8px 6px; */
+  color: #ff2b2b;
+  border-radius: 3px;
+  margin-top: 4px;
+  font-size: .75em;
+  text-align: right;
+}
+
+.login-button {
+  width: 100%;
+  background-color: #0089ff;
+  color: #FFF;
+  border-radius: 3px;
+  padding: 1em 0;
+  line-height: 1;
+  font-size: .95em;
+  text-shadow: 0 1px 4px rgba(0,0,0,.15);
+  font-weight: 500;
+}
+.login-button:disabled {
+  opacity: .5;
+}
+
+.icon-show-pass {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 8px;
+}
+
+.icon-show-pass.low svg:nth-child(1) circle,
+.icon-show-pass.medium svg:not(:nth-child(3)) circle,
+.icon-show-pass.strong svg circle {
+  fill: #0089ff;
+}
+
+.input-group input:disabled {
+  opacity: 1;
+  color: #353535;
+}
+
+.login-simplified .input-group .input-group-content {
+  border: 1px solid rgba(112, 110, 117, .2);
+  border-radius: 4px;
+  padding: 0 10px;
+}
+.login-simplified .input-group label {
+  left: 5px;
+  bottom: 14px;
+  padding: 0 5px;
+  color: #757575;
+}
+.login-simplified .input-group .label-active {
+  background-color: #FFF;
+  transform: translateY(-22px);
+}
+
+.login-simplified .input-group input,
+.login-simplified .input-group select {
+  padding: .75em 0;
+}
+.login-simplified .icon-show-pass {
+  bottom: 5px;
+  background-color: #FFF;
+}
+
+.night-mode .input-group input,
+.night-mode .input-group select {
+  color: #a8a8a8;
+  caret-color: #a8a8a8;
+}
+.night-mode .login-simplified .input-group .label-active,
+.night-mode .login-simplified .icon-show-pass {
+  background-color: #272727;
+}

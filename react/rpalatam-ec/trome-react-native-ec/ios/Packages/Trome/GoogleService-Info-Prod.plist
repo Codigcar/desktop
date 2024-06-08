@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>692496270580-dhi7nmksg5jb08j15143d8igavsllk9p.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1038751133917-bm91nu8i5113oiv2c7fhbto8nubdc74i</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCn71PO7jfKUB9fTCqwNPuQBVbCD5sEpTc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>692496270580</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.eeec.Trome</string>
+	<key>PROJECT_ID</key>
+	<string>trome-pwa</string>
+	<key>STORAGE_BUCKET</key>
+	<string>trome-pwa.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:692496270580:ios:0e5f319ce69ee85d</string>
+	<key>DATABASE_URL</key>
+	<string>https://trome-pwa.firebaseio.com</string>
+</dict>
+</plist>

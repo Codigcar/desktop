@@ -1,0 +1,101 @@
+gestion:android:firebase:
+  extends: .publish_android_job
+  stage: firebase_distribution
+  variables:
+    ANDROID_SIGN_CONFIG: 'android'
+    ANDROID_SIGN_CONFIG_ALIAS: 'androiddebugkey'
+    APP_BRAND: 'gestion'
+    APP_PLATFORM: 'android'
+  script:
+    - bundle exec fastlane android buildDebug
+    - bundle exec fastlane android distribute
+    - bundle exec fastlane android upload_crashlytics_symbols
+    - PLATFORM=android bash util/task-comment.sh
+
+gestion:ios:firebase:
+  extends: .publish_ios_job
+  stage: firebase_distribution
+  variables:
+    APP_BRAND: 'gestion'
+    APP_PLATFORM: 'ios'
+  script:
+    - bundle exec fastlane ios buildDebug
+    - bundle exec fastlane ios distribute
+    - PLATFORM=ios bash util/task-comment.sh
+    - PLATFORM=ios node util/app-size-report.mjs
+  artifacts:
+    paths:
+      - ios/build/app-thinning.plist
+      - ios/build/*.txt
+    expire_in: 1 week
+    when: on_success
+
+gestion:playstore:distribution:
+  extends: .publish_android_job
+  stage: store_internal_distribution
+  variables:
+    ANDROID_SIGN_CONFIG: $ANDROID_SIGN_CONFIG_EEEC
+    ANDROID_SIGN_CONFIG_ALIAS: $ANDROID_SIGN_CONFIG_EEEC
+    APP_BRAND: 'gestion'
+    APP_PLATFORM: 'android'
+  script:
+    - bundle exec fastlane android buildRelease
+    - bundle exec fastlane android internal
+    - bundle exec fastlane android upload_crashlytics_symbols
+
+gestion:appgallery:distribution:
+  extends: .publish_android_job
+  stage: store_internal_distribution
+  variables:
+    ANDROID_SIGN_CONFIG: $ANDROID_SIGN_CONFIG_EEEC
+    ANDROID_SIGN_CONFIG_ALIAS: $ANDROID_SIGN_CONFIG_EEEC
+    APP_BRAND: 'gestion'
+    APP_PLATFORM: 'android'
+    HMS_AVAILABLE: 'true'
+  script:
+    - yarn add @hmscore/react-native-hms-analytics@6.3.2-300
+    - echo "export { default } from '@hmscore/react-native-hms-analytics'" > src/modules/hms-analytics.ts
+    - bundle exec fastlane android buildRelease
+    - bundle exec fastlane android upload_to_appgallery
+
+gestion:testflight:distribution:
+  extends: .publish_ios_job
+  stage: store_internal_distribution
+  variables:
+    APP_BRAND: 'gestion'
+    APP_PLATFORM: 'ios'
+  script:
+    - bundle exec fastlane ios buildRelease
+    - bundle exec fastlane ios internal --verbose
+
+gestion:playstore:review:
+  extends: .review_playstore_job
+  variables:
+    PACKAGE_NAME: 'com.eeec.gestion'
+
+gestion:appgallery:review:
+  extends: .review_appgallery_job
+  variables:
+    HUAWEI_APP_ID: '101670587'
+
+gestion:appstore:review:
+  extends: .review_appstore_job
+  variables:
+    APP_IDENTIFIER: 'com.eeec.Gestion'
+    GIT_STRATEGY: none
+
+gestion:android:release:
+  extends: .release_job
+  dependencies:
+    - gestion:playstore:review
+  variables:
+    APP_BRAND: 'gestion'
+    APP_PLATFORM: 'android'
+
+gestion:ios:release:
+  extends: .release_job
+  dependencies:
+    - gestion:appstore:review
+  variables:
+    APP_BRAND: 'gestion'
+    APP_PLATFORM: 'ios'

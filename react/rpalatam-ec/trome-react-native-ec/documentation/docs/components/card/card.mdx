@@ -1,0 +1,57 @@
+---
+title: Card
+---
+
+El componente Card es una previsualización de una noticia, pudiendo mostrar el título, imagen, descripción, [CardHeader](#CardHeader) y [CardFooter](#CardFooter). Al hacer tap sobre el Card, esta puede realizar una acción.
+
+## Uso
+
+```jsx
+<Card onPress={() => {}} story={information} density="comfortable" />
+```
+
+## CardHeader
+
+El componente CardHeader permite visualizar el nombre de la sección si fue definida en la prop `Story['section']` enviada en el `Card`. Al hacer tap sobre el nombre de la sección, se navegará a la vista de Noticias.
+
+## CardFooter
+
+El componente CardFooter permite visualizar la siguiente información:
+
+- Se podrá visualizar la fecha de actualización de la noticia si la prop `Story['last_updated_date']` existe en la prop `story` enviado en el `Card`.
+- Se podrá visualizar el tiempo de lectura si la prop `Story['reading_time']` existe en la prop `story` enviado en el `Card`.
+- Se podrá visualizar `PremiumBadge` si la prop `Story['restrictions']` existe en la prop `story`, y sea igual a `premium`.
+
+## Props
+
+### `onPress`
+
+Acción que se ejecuta al hacer tap sobre el contenido del Card.
+
+| Tipo       | Requerido |
+| ---------- | --------- |
+| () => void | si        |
+
+### `story`
+
+Objeto que contiene la información que será mostrada en el Card.
+
+| Tipo  | Requerido |
+| ----- | --------- |
+| Story | si        |
+
+### `density`
+
+Opción que muestra la descripción del Card. La opción predeterminada permitirá mostrar la descripción.
+
+| Tipo                             | Requerido | Por defecto |
+| -------------------------------- | --------- | ----------- |
+| string('compact', 'comfortable') | no        | 'compact'   |
+
+### `variant`
+
+Opción que cambia la distribución de los elementos que muestra el Card. La opción predeterminada posiciona la Imagen sobre el Título y esta ocupará el ancho del Card.
+
+| Tipo                          | Requerido | Por defecto |
+| ----------------------------- | --------- | ----------- |
+| string('magazine', 'default') | no        | 'default'   |

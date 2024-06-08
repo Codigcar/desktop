@@ -1,0 +1,149 @@
+.CreditCard {
+  margin-bottom: 16px;
+  margin-top: 12px;
+  transition: all ease 0.3s;
+  height: calc((100vw - 16px) * 0.56);
+  position: relative;
+  width: 100%;
+}
+
+.CreditCard__front,
+.CreditCard__back {
+  backface-visibility: hidden;
+  border-radius: 24px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.CreditCard__front {
+  transform: rotateY(0);
+}
+
+.CreditCard__back {
+  transform: rotateY(-180deg);
+  padding: 20px;
+  justify-content: center;
+}
+
+.CreditCard__back-band {
+  width: 100%;
+  background-color: #181818;
+  opacity: 0.45;
+  height: 20%;
+  position: absolute;
+  top: 30px;
+  right: 0;
+}
+
+.CreditCard__cvv {
+  display: flex;
+  width: 70%;
+  text-shadow: 0 2px 4px #00000036;
+  font-style: italic;
+}
+
+.CreditCard__cvv .CreditCard__cvv-band {
+  width: 80%;
+  background-color: #fff;
+  border-radius: 4px;
+  margin-right: 4px;
+}
+
+.CreditCard.active .CreditCard__front {
+  transform: rotateY(180deg);
+}
+
+.CreditCard.active .CreditCard__back {
+  transform: rotateY(0deg);
+}
+
+.CreditCard__element {
+  position: absolute;
+}
+
+.CreditCard.card-visa .CreditCard__front {
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+}
+
+.CreditCard.card-visa .CreditCard__back {
+  background-image: linear-gradient(20deg, #80d0c7 0%, #0093e9 100%);
+}
+
+.CreditCard.card-mastercard .CreditCard__front {
+  background-color: #ffe53b;
+  background-image: linear-gradient(147deg, #ffe53b 0%, #ff2525 75%);
+}
+
+.CreditCard.card-mastercard .CreditCard__back {
+  background-color: #ffe53b;
+  background-image: linear-gradient(33deg, #ff2525 0%, #ffe53b 75%);
+}
+
+.CreditCard.card-amex .CreditCard__front {
+  background-color: #ff3cac;
+  background-image: linear-gradient(
+    46deg,
+    #ff3cac 0%,
+    #784ba0 50%,
+    #2b86c5 90%
+  );
+}
+
+.CreditCard.card-amex .CreditCard__back {
+  background-color: #ff3cac;
+  background-image: linear-gradient(
+    134deg,
+    #2b86c5 0%,
+    #784ba0 50%,
+    #ff3cac 90%
+  );
+}
+
+.CreditCard.card-diners .CreditCard__front {
+  background-color: #003f84;
+  background-image: linear-gradient(225deg, #003f84 10%, #80d0c7 100%);
+}
+
+.CreditCard.card-diners .CreditCard__back {
+  background-color: #003f84;
+  background-image: linear-gradient(-45deg, #80d0c7 10%, #003f84 100%);
+}
+
+.CreditCard__image {
+  width: 80px;
+  top: 22px;
+  right: 12px;
+}
+
+.CreditCard__icon-security {
+  top: 36px;
+  left: 22px;
+}
+
+.CreditCard__icon-security img {
+  width: 28px;
+}
+
+.CreditCard__image img {
+  max-width: 100%;
+}
+
+.CreditCard__number {
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: 4px;
+}
+
+.CreditCard__section-bottom {
+  padding: 20px;
+  text-shadow: 0 2px 4px #00000036;
+}

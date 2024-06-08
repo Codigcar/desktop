@@ -1,0 +1,20 @@
+.is-icon {
+  color: #7e7e7e;
+  display: inline-block;
+  font-style: normal;
+  vertical-align: -0.125em;
+  text-align: center;
+  text-transform: none;
+  line-height: 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.is-icon svg {
+  display: block;
+}
+
+.night-mode .is-icon {
+  color: #d6d6d6;
+}

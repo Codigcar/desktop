@@ -1,0 +1,25 @@
+---
+title: CheckboxInput
+---
+
+El componente CheckboxInput es una abstracción de nuestro componente `Checkbox`, agregando el beneficio de poder contener un elemento hijo, este se mostrará a la derecha de la casilla cuadrada.
+
+## Uso
+
+```jsx
+<Form ref={ref} onSubmit={onSubmit}>
+  <CheckboxInput name="email" value={false}>
+    This is a checkboxInput view
+  </CheckboxInput>
+</Form>
+```
+
+## Props
+
+### `name`
+
+Texto que describe el nombre del CheckboxInput, este debe ser único dentro del scope de `Form`, link de referencia [name](https://unform-rocketseat.vercel.app/guides/complex-structures/).
+
+| Tipo   | Requerido |
+| ------ | --------- |
+| string | si        |

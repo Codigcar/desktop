@@ -1,0 +1,116 @@
+.is-modal-wrap {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transform: translate3d(0,0,0);
+}
+
+/* .is-modal {
+  position: relative;
+  width: 280px;
+} */
+
+.is-modal-back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.65);
+}
+
+.is-modal__content {
+  background-color: #FFF;
+  border-radius: 4px;
+  padding: 0;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Modal Center */
+.is-modal-center {
+  justify-content: center;
+}
+
+/* Modal Bottom */
+.is-modal-bottom {
+  justify-content: flex-end;
+}
+
+.is-modal-bottom .is-modal {
+  bottom: 0;
+  width: 100%;
+  /* position: relative; */
+  will-change: trasform;
+  /* transform: translateY(100%); */
+}
+
+.is-modal-bottom .is-modal__content {
+  border-radius: 15px 15px 0 0;
+  padding: 15px;
+}
+
+.modalBack-enter {
+  opacity: 0.01;
+}
+.modalBack-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+.modalBack-exit {
+  opacity: 1;
+}
+.modalBack-exit-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-out;
+}
+
+.bottomFade-enter {
+  transform: translateY(100%);
+}
+.bottomFade-enter-active {
+  transform: translateY(0%);
+  transition: transform 300ms ease-in;
+}
+.bottomFade-exit {
+  transform: translateY(0%);
+}
+.bottomFade-exit-active {
+  transform: translateY(100%);
+  transition: transform 300ms ease-out;
+}
+
+.centerFade-enter {
+  transform: translateY(5%);
+  opacity: 0.01;
+}
+.centerFade-enter-active {
+  opacity: 1;
+  transform: translateY(0%);
+  transition: opacity 300ms ease-in,
+              transform 300ms ease-in;
+}
+.centerFade-exit {
+  opacity: 1;
+  transform: translateY(0%);
+}
+.centerFade-exit-active {
+  opacity: 0.01;
+  transform: translateY(5%);
+  transition: opacity 300ms ease-in,
+              transform 300ms ease-out;
+}
+
+/* NIGHT MODE */
+.night-mode .is-modal__content {
+  background-color: #272727;
+}

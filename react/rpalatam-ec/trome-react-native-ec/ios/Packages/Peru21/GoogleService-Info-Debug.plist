@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>579725992950-t71tjus2cu3rso3evqvve5ru3dgo0jdh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1091574505245-oipgfn7em4cb2lt8qqcf64dqi7u9gnjm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAIFu36qwqvH9SIDm2EtPNlBpZZcUEl50c</string>
+	<key>GCM_SENDER_ID</key>
+	<string>579725992950</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.eeec.Peru21.dev</string>
+	<key>PROJECT_ID</key>
+	<string>peru21-sandbox-app</string>
+	<key>STORAGE_BUCKET</key>
+	<string>peru21-sandbox-app.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:579725992950:ios:602f4117a515e431c61dd7</string>
+</dict>
+</plist>

@@ -1,0 +1,56 @@
+.favorites-view-wrapper {
+  overflow-y: auto;
+}
+
+.favorites-view .title-date {
+  font-size: 1em;
+  text-transform: capitalize;
+  line-height: 2em;
+  color: #696969;
+}
+
+.favorites-view .e-card__title {
+  font-size: 0.85em;
+}
+
+.favorites-view .favorite-head-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 15px;
+  font-weight: 500;
+  padding-top: 5px;
+}
+
+.favorites-view .message {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.85em;
+  font-weight: 300;
+  line-height: 1.15em;
+  color: #242729;
+  padding: 0 20px;
+}
+
+.favorites-view .favorites__list .placeholder {
+  padding-top: 0px;
+}
+
+.wrap-list + .wrap-list .favorite-head-list {
+  border-top: 1px solid rgba(112, 110, 117, 0.2);
+}
+
+/* @import "./favoritesNight.css"; */
+.night-mode .favorites-view .title-date {
+  color: #adb3b8;
+}
+.night-mode .favorites-view .message {
+  color: #f2f2f2;
+}
+
+@media (min-width: 640px) {
+  .favorites-view .favorite-head-list {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+}

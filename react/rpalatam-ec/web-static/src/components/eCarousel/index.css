@@ -1,0 +1,106 @@
+.e-carousel {
+  background-color: #f0ddcc;
+  padding: 1.5em 0 1em;
+  margin-bottom: 1.5em;
+}
+
+.e-carousel__wrapper {
+  background-color: #f5e9de;
+  border-radius: 3px;
+  overflow: hidden;
+  height: 100%;
+  box-shadow: 0 4px 8px 0px rgba(0,0,0,0.15);
+}
+.e-carousel__wrapper .e-card {
+  margin: 0;
+  padding: 0;
+}
+
+.e-carousel__wrapper .e-card__image {
+  border-radius: 0;
+}
+.e-carousel__wrapper .e-card__title {
+  font-size: .9em;
+  padding: 0 15px;
+  -webkit-line-clamp: 2;
+}
+.e-carousel__wrapper .e-card__footer {
+  padding: 0 15px 15px;
+  margin-top: .25em;
+}
+
+.e-carousel__title {
+  color: #444444;
+  font-family: 'Merriweather', serif;
+  font-size: 1em;
+  font-weight: 900;
+  padding: 0 15px;
+}
+
+.e-carousel__title::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 40px;
+  background-color: #841b24;
+  margin-top: 10px;
+}
+
+.e-carousel__dots {
+  width: 75px;
+  overflow: hidden;
+  height: 10px;
+  margin: 0 auto;
+  transform: translateX(-15px);
+}
+
+.e-carousel__dots ul {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 350ms;
+  will-change: transform;
+}
+
+.e-carousel__dots li {
+  width: 10px;
+  height: 10px;
+  background-color: #7e7e7e;
+  margin: 0 2.5px;
+  text-align: center;
+  text-indent: -99999px;
+  border-radius: 50%;
+  transition: transform 350ms ease;
+  will-change: transform;
+  transform: scale(.4);
+}
+.e-carousel .e-carousel__dots-prev,
+.e-carousel .e-carousel__dots-next {
+  transform: scale(.5);
+}
+.e-carousel__dots .e-carousel__dots-active {
+  transform: scale(.75);
+  background-color: #272727;
+}
+
+.e-carousel .wrap-new-placeholder {
+  padding-top: 1.5em;
+}
+
+.night-mode .e-carousel__wrapper {
+  background-color: #272727;
+  box-shadow: 0 4px 8px 0px rgba(0,0,0,0.85);
+}
+.night-mode .e-carousel {
+  background-color: #191919;
+}
+.night-mode .e-carousel__dots li {
+  color: #909090;
+}
+.night-mode .e-carousel__dots .e-carousel__dots-active {
+  background-color: #FFF;
+}
+.night-mode .e-carousel__title {
+  color: #d4d4d4;
+}

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "241073662558",
+    "firebase_url": "https://el-comercio-pwa.firebaseio.com",
+    "project_id": "el-comercio-pwa",
+    "storage_bucket": "el-comercio-pwa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241073662558:android:20929b90ff72efc4",
+        "android_client_info": {
+          "package_name": "com.gec.elcomercio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "241073662558-v2u9jgq5rk1eprse91op214bb414r9sm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCG4CKduQEh8EEkKW-18UdI7QvDOlz2u0I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "241073662558-v2u9jgq5rk1eprse91op214bb414r9sm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "241073662558-bgal11cv2e702ten8hv014hgk6f3rt3t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.elcomercio.ElComercioiPhone.dev",
+                "app_store_id": "793178800"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

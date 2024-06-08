@@ -1,0 +1,75 @@
+---
+title: Checkbox
+---
+
+El componente Checkbox es la representación base del componente `CheckboxInput`.
+
+## Uso
+
+```jsx
+<Checkbox
+  ref={inputRef}
+  style={inputStyle}
+  onValueChange={(value) => {
+    setCheckTreatment(value)
+  }}
+/>
+```
+
+## Props
+
+### `onValueChange`
+
+Es un CallBack que se invoca cuando cambia el valor.
+
+| Tipo                    | Requerido |
+| ----------------------- | --------- |
+| (value: string) => void | si        |
+
+### `children`
+
+Agrega un elemento hijo envuelto por un `View`, dicho elemento se ubicará a la derecha del checkbox en caso sea diferente de `null`.
+
+| Tipo        | Requerido |
+| ----------- | --------- |
+| JSX.Element | no        |
+
+### `disabled`
+
+Permite deshabilitar el checkbox.
+
+| Tipo    | Requerido |
+| ------- | --------- |
+| boolean | no        |
+
+### `ref`
+
+Permite hacer referencia a todo el componente.
+
+| Tipo            | Requerido |
+| --------------- | --------- |
+| React.RefObject | no        |
+
+### `style`
+
+Agregar y/o sobrescribe los estilos por defecto.
+
+| Tipo                                                                         | Requerido |
+| ---------------------------------------------------------------------------- | --------- |
+| StyleSheet([ViewStyle](https://reactnative.dev/docs/view-style-props#props)) | no        |
+
+### `testID`
+
+Usado para localizar el componente al momento de realizar las pruebas unitarias.
+
+| Tipo   | Requerido |
+| ------ | --------- |
+| string | no        |
+
+### `value`
+
+Es el valor del checkbox. Si es verdadero el checkbox se activará.
+
+| Tipo    | Requerido | Por defecto |
+| ------- | --------- | ----------- |
+| boolean | no        | false       |

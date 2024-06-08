@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>246143590749-tc8ilvmkb0qun38egadq30okgff5hias.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1038751133917-d7k8jno6dlptif31gs3c38lks0ro7d94</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA5OVnWFhLNLSSxfjkKOenHJOr--lsfb-I</string>
+	<key>GCM_SENDER_ID</key>
+	<string>246143590749</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.eeec.Gestion</string>
+	<key>PROJECT_ID</key>
+	<string>gestion-pwa</string>
+	<key>STORAGE_BUCKET</key>
+	<string>gestion-pwa.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:246143590749:ios:e020a94a89620b49</string>
+	<key>DATABASE_URL</key>
+	<string>https://gestion-pwa.firebaseio.com</string>
+</dict>
+</plist>

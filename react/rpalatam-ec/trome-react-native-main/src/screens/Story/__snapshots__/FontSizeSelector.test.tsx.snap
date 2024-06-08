@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`font size selector snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "display": "flex",
+          "paddingBottom": 12,
+          "paddingHorizontal": 24,
+          "paddingTop": 12,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "marginBottom": 16,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#2e3443",
+              "display": "flex",
+              "fontFamily": "Avenir",
+              "fontSize": 16,
+              "fontWeight": "700",
+              "lineHeight": 24,
+            },
+          ]
+        }
+      >
+        Seleccione el tamaño de letra
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#2e3443",
+              "display": "flex",
+              "fontFamily": "Avenir",
+              "fontSize": 12,
+              "fontWeight": "700",
+              "lineHeight": 16,
+            },
+          ]
+        }
+      >
+        Aa
+      </Text>
+      <View
+        style={
+          Array [
+            Object {
+              "display": "flex",
+              "flex": 1,
+              "paddingHorizontal": 8,
+            },
+          ]
+        }
+      >
+        <RNCSlider
+          disabled={false}
+          enabled={true}
+          hitSlop={
+            Object {
+              "bottom": 8,
+              "left": 8,
+              "right": 8,
+              "top": 8,
+            }
+          }
+          inverted={false}
+          maximumValue={5}
+          minimumTrackTintColor="#0089ff"
+          minimumValue={1}
+          onChange={[Function]}
+          onRNCSliderAccessibilityAction={null}
+          onRNCSliderSlidingComplete={null}
+          onRNCSliderSlidingStart={null}
+          onRNCSliderValueChange={[Function]}
+          onResponderGrant={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          step={1}
+          style={
+            Object {
+              "height": 40,
+            }
+          }
+          tapToSeek={false}
+          thumbImage={null}
+          thumbTintColor="white"
+          value={3}
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#2e3443",
+              "display": "flex",
+              "fontFamily": "Avenir",
+              "fontSize": 20,
+              "fontWeight": "700",
+              "lineHeight": 28,
+            },
+          ]
+        }
+      >
+        Aa
+      </Text>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;

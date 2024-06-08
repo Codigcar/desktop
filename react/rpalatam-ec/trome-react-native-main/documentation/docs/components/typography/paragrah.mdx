@@ -1,0 +1,32 @@
+---
+title: Paragraph
+---
+
+El componente Paragraph es una abstracción del componente [React Native Text](https://reactnative.dev/docs/text),
+agregando el beneficio de gestionar los estilos como propiedad y además:
+
+- La prop `fontFamily` es siempre `Theme['fontFamily'].body`
+- La prop `fontSize` es de forma predeterminada `Theme['fontSize'].base`
+- La prop `lineHeight` varia de forma predeterminada según la prop `fontSize`
+
+## Uso
+
+```jsx
+<Paragraph color="text" fontSize="sm" numberOfLines={3}>
+  This is a paragraph
+</Paragraph>
+```
+
+## Props
+
+### Estilos como propiedad
+
+El componente **Paragraph** tiene los siguientes estilos como propiedad:
+
+- [color](../../core-features/style-props#color)
+- [opacity](../../core-features/style-props#opacity)
+- [textShadow](../../core-features/style-props#text-shadow)
+- [typography](../../core-features/style-props#typography) (Excepto la prop `fontFamily`)
+- [visible](../../core-features/style-props#visible)
+
+### [Text Props](https://reactnative.dev/docs/text#props)

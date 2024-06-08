@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "246143590749",
+    "firebase_url": "https://gestion-pwa.firebaseio.com",
+    "project_id": "gestion-pwa",
+    "storage_bucket": "gestion-pwa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246143590749:android:cae3c7b59117d6ec",
+        "android_client_info": {
+          "package_name": "com.eeec.gestion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "246143590749-jvfuu0jv8om4fb0422rt1eam7dj4miib.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATfLocdrHNjO6ZQGLv7KmYrt98ZLDuALE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "246143590749-jvfuu0jv8om4fb0422rt1eam7dj4miib.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "246143590749-8q6fg6v04qci2anbor04vi5774se8oic.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.eeec.Gestion.dev",
+                "app_store_id": "991224096"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

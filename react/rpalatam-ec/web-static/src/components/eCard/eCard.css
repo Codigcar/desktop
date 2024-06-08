@@ -1,0 +1,306 @@
+.e-card {
+  font-size: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 15px;
+  padding-bottom: 15px;
+  padding-top: 20px;
+}
+
+/* .e-card:not(:last-child) {
+  border-bottom: none;
+} */
+
+/* .e-card__wrapper {
+  border-bottom: 1px solid rgba(112, 110, 117, 0.2);
+} */
+
+.e-card__wrapper + .e-card__wrapper .e-card {
+  border-top: 1px solid rgba(112, 110, 117, 0.2);
+}
+
+.e-card__header {
+  display: block;
+  margin-bottom: 0.75em;
+  font-size: 0.75em;
+}
+.e-card__header button {
+  color: #666e75;
+  text-transform: uppercase;
+  text-align: left;
+}
+.gestion .e-card__header {
+  align-items: center;
+  background-color: #f0ddcc;
+  border-radius: 10px;
+  display: inline-flex;
+  height: 20px;
+  overflow: hidden;
+  padding: 0 0.75em;
+}
+.gestion.night-mode .e-card__header {
+  background-color: #2e3443;
+}
+.gestion .e-card__header button {
+  text-transform: none;
+}
+.trome .e-card__header {
+  margin-bottom: 0;
+}
+
+.e-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #666e75;
+}
+
+.e-card__title {
+  font-family: 'Merriweather', serif;
+  color: #393d40;
+  display: block;
+  flex: 1 1;
+}
+
+.e-card__subtitle {
+  color: #666e75;
+  margin-top: 0.5em;
+  overflow: hidden;
+}
+
+.e-card__subtitle b {
+  font-weight: 600;
+}
+
+.e-card__subtitle a {
+  text-decoration: none;
+  pointer-events: none;
+}
+
+.e-card__subtitle u {
+  text-decoration: none;
+}
+
+.e-card__title,
+.e-card__subtitle {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+}
+
+.e-card__image__wrapper {
+  margin-bottom: 0.75em;
+}
+
+.e-card__image {
+  overflow-y: hidden;
+  border-radius: 3px;
+  background: #eeede5;
+  height: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  position: relative;
+}
+
+.e-card__image img {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+  /* transform: scale(1.25);
+  transition: transform 500ms;
+  transition-timing-function: cubic-bezier(0.77, 0.2, 0.675, 1); */
+}
+
+/* .e-card__image img.load {
+  transform: scale(1);
+} */
+
+.e-card__info {
+  line-height: 1.25em;
+  font-size: 0.85em;
+}
+
+.e-card__author {
+  color: #393d40;
+}
+
+/* Full Card */
+.e-card--full {
+  margin: 0;
+}
+
+.e-card--full .e-card__image {
+  /* margin-bottom: .75em; */
+  border-radius: 0;
+}
+
+.e-card--full .e-card__header,
+.e-card--full .e-card__footer,
+.e-card--full .e-card__title,
+.e-card--full .e-card__subtitle,
+.e-card--full .e-card__author {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+/* .card-full .e-card-multimedia-wrapper + .e-card-text-wrapper {
+  margin-top: .75em;
+} */
+
+/* .card-full .e-card__header {
+  height: 20.75em;
+  overflow: hidden;
+} */
+
+/* .card-full .e-card__header {
+  display: none;
+} */
+
+/* Card Magazine */
+
+.e-card--magazine .e-card__body {
+  display: flex;
+  flex-flow: row-reverse;
+  align-items: flex-start;
+}
+
+.e-card--magazine .e-card__image__wrapper {
+  margin-left: 0.75em;
+  margin-bottom: 0;
+}
+
+.e-card--magazine .e-card__image {
+  width: 120px;
+}
+
+.e-card--magazine .e-card__title {
+  -webkit-line-clamp: 4;
+}
+
+.gestion span.premium svg {
+  width: 46px;
+  top: 1px;
+}
+
+.gestion span.premium path {
+  fill: #841b24;
+}
+
+/* Card Opinion */
+
+/* .e-card__footer-image {
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  margin-right: .75em;
+}
+.e-card__footer-image  img {
+  display: block;
+  max-width: 100%;
+} */
+
+.e-card button.is-loading {
+  opacity: 0.5;
+}
+
+.e-card .is-icon.marked {
+  color: #1f92e6;
+}
+
+/* Night mode */
+
+.night-mode .e-card__title,
+.night-mode .e-card__author {
+  color: #f2f2f2;
+}
+
+.night-mode .e-card__header button,
+.night-mode .e-card__subtitle,
+.night-mode .e-card__footer {
+  color: #d4d4d4;
+}
+
+.gestion.night-mode span.premium path {
+  fill: #f2f2f2;
+}
+
+/* Card Elcomercio */
+.elcomercio .e-card__header button {
+  color: #ad9130;
+}
+
+/* Card Trome */
+
+.trome .e-card__title {
+  font-family: 'Encode Sans Condensed', sans-serif;
+  line-height: 1.25em;
+  font-size: 1.25em;
+  font-weight: 600;
+  padding: 0 1rem 0.3rem;
+  color: #000000;
+}
+
+.trome.night-mode .e-card__title {
+  color: #ffffff;
+}
+
+.trome .e-card--magazine .e-card__title {
+  font-size: 1.25em;
+  padding: 0em;
+}
+
+.trome .e-card--magazine .e-card__image__wrapper {
+  margin-left: 0.75em;
+  width: 100px;
+}
+
+.trome .e-card--magazine .e-card__image {
+  width: 100%;
+  padding-bottom: 120%;
+  border-radius: 0;
+}
+
+.trome .e-card__info {
+  font-family: 'Encode Sans Condensed', sans-serif;
+  font-size: 1em;
+  color: #000000;
+}
+
+.trome.night-mode .e-card__info {
+  color: #999999;
+}
+
+.trome .e-card__flag-premium {
+  align-items: center;
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.e-card__header + .icon-premium-trome {
+  margin-left: 0.75rem;
+}
+
+/* Icon premium */
+.e-card .icon-premium-peru21 {
+  display: block;
+  width: 100px;
+}
+.e-card .icon-premium-peru21 img {
+  display: block;
+}
+.e-card.e-card--full .icon-premium-depor,
+.e-card.e-card--full .icon-premium-peru21 {
+  margin: 0 15px;
+}
+
+.category-list-opinion .e-card .icon-premium-peru21,
+.e-card.e-card--opinion .icon-premium-peru21 {
+  margin-top: 8px;
+}

@@ -1,0 +1,409 @@
+/* .e-list-news {
+  height: 100vh;
+  width: 100%;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.e-list-news .e-loading-indicator {
+  margin: 0 auto;
+}
+
+.e-list-news .e-loading-indicator > div {
+  background-color: #888;
+  width: 12px;
+  height: 12px;
+} */
+
+/* CARD ADS */
+
+.wrapper-newlist .e-ads-content {
+  border-top: 1px solid rgba(112, 110, 117, 0.2);
+  max-height: 250px;
+  overflow: hidden;
+}
+
+.wrapper-newlist .e-card__wrapper + .e-ads {
+  margin: 0 16px;
+  border-bottom: 1px solid rgba(112, 110, 117, 0.2);
+}
+
+.e-card__wrapper,
+.wrapper-newlist .e-ads {
+  max-width: 640px;
+}
+
+/* NEW LIST */
+
+.wrapper-newlist {
+  overflow-y: scroll;
+  height: 100vh;
+  padding-top: 97px;
+  transition: opacity 250ms ease;
+  -webkit-overflow-scrolling: touch;
+}
+.gestion .wrapper-newlist {
+  padding-top: 48px;
+}
+
+@supports (padding: env(safe-area-inset-top)) {
+  .wrapper-newlist {
+    padding-top: calc(env(safe-area-inset-top) + 97px);
+  }
+  .gestion .wrapper-newlist {
+    padding-top: calc(env(safe-area-inset-top) + 48px);
+  }
+}
+
+.wrapper-newlist.newlist-navbottom {
+  height: calc(100vh - 49px);
+}
+
+.trome.night-mode
+  .wrapper-newlist.portada
+  .e-card__wrapper:first-child
+  .e-card__body,
+.trome.night-mode
+  .wrapper-newlist.portada
+  .e-card__wrapper:nth-child(2)
+  .e-card__body {
+  background-color: #e67402;
+}
+
+.trome .portada .e-card__wrapper:nth-child(2) .e-card--magazine .e-card__title,
+.trome
+  .portada
+  .category-list.category-list-opinion
+  .e-card__wrapper:nth-child(3)
+  .e-card--magazine
+  .e-card__title,
+.trome
+  .portada
+  .category-list.category-list-deportes
+  .e-card__wrapper:nth-child(3)
+  .e-card--magazine
+  .e-card__title,
+.trome
+  .portada
+  .category-list.category-list-espectaculos
+  .e-card__wrapper:nth-child(3)
+  .e-card--magazine
+  .e-card__title {
+  padding: 0.5em 0 0.2em 0.5em;
+  font-size: 1.25em;
+}
+
+.trome .wrapper-newlist .e-card__wrapper:first-child .e-card__body {
+  padding-bottom: 0.5em;
+}
+
+.trome .wrapper-newlist.portada .e-card__wrapper:first-child .e-card__body,
+.trome .wrapper-newlist.portada .e-card__wrapper:nth-child(2) .e-card__body {
+  background-color: #ff8303;
+}
+
+.trome
+  .wrapper-newlist.portada
+  .e-card__wrapper:first-child
+  .e-card__body
+  .e-card__title,
+.trome
+  .wrapper-newlist.portada
+  .e-card__wrapper:nth-child(2)
+  .e-card__body
+  .e-card__title {
+  color: #ffffff;
+}
+
+.trome .category-list .e-card:not(.e-card--magazine) .e-card__title {
+  padding-bottom: 0.75em;
+}
+
+.trome .category-list .e-card__wrapper .e-card--full .e-card__title,
+.trome.night-mode .category-list .e-card__wrapper .e-card--full .e-card__title {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.trome.night-mode
+  .category-list.category-list-opinion
+  .e-card__wrapper:nth-child(2)
+  .e-card__body,
+.trome
+  .category-list.category-list-opinion
+  .e-card__wrapper:nth-child(3)
+  .e-card__body {
+  background-color: #77bcd1;
+}
+
+.trome
+  .category-list.category-list-opinion
+  .e-card__wrapper:nth-child(2)
+  .e-card__body,
+.trome
+  .category-list.category-list-opinion
+  .e-card__wrapper:nth-child(3)
+  .e-card__body {
+  background-color: #85d4eb;
+}
+
+.trome
+  .category-list.category-list-opinion
+  .e-card__wrapper:nth-child(2)
+  .e-card__body
+  .e-card__title,
+.trome
+  .category-list.category-list-opinion
+  .e-card__wrapper:nth-child(3)
+  .e-card__body
+  .e-card__title {
+  color: #000000;
+}
+
+.trome.night-mode
+  .category-list.category-list-espectaculos
+  .e-card__wrapper:nth-child(2)
+  .e-card__body,
+.trome.night-mode
+  .category-list.category-list-espectaculos
+  .e-card__wrapper:nth-child(3)
+  .e-card__body {
+  background-color: #c24e99 !important;
+}
+
+.trome
+  .category-list.category-list-espectaculos
+  .e-card__wrapper:nth-child(2)
+  .e-card__body,
+.trome
+  .category-list.category-list-espectaculos
+  .e-card__wrapper:nth-child(3)
+  .e-card__body {
+  background-color: #db58ad !important;
+}
+
+.trome
+  .category-list.category-list-espectaculos
+  .e-card__wrapper:nth-child(2)
+  .e-card__body
+  .e-card__title,
+.trome
+  .category-list.category-list-espectaculos
+  .e-card__wrapper:nth-child(3)
+  .e-card__body
+  .e-card__title {
+  color: #ffffff;
+}
+
+.trome.night-mode
+  .category-list.category-list-deportes
+  .e-card__wrapper:nth-child(2)
+  .e-card__body,
+.trome.night-mode
+  .category-list.category-list-deportes
+  .e-card__wrapper:nth-child(3)
+  .e-card__body {
+  background-color: #0fa80f !important;
+}
+
+.trome
+  .category-list.category-list-deportes
+  .e-card__wrapper:nth-child(2)
+  .e-card__body,
+.trome
+  .category-list.category-list-deportes
+  .e-card__wrapper:nth-child(3)
+  .e-card__body {
+  background-color: #11c111;
+}
+
+.trome
+  .category-list.category-list-deportes
+  .e-card__wrapper:nth-child(2)
+  .e-card__body
+  .e-card__title,
+.trome
+  .category-list.category-list-deportes
+  .e-card__wrapper:nth-child(3)
+  .e-card__body
+  .e-card__title {
+  color: #ffffff;
+}
+
+.category-list-loading {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid rgba(112, 110, 117, 0.2);
+  margin: 0 15px;
+}
+
+.last-news__title {
+  padding: 0 15px;
+  margin-top: 1.5em;
+  color: #444444;
+  font-family: 'Merriweather', serif;
+  font-size: 1em;
+  font-weight: 900;
+}
+
+.last-news__title::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 40px;
+  background-color: #841b24;
+  margin-top: 10px;
+}
+
+.wrapper-newlist .e-iframe__wrapper {
+  padding: 20px 0 15px;
+  text-align: center;
+  border-bottom: 1px solid rgba(112, 110, 117, 0.2);
+  border-top: 1px solid rgba(112, 110, 117, 0.2);
+}
+
+/* PULL REFRESH */
+
+@keyframes loadingRefresh {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.item-pull-refresh {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  top: 62px;
+  z-index: 1;
+  will-change: transform;
+  transition: transform 250ms ease-out;
+}
+.gestion .item-pull-refresh {
+  top: 13px;
+}
+
+@supports (padding: env(safe-area-inset-top)) {
+  .item-pull-refresh {
+    top: calc(env(safe-area-inset-top) + 62px);
+  }
+  .gestion .item-pull-refresh {
+    top: calc(env(safe-area-inset-top) + 13px);
+  }
+}
+
+.item-pull-refresh.noTransition {
+  transition: none;
+}
+
+.pull-refresh-animated .is-icon {
+  animation: loadingRefresh 700ms infinite linear;
+}
+
+.item-pull-refresh .is-icon {
+  font-size: 22px;
+  color: #0089ff;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 4px;
+  will-change: transform;
+  opacity: 0;
+}
+
+.wrapper-newlist.list-refresh {
+  opacity: 0.3;
+}
+
+/* IMAGE */
+
+.wrapper-image {
+  display: block;
+}
+
+.wrapper-image img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  max-height: 100px;
+}
+
+.wrapper-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.wrapper-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper-newlist hr {
+  border: none;
+  display: none;
+  height: 1px;
+  background-color: rgba(112, 110, 117, 0.2);
+  margin: 0;
+}
+
+/* BREAKING NEWS */
+.e-breaking__wrapper {
+  background-color: hsl(348, 100%, 97%);
+  max-width: 640px;
+  margin: 0 auto;
+}
+.night-mode .e-breaking__wrapper,
+.trome .e-breaking__wrapper {
+  background-color: #1b1b1b;
+}
+.e-breaking__wrapper a {
+  display: block;
+  padding: 12px 15px;
+}
+.e-breaking__wrapper .e-card__title {
+  color: hsl(348, 100%, 30%);
+}
+.night-mode .e-breaking__wrapper .e-card__title {
+  color: #f2f2f2;
+}
+.e-breaking__wrapper hr {
+  display: none;
+  margin: 0 15px;
+}
+.e-breaking__tag {
+  background: hsl(348, 100%, 61%);
+  border-radius: 4px;
+  color: #FFF;
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+}
+.e-breaking__prefix {
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.trome .e-breaking__wrapper .e-card__title {
+  color: #FFF;
+  padding: 0;
+}
+.trome .e-breaking__tag {
+  background-color: #ff8303;
+  top: -3px;
+}

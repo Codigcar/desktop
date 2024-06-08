@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>690467688102-n955q81svn1nsch9nsdhgugroklg374m.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1091574505245-hcp1plpp895e6el8veq3frpjt93t9lc0</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAqvK2cq4Zgz3vaJ-d6NKRB2bWGfA1_KhY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>690467688102</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.elcomercio.ElComercioiPhone.dev</string>
+	<key>PROJECT_ID</key>
+	<string>el-comercio--sandbox</string>
+	<key>STORAGE_BUCKET</key>
+	<string>el-comercio--sandbox.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:690467688102:ios:0d87a87899026c294b6e67</string>
+</dict>
+</plist>

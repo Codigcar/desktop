@@ -1,0 +1,171 @@
+fastlane_require 'dotenv'
+
+before_all do
+  Dotenv.overload '../build.env'
+end
+
+IOS_OUTPUT_NAME = "#{ENV['SCHEMA']}-#{ENV['VERSION_CODE']}"
+
+platform :ios do  
+  desc 'Install Cocoapods'
+  lane :installCocoapods do
+    cocoapods(clean_install: true, podfile: "ios/Podfile")
+  end
+  
+  desc 'Build Dev'
+  lane :buildDebug do
+    add_badge(
+      glob: "/ios/**/AppIcon.#{ENV['SCHEMA']}.appiconset/*.{png,PNG}",
+      shield: "#{ENV['IOS_VERSION_NUMBER']}-#{ENV['VERSION_CODE']}-orange",
+      shield_scale: "0.75",
+      no_badge: true
+    )
+    match(app_identifier: ENV['APP_IDENTIFIER'] + '.dev', type: 'development')
+    increment_build_number(build_number: ENV['VERSION_CODE'], xcodeproj: "ios/Trome.xcodeproj")
+    increment_version_number(version_number: ENV['IOS_VERSION_NUMBER'], xcodeproj: "ios/Trome.xcodeproj")
+    build_app(
+      scheme: ENV['SCHEMA'],
+      output_name: IOS_OUTPUT_NAME,
+      export_options: {
+        method: "development",
+        thinning: "<thin-for-all-variants>"
+      }
+    )
+  end
+
+  desc 'Distribute app with Firebase'
+  lane :distribute do
+    firebase_app_distribution(
+      ipa_path: "ios/build/#{IOS_OUTPUT_NAME}.ipa",
+      app: ENV['FIREBASE_IOS_APP_ID'],
+      groups: 'suad-mobile',
+      firebase_cli_token: ENV['FIREBASE_TOKEN'],
+      release_notes: ENV['CI_MERGE_REQUEST_TITLE']
+    )
+    upload_symbols_to_crashlytics(
+      binary_path: "ios/Pods/FirebaseCrashlytics/upload-symbols",
+      gsp_path: "ios/Packages/#{ENV['SCHEMA']}/GoogleService-Info-Debug.plist",
+      dsym_path: "ios/build/#{IOS_OUTPUT_NAME}.app.dSYM.zip"
+    )
+  end
+
+  desc 'Build Prod'
+  lane :buildRelease do
+    match(app_identifier: ENV['APP_IDENTIFIER'], type: 'appstore')
+    increment_build_number(build_number: ENV['VERSION_CODE'], xcodeproj: "ios/Trome.xcodeproj")
+    increment_version_number(version_number: ENV['IOS_VERSION_NUMBER'], xcodeproj: "ios/Trome.xcodeproj")
+    build_app(scheme: ENV['SCHEMA'], output_name: IOS_OUTPUT_NAME)
+  end
+
+  desc 'Submit a new Internal Build to TestFlight'
+  lane :internal do
+    changelog = File.read('metadata/' + ENV['PRODUCT_FLAVOR'] + '/ios/es-MX/changelogs/default.txt')
+    upload_to_testflight(
+      api_key_path: 'ios/app_store_connect_api_key.json',
+      app_identifier: ENV['APP_IDENTIFIER'],
+      changelog: changelog,
+      ipa: "ios/build/#{IOS_OUTPUT_NAME}.ipa",
+    )
+    upload_symbols_to_crashlytics(
+      binary_path: "ios/Pods/FirebaseCrashlytics/upload-symbols",
+      gsp_path: "ios/Packages/#{ENV['SCHEMA']}/GoogleService-Info-Prod.plist",
+      dsym_path: "ios/build/#{IOS_OUTPUT_NAME}.app.dSYM.zip"
+    )
+  end
+
+  desc 'Promote TestFlight to Production'
+  lane :promote_internal_to_production do
+    upload_to_app_store(
+      api_key_path: 'ios/app_store_connect_api_key.json',
+      app_identifier: ENV['APP_IDENTIFIER'],
+      submit_for_review: true,
+      automatic_release: true,
+      force: true, # Skip HTMl report verification
+      ignore_language_directory_validation: true,
+      skip_metadata: true,
+      skip_screenshots: true,
+      skip_binary_upload: true,
+      submission_information: {
+        add_id_info_uses_idfa: false
+      },
+      precheck_include_in_app_purchases: false
+    )
+  end
+
+end
+
+platform :android do
+  desc 'Upload crashlytics symbols to Firebase'
+  lane :upload_crashlytics_symbols do
+    gradle(task: "uploadCrashlyticsSymbolFile#{ENV['PRODUCT_FLAVOR']}Release", project_dir: 'android/')
+  end
+
+  desc 'Build APK'
+  lane :buildDebug do
+    add_badge(
+      glob: "/android/**/#{ENV['PRODUCT_FLAVOR']}/**/ic_launcher.{png,PNG}",
+      shield: "#{ENV['ANDROID_VERSION_NAME']}-#{ENV['VERSION_CODE']}-orange",
+      shield_scale: "0.75",
+      no_badge: true
+    )
+    gradle(task: 'clean', project_dir: 'android/')
+    gradle(task: 'assemble' + ENV['PRODUCT_FLAVOR'], build_type: 'Release', project_dir: 'android/')
+  end
+
+  desc 'Distribute app with Firebase'
+  lane :distribute do
+    firebase_app_distribution(
+      apk_path: 'android/app/build/outputs/apk/' + ENV['PRODUCT_FLAVOR'] + '/release/app-' + ENV['PRODUCT_FLAVOR'] + '-release.apk',
+      app: ENV['FIREBASE_ANDROID_APP_ID'],
+      groups: "suad-mobile",
+      firebase_cli_token: ENV['FIREBASE_TOKEN'],
+      release_notes: ENV['CI_MERGE_REQUEST_TITLE']
+    )
+  end
+
+  desc 'Build AAB'
+  lane :buildRelease do
+    pathFile = "../android/app/src/#{ENV['PRODUCT_FLAVOR']}"
+    File.rename("#{pathFile}/google-services.json", "#{pathFile}/google-services-dev.json" )
+    gradle(task: 'clean', project_dir: 'android/')
+    gradle(task: 'bundle' + ENV['PRODUCT_FLAVOR'], build_type: 'Release', project_dir: 'android/')
+  end
+
+  desc 'Submit a new Internal Build to Play Store'
+  lane :internal do
+    supply(
+      aab: 'android/app/build/outputs/bundle/' + ENV['PRODUCT_FLAVOR'] + 'Release/app-' + ENV['PRODUCT_FLAVOR'] + '-release.aab',
+      metadata_path: 'fastlane/metadata/' + ENV['PRODUCT_FLAVOR'] + '/android',
+      package_name: ENV['PACKAGE_NAME'],
+      track: 'internal'
+    )
+  end
+
+  desc "Promote Internal to Production"
+  lane :promote_internal_to_production do
+    supply(package_name: ENV['PACKAGE_NAME'], skip_upload_changelogs: true, track: 'internal', track_promote_to: 'production')
+  end
+
+  desc "Upload to AppGallery Connect"
+  lane :upload_to_appgallery do
+    huawei_appgallery_connect(
+      client_id: ENV['HUAWEI_CLIENT_ID'],
+      client_secret: ENV['HUAWEI_CLIENT_SECRET'],
+      app_id: ENV['HUAWEI_APP_ID'],
+      apk_path: "android/app/build/outputs/bundle/#{ENV['PRODUCT_FLAVOR']}Release/app-#{ENV['PRODUCT_FLAVOR']}-release.aab",
+      is_aab: true,
+      submit_for_review: false,
+      changelog_path: "fastlane/metadata/#{ENV['PRODUCT_FLAVOR']}/android",
+    )
+  end
+
+  desc "Submit for review to AppGallery Connect"
+  lane :submit_for_review_to_appgallery do
+    huawei_appgallery_connect_submit_for_review(
+      client_id: ENV['HUAWEI_CLIENT_ID'],
+      client_secret: ENV['HUAWEI_CLIENT_SECRET'],
+      app_id: ENV['HUAWEI_APP_ID'],
+    )
+  end
+
+end

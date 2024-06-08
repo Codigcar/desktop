@@ -1,0 +1,15 @@
+git_url("https://gitlab.ec.pe/movil/certs")
+
+storage_mode("git")
+
+type("development") # The default type, can be: appstore, adhoc, enterprise or development
+readonly(true)
+
+team_id("JBGR56T3X4")
+# app_identifier(["com.eeec.Depor", "com.eeec.Depor.dev", "com.elcomercio.ElComercioiPhone", "com.elcomercio.ElComercioiPhone.dev", "com.eeec.Gestion", "com.eeec.Gestion.dev", "com.eeec.Peru21", "com.eeec.Peru21.dev", "com.eeec.Trome", "com.eeec.Trome.dev"])
+api_key_path("ios/app_store_connect_api_key.json") # Path to your App Store Connect API Key JSON file
+
+# For all available options run `fastlane match --help`
+# Remove the # in the beginning of the line to enable the other options
+
+# The docs are available on https://docs.fastlane.tools/actions/match

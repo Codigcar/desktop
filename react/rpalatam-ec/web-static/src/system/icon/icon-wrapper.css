@@ -1,0 +1,23 @@
+.is-icon-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  height: 1em;
+  width: 1em;
+}
+
+.is-icon-wrapper.is-small {
+  height: 1.25em;
+  width: 1.25em;
+}
+
+.is-icon-wrapper.is-medium {
+  height: 2em;
+  width: 2em;
+}
+
+.is-icon-wrapper.is-large {
+  height: 3em;
+  width: 3em;
+}

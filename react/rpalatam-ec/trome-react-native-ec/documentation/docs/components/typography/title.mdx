@@ -1,0 +1,31 @@
+---
+title: Title
+---
+
+El componente Title es una abstracción del componente [React Native Text](https://reactnative.dev/docs/text),
+agregando el beneficio de gestionar los estilos como propiedad  y además:
+
+- La prop `fontFamily` es siempre `Theme['fontFamily'].display`
+- La prop `lineHeight` varia de forma predeterminada según la prop `fontSize`
+
+## Uso
+
+```jsx
+<Title color="primary" fontSize="3xl" letterSpacing="tighter">
+  This is a title
+</Title>
+```
+
+## Props
+
+### Estilos como propiedad
+
+El componente **Title** tiene los siguientes estilos como propiedad:
+
+- [color](../../core-features/style-props#color)
+- [opacity](../../core-features/style-props#opacity)
+- [textShadow](../../core-features/style-props#text-shadow)
+- [typography](../../core-features/style-props#typography) (Excepto la prop `fontFamily`)
+- [visible](../../core-features/style-props#visible)
+
+### [Text Props](https://reactnative.dev/docs/text#props)

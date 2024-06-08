@@ -1,0 +1,108 @@
+/* TYPE CARD: Fotogalery - Video */
+
+.type-note {
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  z-index: 2;
+  pointer-events: none;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  width: 85px;
+  text-align: center;
+  line-height: 1.5em;
+  padding: 4px 0;
+  height: 28px;
+  color: white;
+  font-size: .75em;
+}
+
+.type-note-background {
+  background-color: #000;
+  opacity: .5;
+  border-radius: 25px;
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.type-note span {
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.type-note .is-icon {
+  font-size: 14px;
+  color: #fff;
+}
+
+/* Card magazine */
+
+.e-card--magazine .type-note {
+  width: 32px;
+  line-height: 1;
+  height: 22px;
+  bottom: 2px;
+}
+
+.e-card--magazine .type-note .is-icon {
+  font-size: 12px;
+}
+
+.e-card--magazine .type-note span {
+  display: none;
+}
+
+/* TROME */
+
+.trome .type-note {
+  min-width: 45px;
+  height: 45px;
+  left: 12px;
+  bottom: 12px;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trome .type-note span {
+  font-family: 'Encode Sans Condensed', sans-serif;
+  font-size: 1.25em;
+}
+
+.trome .e-card--magazine .type-note {
+  min-width: 36px;
+  height: 36px;
+}
+
+.trome .type-note-background {
+  background-color: #FF8303;
+  opacity: .8;
+  border-radius: 5px;
+}
+
+.trome .type-note .is-icon {
+  font-size: 23px;
+}
+
+.trome .e-card--magazine .type-note .is-icon {
+  font-size: 20px;
+}
+
+.trome .category-list-opinion .type-note-background {
+  background-color: #85D4EB;
+}
+
+.trome .category-list-espectaculos .type-note-background {
+  background-color: #DB58AD;
+}
+
+.trome .category-list-deportes .type-note-background {
+  background-color: #11C111;
+}

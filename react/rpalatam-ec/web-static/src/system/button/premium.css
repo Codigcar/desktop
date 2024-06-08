@@ -1,0 +1,35 @@
+.icon-premium-depor {
+  align-items: center;
+  background-color: #007c31;
+  border-radius: 4px;
+  color: #FFF;
+  display: flex;
+  font-size: 11px;
+  font-weight: 600;
+  justify-content: center;
+  letter-spacing: -0.5px;
+  width: 160px;
+  white-space: nowrap;
+}
+
+.icon-premium-depor img {
+  margin-left: 4px;
+  width: 70px;
+}
+
+.icon-premium-ec {
+  display: flex;
+  align-items: center;
+  color: #AD9130;
+  margin-top: 0.125rem;
+}
+
+.icon-premium-trome {
+  display: block;
+  width: 60px;
+}
+
+.icon-premium-trome img {
+  display: block;
+  max-width: 100%;
+}

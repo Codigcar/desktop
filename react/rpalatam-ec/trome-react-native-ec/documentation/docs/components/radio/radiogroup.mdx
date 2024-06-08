@@ -1,0 +1,42 @@
+---
+title: RadioGroup
+slug: group
+---
+
+El componente RadioGroup permite agrupar múltiples Radio's y poder seleccionar solo uno.
+
+## Uso
+
+```jsx
+<Radio.Group>
+  <Radio value="red" />
+  <Radio value="green" />
+  <Radio value="blue" />
+</Radio.Group>
+```
+
+## Props
+
+### `defaultValue`
+
+Valor del Radio seleccionado por defecto.
+
+| Tipo   | Requerido |
+| ------ | --------- |
+| string | no        |
+
+### `name`
+
+Usado como `testID`.
+
+| Tipo   | Requerido |
+| ------ | --------- |
+| string | no        |
+
+### `onChangeValue`
+
+Es un CallBack que se llama cuando se hace tap sobre el Radio, y este contiene el valor del Radio seleccionado.
+
+| Tipo                              | Requerido |
+| --------------------------------- | --------- |
+| (value: string,undefined) => void | no        |

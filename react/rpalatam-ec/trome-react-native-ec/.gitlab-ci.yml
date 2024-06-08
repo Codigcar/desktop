@@ -1,0 +1,308 @@
+include:
+  - project: "arquitectura/ci"
+    file:
+      - /templates/Code-Quality.gitlab-ci.yml
+      - /templates/Sonar-Quality.gitlab-ci.yml
+      - /templates/Test.gitlab-ci.yml
+  - template: Security/Secret-Detection.gitlab-ci.yml
+  - 'ci/**.yml'
+
+stages:
+  - images
+  - dependencies
+  - test
+  - firebase_distribution
+  - store_internal_distribution
+  - store_review
+  - release
+
+default:
+  tags:
+    - docker
+    - movil
+
+variables:
+  FF_USE_FASTZIP: "true"
+  ARTIFACT_COMPRESSION_LEVEL: "fast"
+  CACHE_COMPRESSION_LEVEL: "fast"
+  DOCKER_DRIVER: overlay2
+  LC_ALL: en_US.UTF-8
+  LANG: en_US.UTF-8
+
+.cache_template_nodejs: &cache_nodejs
+  key: $CI_COMMIT_REF_NAME-nodejs
+  paths:
+    - node_modules
+  policy: pull
+
+.cache_template_nodejs_fallback: &cache_nodejs_fallback
+  <<: *cache_nodejs
+  key: $CI_DEFAULT_BRANCH-nodejs
+
+updateContainer:
+  image: docker:stable
+  stage: images
+  only:
+    changes:
+      - Dockerfile
+      - Gemfile.lock
+    refs:
+      - branches
+    variables:
+      - $CI_COMMIT_REF_NAME =~ /master/
+  script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG || true
+    - docker build --cache-from $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG -t $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG .
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+
+dependencies:android:
+  stage: dependencies
+  image: registry.ec.pe/movil/trome/trome-react-native:master
+  cache:
+    key: $CI_DEFAULT_BRANCH:android
+    paths:
+      - node_modules/
+      - vendor/
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+      changes:
+        - Gemfile.lock
+        - yarn.lock
+  script:
+    - bundle install
+    - yarn install
+
+dependencies:ios:
+  stage: dependencies
+  cache:
+    key: $CI_DEFAULT_BRANCH:ios
+    paths:
+      - ios/Pods/
+      - node_modules/
+      - vendor/
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+      changes:
+        - Gemfile.lock
+        - ios/Podfile.lock
+        - yarn.lock
+  script:
+    - bundle install
+    - yarn install
+    - bundle exec fastlane ios installCocoapods
+  tags:
+    - ios
+
+.node_dependencies_job:
+  stage: dependencies
+  image: registry.ec.pe/arquitectura/ci/node:16-alpine
+  script: yarn install
+
+dependencies:node:
+  extends: .node_dependencies_job
+  cache:
+    <<: *cache_nodejs
+    policy: pull-push
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+      changes:
+        - yarn.lock
+
+dependencies:node:branch:
+  extends: .node_dependencies_job
+  cache:
+    - *cache_nodejs_fallback
+    - <<: *cache_nodejs
+      policy: pull-push
+  rules:
+    - if: $CI_MERGE_REQUEST_IID
+      changes:
+        - yarn.lock
+
+.source_javascript: &source_js
+  - __mocks__/**/*
+  - __test__/**/*
+  - src/**/*
+
+eslint_json:
+  cache:
+    - *cache_nodejs_fallback
+    - *cache_nodejs
+  rules:
+    - if: $CI_MERGE_REQUEST_IID || $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+      changes: *source_js
+
+jest:
+  cache:
+    - *cache_nodejs_fallback
+    - *cache_nodejs
+  rules:
+    - if: $CI_MERGE_REQUEST_IID || $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+      changes: *source_js
+
+sonarqube:
+  needs:
+    - eslint_json
+    - jest
+  rules:
+    - if: $CI_MERGE_REQUEST_IID
+      changes: *source_js
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+      changes: *source_js
+      variables:
+        SONAR_PROJECT_VERSION: "1.$CI_PIPELINE_IID"
+
+secret_detection:
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+    - if: $CI_MERGE_REQUEST_IID
+  tags:
+    - docker
+
+.publish_android_job:
+  image: registry.ec.pe/movil/trome/trome-react-native:master
+  cache:
+    key: $CI_DEFAULT_BRANCH:android
+    paths:
+      - node_modules/
+      - vendor/
+    policy: pull
+  dependencies: []
+  when: manual
+  only:
+    changes:
+      - android/**/*
+      - src/**/*
+    refs:
+      - merge_requests
+  except:
+    - /^ci/.*$/
+    - /^docs/.*$/
+    - /^test/.*$/
+    - tags
+    - master
+  before_script:
+    - bundle install
+    - yarn install
+    - bash util/copy-env-file.sh
+    - cat $google_play_service_account_api_key_json > android/google_play_api_key.json
+    - npx ts-node util/app-ci-config.ts
+    - export $(cat build.env | xargs)
+  after_script:
+    - rm -f android/app/release.keystore
+    - rm -f android/google_play_api_key.json
+    - rm -f build.env
+  tags:
+    - docker
+
+.publish_ios_job:
+  cache:
+    key: $CI_DEFAULT_BRANCH:ios
+    paths:
+      - ios/Pods/
+      - node_modules/
+      - vendor/
+    policy: pull
+  dependencies: []
+  when: manual
+  only:
+    changes:
+      - ios/**/*
+      - src/**/*
+    refs:
+      - merge_requests
+  except:
+    - /^ci/.*$/
+    - /^docs/.*$/
+    - /^test/.*$/
+    - tags
+    - master
+  before_script:
+    - bundle install
+    - yarn install
+    - bundle exec fastlane ios installCocoapods
+    - cat $app_store_connect_api_key_json > ios/app_store_connect_api_key.json
+    - npx ts-node util/app-ci-config.ts
+    - export $(cat build.env | xargs)
+  after_script:
+    - rm -f ios/app_store_connect_api_key.json
+    - rm -f build.env
+  tags:
+    - ios
+
+.review_playstore_job:
+  image: registry.ec.pe/movil/trome/trome-react-native:master
+  stage: store_review
+  cache:
+    key: $CI_DEFAULT_BRANCH:android
+    paths:
+      - node_modules/
+      - vendor/
+    policy: pull
+  when: manual
+  only:
+    - master
+  except:
+    - tags
+  dependencies: []
+  before_script:
+    - bundle install
+    - cat $google_play_service_account_api_key_json > android/google_play_api_key.json
+  script:
+    - bundle exec fastlane android promote_internal_to_production
+  after_script:
+    - rm -f android/google_play_api_key.json
+
+.review_appgallery_job:
+  image: registry.ec.pe/movil/trome/trome-react-native:master
+  stage: store_review
+  cache:
+    key: $CI_DEFAULT_BRANCH:android
+    paths:
+      - node_modules/
+      - vendor/
+    policy: pull
+  when: manual
+  only:
+    - master
+  except:
+    - tags
+  dependencies: []
+  before_script:
+    - bundle install
+  script:
+    - bundle exec fastlane android submit_for_review_to_appgallery
+
+.review_appstore_job:
+  stage: store_review
+  cache:
+    key: $CI_DEFAULT_BRANCH:ios
+    paths:
+      - node_modules/
+      - vendor/
+    policy: pull
+  when: manual
+  only:
+    - master
+  except:
+    - tags
+  dependencies: []
+  before_script:
+    - bundle install
+    - cat $app_store_connect_api_key_json > ios/app_store_connect_api_key.json
+  script:
+    - bundle exec fastlane ios promote_internal_to_production
+  after_script:
+    - rm -f ios/app_store_connect_api_key.json
+  tags:
+    - ios
+
+.release_job:
+  image: registry.ec.pe/movil/trome/trome-react-native:semantic-release
+  stage: release
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+      when: manual
+  script:
+    - semantic-release

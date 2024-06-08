@@ -1,0 +1,90 @@
+{
+  "version": "2.0.0",
+  "configurations": [
+    {
+      "name": "Depor Android",
+      "cwd": "${workspaceFolder}",
+      "type": "reactnative",
+      "request": "launch",
+      "runArguments": ["--appIdSuffix=depor.dev", "--tasks=installDeporDebug"],
+      "platform": "android",
+      "envFile": "${workspaceFolder}/build.env"
+    },
+    {
+      "name": "Depor iOS",
+      "cwd": "${workspaceFolder}",
+      "type": "reactnative",
+      "request": "launch",
+      "runArguments": ["--scheme=Depor", "--configuration=Debug"],
+      "platform": "ios"
+    },
+    {
+      "name": "El Comercio Android",
+      "cwd": "${workspaceFolder}",
+      "type": "reactnative",
+      "request": "launch",
+      "runArguments": ["--appId=com.gec.elcomercio.dev", "--tasks=installElcomercioDebug"],
+      "platform": "android",
+      "envFile": "${workspaceFolder}/build.env"
+    },
+    {
+      "name": "El Comercio iOS",
+      "cwd": "${workspaceFolder}",
+      "type": "reactnative",
+      "request": "launch",
+      "runArguments": ["--scheme=ElComercio", "--configuration=Debug"],
+      "platform": "ios"
+    },
+    {
+      "name": "Gestión Android",
+      "cwd": "${workspaceFolder}",
+      "type": "reactnative",
+      "request": "launch",
+      "runArguments": ["--appIdSuffix=gestion.dev", "--tasks=installGestionDebug"],
+      "platform": "android",
+      "envFile": "${workspaceFolder}/build.env"
+    },
+    {
+      "name": "Gestión iOS",
+      "cwd": "${workspaceFolder}",
+      "type": "reactnative",
+      "request": "launch",
+      "runArguments": ["--scheme=Gestion", "--configuration=Debug"],
+      "platform": "ios"
+    },
+    {
+      "name": "Perú21 Android",
+      "cwd": "${workspaceFolder}",
+      "type": "reactnative",
+      "request": "launch",
+      "runArguments": ["--appIdSuffix=peru21.dev", "--tasks=installPeru21Debug"],
+      "platform": "android",
+      "envFile": "${workspaceFolder}/build.env"
+    },
+    {
+      "name": "Perú21 iOS",
+      "cwd": "${workspaceFolder}",
+      "type": "reactnative",
+      "request": "launch",
+      "runArguments": ["--scheme=Peru21", "--configuration=Debug"],
+      "platform": "ios"
+    },
+    {
+      "name": "Trome Android",
+      "cwd": "${workspaceFolder}",
+      "type": "reactnative",
+      "request": "launch",
+      "runArguments": ["--appIdSuffix=trome.dev", "--tasks=installTromeDebug"],
+      "platform": "android",
+      "envFile": "${workspaceFolder}/build.env"
+    },
+    {
+      "name": "Trome iOS",
+      "cwd": "${workspaceFolder}",
+      "type": "reactnative",
+      "request": "launch",
+      "runArguments": ["--scheme=Trome", "--configuration=Debug"],
+      "platform": "ios"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+---
+title: Date Picker
+---
+
+El componente Date Picker es una abstracción del componente [React Native Date Time Picker](https://github.com/react-native-datetimepicker/datetimepicker).
+
+## Uso
+
+```jsx
+<DatePicker value={currentDate} onChangeDate={handleChangeDate} />
+```
+
+## Props
+
+### `containerStyle`
+
+Agregar y/o sobrescribe los estilos por defecto que tiene el label que muestra la fecha seleccionada.
+
+| Tipo                                                                         | Requerido |
+| ---------------------------------------------------------------------------- | --------- |
+| StyleSheet([ViewStyle](https://reactnative.dev/docs/view-style-props#props)) | no        |
+
+### `dateFormat`
+
+Establece el formato de visualización para el valor de la fecha en el cuadro de texto.
+
+| Tipo                       | Requerido |
+| -------------------------- | --------- |
+| Intl.DateTimeFormatOptions | no        |
+
+### `disabled`
+
+Permite deshabilitar la caja de texto con un valor booleano.
+
+| Tipo    | Requerido |
+| ------- | --------- |
+| boolean | no        |
+
+### `onChangeDate`
+
+Es un CallBack que se invoca cuando cambia el valor.
+
+| Tipo                 | Requerido |
+| -------------------- | --------- |
+| (date: Date) => void | no        |
+
+### `textColor`
+
+Permite cambiar el color de texto del selector de fecha.
+
+| Tipo   | Requerido |
+| ------ | --------- |
+| string | no        |
+
+### `value`
+
+Define el valor de fecha u hora utilizado en el componente.
+
+| Tipo | Requerido |
+| ---- | --------- |
+| Date | no        |

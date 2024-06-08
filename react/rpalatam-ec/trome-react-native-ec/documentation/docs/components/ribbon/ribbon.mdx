@@ -1,0 +1,60 @@
+---
+title: Ribbon
+---
+
+El componente Ribbon es uno de tipo Nav, que tiene por defecto la opción de navegar hacia atrás.
+
+## Uso
+
+```jsx
+<Ribbon
+  title="Wuf"
+  titleStyle={{ textTransform: 'capitalize' }}
+  LeftComponent={() => <Button onPress={handleSubmit} title="left"/>}
+  RigthComponent={() => <Button onPress={handleSubmit} title="rigth"/>}
+/>
+```
+
+## Props
+
+### `title`
+Texto principal a mostrar dentro del componente Ribbon.
+
+| Tipo   | Requerido |
+| ------ | --------- |
+| string | no        |
+
+### `titleStyle`
+Agrega estilos personalizados al título dentro del componente Ribbon. Estos estilos son propiedades heredadas de [ViewStyle](https://reactnative.dev/docs/view-style-props#props) y [TextStyle](https://reactnative.dev/docs/text-style-props#props) de React Native.
+
+| Tipo                                                                                                                                           | Requerido |
+| ---------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| StyleSheet([ViewStyle](https://reactnative.dev/docs/view-style-props#props), [TextStyle](https://reactnative.dev/docs/text-style-props#props)) | no        |
+
+### `LeftComponent`                             
+Permite agregar un componente funcional que devuelve un JSX.
+
+| Tipo                | Requerido |
+| ------------------- | --------- |
+| React.ComponentType | no        |
+
+Por defecto se encuentra un componente que permite regresar a la pantalla anterior. 
+
+```jsx
+<TouchableWithoutFeedback
+  onPress={navigation.goBack}
+  testID="goback-button">
+  <Icon
+    size={32}
+    name="chevron-left"
+    color={colors['coolGray-700']}
+  />
+</TouchableWithoutFeedback>
+```
+
+### `RigthComponent`
+Permite agregar un componente funcional que devuelve un JSX.
+
+| Tipo                | Requerido |
+| ------------------- | --------- |
+| React.ComponentType | no        |

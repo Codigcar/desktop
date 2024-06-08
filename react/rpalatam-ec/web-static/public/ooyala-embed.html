@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KGHXT7F');</script>
+  <title>Player</title>
+
+  <!-- Ooyala .css -->
+  <!-- <link rel="stylesheet" href="//player.ooyala.com/static/v4/stable/4.17.8/skin-plugin/html5-skin.min.css" /> -->
+  <style type="text/css">
+    .oo-player-container {
+      min-width: 280px !important;
+    }
+
+    .oo-player-container .oo-control-bar .oo-control-bar-items-wrapper a.oo-control-bar-item {
+      color: transparent !important;
+    }
+
+    .oo-player-container .oo-scrubber-bar-container .oo-scrubber-bar-padding .oo-playhead-padding .oo-playhead {
+      background-color: rgb(247, 197, 0) !important;
+    }
+
+    .oo-player-container .oo-scrubber-bar-container .oo-scrubber-bar-padding .oo-playhead-padding .oo-playhead-scrubbing {
+      border: 3px solid rgb(247, 197, 0) !important;
+      background-color: #fff !important;
+    }
+
+    .oo-player-container .oo-control-bar .oo-control-bar-items-wrapper a.oo-control-bar-item .oo-icon-share {
+      display: none;
+    }
+
+    .oo-player-container .oo-player {
+      padding-top: 56.25% !important;
+    }
+
+    .oo-player-container .oo-control-bar .oo-control-bar-items-wrapper .oo-logo img {
+      height: 38px !important;
+      max-height: inherit !important
+    }
+
+    .oo-player-container .oo-xsmall .oo-control-bar .oo-control-bar-items-wrapper .oo-logo img {
+      height: 24px !important;
+    }
+    .oo-video-player video.videoAlt::-webkit-media-controls-panel {
+      display:inherit !important;
+      -webkit-appearance: auto;
+    }
+    /* .oo-video-player video.videoAlt::-webkit-media-controls-start-playback-button {
+      display:inherit !important;
+      -webkit-appearance: auto;
+    } */
+  </style>
+  <!-- FIN Ooyala .css -->
+
+
+  <!-- Ooyala .js -->
+  <script src="//player.ooyala.com/core/8c71f40fb4344c14b0fdf7e3da2426b9"></script>
+  <script src="//player.ooyala.com/static/v4/stable/4.17.8/ad-plugin/google_ima.min.js"></script>
+  <script src="//player.ooyala.com/static/v4/stable/4.17.8/analytics-plugin/googleAnalytics.min.js"></script>
+  <!-- FIN Ooyala .js -->
+
+</head>
+
+<body style="margin: 0;padding: 0">
+  <noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KGHXT7F" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <div id="container" style="width:100%;"></div>
+  <script>
+
+
+    function getQueryVariable(variable) {
+      var query = window.location.search.substring(1);
+      var vars = query.split("&");
+      for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] == variable) {
+          return pair[1];
+        }
+      }
+    }
+
+    var ads
+      = 1;
+    var autoplayed = getQueryVariable("autoplay");
+    autoplayedVideo = true;
+
+    if (autoplayed == 0) {
+      autoplayedVideo = false;
+    }
+
+    var category = "";
+    if (ads == 1 && category != '') {
+      preroll = "https://pubads.g.doubleclick.net/gampad/ads?sz=640x360&iu=/28253241/ECO_Preroll&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url=[referrer_url]&description_url=[description_url]&correlator=[timestamp]";
+    } else {
+      preroll = "";
+    }
+
+    
+    function onCreate(player) {
+      player.mb.subscribe(
+        OO.EVENTS.ERROR,
+        'test',
+        function(event, payload) {
+          console.warn("Error ooyala");
+          let original = window.location.search.split("poster=")[1].split("&original=");
+          let myContainer = document.querySelector('.oo-video-player');
+          myContainer.innerHTML = `<video class="videoAlt" controls="true" poster=${original[0]} preload="none"><source src=${original[1]} type="video/mp4"></video>`;
+        }
+      );
+    }
+
+    var playerParam = {
+      "autoplay": autoplayedVideo,
+      'loop': false,
+      "google-ima-ads-manager": {
+        "all_ads": [
+          {
+            "tag_url": preroll
+          }
+        ]
+      },
+      'iosPlayMode': 'inline',
+      onCreate: window.onCreate
+    };
+
+    OO.ready(function () {
+      window.pp = OO.Player.create("container", getQueryVariable("id"), playerParam);
+      //ooyalaUtils.trackVideoGa(window.pp);
+    });
+  </script>
+</body>
+
+</html>

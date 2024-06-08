@@ -1,0 +1,337 @@
+.e-ribbon {
+  background: #fff;
+  box-shadow: 0 0 3px 1px rgba(112, 110, 117, 0.2);
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+  transition: background 300ms;
+}
+.e-ribbon.ec-app {
+  border-bottom: 1px solid #ffcb05;
+}
+
+.e-ribbon::before {
+  background-color: #000;
+  content: '';
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: opacity 300ms ease-in-out;
+  width: 100%;
+}
+
+.e-ribbon__section {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: #242729;
+  padding: 0 0.5em;
+  height: 38px;
+}
+.ec-app .e-ribbon__section {
+  color: #665202;
+  font-weight: 700;
+}
+.e-ribbon__section .is-icon {
+  color: #C1C1C1;
+}
+
+.e-ribbon__section div {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  flex: 1 1;
+  text-align: left;
+  margin-left: 0.25em;
+  font-size: 0.95em;
+  line-height: 1.2em;
+}
+
+.e-ribbon .is-icon {
+  color: #242729;
+}
+
+.e-ribbon .is-icon.marked {
+  color: #1f92e6 !important;
+}
+
+.e-ribbon .is-icon.disabled {
+  opacity: 0.5;
+}
+
+.e-ribbon.ec-app .is-icon-group .is-icon,
+.night-mode .e-ribbon.ec-app .is-icon-group .is-icon {
+  color: #AD9130;
+  font-size: 20px;
+}
+
+.e-ribbon__sucription {
+  font-size: 0.75em;
+  border: 1px solid #1f92e6;
+  border-radius: 2px;
+  height: 24px;
+  font-weight: 600;
+  padding: 0 8px;
+  color: #1f92e6;
+  margin: 0 0.5em;
+}
+
+.gestion .e-ribbon__sucription {
+  border-color: #1781a8;
+  color: #1781a8;
+}
+
+.e-ribbon__follow-wrapper {
+  position: absolute;
+  right: 10px;
+}
+
+.e-ribbon__follow-wrapper .e-follow {
+  font-size: 0.8rem;
+  border-radius: 4px;
+  margin: 0;
+}
+
+.e-ribbon__follow-wrapper .e-follow__notification {
+  margin-left: 4px;
+}
+
+/* @media (max-width: 370px) {
+  .gestion .e-ribbon__sucription {
+    display: none;
+  }
+} */
+
+.e-ribbon.e-ribbon-options::before {
+  height: 100vh;
+  opacity: 0.15;
+}
+
+.e-ribbon .news__header-title {
+  color: #666e75;
+  font-size: 1em;
+  text-align: center;
+  margin-right: 1em;
+}
+
+.e-ribbon .news__header-title.cutted {
+  text-overflow: ellipsis;
+  width: 120px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.e-ribbon .subtitle {
+  color: #7e7e7e;
+  font-size: 1em;
+  line-height: 1em;
+  text-align: center;
+}
+
+.is-modal__userConfig .wrapper__userConfig .wrapper__fontSize,
+.is-modal__userConfig .wrapper__userConfig .wrapper__modeNight {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  margin: 1em 0;
+}
+
+.is-modal__userConfig .wrapper__userConfig h3 {
+  color: #393d40;
+  line-height: 1.5em;
+  font-size: 0.85em;
+  font-weight: 700;
+  display: block;
+}
+.is-modal__userConfig .wrapper__fontSize-change {
+  border-radius: 4px;
+  border: 2px solid rgba(112, 110, 117, 0.25);
+  display: flex;
+  height: 40px;
+  overflow: hidden;
+}
+.is-modal__userConfig .wrapper__fontSize-change button {
+  color: #404040;
+  width: 80px;
+  height: 100%;
+}
+.is-modal__userConfig button:last-child {
+  font-size: 1.5em;
+}
+.is-modal__userConfig .wrapper__fontSize-change hr {
+  width: 2px;
+  height: 100%;
+  margin: 0;
+  background-color: rgba(112, 110, 117, 0.25);
+  border: none;
+}
+.night-mode .is-modal__userConfig h3,
+.night-mode .is-modal__userConfig .wrapper__fontSize-change button {
+  color: #f2f2f2;
+}
+
+.more-options {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.more-options::before {
+  background-color: #000;
+  content: '';
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  transition: opacity 300ms ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.more-options-active {
+  height: 100vh;
+  pointer-events: auto;
+}
+
+.more-options.more-options-active::before {
+  opacity: 0.15;
+}
+
+.more-options-content {
+  background-color: #fff;
+  position: absolute;
+  top: 65px;
+  right: 10px;
+  border-radius: 4px;
+  padding: 5px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: none;
+}
+
+.more-options-active .more-options-content {
+  display: block;
+}
+
+.more-options-content a,
+.more-options-content button {
+  display: block;
+  line-height: 36px;
+  font-size: 15px;
+  color: #404040;
+  padding: 0 12px;
+  min-width: 125px;
+  text-align: left;
+}
+
+.more-options-content .is-icon {
+  margin-right: 8px;
+}
+
+.more-options-content span {
+  vertical-align: 0.15em;
+  pointer-events: none;
+}
+
+.more-options-content p {
+  margin: 0;
+}
+
+/* .icon-more_vert.marked {
+  background-color: #1f92e6;
+} */
+
+.more-options-content .is-icon.marked {
+  color: #1f92e6;
+}
+
+/* @import "ERibbonNight.css"; */
+.night-mode .e-ribbon {
+  background: #212121;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.4);
+}
+.night-mode .e-ribbon .news__header-title {
+  color: #adb3b8;
+}
+.night-mode .more-options-content {
+  background-color: #272727;
+}
+.night-mode .more-options.more-options-active::before {
+  opacity: 0.35;
+}
+.night-mode .more-options-content a,
+.night-mode .more-options-content button {
+  color: #f2f2f2;
+}
+.night-mode .e-ribbon .is-icon,
+.night-mode .e-ribbon__section {
+  color: #d6d6d6;
+}
+.night-mode .ec-app .e-ribbon__section,
+.night-mode .ec-app .e-ribbon__section .is-icon {
+  color: #C1C1C1;
+}
+.night-mode.gestion .e-ribbon__sucription {
+  background-color: #1781a8;
+  color: #fff;
+}
+
+/* SWITCH */
+.switch-mode {
+  margin: 0;
+  appearance: none;
+  width: 50px;
+  height: 28px;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 14px;
+  border: 2px solid rgba(112, 110, 117, 0.25);
+  box-sizing: border-box;
+  position: relative;
+  outline: none;
+}
+.switch-mode::after {
+  content: '';
+  background-color: #fff;
+  /* border: 1px solid #999; */
+  border-radius: 12px;
+  box-sizing: border-box;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 24px;
+  width: 24px;
+  will-change: transform;
+  transition: transform 100ms ease;
+}
+.switch-mode:checked {
+  background-color: #4cd964;
+  border-color: #4cd964;
+}
+.switch-mode:checked::after {
+  transform: translateX(22px);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 5px;
+  background-color: #ffcb05;
+  animation: animatedValue 1s alternate infinite ease-in-out;
+  border-radius: 2.5px;
+  position: absolute;
+}
+
+@keyframes animatedValue {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

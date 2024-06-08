@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paywall Mount screen 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "display": "flex",
+          "flex": 1,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "overflow": "hidden",
+          },
+          undefined,
+        ]
+      }
+    >
+      <RNCWebView
+        cacheEnabled={true}
+        incognito={true}
+        injectedJavaScriptBeforeContentLoaded="console.log(\\"inject\\")"
+        injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+        injectedJavaScriptForMainFrameOnly={true}
+        javaScriptEnabled={true}
+        messagingEnabled={true}
+        onContentProcessDidTerminate={[Function]}
+        onHttpError={[Function]}
+        onLoadingError={[Function]}
+        onLoadingFinish={[Function]}
+        onLoadingProgress={[Function]}
+        onLoadingStart={[Function]}
+        onMessage={[Function]}
+        onShouldStartLoadWithRequest={[Function]}
+        source={
+          Object {
+            "uri": "https://elcomercio.pe/suscripcionesdigitales",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#ffffff",
+            },
+            Object {
+              "flex": 1,
+            },
+          ]
+        }
+        testID="paywall-screen"
+        textInteractionEnabled={true}
+        useSharedProcessPool={true}
+      />
+      <ActivityIndicator
+        color="#0089ff"
+        size="large"
+        style={
+          Object {
+            "flex": 1,
+            "justifyContent": "flex-start",
+          }
+        }
+      />
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;

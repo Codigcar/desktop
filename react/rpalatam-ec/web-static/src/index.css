@@ -1,0 +1,258 @@
+:root {
+  --primary-color: #ffcb05;
+  --info-color: hsl(204, 86%, 53%);
+  --success-color: hsl(141, 71%, 48%);
+  --warning-color: hsl(48, 100%, 67%);
+  --error-color: hsl(348, 100%, 61%);
+}
+
+@import 'font-style.css';
+@import './theme/depor.css';
+@import './theme/gestion.css';
+@import './theme/peru21.css';
+@import './theme/trome.css';
+.is-header .logotipo {
+  display: block;
+}
+
+.is-header .logotipo img {
+  height: 22px;
+  display: block;
+}
+
+.elcomercio .is-header .logotipo img {
+  height: 30px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', Helvetica, sans-serif;
+  line-height: 1.7em;
+  background-color: #dbdbdb;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html.overflow-hidden,
+html.overflow-hidden body {
+  overflow: hidden;
+}
+
+html.ios,
+.ios body {
+  overflow: hidden;
+}
+
+body.zoom-xSmall {
+  font-size: 12px;
+}
+
+body.zoom-small {
+  font-size: 15px;
+}
+
+body.zoom-medium {
+  font-size: 16px;
+}
+
+body.zoom-large {
+  font-size: 17px;
+}
+
+body.zoom-xLarge {
+  font-size: 19px;
+}
+
+/* Trasition Router Start */
+
+.transition-group {
+  position: relative;
+  z-index: 2;
+}
+
+.route-section {
+  /* position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2; */
+  will-change: transform;
+  transform: translate3d(0%, 0px, 0px);
+}
+
+.fade-enter {
+  /* opacity: 0.01; */
+  transform: translate3d(105%, 0px, 0px);
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transform: translate3d(0%, 0px, 0px);
+  transition: transform 300ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translate3d(0%, 0px, 0px);
+}
+
+.fade-exit.fade-exit-active {
+  /* opacity: 0.01; */
+  transform: translate3d(105%, 0px, 0px);
+  transition: transform 300ms ease-out;
+}
+
+/* Trasition Router End */
+
+.e-head .is-header {
+  height: 48px;
+}
+
+.e-head .is-header .is-icon {
+  color: #000;
+}
+
+.wrap-page {
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  will-change: scroll-position;
+}
+
+.wrap-view-new {
+  position: absolute;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  will-change: scroll-position;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.view-page > div {
+  background: white;
+  will-change: transform;
+}
+
+.wrap-router {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.router-portrait > div {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.float-preferences:active {
+  box-shadow: -9px 9px 15px -9px rgba(0, 0, 0, 0.75);
+}
+
+.viewer {
+  padding: 57px 15px 10px;
+  background-color: #e5e5e5;
+  height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.viewer .message {
+  color: #a7a5a5;
+  font-size: 1.9em;
+  text-align: center;
+  line-height: 1.5em;
+}
+
+.marker-wrap .icon-marker {
+  animation-name: hvr-icon-push;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+.icon-marker.marked {
+  animation-name: hvr-icon-pop;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  background-color: #1f92e6;
+}
+
+.e-notice-message {
+  display: flex;
+  margin: 0 15px;
+  justify-content: center;
+}
+
+.e-notice-message .e-notice-link {
+  color: #26d5ff;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.view-page {
+  position: relative;
+  z-index: 2;
+}
+
+.elcomercio table {
+  margin-bottom: 25px;
+  width: 100%;
+  height: auto;
+  border: 1px solid #ececec;
+}
+
+.elcomercio table tr:nth-child(2n) td {
+  background-color: #ececec;
+}
+
+.elcomercio table td {
+  padding: 5px;
+  border-right: 1px solid #ececec;
+}
+
+/* Notification */
+
+.notification-root {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: fixed;
+  z-index: 1010;
+  width: 100%;
+  top: 10px;
+  left: 0;
+  pointer-events: none;
+}
+
+@keyframes hvr-icon-push {
+  50% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+}
+
+@keyframes hvr-icon-pop {
+  50% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+
+@import './indexNight.css';

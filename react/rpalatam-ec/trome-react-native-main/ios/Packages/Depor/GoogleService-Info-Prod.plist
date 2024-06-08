@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>614498765050-0sqdaigppt3antp22qenmhlj6eq3n997.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1038751133917-m2p7t4igceegbq22ajsltginc5mho2q3</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAbfh23NghdMVw3DMw9SPAFMc_0HP66Qtk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>614498765050</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.eeec.Depor</string>
+	<key>PROJECT_ID</key>
+	<string>depor-pwa</string>
+	<key>STORAGE_BUCKET</key>
+	<string>depor-pwa.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:614498765050:ios:1d102b419fd6f628</string>
+	<key>DATABASE_URL</key>
+	<string>https://depor-pwa.firebaseio.com</string>
+</dict>
+</plist>

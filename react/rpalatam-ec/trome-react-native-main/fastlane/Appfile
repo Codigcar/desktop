@@ -1,0 +1,3 @@
+json_key_file("android/google_play_api_key.json") # Path to the json secret file
+
+# The docs are available on https://docs.fastlane.tools/actions/supply

@@ -1,0 +1,35 @@
+.collapse-item {
+  margin: 5px 0;
+}
+
+.collapse-header {
+  padding: 2px 0;
+}
+
+.collapse-item .collapse-header .is-icon {
+  /* color: #4bafba; */
+  color: #0089ff;
+}
+
+.collapse-item-active .collapse-header .is-icon {
+  transform: rotate(90deg);
+  will-change: transform;
+}
+
+.collapse-content {
+  overflow: hidden;
+  will-change: height;
+}
+
+.collapse-item-active .collapse-content {
+  height: auto;
+}
+
+.collapse-content {
+  /* display: none; */
+  height: 0;
+}
+
+.collapse-content ul {
+  margin-top: 3px;
+}

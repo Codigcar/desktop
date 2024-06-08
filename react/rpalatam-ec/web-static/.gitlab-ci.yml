@@ -1,0 +1,73 @@
+stages:
+  - build
+  - deploy
+
+default:
+  image: registry.ec.pe/movil/trome/trome-react-native:node14
+  tags:
+    - docker
+
+.build_job:
+  stage: build
+  cache:
+    paths:
+      - node_modules/
+  except:
+    - /^ci/.*$/
+  before_script:
+    - yarn install
+  artifacts:
+    when: on_success
+    paths:
+      - build/
+    expire_in: 1 week
+
+build:dev:
+  extends: .build_job
+  script:
+    - CI=false yarn build:dev
+  only:
+    - development
+
+build:prod:
+  extends: .build_job
+  script:
+    - CI=false yarn build
+  only:
+    - master
+
+.deploy_job:
+  image: registry.ec.pe/infraestructura/imagesci/awscli/awscli-s3
+  stage: deploy
+  script:
+    - cd build
+    - aws s3 sync . s3://$WEB_DOMAIN/ --exclude '*.svg' --exclude '*.json' --exclude 'brands/*/.well-known/apple-app-site-association' --exclude 'index.html' --exclude 'service-worker.js' --exclude 'sw.js' --metadata-directive REPLACE --expires 2034-01-01T00:00:00Z --cache-control max-age=31536000
+    - aws s3 sync . s3://$WEB_DOMAIN/ --delete --exclude '*' --include '*.svg' --content-type 'image/svg+xml'
+    - aws s3 sync . s3://$WEB_DOMAIN/ --delete --exclude '*' --include '*.json' --content-type 'application/json'
+    - aws s3 cp ./brands/depor/.well-known/apple-app-site-association s3://$WEB_DOMAIN/brands/depor/.well-known/apple-app-site-association --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type application/json --acl public-read
+    - aws s3 cp ./brands/elcomercio/.well-known/apple-app-site-association s3://$WEB_DOMAIN/brands/elcomercio/.well-known/apple-app-site-association --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type application/json --acl public-read
+    - aws s3 cp ./brands/gestion/.well-known/apple-app-site-association s3://$WEB_DOMAIN/brands/gestion/.well-known/apple-app-site-association --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type application/json --acl public-read
+    - aws s3 cp ./brands/peru21/.well-known/apple-app-site-association s3://$WEB_DOMAIN/brands/peru21/.well-known/apple-app-site-association --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type application/json --acl public-read
+    - aws s3 cp ./brands/trome/.well-known/apple-app-site-association s3://$WEB_DOMAIN/brands/trome/.well-known/apple-app-site-association --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type application/json --acl public-read
+    - aws s3 cp ./asset-manifest.json s3://$WEB_DOMAIN/asset-manifest.json --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type application/json --acl public-read
+    - aws s3 cp ./service-worker.js s3://$WEB_DOMAIN/service-worker.js --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type application/javascript --acl public-read
+    - aws s3 cp ./sw.js s3://$WEB_DOMAIN/sw.js --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type application/javascript --acl public-read
+    - aws s3 cp ./index.html s3://$WEB_DOMAIN/index.html --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type text/html --acl public-read
+
+deploy:dev:
+  extends: .deploy_job
+  dependencies:
+    - build:dev
+  variables:
+    WEB_DOMAIN: 'pwa.dev.elcomercio.pe'
+  only:
+    - development
+
+deploy:prod:
+  extends: .deploy_job
+  dependencies:
+    - build:prod
+  variables:
+    WEB_DOMAIN: 'pwa.elcomercio.pe'
+  only:
+    - master

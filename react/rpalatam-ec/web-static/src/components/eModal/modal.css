@@ -1,0 +1,635 @@
+.is-modal-swh .swh-message {
+  color: #757575;
+  line-height: 1.25em;
+  margin-bottom: 1.25em;
+}
+.is-modal-swh .swh-message h5 {
+  font-size: 1.15em;
+  color: #242729;
+  font-weight: 900;
+  line-height: 1.25em;
+  font-family: 'Merriweather', serif;
+}
+.trome .is-modal-swh .swh-message h5 {
+  font-family: 'Encode Sans Condensed', serif;
+}
+.is-modal-swh .swh-message h5 + p {
+  margin-top: 0.5em;
+}
+
+/* Modal Podcast */
+.is-modal-register.is-modal-bottom .is-modal__content,
+.is-modal-swh.is-modal-bottom .is-modal__content {
+  padding: 0;
+}
+.is-modal-register .register-content,
+.is-modal-swh .register-content {
+  padding: 1.75em 20px 1.25em;
+  max-height: calc(100vh - 43px);
+  overflow-y: auto;
+}
+.is-modal-register .register-content .input-group,
+.is-modal-swh .register-content .input-group {
+  padding-top: 0;
+}
+.is-modal-register .mpp-modal-podcast .btn-close {
+  align-self: flex-end;
+  margin: 0;
+}
+
+.button__fb-wrapper {
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.button__fb-wrapper p {
+  font-size: 0.85em;
+  margin-top: 1em;
+}
+
+.is-modal-register .btn-close,
+.is-modal-swh .btn-close {
+  width: 100%;
+  background-color: #000;
+  font-size: 0.9em;
+  font-weight: 600;
+  padding: 1em 15px;
+  color: #d3d7de;
+}
+@supports (padding: env(safe-area-inset-bottom)) {
+  .is-modal-register .btn-close,
+  .is-modal-swh .btn-close {
+    padding-bottom: calc(env(safe-area-inset-bottom) + 1em) !important;
+  }
+}
+.is-modal-register .register-other-options,
+.is-modal-swh .register-other-options,
+.modal-cancel-other-options {
+  text-align: center;
+  margin-top: 1.25em;
+  line-height: 1.5em;
+  color: #757575;
+  font-size: 0.95em;
+}
+.is-modal-register .register-other-options button,
+.is-modal-swh .register-other-options button,
+.modal-cancel-other-options button {
+  color: #0089ff;
+  font-weight: 500;
+}
+.trome .is-modal-swh .register-other-options button {
+  color: #242729;
+}
+.trome.night-mode .is-modal-swh .register-other-options button {
+  color: #ff8400;
+}
+
+.is-modal-register .button-register {
+  background-color: #0089ff;
+  width: 100%;
+  border-radius: 4px;
+  line-height: 1.5;
+  color: #d3d7de;
+  font-weight: 600;
+  font-size: 0.95em;
+  padding: 1em 0;
+  letter-spacing: 0.25px;
+}
+
+.is-modal-register .button-register span {
+  color: #fff;
+}
+
+.is-modal-register .modal-loading,
+.is-modal-swh .modal-loading {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1001;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 15px 15px 0 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fadeBottom-enter {
+  opacity: 0;
+  z-index: 1;
+}
+.fadeBottom-enter.fadeBottom-enter-active {
+  opacity: 1;
+  transition: opacity 450ms ease-in-out;
+}
+.fadeBottom-exit {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+}
+.fadeBottom-exit.fadeBottom-exit-active {
+  opacity: 0;
+}
+
+/* Checkbox */
+.input-group-checkbox {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  margin-bottom: 1em;
+  line-height: 1;
+}
+.input-group-checkbox label {
+  flex: 1 1;
+  line-height: 1.25em;
+  font-size: 0.85em;
+}
+.input-group-checkbox label a {
+  text-decoration: underline;
+}
+.input-group-checkbox input {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin: 0 1em 0 0;
+  padding: 0;
+  border: 1px solid rgba(112, 110, 117, 0.2);
+  border-radius: 2px;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+.input-group-checkbox .is-icon {
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  font-size: 24px;
+  color: #0089ff !important;
+  pointer-events: none;
+  display: none;
+}
+.input-group-checkbox input:checked + .is-icon {
+  display: block;
+}
+.input-checkbox .error {
+  border-color: red;
+}
+
+/* Paywall Modal */
+.paywall__modal-header {
+  background-color: #000;
+  padding: 25px 20px;
+  color: #fff;
+}
+
+.paywall__modal-header h5 {
+  font-size: 1.65em;
+  font-weight: 900;
+  font-family: 'Merriweather', serif;
+}
+
+.paywall__modal-header p {
+  font-size: 0.9em;
+  line-height: 1.25em;
+  margin-bottom: 0.5em;
+}
+
+.campaign__loader-background-placeholder {
+  padding: 22px;
+}
+
+.campaign__loader .is-icon {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.paywall-content {
+  color: #242729;
+  font-size: 0.9em;
+  margin-bottom: 1.5em;
+}
+
+.paywall__price {
+  display: flex;
+  align-items: center;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+.paywall__price-number {
+  font-size: 4.5em;
+  font-weight: 600;
+  letter-spacing: -2px;
+}
+
+.paywall__price-number sup {
+  font-size: 0.4em;
+}
+
+.paywall__price-text {
+  font-family: 'Merriweather', serif;
+  font-size: 2.75em;
+}
+
+.paywall__price-conditions {
+  font-size: 0.85em;
+  margin-left: 0.75em;
+  text-transform: uppercase;
+  line-height: 1.25;
+}
+.paywall__price-conditions p + p {
+  margin-top: 0.25em;
+}
+
+.hr-title {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+  margin: 1em 0;
+}
+
+.hr-title::before {
+  content: '';
+  height: 1px;
+  background-color: rgba(112, 110, 117, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  margin-top: 0.5px;
+}
+
+.hr-title span {
+  background-color: #fff;
+  display: inline-block;
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
+  padding: 0 20px;
+}
+
+/* .benefit-list {
+  margin-bottom: 1em;
+} */
+
+.benefit-list li {
+  padding-left: 24px;
+  line-height: 1.25;
+  font-weight: 300;
+}
+
+.benefit-list .is-icon {
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: #393d40;
+  font-size: 1.1em;
+}
+
+.benefit-list li + li {
+  margin-top: 1em;
+}
+
+.btn-paywall {
+  background-color: #0089ff;
+  width: 100%;
+  border-radius: 4px;
+  line-height: 1.5;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95em;
+  padding: 1em 0;
+  letter-spacing: 0.25px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+}
+.paywall__verify {
+  color: #242729;
+  font-size: 0.95em;
+  line-height: 1.5em;
+  margin-top: 1.25em;
+  text-align: center;
+}
+.paywall__verify button {
+  color: #0089ff;
+  font-weight: 500;
+}
+.gestion .paywall__verify button {
+  color: #1781a8;
+}
+
+.paywall__footer {
+  color: #242729;
+  font-size: 0.85em;
+  margin-top: 1.5em;
+  font-weight: 300;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.gestion .paywall__modal-header {
+  background-color: #841b24;
+}
+.gestion .btn-paywall {
+  background-color: #1781a8;
+}
+.gestion .hr-title span {
+  background-color: #f5e9de;
+}
+
+.form-register__test-b {
+  display: flex;
+  flex-direction: column;
+}
+
+.gestion .form-register__test-b .input-group label::after,
+.gestion .form-register__test-a .input-group:nth-child(1) label::after,
+.gestion .form-register__test-a .input-group:nth-child(2) label::after {
+  content: '*';
+}
+
+.form-register__test-b > .input-group:nth-child(3) {
+  order: -1;
+}
+
+span.input-required {
+  font-size: 0.8em;
+  top: -10px;
+  margin-bottom: 5px;
+  color: #757575;
+}
+
+/* Night Mode */
+.night-mode .is-modal-register,
+.night-mode .is-modal-swh,
+.night-mode .benefit-list .is-icon {
+  color: #a8a8a8;
+}
+.night-mode .is-modal-register .content-mpp-modal,
+.night-mode .hr-title span {
+  background-color: #272727;
+}
+.night-mode .is-modal-register .content-mpp-modal h5,
+.night-mode .is-modal-swh .swh-message,
+.night-mode .is-modal-swh .swh-message h5,
+.night-mode .is-modal-register .content-mpp-modal p,
+.night-mode .paywall-content,
+.night-mode .paywall__footer,
+.night-mode .modal-cancel__head,
+.night-mode .paywall__verify {
+  color: #f2f2f2;
+}
+.gestion.night-mode .paywall__verify button {
+  color: #1a95c1;
+}
+
+/* Modal Cancelation */
+.modal-cancel__head {
+  line-height: 1.25em;
+  color: #242729;
+  font-size: 1.15em;
+  font-family: 'Merriweather', serif;
+  margin-bottom: 1em;
+}
+
+.modal-cancel__body {
+  color: #242729;
+  line-height: 1.25em;
+  margin-bottom: 1.25em;
+  font-weight: 300;
+}
+
+.night-mode .modal-cancel__body {
+  color: #a8a8a8;
+}
+
+.modal-cancel__body b {
+  font-weight: 500;
+}
+
+.modal-cancel__body > p {
+  margin-bottom: 10px;
+}
+
+.modal-cancel__options-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25em;
+}
+
+.modal-cancel__options-wrapper input[type='radio'] {
+  opacity: 0;
+  position: absolute;
+}
+
+.modal-cancel__option {
+  border: 1px solid rgba(112, 110, 117, 0.2);
+  border-radius: 4px;
+  margin-bottom: 0.5em;
+  padding: 0.5em 10px;
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+  font-size: 0.95em;
+  line-height: 1;
+}
+
+.modal-cancel__option-icon {
+  margin-right: 12px;
+}
+
+.modal-cancel__option-icon {
+  border-radius: 50%;
+  border: solid 2px #a8a8a8;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+}
+
+.modal-cancel__option.active {
+  font-weight: 500;
+  border-color: #0089ff;
+}
+
+.night-mode .modal-cancel__option.active {
+  border-color: #757575;
+}
+
+.modal-cancel__option.active .modal-cancel__option-icon {
+  background-color: #0089ff;
+  border-color: transparent;
+}
+
+.modal-cancel__option svg {
+  fill: transparent;
+}
+
+.modal-cancel__option.active svg {
+  fill: #fff;
+}
+
+.modal-cancel__option.area {
+  background-color: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: 0.95em;
+  font-weight: 400;
+  line-height: 1.15em;
+  resize: none;
+  outline: none;
+}
+
+.modal-cancel__option.area.invalid {
+  border-color: #ff2b2b;
+}
+
+.modal-cancel__error-message {
+  font-size: 0.8em;
+}
+
+.modal-cancel-other-options {
+  padding-bottom: 1em;
+}
+
+.modal-cancel__button {
+  color: hsl(348, 100%, 61%);
+  text-align: center;
+  width: 100%;
+  line-height: 1.5em;
+}
+
+.modal-cancel__button:disabled {
+  opacity: 0.7;
+}
+
+.modal-confirm__body {
+  padding: 32px 14px 22px 14px;
+  text-align: center;
+}
+
+.modal-confirm__body .heading,
+.modal-cancel__body .heading-highlight {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.modal-confirm__body .heading-highlight {
+  color: #0089ff;
+}
+
+.modal-confirm__body .text {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1rem;
+  margin: 12px 0;
+}
+
+.modal-confirm__options {
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.modal-confirm__button {
+  border-radius: 18px;
+  padding: 0 22px;
+  font-size: 14px;
+  color: inherit;
+  height: 36px;
+}
+
+.modal-confirm__button.accept {
+  border: 1px solid #0089ff;
+  color: #0089ff;
+  font-weight: 600;
+}
+
+.swh-partners {
+  display: flex;
+  justify-content: space-around;
+  margin: 0.75rem auto 0;
+  max-width: 400px;
+}
+.swh-partners img {
+  max-width: 100%;
+}
+
+.depor .swh-partners figure {
+  margin: 0 2px;
+}
+
+.trome .swh-partners figure {
+  overflow: hidden;
+  width: 60px;
+  height: 42px;
+}
+
+.trome .swh-partners img {
+  max-width: none;
+  width: 64px;
+  margin-left: -2px;
+  margin-top: -2px;
+}
+
+.icon-trome-premium-bg {
+  background-image: url(https://cdna.trome.pe/resources/dist/trome/images/logo-club-trome.png?d=1);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  font-size: 0;
+  margin: 0 2px;
+  top: -6px;
+  width: 60px;
+}
+
+.register-modal .icon-premium-peru21 {
+  display: block;
+  margin: 0 auto 1em;
+  width: 150px;
+}
+.register-modal .icon-premium-peru21 img {
+  display: block;
+}
+.peru21 .register-modal .login-button {
+  background-color: #0065aa;
+}
+.depor .register-modal .logo-premium-depor img {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+}
+.depor .register-modal .swh-message {
+  text-align: center;
+}
+.depor .register-modal .swh-message h5 {
+  margin: 0.5rem 0 1.5rem;
+}
+.depor .register-modal .login-button {
+  background-color: #C2D32C;
+  color: #272727;
+}
+
+.upate-modal .is-modal__content {
+  text-align: center;
+  border-radius: 16px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  max-width: 280px;
+  overflow: hidden;
+}
+
+.upate-modal__text {
+  padding: 1.25rem .25rem;
+  border-bottom: 1px solid rgba(112, 110, 117, .2);
+}
+
+.upate-modal button {
+  width: 100%;
+  padding-bottom: 0.625rem;
+  padding-top: 0.625rem;
+  color: #1f92e7;
+}

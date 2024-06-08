@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "526805138059",
+    "firebase_url": "https://trome-sandbox-app.firebaseio.com",
+    "project_id": "trome-sandbox-app",
+    "storage_bucket": "trome-sandbox-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526805138059:android:f44c85df6677a9e76cf28e",
+        "android_client_info": {
+          "package_name": "com.eeec.trome.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "526805138059-kfdfu2i7g4rogdchmj0q82puqfjc1ccr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZvll8KD3CXjdALRGrtMK3M90EbijDvdY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "526805138059-kfdfu2i7g4rogdchmj0q82puqfjc1ccr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "526805138059-h63c10barhr81saj0sql7mb948db4bt0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.eeec.Trome.dev",
+                "app_store_id": "991048862"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,19 @@
+{
+  "short_name": "Gestión",
+  "name": "Gestión",
+  "icons": [
+    {
+      "src": "/brands/gestion/64x64.png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "/brands/gestion/144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#eeded2",
+  "background_color": "#eeded2"
+}

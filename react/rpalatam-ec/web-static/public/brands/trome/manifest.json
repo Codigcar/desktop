@@ -1,0 +1,19 @@
+{
+  "short_name": "Trome",
+  "name": "Trome",
+  "icons": [
+    {
+      "src": "/brands/trome/64x64.png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "/brands/trome/144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#f15a24",
+  "background_color": "#f15a24"
+}

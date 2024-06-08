@@ -1,0 +1,147 @@
+.nav-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 2;
+  padding: 0 0.75em;
+  border-top: 1px solid rgba(112, 110, 117, 0.1);
+  box-shadow: 0 -4px 10px -4px rgba(0, 0, 0, 0.1);
+  padding-bottom: 0.25em;
+  transition: background 300ms;
+}
+@supports (padding: env(safe-area-inset-bottom)) {
+  .nav-bottom {
+    padding-bottom: max(env(safe-area-inset-bottom), 1em);
+  }
+}
+.nav-bottom-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.nav-bottom-group .is-icon-wrapper.is-large {
+  height: 3em;
+  width: 3.75em;
+  flex-direction: column;
+}
+
+.nav-bottom-group .is-icon {
+  font-size: 22px;
+}
+.icon-p21tv.is-icon {
+  font-size: 32px !important;
+}
+
+.nav-bottom-group .is-icon {
+  margin-top: -8px;
+}
+
+.elcomercio .nav-bottom-group .active .is-icon,
+.elcomercio .nav-bottom-group .active .icon-title {
+  color: #0089ff;
+}
+
+.peru21 .nav-bottom-group .active .is-icon,
+.peru21 .nav-bottom-group .active .icon-title {
+  color: #0E6DC1;
+}
+
+.depor .nav-bottom-group .active .is-icon,
+.depor .nav-bottom-group .active .icon-title {
+  color: #f25a23;
+}
+
+.icon-title {
+  font-size: 10px;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  bottom: 4px;
+  right: 0;
+  color: #666666;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: -0.25px;
+}
+
+.night-mode .nav-bottom,
+.nav-bottom.nav-bottom-night {
+  background-color: #272727;
+}
+.night-mode .nav-bottom-group .is-icon,
+.night-mode .nav-bottom-group .icon-title,
+.nav-bottom.nav-bottom-night .is-icon,
+.nav-bottom.nav-bottom-night .icon-title {
+  color: #909090;
+}
+.night-mode .nav-bottom-group .active .is-icon,
+.night-mode .nav-bottom-group .active .icon-title,
+.nav-bottom.nav-bottom-night .active .is-icon,
+.nav-bottom.nav-bottom-night .active .icon-title {
+  color: #ffffff;
+}
+
+/* EC APP */
+.nav-bottom.ec-v2 {
+  box-shadow: none;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.nav-bottom.ec-v2 .nav-bottom-group {
+  background-color: #FFFDF4;
+  box-shadow: 0px -4px 8px #C9C9C999;
+}
+.nav-bottom.ec-v2 .nav-bottom-group a {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 48px;
+  justify-content: center;
+}
+@supports (padding: env(safe-area-inset-bottom)) {
+  .nav-bottom.ec-v2 .nav-bottom-group a {
+    height: calc(env(safe-area-inset-bottom) + 48px);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+.nav-bottom.ec-v2 .nav-bottom-group a:not(:last-child) {
+  border-right: 1px solid #CECECE;
+}
+.nav-bottom.ec-v2 .nav-bottom-group .is-icon {
+  color: #8E8E8E;
+  font-size: 14px;
+  margin-top: 0;
+}
+.nav-bottom.ec-v2 .nav-bottom-group span {
+  color: #8E8E8E;
+  font-size: 11px;
+  white-space: nowrap;
+}
+.nav-bottom.ec-v2 .nav-bottom-group .active::before {
+  content: "";
+  background-color: #FFF7D5;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0px 4px 8px #00000079;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: -5px;
+}
+.nav-bottom.ec-v2 .nav-bottom-group .active span,
+.nav-bottom.ec-v2 .nav-bottom-group .active .is-icon {
+  color: #1B1B1B;
+}
+.night-mode .nav-bottom.ec-v2 .nav-bottom-group {
+  background-color: #1B1B1B;
+}
+.night-mode .nav-bottom.ec-v2 .nav-bottom-group .active::before {
+  background-color: #8E8E8E;
+}

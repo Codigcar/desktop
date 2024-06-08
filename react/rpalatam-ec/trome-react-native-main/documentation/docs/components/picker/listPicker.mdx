@@ -1,0 +1,66 @@
+---
+title: Picker
+---
+
+El componente Picker es una abstracción del componente [React Native Picker](https://github.com/react-native-picker/picker).
+
+## Uso
+
+```jsx
+<Picker
+  selectedValue={value}
+  onValueChange={handleValueChange}
+  options={options}
+  labelContainerStyle={errorStyle}
+/>
+```
+
+## Props
+
+### `onValueChange`
+
+Es un CallBack que se invoca cuando cambia el valor.
+
+| Tipo                                           | Requerido |
+| ---------------------------------------------- | --------- |
+| (itemValue: string, itemIndex: number) => void | si        |
+
+### `options`
+
+Lista de elementos que contendrá el Picker.
+
+| Tipo  | Requerido |
+| ----- | --------- |
+| array | si        |
+
+### `disabled`
+
+Permite deshabilitar la caja de texto con un valor booleano.
+
+| Tipo    | Requerido |
+| ------- | --------- |
+| boolean | no        |
+
+### `labelContainerStyle`
+
+Agregar y/o sobrescribe los estilos por defecto que tiene el label que muestra el elemento seleccionado.
+
+| Tipo                                                                         | Requerido |
+| ---------------------------------------------------------------------------- | --------- |
+| StyleSheet([ViewStyle](https://reactnative.dev/docs/view-style-props#props)) | no        |
+
+### `placeholder`
+
+Texto que mostrará el Picker al no tener una opción seleccionada.
+
+| Tipo   | Requerido |
+| ------ | --------- |
+| string | no        |
+
+### `selectedValue`
+
+Opción que mostrará el Picker como valor inicial.
+
+| Tipo   | Requerido |
+| ------ | --------- |
+| string | no        |

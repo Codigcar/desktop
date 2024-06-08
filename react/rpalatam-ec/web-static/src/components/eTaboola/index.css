@@ -1,0 +1,93 @@
+/* Taboola Styles */
+.trome .eNew .trc_rbox_container{
+  margin-top: 2rem;
+}
+
+.eNew .thumbnails-c .trc_rbox_header,
+.eNew .thumbnails-d .trc_rbox_header,
+.eNew .thumbnails-i .trc_rbox_header {
+  font-family: system-ui, sans-serif;
+  font-size: .85rem;
+  background-color: rgba(0,0,0,0);
+  color: #666e75;
+  text-transform: uppercase;
+  padding: 0;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.trome .eNew .thumbnails-d .trc_rbox_header .trc_rbox_header_span{
+  font-family: 'Encode Sans Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #333333;
+}
+.trome.night-mode .eNew .thumbnails-d .trc_rbox_header .trc_rbox_header_span {
+  color: #dddddd;
+}
+
+.eNew .thumbnails-c .logoDiv a span,
+.eNew .thumbnails-d .logoDiv a span,
+.eNew .thumbnails-i .logoDiv a span,
+.eNew .thumbnails-c .trc_header_ext a span,
+.eNew .thumbnails-d .trc_header_ext a span
+.eNew .thumbnails-i .trc_header_ext a span {
+  color: #666e75;
+  font-size: 10px;
+  text-transform: initial;
+}
+
+.trome .eNew .thumbnails-d .logoDiv a span,
+.trome .eNew .thumbnails-d .trc_header_ext a span{
+  color: #666666;
+  font-size: 12px;
+  font-family: system-ui, sans-serif;
+}
+
+.trome.night-mode .eNew .thumbnails-d .logoDiv a span,
+.trome.night-mode .eNew .thumbnails-d .trc_header_ext a span{
+  color: #777777;
+}
+
+.eNew .thumbnails-c .syndicatedItem .video-title,
+.eNew .thumbnails-d .syndicatedItem .video-title,
+.eNew .thumbnails-i .syndicatedItem .video-title {
+  font-family: system-ui, sans-serif;
+  font-size: 1.15em;
+  font-weight: 700;
+  line-height: 1.25em;
+  color: #242729;
+}
+
+.trome .eNew .thumbnails-d .syndicatedItem .video-title {
+  font-size: .875rem;
+  color: #000000;
+  letter-spacing:-0.01em;
+}
+.eNew .thumbnails-c .syndicatedItem .branding,
+.eNew .thumbnails-d .syndicatedItem .branding,
+.eNew .thumbnails-i .syndicatedItem .branding {
+  font-family: system-ui, sans-serif;
+  color: #666e75;
+  font-weight: 500;
+  line-height: 1.25em;
+}
+
+.trome .eNew .thumbnails-d .syndicatedItem .branding {
+  color: #666666;
+  margin-top: 10px;
+  letter-spacing:-0.01em;
+}
+.trome.night-mode .eNew .thumbnails-d .syndicatedItem .branding {
+  color: #888888;
+}
+.eNew .videoCube a.item-label-href {
+  display: block;
+  margin: 10px 0 0;
+}
+
+.night-mode .eNew .thumbnails-c .syndicatedItem .video-title,
+.night-mode .eNew .thumbnails-d .syndicatedItem .video-title,
+.night-mode .eNew .thumbnails-i .syndicatedItem .video-title {
+  color: #f2f2f2;
+}

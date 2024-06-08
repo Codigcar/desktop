@@ -1,0 +1,8 @@
+.message-notification {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.message-notification__link {
+  font-weight: bold;
+}

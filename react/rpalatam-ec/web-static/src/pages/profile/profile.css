@@ -1,0 +1,309 @@
+.profile__header {
+  background-color: #f2f2f2;
+  transition: background 300ms;
+}
+.profile-view .internal-page {
+  background-color: #fff;
+  min-height: 100vh;
+}
+.elcomercio .profile-view .internal-page {
+  background-color: #f2f2f2;
+}
+
+.gestion .profile__header {
+  background-color: #f1ded0;
+}
+
+.profile-view .content-page-view {
+  overflow-y: inherit;
+}
+
+.profile-view .profile__submenu-wrapper {
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+.profile-view .profile__header .submenu__item {
+  padding-top: 0;
+}
+
+.profile__user-image {
+  height: 35px;
+  width: 35px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  box-sizing: content-box;
+}
+
+.profile__login-button {
+  background-color: #0089ff;
+  border-radius: 4px;
+  line-height: 1.5;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.85em;
+  padding: 8px 15px;
+  letter-spacing: 0.25px;
+}
+
+.profile-view .submenu li {
+  border-bottom: 1px solid rgba(112, 110, 117, 0.2);
+}
+
+.profile-view .submenu__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  width: 100%;
+}
+
+.profile-view .submenu__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 1;
+  margin-right: 5px;
+  text-align: start;
+}
+
+.profile-view .submenu__title .is-icon {
+  margin-right: 15px;
+  font-size: 24px;
+  color: #393d40;
+}
+
+.profile-view .submenu__title > div {
+  flex: 1 1;
+}
+
+.profile-view h2 {
+  /* font-family: 'Merriweather', serif; */
+  color: #393d40;
+  line-height: 1.5em;
+  font-size: 0.85em;
+  font-weight: 700;
+  display: block;
+}
+
+.profile-view .submenu__item small {
+  color: #666666;
+  font-weight: 400;
+  display: block;
+  font-size: 0.75em;
+  line-height: 1.25em;
+  margin-top: 2px;
+}
+
+/* SWITCH */
+.switch-mode {
+  margin: 0;
+  appearance: none;
+  width: 50px;
+  height: 28px;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 14px;
+  border: 2px solid rgba(112, 110, 117, 0.25);
+  box-sizing: border-box;
+  position: relative;
+  outline: none;
+}
+.switch-mode::after {
+  content: '';
+  background-color: #fff;
+  /* border: 1px solid #999; */
+  border-radius: 12px;
+  box-sizing: border-box;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 24px;
+  width: 24px;
+  will-change: transform;
+  transition: transform 100ms ease;
+}
+.switch-mode:checked {
+  background-color: #4cd964;
+  border-color: #4cd964;
+}
+.switch-mode:checked::after {
+  transform: translateX(22px);
+}
+
+.input-verify h2 {
+  opacity: 0.5;
+}
+
+/* CUSTOM CATEGORIES */
+.dnd__wrapper .submenu__item-dnd {
+  padding: 0;
+}
+.submenu__item-dnd button {
+  flex: 1 1;
+}
+.submenu__item-dnd .submenu__title {
+  margin-right: 0;
+  padding: 15px 0 15px 20px;
+}
+.dnd__wrapper .submenu__item-dnd button .is-icon {
+  color: #1781a8;
+}
+.hr-vertical {
+  width: 1px;
+  height: 32px;
+  background-color: rgba(112, 110, 117, 0.2);
+  /* margin: 0 10px; */
+  border: 0;
+}
+
+/* MY SUBSCRIPTION */
+.subscription__wrapper {
+  color: #393d40;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.subscription__content {
+  max-height: calc(100% - 48px);
+  overflow-y: auto;
+}
+
+.subscription__select {
+  background-color: #f2f2f2;
+  padding: 15px 20px;
+}
+.gestion .subscription__select {
+  background-color: #f1ded0;
+}
+.subscription__select select {
+  appearance: none;
+  width: 100%;
+  outline: none;
+  background-color: #fff;
+  border: 0;
+  border-radius: 3px;
+  padding: 10px 5px;
+  font-size: 1em;
+}
+.subscription__select .is-icon {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  right: 8px;
+  top: 50%;
+  margin-top: -8px;
+}
+
+.subscription__card-wrapper {
+  padding: 0px 20px 0px 20px;
+}
+
+.subscription__btn-edit {
+  background-color: #d6d2cd;
+  border-radius: 30px;
+  color: inherit;
+  display: block;
+  margin: 0 auto;
+  font-size: 14.6px;
+  text-transform: lowercase;
+  padding: 6px 12px;
+}
+
+.night-mode .subscription__btn-edit {
+  background-color: #333740;
+}
+
+.subscription__detail h3 {
+  padding: 10px 20px;
+  /* color: #393D40; */
+  line-height: 1.5em;
+  font-size: 0.85em;
+  font-weight: 700;
+  display: block;
+}
+.subscription__history li {
+  /* color: #393D40; */
+  padding: 15px 20px;
+  line-height: 1.5em;
+  border-bottom: 1px solid rgba(112, 110, 117, 0.2);
+  font-size: 0.9em;
+}
+.subscription__history li:first-child {
+  border-top: 1px solid rgba(112, 110, 117, 0.2);
+}
+.subscription__price {
+  font-weight: 500;
+}
+.subscription__history sub {
+  display: inline-block;
+  margin-right: 2px;
+}
+.subscription__empty {
+  text-align: center;
+  padding: 20px;
+  height: calc(100vh - 47px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.subscription__empty p {
+  font-size: 1.2em;
+}
+
+.subscription__empty button {
+  color: #1781a8;
+  display: block;
+  margin: 0 auto;
+  padding: 0.75em 1.25em;
+  font-weight: 600;
+  margin-top: 1.5em;
+  border: 1px solid #1781a8;
+  border-radius: 2px;
+}
+
+.loading__wrapper {
+  text-align: center;
+  padding: 1em 0;
+  font-size: 24px;
+}
+
+.gestion.night-mode .subscription__empty button {
+  background-color: #1781a8;
+  color: #fff;
+}
+
+.night-mode .profile__header,
+.night-mode .subscription__select,
+.night-mode .profile-view .internal-page {
+  background-color: #1b1b1b;
+}
+
+.night-mode .profile-view,
+.night-mode .profile-view .submenu__item small,
+.night-mode .subscription__wrapper,
+.night-mode .btn-cancelsubscription {
+  color: #a8a8a8;
+}
+
+.night-mode .profile-view h2,
+.night-mode .profile-view .submenu__title .is-icon {
+  color: #f2f2f2;
+}
+
+.btn-cancelsubscription {
+  color: #393939;
+  font-size: 0.85em;
+  font-weight: 700;
+}
+
+.input-logout {
+  padding-top: 0.5em;
+  border-top: 1px solid #706e7533;
+  margin-bottom: 24px;
+}

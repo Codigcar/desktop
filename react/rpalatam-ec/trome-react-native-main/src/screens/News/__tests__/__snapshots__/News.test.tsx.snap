@@ -1,0 +1,732 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`News screen page should render card and ad 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "display": "flex",
+          "flex": 1,
+        },
+      ]
+    }
+    testID="News-screen"
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#FFFFFF",
+            "borderBottomColor": "#FFCB05",
+            "borderBottomWidth": 1,
+            "display": "flex",
+            "elevation": 3,
+            "shadowColor": "#050505",
+            "shadowOffset": Object {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.16,
+            "shadowRadius": 2.22,
+            "zIndex": 1,
+          },
+          Object {
+            "paddingTop": 0,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "display": "flex",
+              "flexDirection": "row",
+              "height": 48,
+              "justifyContent": "center",
+              "paddingHorizontal": 8,
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "left": 8,
+                "position": "absolute",
+                "zIndex": 1,
+              },
+            ]
+          }
+        >
+          <RNGestureHandlerButton
+            collapsable={false}
+            onGestureEvent={[Function]}
+            onGestureHandlerEvent={[Function]}
+            onGestureHandlerStateChange={[Function]}
+            onHandlerStateChange={[Function]}
+            rippleColor={0}
+            testID="goback-button"
+          >
+            <View
+              accessible={true}
+              style={Object {}}
+            >
+              <Icon
+                color="#2e3443"
+                name="chevron-left"
+                size={32}
+              />
+            </View>
+          </RNGestureHandlerButton>
+        </View>
+        <Text
+          numberOfLines={1}
+          style={
+            Array [
+              Object {
+                "color": "#2e3443",
+                "display": "flex",
+                "fontFamily": "Avenir",
+                "fontSize": 16,
+                "fontWeight": "700",
+                "lineHeight": 24,
+                "textAlign": "center",
+              },
+              Array [
+                Object {
+                  "flex": 1,
+                  "maxWidth": 654,
+                },
+                Object {
+                  "textTransform": "capitalize",
+                },
+              ],
+            ]
+          }
+        >
+          politics
+        </Text>
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "position": "absolute",
+                "right": 8,
+                "zIndex": 1,
+              },
+            ]
+          }
+        />
+      </View>
+    </View>
+    <RCTScrollView
+      ItemSeparatorComponent={[Function]}
+      ListEmptyComponent={
+        <View
+          flex={1}
+          pt="1"
+          px="0.75"
+        >
+          <CardPlaceholder
+            repeat={1}
+            variant="default"
+          />
+          <CardPlaceholder
+            repeat={5}
+            variant="magazine"
+          />
+        </View>
+      }
+      ListFooterComponent={[Function]}
+      data={
+        Array [
+          Story {
+            "headline": "title_one",
+            "id": "1",
+            "last_updated_date": "date",
+            "promo_items": Object {},
+            "reading_time": undefined,
+            "restrictions": undefined,
+            "section": undefined,
+            "subheadline": "description_one",
+            "type": "basic",
+            "url": "url",
+          },
+          Advertising {
+            "id": "/28253241/elcomercio/pwa/sect/default/caja1",
+            "size": "mediumRectangle",
+            "sizes": Array [
+              "mediumRectangle",
+              "largeBanner",
+              "banner",
+            ],
+          },
+          Story {
+            "headline": "title_two",
+            "id": "2",
+            "last_updated_date": "date",
+            "promo_items": Object {},
+            "reading_time": undefined,
+            "restrictions": undefined,
+            "section": undefined,
+            "subheadline": "description_two",
+            "type": "basic",
+            "url": "url",
+          },
+        ]
+      }
+      getItem={[Function]}
+      getItemCount={[Function]}
+      keyExtractor={[Function]}
+      onContentSizeChange={[Function]}
+      onEndReached={[Function]}
+      onEndReachedThreshold={0.5}
+      onLayout={[Function]}
+      onMomentumScrollBegin={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      refreshControl={
+        <RefreshControlMock
+          colors={
+            Array [
+              "#0089ff",
+            ]
+          }
+          onRefresh={[Function]}
+          progressBackgroundColor="#FFFFFF"
+          refreshing={false}
+        />
+      }
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEventThrottle={0.5}
+      scrollIndicatorInsets={
+        Object {
+          "right": 1,
+        }
+      }
+      stickyHeaderIndices={Array []}
+      viewabilityConfigCallbackPairs={Array []}
+    >
+      <RCTRefreshControl />
+      <View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flex": 1,
+                  "paddingVertical": 16,
+                },
+              ]
+            }
+          >
+            <RNGestureHandlerButton
+              collapsable={false}
+              onGestureEvent={[Function]}
+              onGestureHandlerEvent={[Function]}
+              onGestureHandlerStateChange={[Function]}
+              onHandlerStateChange={[Function]}
+              rippleColor={0}
+              testID="card-action-area"
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                nativeID="animatedComponent"
+                style={Object {}}
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "display": "flex",
+                        "flex": 1,
+                        "paddingHorizontal": 16,
+                      },
+                    ]
+                  }
+                >
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "color": "#2e3443",
+                          "display": "flex",
+                          "fontFamily": "NotoSerif-SemiCondensedBold",
+                          "fontSize": 18,
+                          "lineHeight": 26,
+                        },
+                      ]
+                    }
+                    testID="card-title"
+                  >
+                    title_one
+                  </Text>
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "display": "flex",
+                          "paddingTop": 8,
+                        },
+                      ]
+                    }
+                  >
+                    <Text
+                      numberOfLines={3}
+                      style={
+                        Array [
+                          Object {
+                            "color": "#6B7280",
+                            "display": "flex",
+                            "fontFamily": "Avenir",
+                            "fontSize": 14,
+                            "lineHeight": 20,
+                          },
+                        ]
+                      }
+                    >
+                      description_one
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </RNGestureHandlerButton>
+            <View
+              style={
+                Array [
+                  Object {
+                    "display": "flex",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "display": "flex",
+                      "flexDirection": "row",
+                      "justifyContent": "space-between",
+                      "paddingHorizontal": 16,
+                      "paddingTop": 8,
+                    },
+                  ]
+                }
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "flexDirection": "row",
+                      },
+                    ]
+                  }
+                >
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "color": "#6B7280",
+                          "display": "flex",
+                          "fontFamily": "Avenir",
+                          "fontSize": 14,
+                          "lineHeight": 20,
+                        },
+                      ]
+                    }
+                  />
+                </View>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "display": "flex",
+                        "flexDirection": "row",
+                      },
+                    ]
+                  }
+                >
+                  <RNGestureHandlerButton
+                    collapsable={false}
+                    onGestureEvent={[Function]}
+                    onGestureHandlerEvent={[Function]}
+                    onGestureHandlerStateChange={[Function]}
+                    onHandlerStateChange={[Function]}
+                    rippleColor={0}
+                    testID="card-save-button"
+                  >
+                    <View
+                      accessible={true}
+                      collapsable={false}
+                      nativeID="animatedComponent"
+                      style={Object {}}
+                    >
+                      <View
+                        style={
+                          Array [
+                            Object {
+                              "display": "flex",
+                              "padding": 4,
+                            },
+                          ]
+                        }
+                      >
+                        <Icon
+                          color="#6B7280"
+                          name="bookmark"
+                          size={22}
+                        />
+                      </View>
+                    </View>
+                  </RNGestureHandlerButton>
+                  <RNGestureHandlerButton
+                    collapsable={false}
+                    onGestureEvent={[Function]}
+                    onGestureHandlerEvent={[Function]}
+                    onGestureHandlerStateChange={[Function]}
+                    onHandlerStateChange={[Function]}
+                    rippleColor={0}
+                    testID="card-share-button"
+                  >
+                    <View
+                      accessible={true}
+                      collapsable={false}
+                      nativeID="animatedComponent"
+                      style={Object {}}
+                    >
+                      <View
+                        style={
+                          Array [
+                            Object {
+                              "display": "flex",
+                              "padding": 4,
+                            },
+                          ]
+                        }
+                      >
+                        <Icon
+                          color="#6B7280"
+                          name="share-variant"
+                          size={22}
+                        />
+                      </View>
+                    </View>
+                  </RNGestureHandlerButton>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#E5E5E5",
+                  "display": "flex",
+                  "height": 1,
+                  "marginHorizontal": 16,
+                },
+              ]
+            }
+          />
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  undefined,
+                  undefined,
+                ]
+              }
+            >
+              <Banner
+                adSize="mediumRectangle"
+                adUnitID="/6499/example/banner"
+                onAdLoaded={[Function]}
+                validAdSizes={
+                  Array [
+                    "mediumRectangle",
+                    "largeBanner",
+                    "banner",
+                  ]
+                }
+              />
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#E5E5E5",
+                  "display": "flex",
+                  "height": 1,
+                  "marginHorizontal": 16,
+                },
+              ]
+            }
+          />
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flex": 1,
+                  "paddingVertical": 16,
+                },
+              ]
+            }
+          >
+            <RNGestureHandlerButton
+              collapsable={false}
+              onGestureEvent={[Function]}
+              onGestureHandlerEvent={[Function]}
+              onGestureHandlerStateChange={[Function]}
+              onHandlerStateChange={[Function]}
+              rippleColor={0}
+              testID="card-action-area"
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                nativeID="animatedComponent"
+                style={Object {}}
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "display": "flex",
+                        "flex": 1,
+                        "paddingHorizontal": 16,
+                      },
+                    ]
+                  }
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "display": "flex",
+                          "flexDirection": "row",
+                        },
+                      ]
+                    }
+                  >
+                    <View
+                      style={
+                        Array [
+                          Object {
+                            "display": "flex",
+                            "flex": 1,
+                          },
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          Array [
+                            Object {
+                              "color": "#2e3443",
+                              "display": "flex",
+                              "fontFamily": "NotoSerif-SemiCondensedBold",
+                              "fontSize": 18,
+                              "lineHeight": 26,
+                            },
+                          ]
+                        }
+                        testID="card-title"
+                      >
+                        title_two
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </RNGestureHandlerButton>
+            <View
+              style={
+                Array [
+                  Object {
+                    "display": "flex",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "display": "flex",
+                      "flexDirection": "row",
+                      "justifyContent": "space-between",
+                      "paddingHorizontal": 16,
+                      "paddingTop": 8,
+                    },
+                  ]
+                }
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "flexDirection": "row",
+                      },
+                    ]
+                  }
+                >
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "color": "#6B7280",
+                          "display": "flex",
+                          "fontFamily": "Avenir",
+                          "fontSize": 14,
+                          "lineHeight": 20,
+                        },
+                      ]
+                    }
+                  />
+                </View>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "display": "flex",
+                        "flexDirection": "row",
+                      },
+                    ]
+                  }
+                >
+                  <RNGestureHandlerButton
+                    collapsable={false}
+                    onGestureEvent={[Function]}
+                    onGestureHandlerEvent={[Function]}
+                    onGestureHandlerStateChange={[Function]}
+                    onHandlerStateChange={[Function]}
+                    rippleColor={0}
+                    testID="card-save-button"
+                  >
+                    <View
+                      accessible={true}
+                      collapsable={false}
+                      nativeID="animatedComponent"
+                      style={Object {}}
+                    >
+                      <View
+                        style={
+                          Array [
+                            Object {
+                              "display": "flex",
+                              "padding": 4,
+                            },
+                          ]
+                        }
+                      >
+                        <Icon
+                          color="#6B7280"
+                          name="bookmark"
+                          size={22}
+                        />
+                      </View>
+                    </View>
+                  </RNGestureHandlerButton>
+                  <RNGestureHandlerButton
+                    collapsable={false}
+                    onGestureEvent={[Function]}
+                    onGestureHandlerEvent={[Function]}
+                    onGestureHandlerStateChange={[Function]}
+                    onHandlerStateChange={[Function]}
+                    rippleColor={0}
+                    testID="card-share-button"
+                  >
+                    <View
+                      accessible={true}
+                      collapsable={false}
+                      nativeID="animatedComponent"
+                      style={Object {}}
+                    >
+                      <View
+                        style={
+                          Array [
+                            Object {
+                              "display": "flex",
+                              "padding": 4,
+                            },
+                          ]
+                        }
+                      >
+                        <Icon
+                          color="#6B7280"
+                          name="share-variant"
+                          size={22}
+                        />
+                      </View>
+                    </View>
+                  </RNGestureHandlerButton>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "height": 0,
+            }
+          }
+        />
+        <View
+          onLayout={[Function]}
+        />
+      </View>
+    </RCTScrollView>
+  </View>
+</RNCSafeAreaProvider>
+`;

@@ -1,0 +1,76 @@
+.gestion .is-header.is-primary .is-icon {
+  color: #841b24;
+}
+
+.gestion .categories-menu { background-color: #958484; }
+.gestion .categories-menu-item span { color: #FFF; }
+
+.gestion section.route-section {
+  background-color: #f1ded0;
+}
+.gestion .placeholder.animate-inout .animated-background {
+  background-color: #f5efea;
+}
+
+.gestion .app-menu {
+  background-color: #f1ded0;
+}
+
+.gestion .nav-bottom {
+  background-color: #f1ded0;
+}
+
+.gestion .e-ribbon,
+.gestion .more-options-content {
+  background: #f1ded0;
+}
+
+.gestion .login-tabs {
+  background-color: #eeded2;
+}
+.gestion .login-tabs button.active {
+  border-color: #841b24;
+}
+
+/* .gestion .login-view {
+  height: calc(100vh - 49px);
+} */
+
+.gestion .notice-view,
+.gestion .register-view, .gestion .lost-password-view {
+  background-color: #f1ded0;
+}
+
+.gestion .profile-view .internal-page {
+  background-color: #f1ded0;
+}
+
+.gestion .search-view .search {
+  background-color: #f1ded0;
+}
+
+.gestion .login-simplified .icon-show-pass,
+.gestion .login-simplified .input-group .label-active {
+  background-color: #f1ded0;
+}
+
+.gestion .is-modal__content {
+  background-color: #f1ded0;
+}
+
+/* NAV BOTTOM */
+.gestion .nav-bottom-group .active .is-icon,
+.gestion .nav-bottom-group .active .icon-title {
+  color: #841b24;
+  font-weight: 600;
+}
+
+
+/* .gestion .content-page-view {
+  max-height: calc(100vh - 49px);
+}
+@supports (padding: env(safe-area-inset-top)) and (padding: env(safe-area-inset-bottom)) {
+  .gestion .content-page-view {
+    max-height: calc(100vh - env(safe-area-inset-bottom) - 48px);
+  }
+} */

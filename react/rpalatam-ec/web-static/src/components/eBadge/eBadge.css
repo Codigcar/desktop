@@ -1,0 +1,40 @@
+.eBadge {
+  border: solid 1px transparent;
+  border-radius: 30px;
+}
+
+.eBadge.dashed.default {
+  border-style: dashed;
+  border-color: #0089ff;
+}
+
+.eBadge.outlined.default {
+  border-color: #0089ff;
+}
+
+.eBadge.filled.default {
+  background-color: #0089ff;
+}
+
+.elcomercio .eBadge.dashed.primary {
+  border-color: #ffcb05;
+}
+
+.elcomercio .eBadge.outlined.primary {
+  border-color: #ffcb05;
+}
+
+.elcomercio .eBadge.filled.primary {
+  background-color: #ffcb05;
+}
+
+.eBadge.tiny {
+  padding: 3px 8px;
+}
+.eBadge.small {
+  padding: 8px 12px;
+}
+
+.eBadge.large {
+  padding: 12px 24px;
+}

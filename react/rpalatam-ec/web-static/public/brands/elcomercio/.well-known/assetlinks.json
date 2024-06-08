@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.gec.elcomercio.dev",
+      "sha256_cert_fingerprints": ["A4:35:FB:B2:50:07:BB:7F:B6:35:B6:EA:83:0B:FD:74:73:01:47:78:E5:5E:89:DF:5B:CA:0A:D3:6A:00:B0:A3"]
+    }
+  }
+]

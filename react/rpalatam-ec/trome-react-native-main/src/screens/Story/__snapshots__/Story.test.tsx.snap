@@ -1,0 +1,410 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Story screen snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    onLayout={[Function]}
+    pointerEvents="box-none"
+    style={
+      Array [
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {},
+      ]
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "display": "flex",
+          "flex": 1,
+        },
+      ]
+    }
+    testID="story-screen"
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#FFFFFF",
+            "borderBottomColor": "#FFCB05",
+            "borderBottomWidth": 1,
+            "display": "flex",
+            "elevation": 3,
+            "shadowColor": "#050505",
+            "shadowOffset": Object {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.16,
+            "shadowRadius": 2.22,
+            "zIndex": 1,
+          },
+          Object {
+            "paddingTop": 0,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "display": "flex",
+              "flexDirection": "row",
+              "height": 48,
+              "justifyContent": "center",
+              "paddingHorizontal": 8,
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "left": 8,
+                "position": "absolute",
+                "zIndex": 1,
+              },
+            ]
+          }
+        >
+          <RNGestureHandlerButton
+            collapsable={false}
+            onGestureEvent={[Function]}
+            onGestureHandlerEvent={[Function]}
+            onGestureHandlerStateChange={[Function]}
+            onHandlerStateChange={[Function]}
+            rippleColor={0}
+            testID="goback-button"
+          >
+            <View
+              accessible={true}
+              collapsable={false}
+              nativeID="animatedComponent"
+              style={Object {}}
+            >
+              <Icon
+                color="#2e3443"
+                name="chevron-left"
+                size={32}
+              />
+            </View>
+          </RNGestureHandlerButton>
+        </View>
+        <Text
+          numberOfLines={1}
+          style={
+            Array [
+              Object {
+                "color": "#2e3443",
+                "display": "flex",
+                "fontFamily": "Avenir",
+                "fontSize": 16,
+                "fontWeight": "700",
+                "lineHeight": 24,
+                "textAlign": "center",
+              },
+              Array [
+                Object {
+                  "flex": 1,
+                  "maxWidth": 654,
+                },
+                undefined,
+              ],
+            ]
+          }
+        />
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "position": "absolute",
+                "right": 8,
+                "zIndex": 1,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
+            }
+            testID="options"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "display": "flex",
+                    "marginRight": 8,
+                  },
+                ]
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                nativeID="animatedComponent"
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                testID="button-bookmark"
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "height": 32,
+                        "justifyContent": "center",
+                        "width": 32,
+                      },
+                    ]
+                  }
+                >
+                  <Icon
+                    color="#2e3443"
+                    name="bookmark"
+                    size={24}
+                  />
+                </View>
+              </View>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "display": "flex",
+                    "marginRight": 8,
+                  },
+                ]
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                nativeID="animatedComponent"
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                testID="button-share"
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "height": 32,
+                        "justifyContent": "center",
+                        "width": 32,
+                      },
+                    ]
+                  }
+                >
+                  <Icon
+                    color="#2e3443"
+                    name="share-variant"
+                    size={24}
+                  />
+                </View>
+              </View>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "display": "flex",
+                  },
+                ]
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                nativeID="animatedComponent"
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                testID="button-font_size"
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "flexDirection": "row",
+                        "height": 32,
+                        "justifyContent": "center",
+                        "width": 32,
+                      },
+                    ]
+                  }
+                >
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "color": "#2e3443",
+                          "display": "flex",
+                          "fontFamily": "Avenir",
+                          "fontSize": 20,
+                          "fontWeight": "700",
+                          "lineHeight": 28,
+                        },
+                      ]
+                    }
+                  >
+                    A
+                  </Text>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "color": "#2e3443",
+                          "display": "flex",
+                          "fontFamily": "Avenir",
+                          "fontSize": 16,
+                          "fontWeight": "700",
+                          "lineHeight": 36,
+                        },
+                      ]
+                    }
+                  >
+                    a
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "overflow": "hidden",
+          },
+          undefined,
+        ]
+      }
+    >
+      <RNCWebView
+        allowsFullscreenVideo={true}
+        allowsInlineMediaPlayback={true}
+        bounces={false}
+        cacheEnabled={true}
+        injectedJavaScriptBeforeContentLoaded="
+    document.cookie = 'eeecappuser=undefined;'
+    window.__REACT_NATIVE_CONTEXT_TOPICS__ = true;
+    window.__REACT_NATIVE_SCREENS_AUTH_SIGNWALL__ = false;
+    window.__REACT_NATIVE_SCREENS_STORY_V2__ = false;
+    window.__REACT_NATIVE_SCREENS_PAYWALL_MODAL__ = false;
+    window.sessionStorage.setItem('config', '{\\"fontSize\\":\\"m\\",\\"mode\\":false}');
+    true;
+  "
+        injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+        injectedJavaScriptForMainFrameOnly={true}
+        javaScriptEnabled={true}
+        mediaPlaybackRequiresUserAction={true}
+        messagingEnabled={true}
+        onContentProcessDidTerminate={[Function]}
+        onHttpError={[Function]}
+        onLoadingError={[Function]}
+        onLoadingFinish={[Function]}
+        onLoadingProgress={[Function]}
+        onLoadingStart={[Function]}
+        onMessage={[Function]}
+        onShouldStartLoadWithRequest={[Function]}
+        setSupportMultipleWindows={false}
+        source={
+          Object {
+            "uri": "https://pwa.dev.elcomercio.pe/story/id#?version=50",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#ffffff",
+            },
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "flex": 1,
+            },
+          ]
+        }
+        testID="story-webview"
+        textInteractionEnabled={true}
+        useSharedProcessPool={true}
+      />
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;

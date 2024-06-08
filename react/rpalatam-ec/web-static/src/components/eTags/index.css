@@ -1,0 +1,31 @@
+.eTags .tag {
+  background-color: #e8f2f7;
+  padding: .2em 1em;
+  margin: 3px 0;
+  display: inline-block;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  margin-right: .4em;
+  white-space: nowrap;
+  color: #4693cb;
+  font-weight: 400;
+}
+
+.eTags .tag:last-child {
+  margin-right: 0;
+}
+.trome .eTags .tag{
+  background-color: #8CFFDB;
+  padding: .2em .75em;
+  border-radius: 0px;
+  color:#000000;
+  margin-right: .6em;
+  font-family: 'Encode Sans Condensed', sans-serif;
+  font-size: 1rem;
+}
+.trome.night-mode .eTags .tag{
+  background-color: #444444;
+  color:#dddddd;
+}
+
+/* @import "./eTagNight.css"; */

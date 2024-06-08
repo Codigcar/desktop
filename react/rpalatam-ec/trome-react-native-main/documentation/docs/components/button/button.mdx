@@ -1,0 +1,65 @@
+---
+title: Button
+---
+
+El componente Button es una abstracción del componente [React Native TouchableWithoutFeedback](https://reactnative.dev/docs/touchablewithoutfeedback), agregando los siguientes beneficios:
+
+- Estilos predeterminados según el `type`
+- Icono personalizado
+- Tamaños predeterminados según el `size`
+
+## Uso
+
+```jsx
+<Button
+  disabled={isSubmitted}
+  onPress={() => {}}
+  size="small"
+  title="Cambiar información"
+  type="primary"
+/>
+```
+
+## Props
+
+### `title`
+
+Texto a mostrar dentro del botón.
+
+| Tipo   | Requerido |
+| ------ | --------- |
+| string | si        |
+
+### `disabled`
+
+Permite deshabilitar el botón, reduciendo su `opacity` a un 70%.
+
+| Tipo    | Requerido |
+| ------- | --------- |
+| boolean | no        |
+
+### `icon`
+
+Ícono a mostrar dentro del botón.
+
+| Tipo        | Requerido |
+| ----------- | --------- |
+| JSX.Element | no        |
+
+### `size`
+
+Define el tamaño del botón en 3 opciones gradualmente de menor a mayor. Sus propiedades `height` y `fontSize` varían según el tipo seleccionado.
+
+| Tipo                                | Requerido | Por defecto |
+| ----------------------------------- | --------- | ----------- |
+| string('small', 'default', 'large') | no        | 'default'   |
+
+### `type`
+
+Define el tipo del botón en 3 opciones. Sus propiedades `backgroundColor` y `textColor` varían según el tipo seleccionado.
+
+| Tipo                                      | Requerido | Requerido |
+| ----------------------------------------- | --------- | --------- |
+| string('default', 'primary', 'secondary') | no        | 'default' |
+
+### [TouchableWithoutFeedback Props](https://reactnative.dev/docs/touchablewithoutfeedback#props)
