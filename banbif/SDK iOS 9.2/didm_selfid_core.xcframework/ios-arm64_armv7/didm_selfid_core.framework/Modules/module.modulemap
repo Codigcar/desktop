@@ -1,0 +1,6 @@
+framework module didm_selfid_core {
+	umbrella header "didm_selfid_core-umbrella.h"
+	
+    export *
+    module * { export * }
+}

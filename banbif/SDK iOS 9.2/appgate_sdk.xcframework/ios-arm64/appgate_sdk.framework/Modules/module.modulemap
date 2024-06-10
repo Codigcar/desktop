@@ -1,0 +1,4 @@
+framework module appgate_sdk {
+  header "appgate_sdk-Swift.h"
+  requires objc
+}

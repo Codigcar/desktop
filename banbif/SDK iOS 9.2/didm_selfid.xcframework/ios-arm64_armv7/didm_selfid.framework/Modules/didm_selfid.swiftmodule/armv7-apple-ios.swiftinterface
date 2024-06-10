@@ -1,0 +1,330 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target armv7-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name didm_selfid
+import AVFoundation
+import CoreImage
+import Foundation
+import Swift
+import UIKit
+import Vision
+import _Concurrency
+import didm_selfid_core
+import os.log
+import os
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class SDK : UIKit.UIView, didm_selfid.LivenessResultDelegate {
+  @objc @_Concurrency.MainActor(unsafe) public var faceTemplate: didm_selfid.FaceStructure?
+  @objc @_Concurrency.MainActor(unsafe) public var configuration: didm_selfid.LivenessConfigProperties?
+  @objc @_Concurrency.MainActor(unsafe) weak public var delegate: didm_selfid.SDKDelegate?
+  @objc convenience dynamic public init()
+  @objc @_Concurrency.MainActor(unsafe) required public init(configuration: didm_selfid.LivenessConfigProperties)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc public func onSuccess(bitmap: UIKit.UIImage)
+  @_Concurrency.MainActor(unsafe) @objc public func onExit()
+  @_Concurrency.MainActor(unsafe) @objc public func onFaceNotFound()
+  @_Concurrency.MainActor(unsafe) @objc public func onError(error: didm_selfid.LivenessError)
+  @objc @_Concurrency.MainActor(unsafe) public func start(myViewController: didm_selfid.FaceAliveView)
+  @objc @_Concurrency.MainActor(unsafe) public func stop(myViewController: didm_selfid.FaceAliveView)
+  @objc @_Concurrency.MainActor(unsafe) public func convertDoubleVector(vector: Swift.String) -> [Swift.Double]
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objcMembers public class SDKLog {
+  @objc public class func createLog(subsysystem: Swift.String, name: Swift.String, message: Swift.String, type: Swift.String)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objcMembers public class Utilities {
+  @objc public class func validateIfExistFramework(identifier: Swift.String) -> Swift.Bool
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class TipsHomeView : UIKit.UIPageViewController {
+  @objc @_Concurrency.MainActor(unsafe) public var color: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(transitionStyle style: UIKit.UIPageViewController.TransitionStyle, navigationOrientation: UIKit.UIPageViewController.NavigationOrientation, options: [UIKit.UIPageViewController.OptionsKey : Any]? = nil)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class LivenessText : ObjectiveC.NSObject {
+  @objc public var size: Swift.Int
+  @objc public var color: didm_selfid.LivenessColor
+  @objc public var text: Swift.String
+  @objc public var typography: didm_selfid.LivenessTypography
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum ActivityType : Swift.String {
+  case FACE_ID
+  case SELFIE
+  case PHOTO_IDCARD
+  case DATA_CREDIT
+  case DSB_API
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class FaceTemplate : ObjectiveC.NSObject {
+  @objc public var faceVector: [Swift.Double]?
+  @objc public var angle: Swift.String?
+  @objc public var mock: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class LivenessTypography : ObjectiveC.NSObject {
+  @objc public var name: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class LivenessGif : ObjectiveC.NSObject {
+  @objc public var name: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class ConstantsSDK : ObjectiveC.NSObject {
+  @objc public static let LOGTYPEERROR: Swift.String
+  @objc public static let LOGTYPEDEBUG: Swift.String
+  @objc public static let LOGTYPEEFAULT: Swift.String
+  @objc public static let LOGTYPEINFO: Swift.String
+  @objc public static let FACEAUTHENTICATORQUEUE: Swift.String
+  @objc public static let LOGSUBSYSTEM: Swift.String
+  @objc public static let LOGNAME: Swift.String
+  @objc public static let LOGSUBSYSTEMLIVENESS: Swift.String
+  @objc public static let LOGSUBSYSTEMCONNECTION: Swift.String
+  @objc public static let LOGNAMELIVENESS: Swift.String
+  @objc public static let NIBNAMEFACE: Swift.String
+  @objc public static let NIBNAMEDOCUMENT: Swift.String
+  @objc public static let BUNDLE_IDENTIFIER_FACE_DETECTOR: Swift.String
+  @objc public static let BUNDLE_IDENTIFIER_LIVENESS: Swift.String
+  @objc public static let LOGERRORINVOKEFACEDETECTOR: Swift.String
+  @objc public static let LOGERRORDELEGATEONSUCCESS: Swift.String
+  @objc public static let LOGERRORDELEGATEONERROR: Swift.String
+  @objc public static let LOGERRORDELEGATEONEXIT: Swift.String
+  @objc public static let FAILSERIALIZATION: Swift.String
+  @objc public static let FACEANGLE: Swift.String
+  @objc public static let FACENEUTRAL: Swift.String
+  @objc public static let TITLEERROR: Swift.String
+  @objc public static let ERRORMESSAGE: Swift.String
+  @objc public static let GETWIZARD: Swift.String
+  @objc public static let SENDDATA: Swift.String
+  @objc public static let EXITPROCESS: Swift.String
+  @objc public static let ENDPROCESS: Swift.String
+  @objc public static let ENCODE: Swift.String
+  @objc public static let TYPE: Swift.String
+  @objc public static let GET: Swift.String
+  @objc public static let PUT: Swift.String
+  @objc public static let POST: Swift.String
+  @objc public static let ERROR_CONNECTION: Swift.String
+  @objc public static let ERROR_DATA: Swift.String
+  @objc public static let FACE_NOT_FOUND: Swift.String
+  @objc public static let ERROR_LIVENESS: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum LivenessError : Swift.Int, Swift.RawRepresentable {
+  case badConfiguration
+  case notFoundCamera
+  case permissionDeny
+  public typealias RawValue = Swift.String
+  public var rawValue: didm_selfid.LivenessError.RawValue {
+    get
+  }
+  public init?(rawValue: didm_selfid.LivenessError.RawValue)
+}
+@objc public protocol SDKDelegate {
+  @objc func onSuccess(faceTemple: didm_selfid.FaceStructure)
+  @objc func onExit()
+  @objc func onError(error: didm_selfid.SDKError)
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class LivenessConfigProperties : ObjectiveC.NSObject {
+  @objc public var challengeDuration: Swift.Int
+  @objc public var gestures: [didm_selfid.GestureMessage]
+  @objc public var successMessage: didm_selfid.LivenessText
+  @objc public var nearbyMessage: didm_selfid.LivenessText
+  @objc public var exitMessage: didm_selfid.LivenessText
+  @objc public var progressBar: didm_selfid.LivenessProgressBar
+  @objc public var shapeBackground: didm_selfid.LivenessBlur
+  @objc public var tipsEnable: didm_selfid.TipsConfig
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension didm_selfid.FaceAliveView {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func metadataOutput(_ output: AVFoundation.AVCaptureMetadataOutput, didOutput metadataObjects: [AVFoundation.AVMetadataObject], from connection: AVFoundation.AVCaptureConnection)
+}
+@objc public enum Gesture : ObjectiveC.NSInteger {
+  case NEUTRAL
+  case BLINK
+  case SIDE_TO_SIDE
+  case SMILE
+  case OPEN_EYES
+  case CLOSED_EYES
+  case LEFT
+  case RIGHT
+  case NONE
+  public init?(rawValue: ObjectiveC.NSInteger)
+  public typealias RawValue = ObjectiveC.NSInteger
+  public var rawValue: ObjectiveC.NSInteger {
+    get
+  }
+}
+extension UIKit.UIImageView {
+  @_Concurrency.MainActor(unsafe) public func loadGif(name: Swift.String)
+}
+extension UIKit.UIImage {
+  public class func gif(data: Foundation.Data) -> UIKit.UIImage?
+  public class func gif(name: Swift.String) -> UIKit.UIImage?
+}
+@objc public protocol LivenessResultDelegate {
+  @objc func onSuccess(bitmap: UIKit.UIImage)
+  @objc func onExit()
+  @objc func onFaceNotFound()
+  @objc func onError(error: didm_selfid.LivenessError)
+}
+@objc @_inheritsConvenienceInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class TipView : UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) public var index: Swift.Int
+  @objc @_Concurrency.MainActor(unsafe) public var color: UIKit.UIColor
+  @objc @_Concurrency.MainActor(unsafe) final public let bundle: Foundation.Bundle?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc public enum LivenessBlur : ObjectiveC.NSInteger {
+  case EXTRA_LIGHT
+  case LIGHT
+  case DARK
+  public init?(rawValue: ObjectiveC.NSInteger)
+  public typealias RawValue = ObjectiveC.NSInteger
+  public var rawValue: ObjectiveC.NSInteger {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class GestureMessage : ObjectiveC.NSObject {
+  @objc public var gesture: didm_selfid.Gesture
+  @objc public var gif: didm_selfid.LivenessGif
+  @objc public var text: didm_selfid.LivenessText
+  @objc override dynamic public init()
+  @objc deinit
+}
+public class FaceDetector {
+  public init(bundlePath: Swift.String)
+  public func retrieveVectorFace(bitmap: UIKit.UIImage, completion: @escaping (_ resultVector: Swift.String) -> Swift.Void)
+  @objc deinit
+}
+public enum UserCommunicationMessageType : Swift.String {
+  case PHOTO_IDCARD_INTRO_MESSAGE
+  case PHOTO_IDCARD_FRONT_MESSAGE
+  case PHOTO_IDCARD_TURN_MESSAGE
+  case PHOTO_IDCARD_BACK_MESSAGE
+  case PHOTO_IDCARD_SUCCESS_MESSAGE
+  case PHOTO_IDCARD_EXIT_MESSAGE
+  case PHOTO_IDCARD_ERROR_MESSAGE
+  case PHOTO_IDCARD_ERROR_TIME_OUT_MESSAGE
+  case SELFIE_TRY_AGAIN_MESSAGE
+  case SELFIE_TIME_OUT_MESSAGE
+  case SELFIE_SUCCESS_MESSAGE
+  case SELFIE_EXIT_MESSAGE
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class LivenessProgressBar : ObjectiveC.NSObject {
+  @objc public var color: didm_selfid.LivenessColor
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class LivenessColor : ObjectiveC.NSObject {
+  @objc public var colorHex: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class FaceStructure : ObjectiveC.NSObject {
+  @objc public var faceTemplates: [didm_selfid.FaceTemplate]?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum Event : ObjectiveC.NSInteger {
+  case FACENOTFOUND
+  case TIMEOUT
+  case EXIT
+  case SUCCESS
+  public init?(rawValue: ObjectiveC.NSInteger)
+  public typealias RawValue = ObjectiveC.NSInteger
+  public var rawValue: ObjectiveC.NSInteger {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objcMembers public class Wizard {
+  @objc deinit
+}
+@objc public enum SDKError : Swift.Int, Swift.RawRepresentable {
+  case faceNotFound
+  case permissionDeny
+  case badConfiguration
+  public typealias RawValue = Swift.String
+  public var rawValue: didm_selfid.SDKError.RawValue {
+    get
+  }
+  public init?(rawValue: didm_selfid.SDKError.RawValue)
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class TipsConfig : ObjectiveC.NSObject {
+  @objc public var enabled: Swift.Bool
+  @objc public var nameXib: Swift.String
+  @objc public var timeShow: Swift.Double
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class Activity : ObjectiveC.NSObject {
+  public var order: Swift.Int?
+  public var hasView: Swift.Bool?
+  @objc public var name: Swift.String?
+  public var lastModified: Swift.Int64?
+  public var activityType: didm_selfid.ActivityType?
+  @objc public var exitMessage: Swift.String?
+  @objc public var communicationMessages: [didm_selfid.UserCommunicationMessage]?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class UserCommunicationMessage : ObjectiveC.NSObject {
+  public var textSize: Swift.Int?
+  @objc public var textColor: Swift.String?
+  @objc public var message: Swift.String?
+  public var messageType: didm_selfid.UserCommunicationMessageType?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class FaceAliveView : UIKit.UIViewController, AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate, AVFoundation.AVCaptureMetadataOutputObjectsDelegate {
+  @objc @_Concurrency.MainActor(unsafe) weak public var delegate: didm_selfid.LivenessResultDelegate?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var shouldAutorotate: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) public func stopProcess()
+  @objc @_Concurrency.MainActor(unsafe) public func settingConfiguration(config: didm_selfid.LivenessConfigProperties)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension didm_selfid.ActivityType : Swift.Equatable {}
+extension didm_selfid.ActivityType : Swift.Hashable {}
+extension didm_selfid.ActivityType : Swift.RawRepresentable {}
+extension didm_selfid.LivenessError : Swift.Equatable {}
+extension didm_selfid.LivenessError : Swift.Hashable {}
+extension didm_selfid.Gesture : Swift.Equatable {}
+extension didm_selfid.Gesture : Swift.Hashable {}
+extension didm_selfid.Gesture : Swift.RawRepresentable {}
+extension didm_selfid.LivenessBlur : Swift.Equatable {}
+extension didm_selfid.LivenessBlur : Swift.Hashable {}
+extension didm_selfid.LivenessBlur : Swift.RawRepresentable {}
+extension didm_selfid.UserCommunicationMessageType : Swift.Equatable {}
+extension didm_selfid.UserCommunicationMessageType : Swift.Hashable {}
+extension didm_selfid.UserCommunicationMessageType : Swift.RawRepresentable {}
+extension didm_selfid.Event : Swift.Equatable {}
+extension didm_selfid.Event : Swift.Hashable {}
+extension didm_selfid.Event : Swift.RawRepresentable {}
+extension didm_selfid.SDKError : Swift.Equatable {}
+extension didm_selfid.SDKError : Swift.Hashable {}

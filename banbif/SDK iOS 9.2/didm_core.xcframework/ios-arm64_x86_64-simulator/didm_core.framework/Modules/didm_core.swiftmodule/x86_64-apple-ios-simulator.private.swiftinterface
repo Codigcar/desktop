@@ -1,0 +1,417 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name didm_core
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import CommonCrypto
+import Foundation
+import LocalAuthentication
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import appgate_sdk
+@_exported import didm_core
+import os.log
+import os
+@objc @_hasMissingDesignatedInitializers @objcMembers public class ChannelConfigNetworkClient : ObjectiveC.NSObject {
+  @objc required public init(account: didm_core.Account)
+  @objc public func requestChannelConfiguration(url: Swift.String, onSuccess: @escaping (didm_core.ChannelConfigResponse) -> Swift.Void, onFailure: @escaping (appgate_sdk.AGSDKError) -> Swift.Void)
+  @objc deinit
+}
+@objc @objcMembers public class FaceServerGestures : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var face: didm_core.BiometricProcess {
+    get
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class OTPEncrypt : ObjectiveC.NSObject {
+  @objc public func encrypt(tokenDic: Foundation.NSDictionary) -> Swift.String
+  @objc public func decrypt(token: Swift.String) -> Foundation.NSDictionary
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @objcMembers public class KeyChainEncodingKey : ObjectiveC.NSObject, didm_core.KeyChainEncodingKeyProtocol {
+  @objc public init(bundleInformation: any didm_core.BundleInformationProtocol, keyChainData: any didm_core.KeyChainDataProtocol)
+  @objc public func saveEncodingKey(key: Swift.String)
+  @objc public func getEncodingKeyV7FromKeyChain() -> Swift.String
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class AuthenticationControllerCore : ObjectiveC.NSObject, didm_core.AuthenticationController {
+  @objc public func decryptScannedCode(_ mks: Swift.String?, withAccount account: didm_core.Account?, onSuccess: @escaping (didm_core.TransactionInfo) -> Swift.Void, onFailure: @escaping appgate_sdk.onFailureResultHandler)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @objcMembers public class ProcessMode : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var challengeDuration: Swift.Int {
+    get
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class Account : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var username: Swift.String
+  @objc public var organizationName: Swift.String {
+    get
+  }
+  @objc public var activeOTPAuth: Swift.Bool {
+    get
+  }
+  @objc public var activePushAuth: Swift.Bool {
+    get
+  }
+  @objc public var activeQRAuth: Swift.Bool {
+    get
+  }
+  @objc public var activePushAlert: Swift.Bool {
+    get
+  }
+  @objc public var activeFaceAuth: Swift.Bool
+  @objc public var registrationDate: Swift.String {
+    get
+  }
+  @objc public var activationURL: Swift.String {
+    get
+  }
+  @objc public var registrationMethod: Swift.Int {
+    get
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class ResponseManagerCore : ObjectiveC.NSObject {
+  @objc public static func getAuthenticationBody(transactionInfo: [Swift.String : Any], account: didm_core.Account) -> Swift.String?
+  @objc public static func getAuthenticationForFace(transactionId: Swift.String) -> Swift.String?
+  @objc public static func getAGSDKError(code: Swift.Int) -> appgate_sdk.AGSDKError
+  @objc public static func getBiometricError(code: Swift.Int) -> appgate_sdk.AGSDKError
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @objcMembers public class DidSdkAuthCoreSyncronizeController : ObjectiveC.NSObject {
+  @objc public init(model: didm_core.DidSdkSyncronizeModel)
+  @objc public func executeDidSdkSyncronization() throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class Gestures : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var faceGestures: [Swift.Int] {
+    get
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc public protocol AccountManagerProtocol {
+  @objc func saveAccount(account: didm_core.Account)
+  @objc func removeAccount(account: didm_core.Account) -> Swift.Bool
+  @objc func getAccounts() -> [didm_core.Account]
+  @objc func getAccountsPendingToMigrateRSAKey() -> [didm_core.Account]
+}
+public enum GestureType : Swift.Int, Swift.Codable {
+  case neutral
+  case blink
+  case sideToSide
+  case smile
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class ChallengeOTPController : ObjectiveC.NSObject {
+  @objc public func generateOtpTokenFromAlphaNumericChallengeQuestion(question: Swift.String, date: Swift.UInt64, tagAccount: Swift.String, onServerParametersDelegate: any didm_core.OnServerParametersErrors, onClientArgumentsDelegate: any didm_core.OnClientArgumentsErrors) throws -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class Channel : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var channelName: Swift.String {
+    get
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class AppCompability : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var forceUpdate: Swift.Bool {
+    get
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc public protocol OnClientArgumentsErrors {
+  @objc func onInvalidChallengeLength(length: Swift.Int, reason: Swift.String)
+  @objc func onMissingPassword(reason: Swift.String)
+}
+@objc public protocol OTPKeyLegacyProtocol {
+  @objc func getTokenInformation(data: Swift.String) -> Foundation.NSDictionary
+}
+@objc @objcMembers public class PushInboxControllerCore : ObjectiveC.NSObject {
+  @objc public init(account: didm_core.Account)
+  @objc public func getInitialDate() -> Swift.String
+  @objc deinit
+}
+@objc public protocol KeyChainDataProtocol {
+  @objc func createQuery() -> appgate_sdk.KeyChainBuilder
+  @objc func saveKeyChain(value: Swift.String) -> Swift.Bool
+  @objc func updateKeyChain(valueToUpdate: Swift.String) -> Swift.Bool
+  @objc func updateKeyChain(queryToUpdate: [Swift.String : Any], attributesToUpdate: [Swift.String : Any]) -> Swift.Bool
+  @objc func getValueKeyChain() -> Swift.String
+  @objc func existKeyChain() -> Swift.Bool
+  @objc func removeKeyChain()
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class DIDAuthenticationParserImpl : ObjectiveC.NSObject, didm_core.DIDAuthenticationParser {
+  @objc public func parseTransactionInfo(businessMessage: [Swift.String : Any], account: didm_core.Account) -> didm_core.TransactionInfo?
+  @objc public func parseTransactionInfo(businessMessage: [Swift.String : Any], account: didm_core.Account, status: didm_core.TransactionStatus = .ALL, registrationDate: Foundation.NSNumber? = nil) -> didm_core.TransactionInfo?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @objcMembers public class ResponseCode : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var responseCodeType: Swift.String {
+    get
+  }
+  @objc public var responseCodeTypeDescription: Swift.String {
+    get
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class BiometricProcess : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var enrollment: didm_core.ProcessMode {
+    get
+  }
+  @objc public var authentication: didm_core.ProcessMode {
+    get
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc extension Foundation.NSString {
+  @objc dynamic public func getActivationDate() -> Foundation.NSString
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class InformationDevice : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc public func getModelDevice() -> Swift.String
+  @objc public func getSystemVersionDevice() -> Swift.String
+  @objc public func getApplicationName() -> Swift.String
+  @objc public func getPhoneId() -> Swift.String
+  @objc public func registerPhoneId(_ phoneId: Swift.String)
+  @objc public func getMobileId() -> Swift.String
+  @objc public func getAppInstallId() -> Swift.String
+  @objc public func getAppInstallIdSha256() -> Swift.String
+  @objc public func resetAppInstallId()
+  @objc deinit
+}
+@objc public protocol AuthenticationController {
+  @objc func decryptScannedCode(_ mks: Swift.String?, withAccount account: didm_core.Account?, onSuccess: @escaping (didm_core.TransactionInfo) -> Swift.Void, onFailure: @escaping appgate_sdk.onFailureResultHandler)
+}
+public protocol DidSdkPersistenceManagerProtocol {
+  func setAdditionalInformationForPush(_ dictionary: [Swift.String : Any])
+  func setAdditionalInformationForQr(_ dictionary: [Swift.String : Any])
+  func setAdditionalInformationForFace(_ dictionary: [Swift.String : Any])
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class OTPKeyLegacyBuilder : ObjectiveC.NSObject {
+  @objc public func build() -> didm_core.OTPKeyLegacy
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @objcMembers public class ChallengeOtpParameters : ObjectiveC.NSObject, Swift.Codable {
+  @objc public init(seedParameter: Swift.String, questionParameter: Swift.String, timeStampParameter: Swift.UInt64, timeStampValueParameter: Swift.Int, truncationOutputParameter: Swift.Int)
+  @objc public init(seedParameter: Swift.String, timestampTypeParameter: Swift.String, timeStampValueParameter: Swift.Int, truncationOutputParameter: Swift.Int)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc public protocol KeyChainEncodingKeyProtocol {
+  @objc func saveEncodingKey(key: Swift.String)
+  @objc func getEncodingKeyV7FromKeyChain() -> Swift.String
+}
+@objc @objcMembers public class AccountManagerImplCore : ObjectiveC.NSObject, didm_core.AccountManagerProtocol {
+  @objc public init(informationDevice: didm_core.InformationDevice)
+  @objc public func saveAccount(account: didm_core.Account)
+  @objc public func updateAccountInfo(account: didm_core.Account)
+  @objc public func removeAccount(account: didm_core.Account) -> Swift.Bool
+  @objc public func getAccounts() -> [didm_core.Account]
+  @objc public func getAccountsPendingToMigrateRSAKey() -> [didm_core.Account]
+  @objc public func removeAllAccounts()
+  @objc public func receivePushServiceId(_ data: Foundation.Data)
+  @objc public func setApplicationName(_ name: Swift.String)
+  @objc deinit
+}
+@objc public protocol BundleInformationProtocol {
+  @objc func getValueFromBundlePlist(key: Swift.String) -> Swift.String?
+  @objc func existAttributeBundlePlist(key: Swift.String) -> Swift.Bool
+}
+@objc @objcMembers public class OTPKeyLegacy : ObjectiveC.NSObject, didm_core.OTPKeyLegacyProtocol {
+  @objc public init(keyChainEncodingKey: any didm_core.KeyChainEncodingKeyProtocol)
+  @objc public func getTokenInformation(data: Swift.String) -> Foundation.NSDictionary
+  @objc public func saveOTPKey(key: Swift.String)
+  @objc deinit
+}
+@objc public protocol DIDAuthenticationParser {
+  @objc func parseTransactionInfo(businessMessage: [Swift.String : Any], account: didm_core.Account) -> didm_core.TransactionInfo?
+  @objc func parseTransactionInfo(businessMessage: [Swift.String : Any], account: didm_core.Account, status: didm_core.TransactionStatus, registrationDate: Foundation.NSNumber?) -> didm_core.TransactionInfo?
+}
+@objc @objcMembers public class ChannelConfigResponse : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var response: didm_core.ResponseCode? {
+    get
+  }
+  @objc public var app: didm_core.AppCompability? {
+    get
+  }
+  @objc public var factors: didm_core.FaceServerGestures? {
+    get
+  }
+  @objc required public init(data: Foundation.Data)
+  @objc public func getData() -> Foundation.Data?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class DidSdkPersistenceManager : ObjectiveC.NSObject, didm_core.DidSdkPersistenceManagerProtocol {
+  @objc override dynamic public init()
+  @objc public func setAdditionalInformationForPush(_ dictionary: [Swift.String : Any])
+  @objc public func setAdditionalInformationForQr(_ dictionary: [Swift.String : Any])
+  @objc public func setAdditionalInformationForFace(_ dictionary: [Swift.String : Any])
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class RegistrationControllerImpl : ObjectiveC.NSObject, didm_core.RegistrationController {
+  @objc override dynamic public init()
+  @objc public func registerDevice(url: Swift.String, registrationMethod: Swift.Int, registrationResult: @escaping (Swift.String) -> Swift.Void)
+  @objc public func registerDevice(url: Swift.String, registrationMethod: Swift.Int, additionalData: Swift.String?, onSuccess: @escaping () -> Swift.Void, onFailure: @escaping (appgate_sdk.AGSDKError) -> Swift.Void)
+  @objc deinit
+}
+@objc public protocol OnServerParametersErrors {
+  @objc func onInvalidTimeStampLength(length: Swift.Int, reason: Swift.String)
+  @objc func onInvalidLengthToken(length: Swift.Int, reason: Swift.String)
+}
+@objc @objcMembers public class DidSdkSyncronizeModel : ObjectiveC.NSObject {
+  @objc public var tagNewInstall: Swift.String {
+    get
+  }
+  @objc public var sdkVersionTag: Swift.String {
+    get
+  }
+  @objc public var sdkVersion: Swift.String {
+    get
+  }
+  @objc public var serviceAttrDeviceId: Swift.String {
+    get
+  }
+  @objc public var accountAttrDeviceId: Swift.String {
+    get
+  }
+  @objc public init(tagNewInstall: Swift.String = "", sdkVersionTag: Swift.String = "", sdkVersion: Swift.String = "", serviceAttrDeviceId: Swift.String = "", accountAttrDeviceId: Swift.String = "")
+  @objc deinit
+}
+@objc public enum TransactionType : Swift.Int, Swift.Codable {
+  case NONE = 0, PUSH_AUTHENTICATION, PUSH_ALERT, BIOMETRIC_AUTHENTICATION
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum BiometricTransactionType : Swift.Int, Swift.Codable {
+  case NONE_BIOMETRIC = 0, FACE_AUTHENTICATION = 2, FACE_AUTHENTICATION_LIVENESS, FACE_ENROLLMENT = 5
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum TransactionStatus : Swift.Int, Swift.Codable {
+  case ALL = 0, APPROVED = 1010, PENDING = 1011, NOT_APPROVED = 1012, EXPIRED = 1013, MAX_WRONG_ATTEMPTS = 1014
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class TransactionInfo : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var transactionID: Swift.String {
+    get
+  }
+  @objc public var subject: Swift.String {
+    get
+  }
+  @objc public var message: Swift.String {
+    get
+  }
+  @objc public var subjectNotification: Swift.String {
+    get
+  }
+  @objc public var messageNotification: Swift.String {
+    get
+  }
+  @objc public var urlToResponse: Swift.String {
+    get
+  }
+  @objc public var urlToConfigFaceID: Swift.String {
+    get
+  }
+  @objc public var type: didm_core.TransactionType {
+    get
+  }
+  @objc public var biometricType: didm_core.BiometricTransactionType {
+    get
+  }
+  @objc public var timeStamp: Swift.UInt64 {
+    get
+  }
+  @objc public var status: didm_core.TransactionStatus {
+    get
+  }
+  @objc public var account: didm_core.Account? {
+    get
+  }
+  @objc public var transactionOfflineCode: Swift.String {
+    get
+  }
+  @objc public var gestures: didm_core.Gestures! {
+    get
+  }
+  @objc public var channel: didm_core.Channel! {
+    get
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class GlobalConfigController : ObjectiveC.NSObject {
+  @objc public func updateGlobalConfig(urlString: Swift.String, body: Foundation.Data, account: didm_core.Account, seed: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class BusinessMKSController : ObjectiveC.NSObject {
+  @objc public init(account: didm_core.Account)
+  @objc public func aesEncryptWithLastMode(data: Foundation.Data) -> Foundation.Data?
+  @objc public func setSignature(signature: Swift.String)
+  @objc public func getMks(message: Swift.String) -> [Swift.String : Any]?
+  public func decryptMessage<T>(mks: [Swift.String : Any]) -> T? where T : Swift.Decodable, T : Swift.Encodable
+  @objc public func decryptMessageJson(mks: [Swift.String : Any]) -> [Swift.String : Any]?
+  @objc public func getSignature(message: Swift.String) -> Swift.String
+  @objc public func isValidSignature(mks: [Swift.String : Any]) -> Swift.Bool
+  @objc deinit
+}
+@objc public protocol RegistrationController {
+  @objc func registerDevice(url: Swift.String, registrationMethod: Swift.Int, registrationResult: @escaping (Swift.String) -> Swift.Void)
+  @objc func registerDevice(url: Swift.String, registrationMethod: Swift.Int, additionalData: Swift.String?, onSuccess: @escaping appgate_sdk.onSuccessResultHandler, onFailure: @escaping appgate_sdk.onFailureResultHandler)
+}
+extension didm_core.GestureType : Swift.Equatable {}
+extension didm_core.GestureType : Swift.Hashable {}
+extension didm_core.GestureType : Swift.RawRepresentable {}
+extension didm_core.TransactionType : Swift.Equatable {}
+extension didm_core.TransactionType : Swift.Hashable {}
+extension didm_core.TransactionType : Swift.RawRepresentable {}
+extension didm_core.BiometricTransactionType : Swift.Equatable {}
+extension didm_core.BiometricTransactionType : Swift.Hashable {}
+extension didm_core.BiometricTransactionType : Swift.RawRepresentable {}
+extension didm_core.TransactionStatus : Swift.Equatable {}
+extension didm_core.TransactionStatus : Swift.Hashable {}
+extension didm_core.TransactionStatus : Swift.RawRepresentable {}

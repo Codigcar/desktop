@@ -1,0 +1,11 @@
+framework module didm_core {
+  umbrella header "didm_core.h"
+  export *
+
+  module * { export * }
+}
+
+module didm_core.Swift {
+  header "didm_core-Swift.h"
+  requires objc
+}

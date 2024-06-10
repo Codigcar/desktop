@@ -1,0 +1,595 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name appgate_sdk
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import CommonCrypto
+import CryptoKit
+import Foundation
+import Security
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os
+extension Swift.String {
+  public func md5() -> Swift.String
+  public func sha1() -> Swift.String
+}
+extension Swift.UInt64 {
+  public func toHexString() -> Swift.String
+}
+public enum RSAError : Swift.Error {
+  case unknownEncryptionKeys
+  case unsupportedAlgorithm
+  case keyNotConvertible
+  case unknonwError
+  public static func == (a: appgate_sdk.RSAError, b: appgate_sdk.RSAError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc public enum AGLogFeatures : Swift.Int {
+  case General
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class RSAEncryptorImpl : appgate_sdk.RSAEncryptor {
+  public init(keyAlgoritm: Security.SecKeyAlgorithm)
+  public func encrypt(data: Foundation.Data, publicKey: Security.SecKey) throws -> Foundation.Data
+  public func decrypt(data: Foundation.Data, privateKey: Security.SecKey) throws -> Foundation.Data
+  @objc deinit
+}
+public protocol AesEncryptor {
+  func encrypt(data: Foundation.Data, key: Swift.String) -> Foundation.Data?
+  func decrypt(data: Foundation.Data, key: Swift.String) -> Foundation.Data?
+}
+@objc @_hasMissingDesignatedInitializers public class RSAKeyPair : ObjectiveC.NSObject {
+  public var publicKey: appgate_sdk.RSAKey? {
+    get
+  }
+  public var publicSecKey: Security.SecKey? {
+    get
+  }
+  public var privateSecKey: Security.SecKey? {
+    get
+  }
+  public init(publicSecKey: Security.SecKey?, privateSecKey: Security.SecKey?)
+  @objc deinit
+}
+extension Swift.String {
+  public func toHexString() -> Swift.String
+  public func fromHexStringToData() -> Foundation.Data?
+  public func sha256() -> Swift.String
+  public func sha512() -> Swift.String
+}
+@objc @objcMembers public class RSAKey : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var modulus: Swift.String {
+    get
+  }
+  @objc public var exponent: Swift.String {
+    get
+  }
+  @objc public init(modulus: Swift.String, exponent: Swift.String)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class NetworkController : ObjectiveC.NSObject, appgate_sdk.NetworkControllerProtocol {
+  @objc public func getRequest(urlString: Swift.String, header: Swift.String, onResponse: @escaping (appgate_sdk.DataResponse) -> Swift.Void)
+  @objc public func postRequest(urlString: Swift.String, header: Swift.String, body: Foundation.Data, onResponse: @escaping (appgate_sdk.DataResponse) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum RSAKeySize : Swift.Int {
+  case bits1024
+  case bits2048
+  case bits4096
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class RSAKeyBuilder : ObjectiveC.NSObject, appgate_sdk.Builder {
+  public typealias T = appgate_sdk.RSAKeyPair?
+  public func setKeySize(_ size: appgate_sdk.RSAKeySize) -> Self
+  public func setPublicSecKey(_ secKey: Security.SecKey) -> Self
+  public func setPrivateSecKey(_ secKey: Security.SecKey) -> Self
+  public func setPublicModulus(string: Swift.String) -> Self
+  public func setPublicExponent(string: Swift.String) -> Self
+  public func build() -> appgate_sdk.RSAKeyPair?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum AesEncryptMode : Swift.Int {
+  case ECB
+  case GCM
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class KeyChainBuilder : ObjectiveC.NSObject {
+  @objc public func addkSecClass(str: Swift.String) -> appgate_sdk.KeyChainBuilder
+  @objc public func addkSecAttrAccount(tag: Swift.String) -> appgate_sdk.KeyChainBuilder
+  @objc public func addkSecAttrService(service: Swift.String) -> appgate_sdk.KeyChainBuilder
+  @objc public func addkSecValueData(data: Foundation.Data) -> appgate_sdk.KeyChainBuilder
+  @objc public func addkSecValueRef(data: Any) -> appgate_sdk.KeyChainBuilder
+  @objc public func addkSecReturnData(returnData: Swift.Bool) -> appgate_sdk.KeyChainBuilder
+  @objc public func addSecAttrKeyType(type: Swift.String) -> appgate_sdk.KeyChainBuilder
+  @objc public func addkSecReturnRef(ref: Swift.Bool) -> appgate_sdk.KeyChainBuilder
+  @objc public func addkSecAttrApplicationTag(tag: Any) -> appgate_sdk.KeyChainBuilder
+  @objc public func addkSecAttrLabel(label: Swift.String) -> appgate_sdk.KeyChainBuilder
+  @objc public func addkSecReturnAttributes(returnAttr: Swift.Bool) -> appgate_sdk.KeyChainBuilder
+  @objc public func addkSecMatchLimit(matchLimit: Swift.String) -> appgate_sdk.KeyChainBuilder
+  @objc public func addkSecAttrAccessGroup(accessGroup: Swift.String) -> appgate_sdk.KeyChainBuilder
+  @objc public func addkSecAttrGeneric(tag: Swift.String) -> appgate_sdk.KeyChainBuilder
+  @objc public func addkSecAttrAccessible(accessibleLevel: CoreFoundation.CFString) -> appgate_sdk.KeyChainBuilder
+  @objc public func build() -> [Swift.String : Any]
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol IdentifierGeneratorProtocol {
+  func generate() -> Swift.String
+  func isPersistent() -> Swift.Bool
+  func hash(data: Foundation.Data) -> Swift.String
+}
+public typealias Limbs = [Swift.UInt64]
+public typealias Limb = Swift.UInt64
+public typealias Digits = [Swift.UInt64]
+public typealias Digit = Swift.UInt64
+public typealias Bytes = [Swift.UInt8]
+public typealias Byte = Swift.UInt8
+precedencegroup ExponentiationPrecedence {
+  associativity: left
+  higherThan: MultiplicationPrecedence
+  lowerThan: BitwiseShiftPrecedence
+}
+infix operator ** : ExponentiationPrecedence
+public struct BInt : Swift.SignedNumeric, Swift.BinaryInteger, Swift.ExpressibleByFloatLiteral, Swift.Codable {
+  public static let decimalRadix: Swift.Int
+  public static let hexadecimalRadix: Swift.Int
+  public typealias Magnitude = appgate_sdk.BInt
+  public var magnitude: appgate_sdk.BInt {
+    get
+  }
+  public typealias Words = [Swift.UInt]
+  public var words: appgate_sdk.BInt.Words {
+    get
+  }
+  public var size: Swift.Int {
+    get
+  }
+  public var sizeDescription: Swift.String {
+    get
+  }
+  public static var stringPrefixes: [Swift.Int : Swift.String]
+  public init(_ z: Swift.Int)
+  public init(_ n: Swift.UInt)
+  public init?(_ number: Swift.String, radix: Swift.Int = 10)
+  public init(floatLiteral value: Swift.Double)
+  public init(integerLiteral value: Swift.Int)
+  public init?<T>(exactly source: T) where T : Swift.BinaryInteger
+  public init<T>(_ source: T) where T : Swift.BinaryFloatingPoint
+  public init<T>(_ source: T) where T : Swift.BinaryInteger
+  public init<T>(clamping source: T) where T : Swift.BinaryInteger
+  public init?<T>(exactly source: T) where T : Swift.BinaryFloatingPoint
+  public init<T>(truncatingIfNeeded source: T) where T : Swift.BinaryInteger
+  public init(bytes: appgate_sdk.Bytes)
+  public var description: Swift.String {
+    get
+  }
+  public func asString(radix: Swift.Int) -> Swift.String
+  public var rawValue: (sign: Swift.Bool, limbs: [Swift.UInt64]) {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public static var isSigned: Swift.Bool {
+    get
+  }
+  public var bitWidth: Swift.Int {
+    get
+  }
+  public func signum() -> appgate_sdk.BInt
+  public var trailingZeroBitCount: Swift.Int {
+    get
+  }
+  public func getBytes() -> appgate_sdk.Bytes
+  public static func << <T>(lhs: appgate_sdk.BInt, rhs: T) -> appgate_sdk.BInt where T : Swift.BinaryInteger
+  public static func <<= <T>(lhs: inout appgate_sdk.BInt, rhs: T) where T : Swift.BinaryInteger
+  public static func >> <T>(lhs: appgate_sdk.BInt, rhs: T) -> appgate_sdk.BInt where T : Swift.BinaryInteger
+  public static func >>= <T>(lhs: inout appgate_sdk.BInt, rhs: T) where T : Swift.BinaryInteger
+  public static func & (lhs: appgate_sdk.BInt, rhs: appgate_sdk.BInt) -> appgate_sdk.BInt
+  public static func &= (lhs: inout appgate_sdk.BInt, rhs: appgate_sdk.BInt)
+  public static func | (lhs: appgate_sdk.BInt, rhs: appgate_sdk.BInt) -> appgate_sdk.BInt
+  public static func |= (lhs: inout appgate_sdk.BInt, rhs: appgate_sdk.BInt)
+  public static func ^ (lhs: appgate_sdk.BInt, rhs: appgate_sdk.BInt) -> appgate_sdk.BInt
+  public static func ^= (lhs: inout appgate_sdk.BInt, rhs: appgate_sdk.BInt)
+  prefix public static func ~ (x: appgate_sdk.BInt) -> appgate_sdk.BInt
+  prefix public static func + (x: appgate_sdk.BInt) -> appgate_sdk.BInt
+  public static func += (lhs: inout appgate_sdk.BInt, rhs: appgate_sdk.BInt)
+  public static func + (lhs: appgate_sdk.BInt, rhs: appgate_sdk.BInt) -> appgate_sdk.BInt
+  public static func + (lhs: Swift.Int, rhs: appgate_sdk.BInt) -> appgate_sdk.BInt
+  public static func + (lhs: appgate_sdk.BInt, rhs: Swift.Int) -> appgate_sdk.BInt
+  public static func += (lhs: inout Swift.Int, rhs: appgate_sdk.BInt)
+  public static func += (lhs: inout appgate_sdk.BInt, rhs: Swift.Int)
+  public mutating func negate()
+  prefix public static func - (n: appgate_sdk.BInt) -> appgate_sdk.BInt
+  public static func - (lhs: appgate_sdk.BInt, rhs: appgate_sdk.BInt) -> appgate_sdk.BInt
+  public static func - (lhs: Swift.Int, rhs: appgate_sdk.BInt) -> appgate_sdk.BInt
+  public static func - (lhs: appgate_sdk.BInt, rhs: Swift.Int) -> appgate_sdk.BInt
+  public static func -= (lhs: inout appgate_sdk.BInt, rhs: appgate_sdk.BInt)
+  public static func -= (lhs: inout Swift.Int, rhs: appgate_sdk.BInt)
+  public static func -= (lhs: inout appgate_sdk.BInt, rhs: Swift.Int)
+  public static func * (lhs: appgate_sdk.BInt, rhs: appgate_sdk.BInt) -> appgate_sdk.BInt
+  public static func * (lhs: Swift.Int, rhs: appgate_sdk.BInt) -> appgate_sdk.BInt
+  public static func * (lhs: appgate_sdk.BInt, rhs: Swift.Int) -> appgate_sdk.BInt
+  public static func *= (lhs: inout appgate_sdk.BInt, rhs: appgate_sdk.BInt)
+  public static func *= (lhs: inout Swift.Int, rhs: appgate_sdk.BInt)
+  public static func *= (lhs: inout appgate_sdk.BInt, rhs: Swift.Int)
+  public static func ** (lhs: appgate_sdk.BInt, rhs: Swift.Int) -> appgate_sdk.BInt
+  public static func ** (lhs: appgate_sdk.BInt, rhs: appgate_sdk.BInt) -> appgate_sdk.BInt
+  public func factorial() -> appgate_sdk.BInt
+  public func quotientAndRemainder(dividingBy rhs: appgate_sdk.BInt) -> (quotient: appgate_sdk.BInt, remainder: appgate_sdk.BInt)
+  public static func / (lhs: appgate_sdk.BInt, rhs: appgate_sdk.BInt) -> appgate_sdk.BInt
+  public static func /= (lhs: inout appgate_sdk.BInt, rhs: appgate_sdk.BInt)
+  public static func % (lhs: appgate_sdk.BInt, rhs: appgate_sdk.BInt) -> appgate_sdk.BInt
+  public static func %= (lhs: inout appgate_sdk.BInt, rhs: appgate_sdk.BInt)
+  public static func == (lhs: appgate_sdk.BInt, rhs: appgate_sdk.BInt) -> Swift.Bool
+  public static func < (lhs: appgate_sdk.BInt, rhs: appgate_sdk.BInt) -> Swift.Bool
+  public static func > (lhs: appgate_sdk.BInt, rhs: appgate_sdk.BInt) -> Swift.Bool
+  public static func <= (lhs: appgate_sdk.BInt, rhs: appgate_sdk.BInt) -> Swift.Bool
+  public static func >= (lhs: appgate_sdk.BInt, rhs: appgate_sdk.BInt) -> Swift.Bool
+  public typealias FloatLiteralType = Swift.Double
+  public typealias IntegerLiteralType = Swift.Int
+  public typealias Stride = Swift.Int
+  public func encode(to encoder: any Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct BDouble : Swift.ExpressibleByIntegerLiteral, Swift.ExpressibleByFloatLiteral, Swift.CustomStringConvertible, Swift.SignedNumeric, Swift.Comparable, Swift.Hashable, Swift.Codable {
+  public var sign: Swift.Bool {
+    get
+  }
+  public var numerator: appgate_sdk.Limbs {
+    get
+  }
+  public var denominator: appgate_sdk.Limbs {
+    get
+  }
+  public typealias Magnitude = Swift.Double
+  public var magnitude: Swift.Double
+  public init?<T>(exactly source: T) where T : Swift.BinaryInteger
+  public init(_ src: appgate_sdk.BInt)
+  public init(sign: Swift.Bool, numerator: appgate_sdk.Limbs, denominator: appgate_sdk.Limbs)
+  public init(_ numerator: appgate_sdk.BInt, over denominator: appgate_sdk.BInt)
+  public init(_ numerator: Swift.Int, over denominator: Swift.Int)
+  public init?(_ numerator: Swift.String, over denominator: Swift.String)
+  public init?(_ nStr: Swift.String)
+  public init?(_ nStr: Swift.String, radix: Swift.Int)
+  public init(_ z: Swift.Int)
+  public init(_ d: Swift.Double)
+  public init(integerLiteral value: Swift.Int)
+  public init(floatLiteral value: Swift.Double)
+  public var description: Swift.String {
+    get
+  }
+  public var fractionDescription: Swift.String {
+    get
+  }
+  public static var precision: Swift.Int {
+    get
+    set
+  }
+  public var precision: Swift.Int {
+    get
+    set
+  }
+  public var decimalDescription: Swift.String {
+    get
+  }
+  public func decimalExpansion(precisionAfterDecimalPoint precision: Swift.Int, rounded: Swift.Bool = true) -> Swift.String
+  public func hash(into hasher: inout Swift.Hasher)
+  public var size: Swift.Int {
+    get
+  }
+  public var sizeDescription: Swift.String {
+    get
+  }
+  public func rawData() -> (sign: Swift.Bool, numerator: [Swift.UInt64], denominator: [Swift.UInt64])
+  public func isPositive() -> Swift.Bool
+  public func isNegative() -> Swift.Bool
+  public func isZero() -> Swift.Bool
+  public mutating func minimize()
+  public func rounded() -> appgate_sdk.BInt
+  public func nthroot(_ root: Swift.Int) -> appgate_sdk.BDouble
+  public func squareRoot() -> appgate_sdk.BDouble
+  public static func + (lhs: appgate_sdk.BDouble, rhs: appgate_sdk.BDouble) -> appgate_sdk.BDouble
+  public static func + (lhs: appgate_sdk.BDouble, rhs: Swift.Double) -> appgate_sdk.BDouble
+  public static func + (lhs: Swift.Double, rhs: appgate_sdk.BDouble) -> appgate_sdk.BDouble
+  public static func + (lhs: appgate_sdk.BDouble, rhs: appgate_sdk.BInt) -> appgate_sdk.BDouble
+  public static func + (lhs: appgate_sdk.BInt, rhs: appgate_sdk.BDouble) -> appgate_sdk.BDouble
+  public static func += (lhs: inout appgate_sdk.BDouble, rhs: appgate_sdk.BDouble)
+  public static func += (lhs: inout appgate_sdk.BDouble, rhs: Swift.Double)
+  public mutating func negate()
+  prefix public static func - (n: appgate_sdk.BDouble) -> appgate_sdk.BDouble
+  public static func - (lhs: appgate_sdk.BDouble, rhs: appgate_sdk.BDouble) -> appgate_sdk.BDouble
+  public static func - (lhs: appgate_sdk.BDouble, rhs: Swift.Double) -> appgate_sdk.BDouble
+  public static func - (lhs: Swift.Double, rhs: appgate_sdk.BDouble) -> appgate_sdk.BDouble
+  public static func - (lhs: appgate_sdk.BDouble, rhs: appgate_sdk.BInt) -> appgate_sdk.BDouble
+  public static func -= (lhs: inout appgate_sdk.BDouble, rhs: appgate_sdk.BDouble)
+  public static func -= (lhs: inout appgate_sdk.BDouble, rhs: Swift.Double)
+  public static func * (lhs: appgate_sdk.BDouble, rhs: appgate_sdk.BDouble) -> appgate_sdk.BDouble
+  public static func * (lhs: appgate_sdk.BDouble, rhs: Swift.Double) -> appgate_sdk.BDouble
+  public static func * (lhs: Swift.Double, rhs: appgate_sdk.BDouble) -> appgate_sdk.BDouble
+  public static func * (lhs: appgate_sdk.BDouble, rhs: appgate_sdk.BInt) -> appgate_sdk.BDouble
+  public static func * (lhs: appgate_sdk.BInt, rhs: appgate_sdk.BDouble) -> appgate_sdk.BDouble
+  public static func *= (lhs: inout appgate_sdk.BDouble, rhs: appgate_sdk.BDouble)
+  public static func *= (lhs: inout appgate_sdk.BDouble, rhs: Swift.Double)
+  public static func ** (base: appgate_sdk.BDouble, exponent: Swift.Int) -> appgate_sdk.BDouble
+  public static func ** (base: appgate_sdk.BDouble, exponent: appgate_sdk.BInt) -> appgate_sdk.BDouble
+  public static func ** (base: appgate_sdk.BDouble, exponent: appgate_sdk.BDouble) -> appgate_sdk.BDouble
+  public static func / (lhs: appgate_sdk.BDouble, rhs: appgate_sdk.BDouble) -> appgate_sdk.BDouble
+  public static func / (lhs: appgate_sdk.BDouble, rhs: Swift.Double) -> appgate_sdk.BDouble
+  public static func / (lhs: appgate_sdk.BDouble, rhs: appgate_sdk.BInt) -> appgate_sdk.BDouble
+  public static func / (lhs: Swift.Double, rhs: appgate_sdk.BDouble) -> appgate_sdk.BDouble
+  public static func % (lhs: appgate_sdk.BDouble, rhs: appgate_sdk.BDouble) -> appgate_sdk.BDouble
+  public static func % (lhs: appgate_sdk.BDouble, rhs: Swift.Double) -> appgate_sdk.BDouble
+  public static func % (lhs: Swift.Double, rhs: appgate_sdk.BDouble) -> appgate_sdk.BDouble
+  public static func nearlyEqual(_ lhs: appgate_sdk.BDouble, _ rhs: appgate_sdk.BDouble, epsilon: Swift.Double = 0.00001) -> Swift.Bool
+  public static func == (lhs: appgate_sdk.BDouble, rhs: appgate_sdk.BDouble) -> Swift.Bool
+  public static func == (lhs: appgate_sdk.BDouble, rhs: Swift.Double) -> Swift.Bool
+  public static func == (lhs: Swift.Double, rhs: appgate_sdk.BDouble) -> Swift.Bool
+  public static func != (lhs: appgate_sdk.BDouble, rhs: appgate_sdk.BDouble) -> Swift.Bool
+  public static func != (lhs: appgate_sdk.BDouble, rhs: Swift.Double) -> Swift.Bool
+  public static func != (lhs: Swift.Double, rhs: appgate_sdk.BDouble) -> Swift.Bool
+  public static func < (lhs: appgate_sdk.BDouble, rhs: appgate_sdk.BDouble) -> Swift.Bool
+  public static func < (lhs: appgate_sdk.BDouble, rhs: Swift.Double) -> Swift.Bool
+  public static func < (lhs: Swift.Double, rhs: appgate_sdk.BDouble) -> Swift.Bool
+  public static func > (lhs: appgate_sdk.BDouble, rhs: appgate_sdk.BDouble) -> Swift.Bool
+  public static func > (lhs: appgate_sdk.BDouble, rhs: Swift.Double) -> Swift.Bool
+  public static func > (lhs: Swift.Double, rhs: appgate_sdk.BDouble) -> Swift.Bool
+  public static func <= (lhs: appgate_sdk.BDouble, rhs: appgate_sdk.BDouble) -> Swift.Bool
+  public static func <= (lhs: appgate_sdk.BDouble, rhs: Swift.Double) -> Swift.Bool
+  public static func <= (lhs: Swift.Double, rhs: appgate_sdk.BDouble) -> Swift.Bool
+  public static func >= (lhs: appgate_sdk.BDouble, rhs: appgate_sdk.BDouble) -> Swift.Bool
+  public static func >= (lhs: appgate_sdk.BDouble, rhs: Swift.Double) -> Swift.Bool
+  public static func >= (lhs: Swift.Double, rhs: appgate_sdk.BDouble) -> Swift.Bool
+  public typealias FloatLiteralType = Swift.Double
+  public typealias IntegerLiteralType = Swift.Int
+  public func encode(to encoder: any Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+}
+public func abs(_ x: appgate_sdk.BDouble) -> appgate_sdk.BDouble
+public func floor(_ base: appgate_sdk.BDouble) -> appgate_sdk.BInt
+public func ceil(_ base: appgate_sdk.BDouble) -> appgate_sdk.BInt
+public func pow(_ base: appgate_sdk.BDouble, _ exp: Swift.Int) -> appgate_sdk.BDouble
+public func pow(_ base: appgate_sdk.BDouble, _ exp: appgate_sdk.BInt) -> appgate_sdk.BDouble
+public func pow(_ base: appgate_sdk.BDouble, _ exp: appgate_sdk.BDouble) -> appgate_sdk.BDouble
+public func min(_ lhs: appgate_sdk.BDouble, _ rhs: appgate_sdk.BDouble) -> appgate_sdk.BDouble
+public func max(_ lhs: appgate_sdk.BDouble, _ rhs: appgate_sdk.BDouble) -> appgate_sdk.BDouble
+public func mod(_ lhs: appgate_sdk.BDouble, _ rhs: appgate_sdk.BDouble) -> appgate_sdk.BDouble
+@_hasMissingDesignatedInitializers public class RSASignerImpl : appgate_sdk.RSASigner {
+  public init(keyAlgoritm: Security.SecKeyAlgorithm)
+  public func signData(_ data: Foundation.Data, using privateKey: Security.SecKey) throws -> Foundation.Data
+  public func signatureIsValid(_ signature: Foundation.Data, forData data: Foundation.Data, using publicKey: Security.SecKey) throws -> Swift.Bool
+  @objc deinit
+}
+public enum DataLocalError : Swift.Error {
+  case badEntryParams
+  case valueNotFound
+  case tagNotFound
+  case failedSave
+  case keyChainError
+  case failedUpdate
+  case failedRemove
+  case badFormatKeyChainDictionary
+  case queryAlreadyExist
+  case queryDoesNotExist
+  public static func == (a: appgate_sdk.DataLocalError, b: appgate_sdk.DataLocalError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol SecurePreferencesProtocol {
+  func setPreference<T>(data d: T, tag: Swift.String) -> Swift.Bool where T : Swift.Encodable
+  func getPreferenceFlag(tag: Swift.String) -> Swift.Bool?
+  func getPreferenceNumber(tag: Swift.String) -> Swift.Int?
+  func getPreference<T>(tag: Swift.String) -> T?
+  func removePreference(tag: Swift.String) -> Swift.Bool
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class PersistenceKeyChainController : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc public func set(query: Foundation.NSDictionary) throws
+  public func get(query: Foundation.NSDictionary) throws -> Swift.AnyObject?
+  @objc public func read(query: Foundation.NSDictionary) -> Any?
+  @objc public func update(query: Foundation.NSDictionary, attributesToUpdate: Foundation.NSDictionary) throws
+  @objc public func remove(query: Foundation.NSDictionary) throws
+  public func checkFilter(query: Foundation.NSDictionary) throws -> Swift.Bool
+  @objc deinit
+}
+public enum DeviceInfoError : Swift.Int, Swift.Error {
+  case FAIL_CREATION_FINGERPRINT
+  case DOESNOTEXIST_FINGERPRINT
+  case FAIL_GET_FINGERPRINT
+  case FAIL_UPDATE_FINGERPRINT
+  case FINGERPRINT_IS_NIL
+  case FAIL_ACCESS_GROUP
+  case FAIL
+  case FAIL_GET_FINGERPRINT_HASHED
+  case FAIL_RESET_FINGERPRINT
+  case BAD_ENTRY_PARAMETERES
+  case FILTER_DOESNOTEXIST
+  case DOESNOTEXIST_ACCESS_GROUP
+  case IDENTIFIER_ALREADY_EXIST
+  case IDENTIFIER_HAS_CHANGED
+  case IDENTIFIER_CANNOT_BE_REMOVED
+  public var localizedDescription: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class AesKeyGenerator {
+  public static func getRandomAESEncryptionKey(size: Swift.Int) -> Swift.String?
+  public static func getRandomIV() -> Foundation.Data?
+  @objc deinit
+}
+@objc public enum AGLogType : Swift.Int {
+  case Info, Fault, Error
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class DeviceIDProvider : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  public func hasBeenCreated() -> Swift.Bool
+  @objc public func getDeviceID() -> Swift.String
+  @objc deinit
+}
+public enum PersistenceType {
+  case preference
+  public static func == (a: appgate_sdk.PersistenceType, b: appgate_sdk.PersistenceType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension Foundation.Data {
+  public func toHex() -> Swift.String
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class NSStringConverter : ObjectiveC.NSObject {
+  @objc public static func toHex(data: Foundation.Data) -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class AGLogs : ObjectiveC.NSObject {
+  @objc public static func print(message: Swift.String, feature: appgate_sdk.AGLogFeatures = .General, productName: Swift.String = "sdk", type: appgate_sdk.AGLogType = .Info, environment: appgate_sdk.AGLogEnvironment = .Debug)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class DataResponse : ObjectiveC.NSObject {
+  @objc public var code: Swift.Int
+  @objc public var data: Foundation.Data
+  @objc public var error: Foundation.NSError?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol RSAEncryptor {
+  func encrypt(data: Foundation.Data, publicKey: Security.SecKey) throws -> Foundation.Data
+  func decrypt(data: Foundation.Data, privateKey: Security.SecKey) throws -> Foundation.Data
+}
+open class SecurePreferences : appgate_sdk.SecurePreferencesProtocol {
+  public init(account: Swift.String)
+  public func setPreference<T>(data d: T, tag: Swift.String) -> Swift.Bool where T : Swift.Encodable
+  public func getPreferenceFlag(tag: Swift.String) -> Swift.Bool?
+  public func getPreferenceNumber(tag: Swift.String) -> Swift.Int?
+  public func getPreference<T>(tag: Swift.String) -> T?
+  public func removePreference(tag: Swift.String) -> Swift.Bool
+  @objc deinit
+}
+@objc public enum AGLogEnvironment : Swift.Int {
+  case Debug, Both
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public protocol Builder {
+  associatedtype T
+  func build() -> Self.T
+}
+@available(*, deprecated, message: "Use DeviceIDProvider for persistent identifier")
+public class DeviceInfoController {
+  public init(service: Swift.String, account: Swift.String, fingerPrintGenerator: any appgate_sdk.IdentifierGeneratorProtocol)
+  public init(service: Swift.String, account: Swift.String)
+  public func createFingerPrint() throws
+  public func getFingerPrint() throws -> Swift.String
+  public func resetFingerPrint() throws
+  @objc deinit
+}
+public typealias onSuccessResultHandler = () -> Swift.Void
+public typealias onFailureResultHandler = (appgate_sdk.AGSDKError) -> Swift.Void
+public protocol RSASigner {
+  func signData(_ data: Foundation.Data, using privateKey: Security.SecKey) throws -> Foundation.Data
+  func signatureIsValid(_ signature: Foundation.Data, forData data: Foundation.Data, using publicKey: Security.SecKey) throws -> Swift.Bool
+}
+public protocol DeviceIDManagerProtocol {
+  func createIdentifier() throws
+  func getIdentifier(persistent: Swift.Bool) throws -> Swift.String
+  func resetIdentifier() throws
+}
+@objc @_inheritsConvenienceInitializers public class AesEncryptorBuilder : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  public func setIV(iv: Foundation.Data) -> appgate_sdk.AesEncryptorBuilder
+  public func setMode(mode: appgate_sdk.AesEncryptMode) -> appgate_sdk.AesEncryptorBuilder
+  public func build() -> any appgate_sdk.AesEncryptor
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class PersistenceController : ObjectiveC.NSObject {
+  public func set(data: Any, tag: Swift.String, persistenceType: appgate_sdk.PersistenceType = PersistenceType.preference) throws
+  public func set(data: Swift.String, tag: Swift.String, persistenceType: appgate_sdk.PersistenceType = PersistenceType.preference) throws
+  public func set(data: Swift.Int, tag: Swift.String, persistenceType: appgate_sdk.PersistenceType = PersistenceType.preference) throws
+  public func set(data: Swift.Bool, tag: Swift.String, persistenceType: appgate_sdk.PersistenceType = PersistenceType.preference) throws
+  public func get(tag: Swift.String, persistenceType: appgate_sdk.PersistenceType = PersistenceType.preference) throws -> Any
+  public func get(tag: Swift.String, persistenceType: appgate_sdk.PersistenceType = PersistenceType.preference) throws -> Swift.String
+  public func get(tag: Swift.String, persistenceType: appgate_sdk.PersistenceType = PersistenceType.preference) throws -> Swift.Int
+  public func get(tag: Swift.String, persistenceType: appgate_sdk.PersistenceType = PersistenceType.preference) throws -> Swift.Bool
+  public func remove(tag: Swift.String, persistenceType: appgate_sdk.PersistenceType = PersistenceType.preference) throws
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol NetworkControllerProtocol {
+  func getRequest(urlString: Swift.String, header: Swift.String, onResponse: @escaping (appgate_sdk.DataResponse) -> Swift.Void)
+  func postRequest(urlString: Swift.String, header: Swift.String, body: Foundation.Data, onResponse: @escaping (appgate_sdk.DataResponse) -> Swift.Void)
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class AGSDKError : Foundation.NSError {
+  @objc override dynamic public init(domain: Swift.String, code: Swift.Int, userInfo dict: [Swift.String : Any]? = nil)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension appgate_sdk.RSAError : Swift.Equatable {}
+extension appgate_sdk.RSAError : Swift.Hashable {}
+extension appgate_sdk.AGLogFeatures : Swift.Equatable {}
+extension appgate_sdk.AGLogFeatures : Swift.Hashable {}
+extension appgate_sdk.AGLogFeatures : Swift.RawRepresentable {}
+extension appgate_sdk.RSAKeySize : Swift.Equatable {}
+extension appgate_sdk.RSAKeySize : Swift.Hashable {}
+extension appgate_sdk.RSAKeySize : Swift.RawRepresentable {}
+extension appgate_sdk.AesEncryptMode : Swift.Equatable {}
+extension appgate_sdk.AesEncryptMode : Swift.Hashable {}
+extension appgate_sdk.AesEncryptMode : Swift.RawRepresentable {}
+extension appgate_sdk.DataLocalError : Swift.Equatable {}
+extension appgate_sdk.DataLocalError : Swift.Hashable {}
+extension appgate_sdk.DeviceInfoError : Swift.Equatable {}
+extension appgate_sdk.DeviceInfoError : Swift.Hashable {}
+extension appgate_sdk.DeviceInfoError : Swift.RawRepresentable {}
+extension appgate_sdk.AGLogType : Swift.Equatable {}
+extension appgate_sdk.AGLogType : Swift.Hashable {}
+extension appgate_sdk.AGLogType : Swift.RawRepresentable {}
+extension appgate_sdk.PersistenceType : Swift.Equatable {}
+extension appgate_sdk.PersistenceType : Swift.Hashable {}
+extension appgate_sdk.AGLogEnvironment : Swift.Equatable {}
+extension appgate_sdk.AGLogEnvironment : Swift.Hashable {}
+extension appgate_sdk.AGLogEnvironment : Swift.RawRepresentable {}

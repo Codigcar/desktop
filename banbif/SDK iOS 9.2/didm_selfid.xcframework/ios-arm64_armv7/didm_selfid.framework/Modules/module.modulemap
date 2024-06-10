@@ -1,0 +1,4 @@
+framework module didm_selfid {
+  header "didm_selfid-Swift.h"
+  requires objc
+}

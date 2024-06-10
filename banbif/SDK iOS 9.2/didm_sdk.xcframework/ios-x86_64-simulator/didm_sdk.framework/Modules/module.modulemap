@@ -1,0 +1,6 @@
+framework module didm_sdk {
+  umbrella header "didm_sdk.h"
+  export *
+
+  module * { export * }
+}
