@@ -1,0 +1,2 @@
+import ModalConfirmationComponent from "./ModalConfirmationComponent"
+export default ModalConfirmationComponent

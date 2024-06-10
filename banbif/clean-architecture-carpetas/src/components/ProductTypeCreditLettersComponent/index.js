@@ -1,0 +1,2 @@
+import ProductTypeCreditLettersComponent from "./ProductTypeCreditLettersComponent";
+export default ProductTypeCreditLettersComponent;

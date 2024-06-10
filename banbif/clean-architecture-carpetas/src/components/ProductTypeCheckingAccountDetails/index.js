@@ -1,0 +1,2 @@
+import ProductTypeCheckingAccountDetails from "./ProductTypeCheckingAccountDetails"
+export default ProductTypeCheckingAccountDetails;

@@ -1,0 +1,2 @@
+import ProductTypeInternationalCollectionsComponent from "./ProductTypeInternationalCollectionsComponent";
+export default ProductTypeInternationalCollectionsComponent;
