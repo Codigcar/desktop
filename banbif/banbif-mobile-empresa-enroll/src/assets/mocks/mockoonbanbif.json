@@ -1,0 +1,437 @@
+{
+    "id": "mockoon_export",
+    "appVersion": "1.4.0",
+    "checksum": "6b86f88b67946cfd73a2daa74bfdee8c",
+    "subject": "full",
+    "data": [
+        {
+            "uuid": "78234910-cb63-11e9-a8d3-c9a61ed7333f",
+            "name": "Banca-Movil",
+            "endpointPrefix": "",
+            "latency": 0,
+            "port": 3040,
+            "routes": [
+                {
+                    "uuid": "78234911-cb63-11e9-a8d3-c9a61ed7333f",
+                    "documentation": "Obtener Detalle de Tarjeta de Crédito",
+                    "method": "post",
+                    "endpoint": "api-banca-movil-empresas/v1/consultaTarjetaCredito/consultas/tarjetaCredito",
+                    "body": "{\r\n   \"meta\":{\r\n      \"mensajes\":[\r\n         {\r\n            \"codigo\":\"ESM00\",\r\n            \"mensaje\":\"Solicitud exitosa y generó una representación\",\r\n            \"tipo\":\"info\"\r\n         }\r\n      ],\r\n      \"totalRegistros\":3,\r\n      \"idTransaccion\":\"0d7c1f12-4fd7-4776-a8f7-9c1ab6e455ff\",\r\n      \"numeroTotalPaginas\":1,\r\n      \"resultado\":true\r\n   },\r\n   \"datos\":\r\n      {\r\n         \"fechaCierreFacturacion\":\"2019-08-06\",\r\n         \"numeroTarjetaCredito\":\"string\",\r\n         \"lineaDolares\":0,\r\n         \"montoDolares\":0,\r\n         \"lineaSoles\":0,\r\n         \"montoSoles\":0,\r\n         \"montoRetiroEfectivoDolares\":0,\r\n         \"saldoDolar\":0,\r\n         \"lineaLimiteDolares\":0,\r\n         \"montoCursoDolares\":0,\r\n         \"montoRetiroEfectivoSoles\":0,\r\n         \"saldoLocal\":0,\r\n         \"lineaLimiteSoles\":0,\r\n         \"montoCursoSoles\":0,\r\n         \"lineaCreditoDolares\":0,\r\n         \"lineaCreditoSoles\":0,\r\n         \"pagoTotalSoles\":0,\r\n         \"pagoTotalMesSoles\":0,\r\n         \"pagoMinimoSoles\":0,\r\n         \"pagoTotalDolares\":0,\r\n         \"pagoTotalMesDolares\":0,\r\n         \"PagoMinimoDolares\":0,\r\n         \"fechaPago\":\"2019-08-06\",\r\n         \"puntosBanbif\":0,\r\n         \"puntosAnteriores\":0,\r\n         \"puntosRedimidos\":0,\r\n         \"puntosActuales\":0,\r\n         \"puntosDisponibles\":0,\r\n         \"limiteEfectivo\":0,\r\n         \"lineaMaxSoles\":0,\r\n         \"lineaMaxDolares\":0,\r\n         \"cantidadDebidaSoles\":0,\r\n         \"cantidadDebidaDolares\":0\r\n      }\r\n}",
+                    "latency": 1000,
+                    "statusCode": "200",
+                    "headers": [
+                        {
+                            "key": "productBankIdentifier",
+                            "value": "40733210|6|007000123729|AMEXBIF1"
+                        },
+                        {
+                            "key": "channelId",
+                            "value": "5"
+                        }
+                    ],
+                    "filePath": "",
+                    "sendFileAsBody": false
+                },
+                {
+                    "uuid": "78234912-cb63-11e9-a8d3-c9a61ed7333f",
+                    "documentation": "Obtener Movimientos de Tarjeta de Crédito",
+                    "method": "post",
+                    "endpoint": "api-banca-movil-empresas/v1/consultaTarjetaCredito/consultas/tarjetaCredito/movimientos",
+                    "body": "{  \r\n   \"meta\":{  \r\n      \"mensajes\":[  \r\n         {  \r\n            \"codigo\":\"ESM00\",\r\n            \"mensaje\":\"Solicitud exitosa y generó una representación\",\r\n            \"tipo\":\"info\"\r\n         }\r\n      ],\r\n      \"totalRegistros\":3,\r\n      \"idTransaccion\":\"0d7c1f12-4fd7-4776-a8f7-9c1ab6e455ff\",\r\n      \"numeroPaginaSiguiente\":null,\r\n      \"numeroTotalPaginas\":3,\r\n      \"resultado\":true\r\n   },\r\n   \"datos\":[  \r\n      {  \r\n         \"numeroOperacion\":\"string\",\r\n         \"tarjetaCredito\":{  \r\n            \"numeroTarjetaCredito\":\"string\",\r\n            \"montoDolares\":0\r\n         },\r\n         \"fechaProceso\":\"2019-08-06\",\r\n         \"fechaMovimiento\":\"2019-08-06\",\r\n         \"descripcion\":\"string\"\r\n      },{  \r\n         \"numeroOperacion\":\"string\",\r\n         \"tarjetaCredito\":{  \r\n            \"numeroTarjetaCredito\":\"string\",\r\n            \"montoDolares\":0\r\n         },\r\n         \"fechaProceso\":\"2019-08-06\",\r\n         \"fechaMovimiento\":\"2019-08-06\",\r\n         \"descripcion\":\"string\"\r\n      },{  \r\n         \"numeroOperacion\":\"string\",\r\n         \"tarjetaCredito\":{  \r\n            \"numeroTarjetaCredito\":\"string\",\r\n            \"montoDolares\":0\r\n         },\r\n         \"fechaProceso\":\"2019-08-06\",\r\n         \"fechaMovimiento\":\"2019-08-06\",\r\n         \"descripcion\":\"string\"\r\n      },{  \r\n         \"numeroOperacion\":\"string\",\r\n         \"tarjetaCredito\":{  \r\n            \"numeroTarjetaCredito\":\"string\",\r\n            \"montoDolares\":0\r\n         },\r\n         \"fechaProceso\":\"2019-08-06\",\r\n         \"fechaMovimiento\":\"2019-08-06\",\r\n         \"descripcion\":\"string\"\r\n      }\r\n   ]\r\n}",
+                    "latency": 1000,
+                    "statusCode": "200",
+                    "headers": [
+                        {
+                            "key": "productBankIdentifier",
+                            "value": "40733210|6|007000123729|AMEXBIF1"
+                        },
+                        {
+                            "key": "channelId",
+                            "value": "5"
+                        },
+                        {
+                            "key": "creditCardNumber",
+                            "value": "string"
+                        },
+                        {
+                            "key": "orderByField",
+                            "value": "string"
+                        },
+                        {
+                            "key": "pageStartIndex",
+                            "value": "0"
+                        },
+                        {
+                            "key": "pageSize",
+                            "value": "0"
+                        },
+                        {
+                            "key": "dateFrom",
+                            "value": "2019-08-06"
+                        },
+                        {
+                            "key": "dateTo",
+                            "value": "2019-08-06"
+                        }
+                    ],
+                    "filePath": "",
+                    "sendFileAsBody": false
+                },
+                {
+                    "uuid": "78234913-cb63-11e9-a8d3-c9a61ed7333f",
+                    "documentation": "Obtener Detalle de Depósito",
+                    "method": "post",
+                    "endpoint": "api-banca-movil-empresas/v1/cuentasAbiertas/consultas/depositos",
+                    "body": "{  \r\n   \"meta\":{  \r\n      \"mensajes\":[  \r\n         {  \r\n            \"codigo\":\"ESM00\",\r\n            \"mensaje\":\"Solicitud exitosa y generó una representación\",\r\n            \"tipo\":\"info\"\r\n         }\r\n      ],\r\n      \"totalRegistros\":1,\r\n      \"idTransaccion\":\"0d7c1f12-4fd7-4776-a8f7-9c1ab6e455ff\",\r\n      \"numeroPaginaSiguiente\":0,\r\n      \"numeroTotalPaginas\":1,\r\n      \"resultado\":true\r\n   },\r\n   \"datos\":{  \r\n      \"numeroDepositoPlazo\":\"string\",\r\n      \"saldoDeposito\":0,\r\n      \"interesGanado\":0,\r\n      \"saldoIntereses\":0,\r\n      \"tasaInteres\":0,\r\n      \"fechaApertura\":\"2019-08-07\",\r\n      \"fechaVencimiento\":\"2019-08-07\",\r\n      \"tipoDepositoPlazo\":\"string\"\r\n   }\r\n}",
+                    "latency": 1000,
+                    "statusCode": "200",
+                    "headers": [
+                        {
+                            "key": "productBankIdentifier",
+                            "value": "40733210|6|007000123729|AMEXBIF1"
+                        },
+                        {
+                            "key": "channelId",
+                            "value": "5"
+                        }
+                    ],
+                    "filePath": "",
+                    "sendFileAsBody": false
+                },
+                {
+                    "uuid": "78234914-cb63-11e9-a8d3-c9a61ed7333f",
+                    "documentation": "Obtener Movimientos de Depósitos",
+                    "method": "post",
+                    "endpoint": "api-banca-movil-empresas/v1/cuentasAbiertas/consultas/depositos/estado",
+                    "body": "{  \r\n   \"meta\":{  \r\n      \"mensajes\":[  \r\n         {  \r\n            \"codigo\":\"ESM00\",\r\n            \"mensaje\":\"Solicitud exitosa y generó una representación\",\r\n            \"tipo\":\"info\"\r\n         }\r\n      ],\r\n      \"totalRegistros\":1,\r\n      \"idTransaccion\":\"0d7c1f12-4fd7-4776-a8f7-9c1ab6e455ff\",\r\n      \"numeroPaginaSiguiente\":null,\r\n      \"numeroTotalPaginas\":1,\r\n      \"resultado\":true\r\n   },\r\n   \"datos\":[{  \r\n      \"numeroDepositoPlazo\":\"string\",\r\n      \"saldoDeposito\":0,\r\n      \"fechaVencimiento\":\"2019-08-07\",\r\n      \"fechaProceso\":\"2019-08-07\",\r\n      \"descripcion\":\"string\",\r\n      \"esDebito\":true,\r\n      \"monto\":0,\r\n      \"fechaValor\":\"2019-08-07\",\r\n      \"numeroOperacion\":\"string\",\r\n      \"tipoMovimiento\":\"string\",\r\n      \"idOperacion\":\"string\"\r\n   },{  \r\n      \"numeroDepositoPlazo\":\"string\",\r\n      \"saldoDeposito\":0,\r\n      \"fechaVencimiento\":\"2019-08-07\",\r\n      \"fechaProceso\":\"2019-08-07\",\r\n      \"descripcion\":\"string\",\r\n      \"esDebito\":true,\r\n      \"monto\":0,\r\n      \"fechaValor\":\"2019-08-07\",\r\n      \"numeroOperacion\":\"string\",\r\n      \"tipoMovimiento\":\"string\",\r\n      \"idOperacion\":\"string\"\r\n   },{  \r\n      \"numeroDepositoPlazo\":\"string\",\r\n      \"saldoDeposito\":0,\r\n      \"fechaVencimiento\":\"2019-08-07\",\r\n      \"fechaProceso\":\"2019-08-07\",\r\n      \"descripcion\":\"string\",\r\n      \"esDebito\":true,\r\n      \"monto\":0,\r\n      \"fechaValor\":\"2019-08-07\",\r\n      \"numeroOperacion\":\"string\",\r\n      \"tipoMovimiento\":\"string\",\r\n      \"idOperacion\":\"string\"\r\n   }]\r\n}",
+                    "latency": 1000,
+                    "statusCode": "200",
+                    "headers": [
+                        {
+                            "key": "productBankIdentifier",
+                            "value": "40733210|6|007000123729|AMEXBIF1"
+                        },
+                        {
+                            "key": "channelId",
+                            "value": "5"
+                        }
+                    ],
+                    "filePath": "",
+                    "sendFileAsBody": false
+                },
+                {
+                    "uuid": "78234915-cb63-11e9-a8d3-c9a61ed7333f",
+                    "documentation": "Obtener Detalle de Descuentos",
+                    "method": "post",
+                    "endpoint": "api-banca-movil-empresas/v1/consultaCuenta/consultas/detalle/descuentos",
+                    "body": "{  \r\n   \"meta\":{  \r\n      \"mensajes\":[  \r\n         {  \r\n            \"codigo\":\"ESM00\",\r\n            \"mensaje\":\"Solicitud exitosa y generó una representación\",\r\n            \"tipo\":\"info\"\r\n         }\r\n      ],\r\n      \"totalRegistros\":1,\r\n      \"idTransaccion\":\"0d7c1f12-4fd7-4776-a8f7-9c1ab6e455ff\",\r\n      \"numeroPaginaSiguiente\":0,\r\n      \"numeroTotalPaginas\":1,\r\n      \"resultado\":true\r\n   },\r\n   \"datos\":{  \r\n      \"detalleDescuento\":{  \r\n         \"fechaInicio\":\"2019-08-07\",\r\n         \"fechaVencimiento\":\"2019-08-07\",\r\n         \"saldoCredito\":0,\r\n         \"intereses\":0,\r\n         \"tasaInteres\":0\r\n      }\r\n   }\r\n}",
+                    "latency": 1000,
+                    "statusCode": "200",
+                    "headers": [
+                        {
+                            "key": "channelId",
+                            "value": "5"
+                        },
+                        {
+                            "key": "lnsust",
+                            "value": "string"
+                        },
+                        {
+                            "key": "lnsacs",
+                            "value": "string"
+                        },
+                        {
+                            "key": "lnsacc",
+                            "value": "string"
+                        },
+                        {
+                            "key": "codigoIbs",
+                            "value": "string"
+                        },
+                        {
+                            "key": "tipoProducto",
+                            "value": "string"
+                        }
+                    ],
+                    "filePath": "",
+                    "sendFileAsBody": false
+                },
+                {
+                    "uuid": "78234916-cb63-11e9-a8d3-c9a61ed7333f",
+                    "documentation": "Obtener Detalle de Carta de Crédito",
+                    "method": "get",
+                    "endpoint": "api-banca-movil-empresas/v1/consultaCuenta/detalle/carta",
+                    "body": "{  \r\n   \"meta\":{  \r\n      \"mensajes\":[  \r\n         {  \r\n            \"codigo\":\"ESM00\",\r\n            \"mensaje\":\"Solicitud exitosa y generó una representación\",\r\n            \"tipo\":\"info\"\r\n         }\r\n      ],\r\n      \"totalRegistros\":1,\r\n      \"idTransaccion\":\"0d7c1f12-4fd7-4776-a8f7-9c1ab6e455ff\",\r\n      \"numeroPaginaSiguiente\":0,\r\n      \"numeroTotalPaginas\":1,\r\n      \"resultado\":true\r\n   },\r\n   \"datos\":{  \r\n      \"carta\":{  \r\n         \"fechaEmision\":\"2019-08-07\",\r\n         \"fechaExpiracion\":\"2019-08-07\",\r\n         \"monto\":0,\r\n         \"beneficiario\":\"string\"\r\n      }\r\n   }\r\n}",
+                    "latency": 1000,
+                    "statusCode": "200",
+                    "headers": [
+                        {
+                            "key": "channelId",
+                            "value": "5"
+                        },
+                        {
+                            "key": "lcrusrcrd",
+                            "value": "string"
+                        },
+                        {
+                            "key": "lcrfrmacs",
+                            "value": "string"
+                        },
+                        {
+                            "key": "lcrlcmacc",
+                            "value": "string"
+                        },
+                        {
+                            "key": "lcrflg",
+                            "value": "string"
+                        },
+                        {
+                            "key": "codigoIbs",
+                            "value": "string"
+                        },
+                        {
+                            "key": "tipoProducto",
+                            "value": "string"
+                        }
+                    ],
+                    "filePath": "",
+                    "sendFileAsBody": false
+                },
+                {
+                    "uuid": "78234917-cb63-11e9-a8d3-c9a61ed7333f",
+                    "documentation": "Obtener Detalle de Cobranzas",
+                    "method": "post",
+                    "endpoint": "api-banca-movil-empresas/v1/consultaCuenta/consultas/cobranzas/detalle/producto",
+                    "body": "{  \r\n   \"meta\":{  \r\n      \"mensajes\":[  \r\n         {  \r\n            \"codigo\":\"ESM00\",\r\n            \"mensaje\":\"Solicitud exitosa y generó una representación\",\r\n            \"tipo\":\"info\"\r\n         }\r\n      ],\r\n      \"totalRegistros\":1,\r\n      \"idTransaccion\":\"0d7c1f12-4fd7-4776-a8f7-9c1ab6e455ff\",\r\n      \"numeroPaginaSiguiente\":0,\r\n      \"numeroTotalPaginas\":1,\r\n      \"resultado\":true\r\n   },\r\n   \"datos\":{  \r\n      \"fechaApertura\":\"2019-08-07\",\r\n      \"fechaExpiracion\":\"2019-08-07\",\r\n      \"tipoCobranza\":\"IMPORTACION\",\r\n      \"monto\":0,\r\n      \"estado\":\"PENDIENTE_CONFIRMACION\",\r\n      \"moneda\":\"SOL\",\r\n      \"numeroReferencia\":\"string\",\r\n      \"cedente\":\"string\",\r\n      \"beneficiario\":\"string\",\r\n      \"entregaDocumentos\":\"A_LA_VISTA\"\r\n   }\r\n}",
+                    "latency": 1000,
+                    "statusCode": "200",
+                    "headers": [
+                        {
+                            "key": "channelId",
+                            "value": "5"
+                        },
+                        {
+                            "key": "cltusrcrd",
+                            "value": "string"
+                        },
+                        {
+                            "key": "cltfrmacs",
+                            "value": "string"
+                        },
+                        {
+                            "key": "cltdcmacc",
+                            "value": "string"
+                        },
+                        {
+                            "key": "cltflg",
+                            "value": "string"
+                        },
+                        {
+                            "key": "codigoIbs",
+                            "value": "string"
+                        },
+                        {
+                            "key": "tipoProducto",
+                            "value": "string"
+                        }
+                    ],
+                    "filePath": "",
+                    "sendFileAsBody": false
+                },
+                {
+                    "uuid": "78234918-cb63-11e9-a8d3-c9a61ed7333f",
+                    "documentation": "Obtener Movimientos de Cuentas Corrientes y de Ahorro",
+                    "method": "post",
+                    "endpoint": "api-banca-movil-empresas/v1/consultaCuenta/consultas/cuenta/movimientos",
+                    "body": "{  \r\n   \"meta\":{  \r\n      \"mensajes\":[  \r\n         {  \r\n            \"codigo\":\"ESM00\",\r\n            \"mensaje\":\"Solicitud exitosa y generó una representación\",\r\n            \"tipo\":\"info\"\r\n         }\r\n      ],\r\n      \"totalRegistros\":1,\r\n      \"idTransaccion\":\"0d7c1f12-4fd7-4776-a8f7-9c1ab6e455ff\",\r\n      \"numeroPaginaSiguiente\":2,\r\n      \"numeroTotalPaginas\":2,\r\n      \"resultado\":true\r\n   },\r\n   \"datos\":[\r\n       {  \r\n      \"numeroOperacion\":2,\r\n      \"codigo\":\"string\",\r\n      \"codigoOperacion\":\"string\",\r\n      \"fechaMovimiento\":\"2019-08-07\",\r\n      \"descripcion\":\"transporte\",\r\n      \"montoMovimiento\":0,\r\n      \"esDebito\":true,\r\n      \"tipoMovimiento\":\"TODO\",\r\n      \"tipoId\":\"string\",\r\n      \"fechaValor\":\"2019-08-07\",\r\n      \"codigoId\":\"string\",\r\n      \"cuenta\":{  \r\n         \"saldoDisponible\":0\r\n      }\r\n      \r\n   },\r\n   {  \r\n      \"numeroOperacion\":4,\r\n      \"codigo\":\"string\",\r\n      \"codigoOperacion\":\"string\",\r\n      \"fechaMovimiento\":\"2019-08-07\",\r\n      \"descripcion\":\"xablau\",\r\n      \"montoMovimiento\":0,\r\n      \"esDebito\":true,\r\n      \"tipoMovimiento\":\"TODO\",\r\n      \"tipoId\":\"string\",\r\n      \"fechaValor\":\"2019-08-07\",\r\n      \"codigoId\":\"string\",\r\n      \"cuenta\":{  \r\n         \"saldoDisponible\":0\r\n      }\r\n      \r\n   },{  \r\n      \"numeroOperacion\":7,\r\n      \"codigo\":\"string\",\r\n      \"codigoOperacion\":\"string\",\r\n      \"fechaMovimiento\":\"2019-08-07\",\r\n      \"descripcion\":\"hadouken\",\r\n      \"montoMovimiento\":0,\r\n      \"esDebito\":true,\r\n      \"tipoMovimiento\":\"TODO\",\r\n      \"tipoId\":\"string\",\r\n      \"fechaValor\":\"2019-08-07\",\r\n      \"codigoId\":\"string\",\r\n      \"cuenta\":{  \r\n         \"saldoDisponible\":0\r\n      }\r\n      \r\n   },{  \r\n      \"numeroOperacion\":8,\r\n      \"codigo\":\"string\",\r\n      \"codigoOperacion\":\"string\",\r\n      \"fechaMovimiento\":\"2019-08-07\",\r\n      \"descripcion\":\"pagamento\",\r\n      \"montoMovimiento\":0,\r\n      \"esDebito\":true,\r\n      \"tipoMovimiento\":\"TODO\",\r\n      \"tipoId\":\"string\",\r\n      \"fechaValor\":\"2019-08-07\",\r\n      \"codigoId\":\"string\",\r\n      \"cuenta\":{  \r\n         \"saldoDisponible\":0\r\n      }\r\n      \r\n   },{  \r\n      \"numeroOperacion\":0,\r\n      \"codigo\":\"string\",\r\n      \"codigoOperacion\":\"string\",\r\n      \"fechaMovimiento\":\"2019-08-07\",\r\n      \"descripcion\":\"Parangaricutirimirruaro\",\r\n      \"montoMovimiento\":0,\r\n      \"esDebito\":true,\r\n      \"tipoMovimiento\":\"TODO\",\r\n      \"tipoId\":\"string\",\r\n      \"fechaValor\":\"2019-09-07\",\r\n      \"codigoId\":\"string\",\r\n      \"cuenta\":{  \r\n         \"saldoDisponible\":0\r\n      }\r\n      \r\n   }\r\n   ]\r\n}",
+                    "latency": 1000,
+                    "statusCode": "200",
+                    "headers": [
+                        {
+                            "key": "channelId",
+                            "value": "5"
+                        },
+                        {
+                            "key": "productBankIdentifier",
+                            "value": "40733210|6|007000123729|AMEXBIF1"
+                        },
+                        {
+                            "key": "dateFromFilter",
+                            "value": "2019-08-07"
+                        },
+                        {
+                            "key": "dateToFilter",
+                            "value": "2019-08-07"
+                        },
+                        {
+                            "key": "movementTypeFilter",
+                            "value": "string"
+                        },
+                        {
+                            "key": "searchType",
+                            "value": "string"
+                        }
+                    ],
+                    "filePath": "",
+                    "sendFileAsBody": false
+                },
+                {
+                    "uuid": "78234919-cb63-11e9-a8d3-c9a61ed7333f",
+                    "documentation": "Consulta Tipos de Productos",
+                    "method": "get",
+                    "endpoint": "api-banca-movil-empresas/v1/productosEmpresa/tiposProductos",
+                    "body": "{\n    \"meta\": {\n        \"mensajes\": [\n            {\n                \"codigo\": \"ESM00\",\n                \"mensaje\": \"Solicitud exitosa y generó una representación\",\n                \"tipo\": \"info\"\n            }\n        ],\n        \"totalRegistros\": 11,\n        \"idTransaccion\": \"5aff02a2-16f6-485e-bc03-d50c352c2447\",\n        \"numeroTotalPaginas\": 1,\n        \"resultado\": true\n    },\n    \"datos\": [\n        {\n            \"codigo\": \"06\",\n            \"descripcion\": \"Prestamo/Pagar\",\n            \"tipo\": \"Prestamo/Pagar\",\n            \"montoSoles\": \"640441.85\",\n            \"cantSoles\": \"0.0\",\n            \"montoDolares\": \"0.0\",\n            \"cantDolares\": \"0.0\"\n        },\n        {\n            \"codigo\": \"23\",\n            \"descripcion\": \"Ahorros\",\n            \"tipo\": \"Ahorros\",\n            \"montoSoles\": \"2109.69\",\n            \"cantSoles\": \"0.0\",\n            \"montoDolares\": \"0.05\",\n            \"cantDolares\": \"0.0\"\n        },\n        {\n            \"codigo\": \"32\",\n            \"descripcion\": \"Otras Garantia\",\n            \"tipo\": \"Otras Garantia\",\n            \"montoSoles\": \"0.0\",\n            \"cantSoles\": \"0.0\",\n            \"montoDolares\": \"0.0\",\n            \"cantDolares\": \"0.0\"\n        },{\n            \"codigo\": \"3\",\n            \"descripcion\": \"Factoring\",\n            \"tipo\": \"Factoring\",\n            \"montoSoles\": \"0.0\",\n            \"cantSoles\": \"0.0\",\n            \"montoDolares\": \"0.0\",\n            \"cantDolares\": \"0.0\"\n        },\n        {\n            \"codigo\": \"02\",\n            \"descripcion\": \"Depósitos a Plazo Fijo\",\n            \"tipo\": \"Depósitos a Plazo Fijo\",\n            \"montoSoles\": \"0.0\",\n            \"cantSoles\": \"0.0\",\n            \"montoDolares\": \"0.0\",\n            \"cantDolares\": \"0.0\"\n        },\n        {\n            \"codigo\": \"04\",\n            \"descripcion\": \"Tarjetas de Crédito\",\n            \"tipo\": \"Tarjetas de Crédito\",\n            \"montoSoles\": \"0.0\",\n            \"cantSoles\": \"0.0\",\n            \"montoDolares\": \"0.0\",\n            \"cantDolares\": \"0.0\"\n        },\n        {\n            \"codigo\": \"7\",\n            \"descripcion\": \"Cartas de Fianza\",\n            \"tipo\": \"Cartas de Fianza\",\n            \"montoSoles\": \"0.0\",\n            \"cantSoles\": \"0.0\",\n            \"montoDolares\": \"0.0\",\n            \"cantDolares\": \"0.0\"\n        },\n        {\n            \"codigo\": \"8\",\n            \"descripcion\": \"Cobranzas Internacionales\",\n            \"tipo\": \"Cobranzas Internacionales\",\n            \"montoSoles\": \"0.0\",\n            \"cantSoles\": \"0.0\",\n            \"montoDolares\": \"0.0\",\n            \"cantDolares\": \"0.0\"\n        },\n        {\n            \"codigo\": \"9\",\n            \"descripcion\": \"Cobranzas\",\n            \"tipo\": \"Cobranzas\",\n            \"montoSoles\": \"0.0\",\n            \"cantSoles\": \"0.0\",\n            \"montoDolares\": \"0.0\",\n            \"cantDolares\": \"0.0\"\n        },\n        {\n            \"codigo\": \"10\",\n            \"descripcion\": \"Descuentos\",\n            \"tipo\": \"Descuentos\",\n            \"montoSoles\": \"0.0\",\n            \"cantSoles\": \"0.0\",\n            \"montoDolares\": \"0.0\",\n            \"cantDolares\": \"0.0\"\n        },\n        {\n            \"codigo\": \"11\",\n            \"descripcion\": \"Línea de Crédito de Letras\",\n            \"tipo\": \"Línea de Crédito de Letras\",\n            \"montoSoles\": \"0.0\",\n            \"cantSoles\": \"0.0\",\n            \"montoDolares\": \"0.0\",\n            \"cantDolares\": \"0.0\"\n        },\n        {\n            \"codigo\": \"5\",\n            \"descripcion\": \"Leasing\",\n            \"tipo\": \"Leasing\",\n            \"montoSoles\": \"0.0\",\n            \"cantSoles\": \"0.0\",\n            \"montoDolares\": \"0.0\",\n            \"cantDolares\": \"0.0\"\n        },\n        \n        {\n            \"codigo\": \"12\",\n            \"descripcion\": \"Leasing\",\n            \"tipo\": \"Leasing\",\n            \"montoSoles\": \"0.0\",\n            \"cantSoles\": \"0.0\",\n            \"montoDolares\": \"0.0\",\n            \"cantDolares\": \"0.0\"\n        }\n    ]\n}",
+                    "latency": 1000,
+                    "statusCode": "200",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        },
+                        {
+                            "key": "codigoCanal",
+                            "value": "BANCA_POR_INTERNET"
+                        },
+                        {
+                            "key": "numeroPagina",
+                            "value": "1"
+                        },
+                        {
+                            "key": "codigoIBS",
+                            "value": "40733210"
+                        },
+                        {
+                            "key": "tipoProduto",
+                            "value": "5"
+                        }
+                    ],
+                    "filePath": "",
+                    "sendFileAsBody": false
+                },
+                {
+                    "uuid": "7823491a-cb63-11e9-a8d3-c9a61ed7333f",
+                    "documentation": "Consulta Productos",
+                    "method": "get",
+                    "endpoint": "api-banca-movil-empresas/v1/productosEmpresa/productos",
+                    "body": "{\n    \"meta\": {\n        \"mensajes\": [\n            {\n                \"codigo\": \"ESM00\",\n                \"mensaje\": \"laalalala\",\n                \"tipo\": \"info\"\n            },\n            {\n                \"codigo\": \"ESM00\",\n                \"mensaje\": \"eerrroo\",\n                \"tipo\": \"info\"\n            }\n        ],\n        \"idTransaccion\": \"c18340fb-3b03-4696-82d4-5c8a26ded069\",\n        \"resultado\": true\n    },\n    \"datos\": [\n        {\n           \n            \"productBankIdentifier\": \"40733210|6|007000123729|AMEXBIF1\",\n            \"clientBankIdentifier\": \"USUARIOOP\",\n            \"entityId\": \"AMEXBIF1\",\n            \"numero\": \"007000123729\",\n            \"tipoIdentificacion\": 6,\n            \"monedaIdentificacion\": \"EUR\",\n            \"estadoProductoIdentificacion\": 1,\n            \"saldoCuentaDisponible\": 99.35,\n            \"saldoActual\": 58.54,\n            \"cuentaCCI\": \"00320000300084684631\",\n            \"numeroCuenta\": \"70001237170001237\"\n        },\n        {\n           \n            \"productBankIdentifier\": \"40733210|6|007000123729|AMEXBIF1\",\n            \"clientBankIdentifier\": \"USUARIOOP\",\n            \"entityId\": \"AMEXBIF1\",\n            \"numero\": \"007000123729\",\n            \"tipoIdentificacion\": 6,\n            \"monedaIdentificacion\": \"SOL\",\n            \"estadoProductoIdentificacion\": 1,\n            \"saldoCuentaDisponible\": 99.35,\n            \"saldoActual\": 58.54,\n            \"cuentaCCI\": \"7000123729\",\n            \"numeroCuenta\": \"7000123717000123770001237170001237\"\n        },\n        {\n           \n            \"productBankIdentifier\": \"40733210|6|007000123729|AMEXBIF1\",\n            \"clientBankIdentifier\": \"USUARIOOP\",\n            \"entityId\": \"AMEXBIF1\",\n            \"numero\": \"007000123729\",\n            \"tipoIdentificacion\": 6,\n            \"monedaIdentificacion\": \"USD\",\n            \"estadoProductoIdentificacion\": 1,\n            \"saldoCuentaDisponible\": 0,\n            \"saldoActual\": 0,\n            \"cuentaCCI\": \"7000123729\",\n            \"numeroCuenta\": \"7000123712\"\n        },\n        {\n           \n            \"productBankIdentifier\": \"40733210|6|007000123729|AMEXBIF1\",\n            \"clientBankIdentifier\": \"USUARIOOP\",\n            \"entityId\": \"AMEXBIF1\",\n            \"numero\": \"007000123729\",\n            \"tipoIdentificacion\": 6,\n            \"monedaIdentificacion\": \"SOL\",\n            \"estadoProductoIdentificacion\": 1,\n            \"saldoCuentaDisponible\": 99.35,\n            \"saldoActual\": 58.54,\n            \"cuentaCCI\": \"7000123729\",\n            \"numeroCuenta\": \"70001237214\"\n        },\n        {\n           \n            \"productBankIdentifier\": \"40733210|6|007000123729|AMEXBIF1\",\n            \"clientBankIdentifier\": \"USUARIOOP\",\n            \"entityId\": \"AMEXBIF1\",\n            \"numero\": \"007000123729\",\n            \"tipoIdentificacion\": 6,\n            \"monedaIdentificacion\": \"USD\",\n            \"estadoProductoIdentificacion\": 1,\n            \"saldoCuentaDisponible\": 99.35,\n            \"saldoActual\": 58.54,\n            \"cuentaCCI\": \"7000123729\",\n            \"numeroCuenta\": \"7000123729\"\n        },\n        {\n           \n            \"productBankIdentifier\": \"40733210|6|007000123729|AMEXBIF1\",\n            \"clientBankIdentifier\": \"USUARIOOP\",\n            \"entityId\": \"AMEXBIF1\",\n            \"numero\": \"007000123729\",\n            \"tipoIdentificacion\": 6,\n            \"monedaIdentificacion\": \"SOL\",\n            \"estadoProductoIdentificacion\": 1,\n            \"saldoCuentaDisponible\": 99.35,\n            \"saldoActual\": 58.54,\n            \"cuentaCCI\": \"7000123729\",\n            \"numeroCuenta\": \"70001237\"\n        },\n        {\n           \n            \"productBankIdentifier\": \"40733210|6|007000123729|AMEXBIF1\",\n            \"clientBankIdentifier\": \"USUARIOOP\",\n            \"entityId\": \"AMEXBIF1\",\n            \"numero\": \"007000123729\",\n            \"tipoIdentificacion\": 6,\n            \"monedaIdentificacion\": \"SOL\",\n            \"estadoProductoIdentificacion\": 1,\n            \"saldoCuentaDisponible\": 99.35,\n            \"saldoActual\": 58.54,\n            \"cuentaCCI\": \"7000123729\",\n            \"numeroCuenta\": \"7000123711\"\n        },\n        {\n           \n            \"productBankIdentifier\": \"40733210|6|007000123729|AMEXBIF1\",\n            \"clientBankIdentifier\": \"USUARIOOP\",\n            \"entityId\": \"AMEXBIF1\",\n            \"numero\": \"007000123729\",\n            \"tipoIdentificacion\": 6,\n            \"monedaIdentificacion\": \"SOL\",\n            \"estadoProductoIdentificacion\": 1,\n            \"saldoCuentaDisponible\": 99.35,\n            \"saldoActual\": 58.54,\n            \"cuentaCCI\": \"7000123729\",\n            \"numeroCuenta\": \"7000123712\"\n        },\n        {\n           \n            \"productBankIdentifier\": \"40733210|6|007000123729|AMEXBIF1\",\n            \"clientBankIdentifier\": \"USUARIOOP\",\n            \"entityId\": \"AMEXBIF1\",\n            \"numero\": \"007000123729\",\n            \"tipoIdentificacion\": 6,\n            \"monedaIdentificacion\": \"SOL\",\n            \"estadoProductoIdentificacion\": 1,\n            \"saldoCuentaDisponible\": 99.35,\n            \"saldoActual\": 12312312.54,\n            \"cuentaCCI\": \"7000123729\",\n            \"numeroCuenta\": \"70001237213\"\n        },\n        {\n           \n            \"productBankIdentifier\": \"40733210|6|007000123729|AMEXBIF1\",\n            \"clientBankIdentifier\": \"USUARIOOP\",\n            \"entityId\": \"AMEXBIF1\",\n            \"numero\": \"007000123729\",\n            \"tipoIdentificacion\": 6,\n            \"monedaIdentificacion\": \"SOL\",\n            \"estadoProductoIdentificacion\": 1,\n            \"saldoCuentaDisponible\": 99.35,\n            \"saldoActual\": 58.54,\n            \"cuentaCCI\": \"7000123729\",\n            \"numeroCuenta\": \"7000123729\"\n        },\n        {\n           \n            \"productBankIdentifier\": \"40733210|6|007000123729|AMEXBIF1\",\n            \"clientBankIdentifier\": \"USUARIOOP\",\n            \"entityId\": \"AMEXBIF1\",\n            \"numero\": \"007000123729\",\n            \"tipoIdentificacion\": 6,\n            \"monedaIdentificacion\": \"SOL\",\n            \"estadoProductoIdentificacion\": 1,\n            \"saldoCuentaDisponible\": 99.35,\n            \"saldoActual\": 58.54,\n            \"cuentaCCI\": \"7000123729\",\n            \"numeroCuenta\": \"7000123777\"\n        }\n    ]\n}",
+                    "latency": 1000,
+                    "statusCode": "200",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        },
+                        {
+                            "key": "codigoCanal",
+                            "value": "BANCA_POR_INTERNET"
+                        },
+                        {
+                            "key": "numeroPagina",
+                            "value": "1"
+                        },
+                        {
+                            "key": "codigoIBS",
+                            "value": "40733210"
+                        },
+                        {
+                            "key": "tipoProduto",
+                            "value": "5"
+                        }
+                    ],
+                    "filePath": "",
+                    "sendFileAsBody": false
+                },
+                {
+                    "uuid": "7823491b-cb63-11e9-a8d3-c9a61ed7333f",
+                    "documentation": "Obtener Detalle Cuentas Corrientes y de Ahorro",
+                    "method": "post",
+                    "endpoint": "api-banca-movil-empresas/v1/productosEmpresa/consultas/detalleCuenta",
+                    "body": "{\n    \"meta\": {\n        \"mensajes\": [\n            {\n                \"codigo\": \"ESM00\",\n                \"mensaje\": \"Solicitud exitosa y generó una representación\",\n                \"tipo\": \"info\"\n            }\n        ],\n        \"idTransaccion\": \"b1018186-09e0-4dc1-8610-843ce48c28c1\",\n        \"resultado\": true\n    },\n    \"datos\": {\n        \"cuenta\": {\n            \"numero\": \"7000123729\",\n            \"saldoDisponible\": 58.54,\n            \"saldoContable\": 99.35,\n            \"numeroContaCCI\": \"7000123729\"\n        },\n        \"moneda\": \"SOL\"\n        \n    }\n}",
+                    "latency": 1000,
+                    "statusCode": "200",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        },
+                        {
+                            "key": "codigoCanal",
+                            "value": "5"
+                        }
+                    ],
+                    "filePath": "",
+                    "sendFileAsBody": false
+                },
+                {
+                    "uuid": "7823491c-cb63-11e9-a8d3-c9a61ed7333f",
+                    "documentation": "Listado de Aprobaciones Pendientes",
+                    "method": "get",
+                    "endpoint": "api-banca-movil-empresas/v1/aprobacionesPendientes",
+                    "body": "{\n  \"meta\": {\n    \"mensajes\": [\n      {\n        \"codigo\": \"ESM00\",\n        \"mensaje\": \"Solicitud exitosa y generó una representación\",\n        \"tipo\": \"info\"\n      }\n    ],\n    \"totalRegistros\": 0,\n    \"idTransaccion\": \"string\"\n  },\n  \"datos\": [\n    {\n            \"entidad\": \"aaaaaaaaaa\",\n            \"nombreUsuario\": \"aaaaaaaaaa\",\n            \"codigoCliente\": \"aaaaaaaaaaaaaa\",\n            \"numeroReferencia\": \"aaaaaaaaaaaaa\",\n            \"orquestradorAprobacionesEnum\": \"PAGOS_PROVEEDORES\"\n        },\n        {\n            \"entidad\": \"aaaaaaaaaa\",\n            \"nombreUsuario\": \"aaaaaaaaaa\",\n            \"codigoCliente\": \"aaaaaaaaaaaaaa\",\n            \"moneda\": \"SOL\",\n            \"cuentaCargo\": \"aaaaaa\",\n            \"creditProductBankIdentifier\": \"aaaaaa\",\n            \"monto\": 20.2,\n            \"description\": \"descripcion\",\n            \"tipoAprobacion\": \"7\",\n            \"bankId\": \"7\",\n            \"isOwner\": true,\n            \"currencyInterbankAccountId\": \"7\",\n            \"beneficiaryDocument\": {\n                \"tipo\": \"DNI_LE\",\n                \"numero\": \"12\"\n            },\n            \"beneficiaryLastName\": \"7\",\n            \"beneficiarySecondLastName\": \"7\",\n            \"beneficiaryName\": \"7\",\n            \"numeroReferencia\": \"aaaaaaaaaaaaa\",\n            \"orquestradorAprobacionesEnum\": \"TRANSFERENCIAS\"\n        },\n        {\n            \"entidad\": \"USMPRECT\",\n            \"nombreUsuario\": \"JALCANTARA\",\n            \"codigoCliente\": \"40892|1|007000020601\",\n            \"numeroReferencia\": \"180824125436\",\n            \"orquestradorAprobacionesEnum\": \"PAGOS_HABERES\"\n        },\n        {\n            \"entidad\": \"USMPRECT\",\n            \"nombreUsuario\": \"JALCANTARA\",\n            \"codigoCliente\": \"40892|1|007000020601\",\n            \"numeroReferencia\": \"180824125436\",\n            \"orquestradorAprobacionesEnum\": \"PAGOS_OTROS_SERVICIOS\"\n        },\n        {\n            \"codigoCliente\": \"20601\",\n            \"numLote\": \"5436\",\n            \"regLote\": \"5436\",\n            \"orquestradorAprobacionesEnum\": \"PAGOS_SERVICIOS_CHEQUES\"\n        }\n  ]\n}",
+                    "latency": 1000,
+                    "statusCode": "200",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "filePath": "",
+                    "sendFileAsBody": false
+                },
+                {
+                    "uuid": "7823491d-cb63-11e9-a8d3-c9a61ed7333f",
+                    "documentation": "Token",
+                    "method": "post",
+                    "endpoint": "auth/realms/Banbif-API/protocol/openid-connect/token",
+                    "body": "{\n    \"access_token\": \"eyJhbGciOiJSUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJHQnhtNmRCMk82TDctV1RfNk9lajZsMFpFWmZ3dnYwREpaaThjSkFxWXJ3In0.eyJqdGkiOiJkZGIzMjk5Yi01ODE2LTQ5NTktODVmZC0zYzA1Nzk4YjU0ZGMiLCJleHAiOjE1NjY1MTE0NTQsIm5iZiI6MCwiaWF0IjoxNTY2NTA5NjU0LCJpc3MiOiJodHRwczovL2Rlc3Nzb3JoLmRvbWJpZi5wZXJ1Ojg0NDMvYXV0aC9yZWFsbXMvQmFuYmlmLUFQSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJjYWFiM2M3NS0yMjg3LTQ1YmItODYzZC1iZGVhYjk5M2EwNjkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiI1NjM2M2JkOSIsImF1dGhfdGltZSI6MCwic2Vzc2lvbl9zdGF0ZSI6IjA0ZjY0NDcwLTI4ZDYtNDExZS1hYjYyLTAzNTQyODhmYTE2ZSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSBpbmZvQmFuY2FFbXByZXNhcyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiQU5EUkVBIEFHVUlMQSBQQVJETyIsImVudGl0eUlkIjoiNDk1NTQyIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWFndWlsYXAtaG9tZWNlbnQiLCJnaXZlbl9uYW1lIjoiQU5EUkVBIiwidXNlcklkIjoiNDk1NTQyIiwiZmFtaWx5X25hbWUiOiJBR1VJTEEgUEFSRE8iLCJlbWFpbCI6ImFuZHJlYS5hZ3VpbGEtcGFyZG9AcHJvbWFydC5wZSJ9.DbV_uUzecwDDJiQUSJkMfMDnG_hAVc2ZiwqTWiLz5sdGqgw-2SIw5aHp33lfhL-NgOADHU-ATlFcjIRpxjJ5Ni0rqe6BIICq_JnfmsH8EHiOzJbM1SrkRpxW18KKn4ULGhqseBzQ-AbLy4i7x8RDXEJQDXk4tB0zUBHIY-d3m3u25VuSlS6tMHY12xpp_S93YK5hBcIIqVP-y16DDlVnES3GMbN-sPT9MFhf7ats0T9AL3fXi6iVvyupHb6M0wzQeFq6HdSTY5AWJC2kiB7un2xEijCrnaSHcQoEgrsSliy6VFeUfYrCpe7FGy1FdBbk938hwX6QSwH5XPZWJszNVw\",\n    \"expires_in\": 1800,\n    \"refresh_expires_in\": 1800,\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjYjQxNjJjMC01ZTQ2LTQ0Y2EtOWYxOS1lN2Y1ZmZiOWJlYTcifQ.eyJqdGkiOiI2OTVjNjgzMy1hNmQ2LTQ5NjQtYTgwMi0yOGQ5NDI2Y2Q3MDQiLCJleHAiOjE1NjY1MTE0NTQsIm5iZiI6MCwiaWF0IjoxNTY2NTA5NjU0LCJpc3MiOiJodHRwczovL2Rlc3Nzb3JoLmRvbWJpZi5wZXJ1Ojg0NDMvYXV0aC9yZWFsbXMvQmFuYmlmLUFQSSIsImF1ZCI6Imh0dHBzOi8vZGVzc3NvcmguZG9tYmlmLnBlcnU6ODQ0My9hdXRoL3JlYWxtcy9CYW5iaWYtQVBJIiwic3ViIjoiY2FhYjNjNzUtMjI4Ny00NWJiLTg2M2QtYmRlYWI5OTNhMDY5IiwidHlwIjoiUmVmcmVzaCIsImF6cCI6IjU2MzYzYmQ5IiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiMDRmNjQ0NzAtMjhkNi00MTFlLWFiNjItMDM1NDI4OGZhMTZlIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUgaW5mb0JhbmNhRW1wcmVzYXMifQ.aDsxrwUC6KrZNj5lM4kpi2aOzqy3I7I9i5QhQSTUWdg\",\n    \"token_type\": \"bearer\",\n    \"not-before-policy\": 1565198304,\n    \"session_state\": \"04f64470-28d6-411e-ab62-0354288fa16e\",\n    \"scope\": \"email profile infoBancaEmpresas\"\n}",
+                    "latency": 0,
+                    "statusCode": "200",
+                    "headers": [
+                        {
+                            "key": "",
+                            "value": ""
+                        }
+                    ],
+                    "filePath": "",
+                    "sendFileAsBody": false
+                },
+                {
+                    "uuid": "7823491e-cb63-11e9-a8d3-c9a61ed7333f",
+                    "documentation": "Listado de Aprobaciones Pendientes",
+                    "method": "put",
+                    "endpoint": "api-banca-movil-empresas/v1/aprobacionesPendientes/aprobar",
+                    "body": "{\n  \"meta\": {\n    \"mensajes\": [\n      {\n        \"codigo\": \"ESM00\",\n        \"mensaje\": \"Solicitud exitosa y generó una representación\",\n        \"tipo\": \"info\"\n      }\n    ],\n    \"totalRegistros\": 0,\n    \"idTransaccion\": \"string\"\n  },\n  \"datos\": [\n    {\n            \"entidad\": \"aaaaaaaaaa\",\n            \"nombreUsuario\": \"aaaaaaaaaa\",\n            \"codigoCliente\": \"aaaaaaaaaaaaaa\",\n            \"numeroReferencia\": \"aaaaaaaaaaaaa\",\n            \"orquestradorAprobacionesEnum\": \"PAGOS_PROVEEDORES\"\n        },\n        {\n            \"entidad\": \"aaaaaaaaaa\",\n            \"nombreUsuario\": \"aaaaaaaaaa\",\n            \"codigoCliente\": \"aaaaaaaaaaaaaa\",\n            \"moneda\": \"SOL\",\n            \"cuentaCargo\": \"aaaaaa\",\n            \"creditProductBankIdentifier\": \"aaaaaa\",\n            \"monto\": 20.2,\n            \"description\": \"descripcion\",\n            \"tipoAprobacion\": \"7\",\n            \"bankId\": \"7\",\n            \"isOwner\": true,\n            \"currencyInterbankAccountId\": \"7\",\n            \"beneficiaryDocument\": {\n                \"tipo\": \"DNI_LE\",\n                \"numero\": \"12\"\n            },\n            \"beneficiaryLastName\": \"7\",\n            \"beneficiarySecondLastName\": \"7\",\n            \"beneficiaryName\": \"7\",\n            \"numeroReferencia\": \"aaaaaaaaaaaaa\",\n            \"orquestradorAprobacionesEnum\": \"TRANSFERENCIAS\"\n        },\n        {\n            \"entidad\": \"USMPRECT\",\n            \"nombreUsuario\": \"JALCANTARA\",\n            \"codigoCliente\": \"40892|1|007000020601\",\n            \"numeroReferencia\": \"180824125436\",\n            \"orquestradorAprobacionesEnum\": \"PAGOS_HABERES\"\n        },\n        {\n            \"entidad\": \"USMPRECT\",\n            \"nombreUsuario\": \"JALCANTARA\",\n            \"codigoCliente\": \"40892|1|007000020601\",\n            \"numeroReferencia\": \"180824125436\",\n            \"orquestradorAprobacionesEnum\": \"PAGOS_OTROS_SERVICIOS\"\n        },\n        {\n            \"codigoCliente\": \"20601\",\n            \"numLote\": \"5436\",\n            \"regLote\": \"5436\",\n            \"orquestradorAprobacionesEnum\": \"PAGOS_SERVICIOS_CHEQUES\"\n        }\n  ]\n}",
+                    "latency": 1000,
+                    "statusCode": "200",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "filePath": "",
+                    "sendFileAsBody": false
+                }
+            ],
+            "proxyMode": false,
+            "proxyHost": "",
+            "https": false,
+            "cors": true,
+            "headers": [
+                {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "key": "Connection",
+                    "value": "close"
+                },
+                {
+                    "key": "Keep-Alive",
+                    "value": "timeout=0,max=1"
+                }
+            ]
+        }
+    ]
+}
