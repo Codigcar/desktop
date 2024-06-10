@@ -1,0 +1,2 @@
+import DollarIconTextCreditCardComponent from "./DollarIconTextCreditCardComponent";
+export default DollarIconTextCreditCardComponent;

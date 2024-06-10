@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resource class="com.linoma.ga.projects.resources.RESTResource">
+	<primaryContactName />
+	<primaryContactPhone />
+	<primaryContactEmail />
+	<secondaryContactName />
+	<secondaryContactPhone />
+	<secondaryContactEmail />
+	<resourceName>Bxie_UAT</resourceName>
+	<domainName>Default</domainName>
+	<resourceDescription>BXIE consumo H2W Haberes y Proveedores</resourceDescription>
+	<url>https://bancaporinternetuat.dombif.peru</url>
+	<dataFormat>JSON</dataFormat>
+	<authType />
+	<user />
+	<password />
+	<passwordIsEncrypted />
+	<passwordIsRecoverable />
+	<domain />
+	<workstation />
+	<connectionTimeout />
+	<readTimeout />
+	<followRedirects />
+	<userAgent />
+	<acceptType />
+	<useChunkedEncoding />
+	<sslContextProtocol />
+	<keyLocation>KeyVault</keyLocation>
+	<clientKeyVault />
+	<clientKeyName />
+	<clientKeyPassword />
+	<clientKeyPasswordIsEncrypted />
+	<clientKeyPasswordIsRecoverable />
+	<clientAlias />
+	<proxyType />
+	<proxyHost />
+	<alternateProxyHost />
+	<proxyPort />
+	<proxyUser />
+	<proxyPassword />
+	<proxyPasswordIsEncrypted />
+	<proxyPasswordIsRecoverable />
+	<resolveAtProxy />
+</resource>

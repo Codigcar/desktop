@@ -1,0 +1,161 @@
+<mxfile host="app.diagrams.net" modified="2024-02-08T21:02:34.877Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="ZpiQho158MYmxGsr7im8" version="23.1.1" type="device" pages="2">
+  <diagram name="Use Case" id="9nQCE-ndrCwmiqW96yne">
+    <mxGraphModel dx="1032" dy="501" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8XLnjvLiEatXCL0LBKyI-1" target="8XLnjvLiEatXCL0LBKyI-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-1" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="120" y="80" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8XLnjvLiEatXCL0LBKyI-2" target="8XLnjvLiEatXCL0LBKyI-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-2" value="Acceder al APPE" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="70" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-4" value="Enrolamiento&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;al token digital" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="70" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8XLnjvLiEatXCL0LBKyI-7" target="8XLnjvLiEatXCL0LBKyI-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-7" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="120" y="224" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8XLnjvLiEatXCL0LBKyI-9" target="8XLnjvLiEatXCL0LBKyI-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-9" value="Acceder al APPE" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="214" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-10" value="Aprobar operaciones pendientes" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="214" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8XLnjvLiEatXCL0LBKyI-12" target="8XLnjvLiEatXCL0LBKyI-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="8XLnjvLiEatXCL0LBKyI-12" target="8XLnjvLiEatXCL0LBKyI-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="8XLnjvLiEatXCL0LBKyI-12" target="8XLnjvLiEatXCL0LBKyI-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-12" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="120" y="371" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8XLnjvLiEatXCL0LBKyI-14" target="8XLnjvLiEatXCL0LBKyI-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-14" value="Acceder a la BXIE" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="361" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8XLnjvLiEatXCL0LBKyI-15" target="8XLnjvLiEatXCL0LBKyI-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-15" value="Consultar Aprobaciones pendientes" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="361" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8XLnjvLiEatXCL0LBKyI-16" target="8XLnjvLiEatXCL0LBKyI-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-16" value="Genera token en al APPE" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="469" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="8XLnjvLiEatXCL0LBKyI-18" target="8XLnjvLiEatXCL0LBKyI-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-18" value="Ingresa token digital en la BXIE" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="577" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8XLnjvLiEatXCL0LBKyI-25" target="8XLnjvLiEatXCL0LBKyI-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="8XLnjvLiEatXCL0LBKyI-25" target="8XLnjvLiEatXCL0LBKyI-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="8XLnjvLiEatXCL0LBKyI-25" target="8XLnjvLiEatXCL0LBKyI-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-25" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="150" y="866" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8XLnjvLiEatXCL0LBKyI-27" target="8XLnjvLiEatXCL0LBKyI-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-27" value="Acceder a la BXIE" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="856" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8XLnjvLiEatXCL0LBKyI-28" target="8XLnjvLiEatXCL0LBKyI-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-28" value="Consultar Aprobaciones pendientes" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="856" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8XLnjvLiEatXCL0LBKyI-30" target="8XLnjvLiEatXCL0LBKyI-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-30" value="Genera token en al APPE" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="964" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8XLnjvLiEatXCL0LBKyI-32" target="8XLnjvLiEatXCL0LBKyI-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-32" value="Ingresa token digital en la BXIE" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="1072" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-33" value="Rechazar operaciones pendientes" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="648" y="856" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8XLnjvLiEatXCL0LBKyI-35" value="Aprobar &lt;br&gt;operaciones pendientes" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="651" y="361" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="fVYn3t7z0lajlDlq8nu5" name="Componentes">
+    <mxGraphModel dx="1032" dy="501" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Qrj5MwbdnilN2tK0Anff-1" value="Enrolamiento Token Digital" style="verticalAlign=top;align=left;shape=cube;size=10;direction=south;fontStyle=0;html=1;boundedLbl=1;spacingLeft=5;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="213" y="38" width="601" height="404" as="geometry" />
+        </mxCell>
+        <mxCell id="Qrj5MwbdnilN2tK0Anff-2" value="Core DetectId 9.2" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;html=1;boundedLbl=1;spacingLeft=5;whiteSpace=wrap;" vertex="1" parent="Qrj5MwbdnilN2tK0Anff-1">
+          <mxGeometry width="136" height="59" relative="1" as="geometry">
+            <mxPoint x="240" y="316" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Qrj5MwbdnilN2tK0Anff-3" value="APP Empresas" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;html=1;boundedLbl=1;spacingLeft=5;whiteSpace=wrap;" vertex="1" parent="Qrj5MwbdnilN2tK0Anff-1">
+          <mxGeometry x="75.23" y="60.9" width="323.77" height="132.1" as="geometry" />
+        </mxCell>
+        <mxCell id="Qrj5MwbdnilN2tK0Anff-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="Qrj5MwbdnilN2tK0Anff-1" source="Qrj5MwbdnilN2tK0Anff-4" target="Qrj5MwbdnilN2tK0Anff-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Qrj5MwbdnilN2tK0Anff-4" value="DetectId&lt;br&gt;SDK 9.2" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;" vertex="1" parent="Qrj5MwbdnilN2tK0Anff-1">
+          <mxGeometry x="264.61294964028775" y="115.71859296482411" width="86.47482014388488" height="50.753768844221106" as="geometry" />
+        </mxCell>
+        <mxCell id="Qrj5MwbdnilN2tK0Anff-6" value="MSSQL 2019" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;" vertex="1" parent="Qrj5MwbdnilN2tK0Anff-1">
+          <mxGeometry x="454.9971223021583" y="315.6891959798995" width="86.47482014388488" height="50.753768844221106" as="geometry" />
+        </mxCell>
+        <mxCell id="Qrj5MwbdnilN2tK0Anff-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=15;entryPerimeter=0;" edge="1" parent="Qrj5MwbdnilN2tK0Anff-1" source="Qrj5MwbdnilN2tK0Anff-2" target="Qrj5MwbdnilN2tK0Anff-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Qrj5MwbdnilN2tK0Anff-9" value="CyberLego" style="verticalAlign=top;align=center;shape=cube;size=10;direction=south;html=1;boundedLbl=1;spacingLeft=5;whiteSpace=wrap;" vertex="1" parent="Qrj5MwbdnilN2tK0Anff-1">
+          <mxGeometry x="75.23309352517985" y="255.79899497487435" width="117.60575539568345" height="59.8894472361809" as="geometry" />
+        </mxCell>
+        <mxCell id="Qrj5MwbdnilN2tK0Anff-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="Qrj5MwbdnilN2tK0Anff-1" source="Qrj5MwbdnilN2tK0Anff-10" target="Qrj5MwbdnilN2tK0Anff-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Qrj5MwbdnilN2tK0Anff-10" value="Enrolamiento" style="shape=mxgraph.uml25.actionParams;html=1;align=center;verticalAlign=top;absoluteArcSize=1;arcSize=10;dashed=0;spacingLeft=10;spacingTop=5;whiteSpace=wrap;" vertex="1" parent="Qrj5MwbdnilN2tK0Anff-1">
+          <mxGeometry x="102.04" y="117.75" width="131.96" height="48.25" as="geometry" />
+        </mxCell>
+        <mxCell id="Qrj5MwbdnilN2tK0Anff-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=34.5;entryDy=136;entryPerimeter=0;exitX=0;exitY=0;exitDx=59;exitDy=73;exitPerimeter=0;" edge="1" parent="Qrj5MwbdnilN2tK0Anff-1" source="Qrj5MwbdnilN2tK0Anff-9" target="Qrj5MwbdnilN2tK0Anff-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

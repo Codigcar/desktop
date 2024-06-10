@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="H2W_BXIE_POST_PRV" mainModule="Main" version="2.0" logLevel="verbose">
+	<variable name="baseDir_ProveedorFTP" value="/PROVEEDORES/" />
+	<variable name="rutaBXIE_Proveedor" value="/BXIE/PROVEEDOR_H2W/" />
+	<variable name="formato_fecha_hora" value="yyyy-MM-dd HH:mm:ss" />
+	<variable name="minHoraInicio" value="07:00:00" />
+	<variable name="maxHoraInicio" value="20:00:00" />
+
+	<module name="Main">
+
+		<setVariable label="minHora Rango" name="minHoraRango" value="${ReformatDateTime(minHoraInicio, &apos;hh:mm:ss&apos;, &apos;HH:mm:ss&apos;)}" version="2.0" />
+
+
+		<setVariable label="maxHora Rango" name="maxHoraRango" value="${ReformatDateTime(maxHoraInicio, &apos;HH:mm:ss&apos;, &apos;HH:mm:ss&apos;)}" version="2.0" />
+
+
+		<timestamp version="1.0">
+			<format outputVariable="endTime" pattern="${formato_fecha_hora}" />
+			<format outputVariable="startTime" pattern="${formato_fecha_hora}" minute="-5" />
+			<format outputVariable="horaActual" pattern="HH:mm:ss" />
+		</timestamp>
+
+
+		<print label="Print RangoFecha" version="1.0">
+			<![CDATA[fechaInicio: ${startTime} ,fecha fin: ${endTime}
+HoraActual: ${horaActual}]]>
+		</print>
+
+		<if label="Cumple rangoHorario" condition="${(horaActual &gt;= minHoraRango) &amp;&amp; (horaActual &lt;= maxHoraRango)}">
+
+			<sftp label="SFTP ObtenerDirectorios Proveedor" resourceId="SFTP Calidad" version="1.0" disabled="false" onError="continue">
+				<list label="ListDir_Input_Proveedor" fileListVariable="dirInputProv" numFilesFoundVariable="dirCountProv">
+					<fileset dir="${baseDir_ProveedorFTP}" recursive="false" includeItems="directories" />
+				</list>
+			</sftp>
+
+
+			<print version="1.0">
+				<![CDATA[NroDir Proveedores: ${dirCountProv}]]>
+			</print>
+
+			<forEachLoop label="For Directorios Proveedor" itemsVariable="${dirInputProv}" currentItemVariable="current_dir_proveedor">
+
+				<setVariable label="InputProv Actual" name="inputProvActual" value="${current_dir_proveedor}/INPUT_HOSTTOWEB/" version="1.0" />
+
+
+				<setVariable label="OutputProv Actual" name="outputProvActual" value="${current_dir_proveedor}/OUTPUT_HOSTTOWEB/" version="1.0" />
+
+
+				<sftp label="SFTP ObtenerArchivos Prov" resourceId="SFTP Calidad" version="1.0" disabled="false" onError="setVariable:fileCountProv=0">
+					<list label="ListInput_Proveedor" fileListVariable="filesInputProv" numFilesFoundVariable="fileCountProv">
+						<fileset dir="${inputProvActual}" includeItems="files">
+							<wildcardFilter>
+								<include pattern="H2W_PRV_*" caseSensitive="true" />
+							</wildcardFilter>
+							<dateFilter>
+								<include from="${startTime}" to="${endTime}" />
+							</dateFilter>
+						</fileset>
+					</list>
+					<get label="GetFiles Proveedor" sourceFilesVariable="${filesInputProv}" destinationDir="${rutaBXIE_Proveedor}" whenFileExists="overwrite" processedSourceFilesVariable="filesProveedores" />
+					<delete label="Borrar del FTP Prov" inputFilesVariable="${filesInputProv}" />
+				</sftp>
+
+				<if condition="${fileCountProv &gt; 0}">
+					<forEachLoop label="Por CadaArchivo Prov" itemsVariable="${filesProveedores}" currentItemVariable="current_file_prov" disabled="false">
+
+						<copy label="Copiar Proveedor a BXIE" sourceFile="${concat(rutaBXIE_Proveedor, current_file_prov:name)}" destFile="resource:sftp://Share_BIF3BPIPJ14/files/15052-H2W/${current_file_prov:name}" whenFileExists="overwrite" version="1.0" />
+
+
+						<checksum label="chekSum Prov" sourceFile="${concat(rutaBXIE_Proveedor, current_file_prov:name)}" checksumAlgorithm="MD5" checksumFormat="Hex" checksumVariable="file_checksum_prov" version="1.0" disabled="false" />
+
+
+						<print version="1.0">
+							<![CDATA[nombreArchivo: ${current_file_prov:name}
+checksumArchivo: ${file_checksum_prov}]]>
+						</print>
+
+
+						<setVariable label="Path RespProv" name="pathRespProv" value="${Concat(rutaBXIE_Proveedor,&apos;H2W_ERR_&apos;,Substring(current_file_prov:name, 5))}" version="2.0" />
+
+
+						<restPost label="Send Provvedor Post" resourceId="Bxie_UAT" uri="/DCIBS_BIFNET/servlet/com.datapro.dibs.servlets.hostToWeb.JsHostToWebProveedor" contentType="application/json" responseBodyDestination="file" responseBodyFile="${pathRespProv}" whenResponseBodyFileExists="overwrite" version="1.0" disabled="false" onError="continue">
+							<content>{
+&quot;nombreArchivo&quot; : &quot;${current_file_prov:name}&quot;,
+&quot;checksumArchivo&quot; : &quot;${file_checksum_prov}&quot;
+}</content>
+							<header name="canal" value="HOST_TO_WEB" />
+						</restPost>
+
+						<if label="Existe RespProv" condition="${FileExists(pathRespProv)}">
+
+							<sftp label="Crear archivo RespProveedor" resourceId="SFTP Calidad" version="1.0">
+								<put sourceFile="${pathRespProv}" destinationDir="${outputProvActual}" />
+							</sftp>
+
+
+							<delete label="Borrar RespProv Local" file="${pathRespProv}" version="1.0" />
+
+						</if>
+
+						<delete label="Borrar Archivos Proveedor" file="${concat(rutaBXIE_Proveedor, current_file_prov:name)}" version="1.0" />
+
+					</forEachLoop>
+				</if>
+			</forEachLoop>
+			<else>
+
+				<print version="1.0">
+					<![CDATA[----------------> H2W PROVEEDOR HORARIO FUERA DE RANGO <----------------]]>
+				</print>
+
+			</else>
+		</if>
+	</module>
+
+</project>

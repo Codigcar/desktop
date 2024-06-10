@@ -1,0 +1,64 @@
+<mxfile host="Electron" modified="2024-05-06T16:07:13.788Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.2.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="SLwVABOmVSGAsJ08GMgc" version="24.2.5" type="device">
+  <diagram name="Página-1" id="d_wNzSvpwTuTj71OuUeD">
+    <mxGraphModel dx="1434" dy="836" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="uNuCZIkHIQl18E81lIdq-2" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="70" y="230" as="sourcePoint" />
+            <mxPoint x="810" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uNuCZIkHIQl18E81lIdq-7" value="OnBoarding" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.document;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="164" y="110" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uNuCZIkHIQl18E81lIdq-8" value="Entitlement" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.document;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="280" y="107" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uNuCZIkHIQl18E81lIdq-9" value="Consultas" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.document;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="390" y="110" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uNuCZIkHIQl18E81lIdq-10" value="Transaccional" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.document;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="506" y="110" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uNuCZIkHIQl18E81lIdq-11" value="Pagos" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.document;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="628" y="110" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uNuCZIkHIQl18E81lIdq-12" value="Release 1&amp;nbsp; &amp;nbsp;Noviembre 2024" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="16" y="339" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="uNuCZIkHIQl18E81lIdq-14" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="70" y="531" as="sourcePoint" />
+            <mxPoint x="810" y="531" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uNuCZIkHIQl18E81lIdq-15" value="Login" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.document;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="164" y="250" width="68" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="uNuCZIkHIQl18E81lIdq-17" value="Cambio Clave" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.document;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="164" y="426" width="68" height="71" as="geometry" />
+        </mxCell>
+        <mxCell id="uNuCZIkHIQl18E81lIdq-18" value="Enrolamiento" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.document;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="162" y="337" width="73" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="uNuCZIkHIQl18E81lIdq-19" value="Configuración de Usuarios y Límites" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.document;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="282" y="247" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uNuCZIkHIQl18E81lIdq-20" value="Gestion de Cuentas&amp;nbsp;" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.document;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="282" y="339" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uNuCZIkHIQl18E81lIdq-21" value="Aprobaciones" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.document;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="284" y="431" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uNuCZIkHIQl18E81lIdq-22" value="Reportes de LogIn" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.document;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="400" y="252" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uNuCZIkHIQl18E81lIdq-23" value="Release 2&amp;nbsp; &amp;nbsp;Noviembre 2025" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="14" y="614" width="80" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

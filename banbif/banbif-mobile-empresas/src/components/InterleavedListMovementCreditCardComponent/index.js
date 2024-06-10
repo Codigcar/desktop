@@ -1,0 +1,3 @@
+import InterleavedListMovementCreditCardComponent from './InterleavedListMovementCreditCardComponent';
+
+export default InterleavedListMovementCreditCardComponent;

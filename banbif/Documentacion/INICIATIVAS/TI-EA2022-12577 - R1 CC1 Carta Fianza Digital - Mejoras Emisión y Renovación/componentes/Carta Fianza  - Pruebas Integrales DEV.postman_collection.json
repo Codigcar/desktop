@@ -1,0 +1,1711 @@
+{
+	"info": {
+		"_postman_id": "8e2cba6b-832f-4e75-a4b7-610e1fce7a01",
+		"name": "Carta Fianza  - Pruebas Integrales DEV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1505827"
+	},
+	"item": [
+		{
+			"name": "getTokenDEV",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();\r",
+							"const token = \"Bearer \" + response.access_token;\r",
+							"pm.globals.set(\"tokenCF\", token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "1774b6f3",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "f296d1f79d8f4e1e4da4fe1c0d72a2d7",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://sso-ocpdev.dombif.peru/auth/realms/Banbif-API/protocol/openid-connect/token",
+					"protocol": "https",
+					"host": [
+						"sso-ocpdev",
+						"dombif",
+						"peru"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"Banbif-API",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Procesar Solicitud Carta Fianza Local",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "idTransaccion",
+						"value": "12345",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "codigoCanal",
+						"value": "BANCA_POR_INTERNET",
+						"type": "text"
+					},
+					{
+						"key": "numeroPagina",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "fechaHora",
+						"value": "20200110 102800",
+						"type": "text"
+					},
+					{
+						"key": "sistemaEmisor",
+						"value": "teste",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "archivoDocumentoEspecial",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "archivoDocumentoAdicionalUno",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "archivoDocumentoAdicionalDos",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "archivoDocumentoAdicionalTres",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "procesarSolicitudCartaFianza",
+							"value": "{\n  \"cliente\": {\n    \"codigoIBS\": \"000758885\"\n  },\n  \"beneficiario\": {\n    \"nombreBeneficiario\": \"GAS NATURAL DE LIMA Y CALLAO S.A.BRUCKNER TEXTILE TECHNOLOGIES GMBH\",\n    \"direccionBeneficiario\": \"AV CENTENARIO 156\",\n    \"correoBeneficiario\": \"prueba_123@gmail.com\"\n  },\n  \"autorizadorRecojo\": {\n    \"nombre\": \"GONZALES RICARDO\",\n    \"documento\": \"73307515\",\n    \"correo\": \"NCABRERA@BANBIF.COM.PE\"\n  },\n  \"oficina\": {\n    \"nombre\": \"0101\"\n  },\n  \"cuenta\": {\n    \"cuentaOrigen\": \"7000746351\"\n  },\n  \"lineaCredito\": {\n    \"numero\": 27\n  },\n  \"cartaFianza\": {\n    \"idCartaFianza\": \"1234567890\",\n    \"fechaOperacion\": \"18092023\",\n    \"monto\": 250000.00,\n    \"moneda\": \"SOL\",\n    \"codigoModalidad\": \"0001\",\n    \"descripcionGarantizar\": \"PARA GARANTIZAR A BXIE BANBIF PRUEBAS PRD EL FIEL CUMPLIMIENTO DEL \",\n    \"fechaInicio\": \"18092023\",\n    \"fechaVencimiento\": \"18092024\",\n    \"tipo\": \"RENOVACION\",\n    \"tipoEmision\": \"DIGITAL\"\n  }\n}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/api-carta-fianza/v1/procesa/solicitud",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api-carta-fianza",
+						"v1",
+						"procesa",
+						"solicitud"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DATO 1 - EXITO",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "idTransaccion",
+								"value": "12345",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET",
+								"type": "text"
+							},
+							{
+								"key": "numeroPagina",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200110 102800",
+								"type": "text"
+							},
+							{
+								"key": "sistemaEmisor",
+								"value": "teste",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivoDocumentoEspecial",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalUno",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalDos",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalTres",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "procesarSolicitudCartaFianza",
+									"value": "{\n  \"cliente\": {\n    \"codigoIBS\": \"44682\"\n  },\n  \"beneficiario\": {\n    \"nombreBeneficiario\": \"GAS NATURAL DE LIMA Y CALLAO S.A.BRUCKNER TEXTILE TECHNOLOGIES GMBH\",\n    \"direccionBeneficiario\": \"AV CENTENARIO 156\",\n    \"correoBeneficiario\": \"prueba_123@gmail.com\"\n  },\n  \"autorizadorRecojo\": {\n    \"nombre\": \"GONZALES RICARDO\",\n    \"documento\": \"73307515\",\n    \"correo\": \"NCABRERA@BANBIF.COM.PE\"\n  },\n  \"oficina\": {\n    \"nombre\": \"0101\"\n  },\n  \"cuenta\": {\n    \"cuentaOrigen\": \"7000746351\"\n  },\n  \"lineaCredito\": {\n    \"numero\": 27\n  },\n  \"cartaFianza\": {\n    \"fechaOperacion\": \"18092023\",\n    \"monto\": 250000.00,\n    \"moneda\": \"SOL\",\n    \"codigoModalidad\": \"0001\",\n    \"descripcionGarantizar\": \"PARA GARANTIZAR A BXIE BANBIF PRUEBAS PRD EL FIEL CUMPLIMIENTO DEL 10 POR CIENTO DEL BA*10O *0GIL DE PING*9INOS Y CIG*9E*10AS EN EL PER*4\",\n    \"fechaInicio\": \"18092023\",\n    \"fechaVencimiento\": \"18092024\",\n    \"tipo\": \"SOLICITUD\",\n    \"tipoEmision\": \"DIGITAL\"\n  }\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api-carta-fianza/v1/procesa/solicitud",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"procesa",
+								"solicitud"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Sep 2023 20:41:11 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"mensajes\": [\n            {\n                \"codigo\": \"0\",\n                \"mensaje\": \"El proceso de la solicitud de carta fianza fue exitoso\",\n                \"tipo\": \"info\"\n            }\n        ],\n        \"totalRegistros\": 1,\n        \"idTransaccion\": \"12345\"\n    },\n    \"datos\": {\n        \"respuestaOperacion\": {\n            \"codRespuesta\": \"0\",\n            \"numeroReferencia\": \"230918154111\"\n        },\n        \"cartaFianza\": {\n            \"idCartaFianza\": \"441009238000\"\n        }\n    }\n}"
+				},
+				{
+					"name": "DATO 2 - EXITO",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "idTransaccion",
+								"value": "12345",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET",
+								"type": "text"
+							},
+							{
+								"key": "numeroPagina",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200110 102800",
+								"type": "text"
+							},
+							{
+								"key": "sistemaEmisor",
+								"value": "teste",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivoDocumentoEspecial",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalUno",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalDos",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalTres",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "procesarSolicitudCartaFianza",
+									"value": "{\n  \"cliente\": {\n    \"codigoIBS\": \"615692\"\n  },\n  \"beneficiario\": {\n    \"nombreBeneficiario\": \"BRUCKNER TEXTILE TECHNOLOGIES GMBH\",\n    \"direccionBeneficiario\": \"BENZSTR. 8-10-71229 LEONBERG, GERMA\",\n    \"correoBeneficiario\": \"prueba_123@gmail.com\"\n  },\n  \"autorizadorRecojo\": {\n    \"nombre\": \"GONZALES RICARDO\",\n    \"documento\": \"73307515\",\n    \"correo\": \"NCABRERA@BANBIF.COM.PE\"\n  },\n  \"oficina\": {\n    \"nombre\": \"0100\"\n  },\n  \"cuenta\": {\n    \"cuentaOrigen\": \"7000289058\"\n  },\n  \"lineaCredito\": {\n    \"numero\": 26\n  },\n  \"cartaFianza\": {\n    \"fechaOperacion\": \"19092023\",\n    \"monto\": 350000.00,\n    \"moneda\": \"SOL\",\n    \"codigoModalidad\": \"0001\",\n    \"descripcionGarantizar\": \"PARA GARANTIZAR A BXIE BANBIF PRUEBAS PRD EL FIEL CUMPLIMIENTO DEL 10 POR CIENTO DEL BA*10O *0GIL DE PING*9INOS Y CIG*9E*10AS EN EL PER*4\",\n    \"fechaInicio\": \"19092023\",\n    \"fechaVencimiento\": \"19092024\",\n    \"tipo\": \"SOLICITUD\",\n    \"tipoEmision\": \"FISICO\"\n  }\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api-carta-fianza/v1/procesa/solicitud",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"procesa",
+								"solicitud"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Sep 2023 20:43:55 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"mensajes\": [\n            {\n                \"codigo\": \"0\",\n                \"mensaje\": \"El proceso de la solicitud de carta fianza fue exitoso\",\n                \"tipo\": \"info\"\n            }\n        ],\n        \"totalRegistros\": 1,\n        \"idTransaccion\": \"12345\"\n    },\n    \"datos\": {\n        \"respuestaOperacion\": {\n            \"codRespuesta\": \"0\",\n            \"numeroReferencia\": \"230918154355\"\n        },\n        \"cartaFianza\": {\n            \"idCartaFianza\": \"441009238100\"\n        }\n    }\n}"
+				},
+				{
+					"name": "DATO 3 - EXITO",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "idTransaccion",
+								"value": "12345",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET",
+								"type": "text"
+							},
+							{
+								"key": "numeroPagina",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200110 102800",
+								"type": "text"
+							},
+							{
+								"key": "sistemaEmisor",
+								"value": "teste",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivoDocumentoEspecial",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalUno",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalDos",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalTres",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "procesarSolicitudCartaFianza",
+									"value": "{\n  \"cliente\": {\n    \"codigoIBS\": \"1077481\"\n  },\n  \"beneficiario\": {\n    \"nombreBeneficiario\": \"CONSORCIO CONSTRUCTOR M2 LIMA\",\n    \"direccionBeneficiario\": \"DONGVAN INDUSTRIAL ZONE, DUY TIEN D\",\n    \"correoBeneficiario\": \"prueba_123@gmail.com\"\n  },\n  \"autorizadorRecojo\": {\n    \"nombre\": \"GONZALES RICARDO\",\n    \"documento\": \"73307515\",\n    \"correo\": \"NCABRERA@BANBIF.COM.PE\"\n  },\n  \"oficina\": {\n    \"nombre\": \"0101\"\n  },\n  \"cuenta\": {\n    \"cuentaOrigen\": \"7000736984\"\n  },\n  \"lineaCredito\": {\n    \"numero\": 3\n  },\n  \"cartaFianza\": {\n    \"fechaOperacion\": \"20092023\",\n    \"monto\": 150000.00,\n    \"moneda\": \"SOL\",\n    \"codigoModalidad\": \"0001\",\n    \"descripcionGarantizar\": \"PARA GARANTIZAR A BXIE BANBIF PRUEBAS PRD EL FIEL CUMPLIMIENTO DEL 10 POR CIENTO DEL BA*10O *0GIL DE PING*9INOS Y CIG*9E*10AS EN EL PER*4\",\n    \"fechaInicio\": \"20092023\",\n    \"fechaVencimiento\": \"20092024\",\n    \"tipo\": \"SOLICITUD\",\n    \"tipoEmision\": \"DIGITAL\"\n  }\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api-carta-fianza/v1/procesa/solicitud",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"procesa",
+								"solicitud"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Sep 2023 20:47:08 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"mensajes\": [\n            {\n                \"codigo\": \"0\",\n                \"mensaje\": \"El proceso de la solicitud de carta fianza fue exitoso\",\n                \"tipo\": \"info\"\n            }\n        ],\n        \"totalRegistros\": 1,\n        \"idTransaccion\": \"12345\"\n    },\n    \"datos\": {\n        \"respuestaOperacion\": {\n            \"codRespuesta\": \"0\",\n            \"numeroReferencia\": \"230918154708\"\n        },\n        \"cartaFianza\": {\n            \"idCartaFianza\": \"441009238200\"\n        }\n    }\n}"
+				},
+				{
+					"name": "DATO 4 - EXITO (ERROR)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "idTransaccion",
+								"value": "12345",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET",
+								"type": "text"
+							},
+							{
+								"key": "numeroPagina",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200110 102800",
+								"type": "text"
+							},
+							{
+								"key": "sistemaEmisor",
+								"value": "teste",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivoDocumentoEspecial",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalUno",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalDos",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalTres",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "procesarSolicitudCartaFianza",
+									"value": "{\n  \"cliente\": {\n    \"codigoIBS\": \"1198482\"\n  },\n  \"beneficiario\": {\n    \"nombreBeneficiario\": \"MASPERO ELEVATORI SPA\",\n    \"direccionBeneficiario\": \"VIALE DELLO SPORT, SNC 22070 APPIAN\",\n    \"correoBeneficiario\": \"prueba_123@gmail.com\"\n  },\n  \"autorizadorRecojo\": {\n    \"nombre\": \"GONZALES RICARDO\",\n    \"documento\": \"73307515\",\n    \"correo\": \"NCABRERA@BANBIF.COM.PE\"\n  },\n  \"oficina\": {\n    \"nombre\": \"0101\"\n  },\n  \"cuenta\": {\n    \"cuentaOrigen\": \"7900065776\"\n  },\n  \"lineaCredito\": {\n    \"numero\": 11\n  },\n  \"cartaFianza\": {\n    \"fechaOperacion\": \"21092023\",\n    \"monto\": 200000.00,\n    \"moneda\": \"SOL\",\n    \"codigoModalidad\": \"0001\",\n    \"descripcionGarantizar\": \"PARA GARANTIZAR A BXIE BANBIF PRUEBAS PRD EL FIEL CUMPLIMIENTO DEL 10 POR CIENTO DEL BA*10O *0GIL DE PING*9INOS Y CIG*9E*10AS EN EL PER*4\",\n    \"fechaInicio\": \"21092023\",\n    \"fechaVencimiento\": \"21092024\",\n    \"tipo\": \"SOLICITUD\",\n    \"tipoEmision\": \"FISICO\"\n  }\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api-carta-fianza/v1/procesa/solicitud",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"procesa",
+								"solicitud"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Sep 2023 20:49:03 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"mensajes\": [\n            {\n                \"codigo\": \"1\",\n                \"mensaje\": \"No se encontró el tipo de carta fianza\",\n                \"tipo\": \"warn\"\n            }\n        ],\n        \"totalRegistros\": 0,\n        \"idTransaccion\": \"12345\"\n    },\n    \"datos\": {\n        \"respuestaOperacion\": {\n            \"codRespuesta\": \"\",\n            \"numeroReferencia\": \"\"\n        },\n        \"cartaFianza\": {\n            \"idCartaFianza\": \"\"\n        }\n    }\n}"
+				},
+				{
+					"name": "DATO 5 - EXITO",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "idTransaccion",
+								"value": "12345",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET",
+								"type": "text"
+							},
+							{
+								"key": "numeroPagina",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200110 102800",
+								"type": "text"
+							},
+							{
+								"key": "sistemaEmisor",
+								"value": "teste",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivoDocumentoEspecial",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalUno",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalDos",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalTres",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "procesarSolicitudCartaFianza",
+									"value": "{\n  \"cliente\": {\n    \"codigoIBS\": \"2131477\"\n  },\n  \"beneficiario\": {\n    \"nombreBeneficiario\": \"NUTRITIONAL TECHNOLOGIES S.A.C.\",\n    \"direccionBeneficiario\": \"AV DIONISIO DERTEANO 102\",\n    \"correoBeneficiario\": \"prueba_123@gmail.com\"\n  },\n  \"autorizadorRecojo\": {\n    \"nombre\": \"GONZALES RICARDO\",\n    \"documento\": \"73307515\",\n    \"correo\": \"NCABRERA@BANBIF.COM.PE\"\n  },\n  \"oficina\": {\n    \"nombre\": \"0101\"\n  },\n  \"cuenta\": {\n    \"cuentaOrigen\": \"7000703920\"\n  },\n  \"lineaCredito\": {\n    \"numero\": 38\n  },\n  \"cartaFianza\": {\n    \"fechaOperacion\": \"22092023\",\n    \"monto\": 300000.00,\n    \"moneda\": \"USD\",\n    \"codigoModalidad\": \"0001\",\n    \"descripcionGarantizar\": \"PARA GARANTIZAR A BXIE BANBIF PRUEBAS PRD EL FIEL CUMPLIMIENTO DEL 10 POR CIENTO DEL BA*10O *0GIL DE PING*9INOS Y CIG*9E*10AS EN EL PER*4\",\n    \"fechaInicio\": \"22092023\",\n    \"fechaVencimiento\": \"22092024\",\n    \"tipo\": \"SOLICITUD\",\n    \"tipoEmision\": \"DIGITAL\"\n  }\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api-carta-fianza/v1/procesa/solicitud",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"procesa",
+								"solicitud"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Sep 2023 20:51:10 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"mensajes\": [\n            {\n                \"codigo\": \"0\",\n                \"mensaje\": \"El proceso de la solicitud de carta fianza fue exitoso\",\n                \"tipo\": \"info\"\n            }\n        ],\n        \"totalRegistros\": 1,\n        \"idTransaccion\": \"12345\"\n    },\n    \"datos\": {\n        \"respuestaOperacion\": {\n            \"codRespuesta\": \"0\",\n            \"numeroReferencia\": \"230918155110\"\n        },\n        \"cartaFianza\": {\n            \"idCartaFianza\": \"441009238300\"\n        }\n    }\n}"
+				},
+				{
+					"name": "DATO 6 - EXITO",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "idTransaccion",
+								"value": "12345",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET",
+								"type": "text"
+							},
+							{
+								"key": "numeroPagina",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200110 102800",
+								"type": "text"
+							},
+							{
+								"key": "sistemaEmisor",
+								"value": "teste",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivoDocumentoEspecial",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalUno",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalDos",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalTres",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "procesarSolicitudCartaFianza",
+									"value": "{\n  \"cliente\": {\n    \"codigoIBS\": \"2387507\"\n  },\n  \"beneficiario\": {\n    \"nombreBeneficiario\": \"HYUNDAI MOTOR COMPANY\",\n    \"direccionBeneficiario\": \"231-YANGJAE DONG, SEOCHO-GU,\",\n    \"correoBeneficiario\": \"prueba_123@gmail.com\"\n  },\n  \"autorizadorRecojo\": {\n    \"nombre\": \"GONZALES RICARDO\",\n    \"documento\": \"73307515\",\n    \"correo\": \"NCABRERA@BANBIF.COM.PE\"\n  },\n  \"oficina\": {\n    \"nombre\": \"0100\"\n  },\n  \"cuenta\": {\n    \"cuentaOrigen\": \"7000713062\"\n  },\n  \"lineaCredito\": {\n    \"numero\": 10\n  },\n  \"cartaFianza\": {\n    \"fechaOperacion\": \"23092023\",\n    \"monto\": 350000.00,\n    \"moneda\": \"USD\",\n    \"codigoModalidad\": \"0001\",\n    \"descripcionGarantizar\": \"PARA GARANTIZAR A BXIE BANBIF PRUEBAS PRD EL FIEL CUMPLIMIENTO DEL 10 POR CIENTO DEL BA*10O *0GIL DE PING*9INOS Y CIG*9E*10AS EN EL PER*4\",\n    \"fechaInicio\": \"23092023\",\n    \"fechaVencimiento\": \"24092024\",\n    \"tipo\": \"SOLICITUD\",\n    \"tipoEmision\": \"FISICO\"\n  }\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api-carta-fianza/v1/procesa/solicitud",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"procesa",
+								"solicitud"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Sep 2023 20:53:46 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"mensajes\": [\n            {\n                \"codigo\": \"0\",\n                \"mensaje\": \"El proceso de la solicitud de carta fianza fue exitoso\",\n                \"tipo\": \"info\"\n            }\n        ],\n        \"totalRegistros\": 1,\n        \"idTransaccion\": \"12345\"\n    },\n    \"datos\": {\n        \"respuestaOperacion\": {\n            \"codRespuesta\": \"0\",\n            \"numeroReferencia\": \"230918155346\"\n        },\n        \"cartaFianza\": {\n            \"idCartaFianza\": \"441009238500\"\n        }\n    }\n}"
+				},
+				{
+					"name": "DATO 1 - ERROR",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "idTransaccion",
+								"value": "12345",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET",
+								"type": "text"
+							},
+							{
+								"key": "numeroPagina",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200110 102800",
+								"type": "text"
+							},
+							{
+								"key": "sistemaEmisor",
+								"value": "teste",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivoDocumentoEspecial",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalUno",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalDos",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalTres",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "procesarSolicitudCartaFianza",
+									"value": "{\n  \"cliente\": {\n    \"codigoIBS\": \"2387507\"\n  },\n  \"beneficiario\": {\n    \"nombreBeneficiario\": \"HYUNDAI MOTOR COMPANY\",\n    \"direccionBeneficiario\": \"231-YANGJAE DONG, SEOCHO-GU,\",\n    \"correoBeneficiario\": \"prueba_123@gmail.com\"\n  },\n  \"autorizadorRecojo\": {\n    \"nombre\": \"GONZALES RICARDO\",\n    \"documento\": \"73307515\",\n    \"correo\": \"NCABRERA@BANBIF.COM.PE\"\n  },\n  \"oficina\": {\n    \"nombre\": \"0100\"\n  },\n  \"cuenta\": {\n    \"cuentaOrigen\": \"7000713062\"\n  },\n  \"lineaCredito\": {\n    \"numero\": 10\n  },\n  \"cartaFianza\": {\n    \"fechaOperacion\": \"23092023\",\n    \"monto\": 350000.00,\n    \"moneda\": \"USD\",\n    \"codigoModalidad\": \"0001\",\n    \"descripcionGarantizar\": \"PARA GARANTIZAR A BXIE BANBIF PRUEBAS PRD EL FIEL CUMPLIMIENTO DEL 10 POR CIENTO DEL BA*10O *0GIL DE PING*9INOS Y CIG*9E*10AS EN EL PER*4\",\n    \"fechaInicio\": \"\",\n    \"fechaVencimiento\": \"24092024\",\n    \"tipo\": \"SOLICITUD\",\n    \"tipoEmision\": \"FISICO\"\n  }\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api-carta-fianza/v1/procesa/solicitud",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"procesa",
+								"solicitud"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Sep 2023 20:54:55 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"mensajes\": [\n            {\n                \"codigo\": \"-1\",\n                \"mensaje\": \"Campo faltante o no es válido: cartaFianza.fechaInicio\",\n                \"tipo\": \"error\"\n            }\n        ],\n        \"idTransaccion\": \"12345\",\n        \"datosAdicionales\": \"-1 - Campo faltante o no es válido: cartaFianza.fechaInicio\"\n    }\n}"
+				},
+				{
+					"name": "DATO 2 - ERROR",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "idTransaccion",
+								"value": "12345",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET",
+								"type": "text"
+							},
+							{
+								"key": "numeroPagina",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200110 102800",
+								"type": "text"
+							},
+							{
+								"key": "sistemaEmisor",
+								"value": "teste",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivoDocumentoEspecial",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalUno",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalDos",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalTres",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "procesarSolicitudCartaFianza",
+									"value": "{\n  \"cliente\": {\n    \"codigoIBS\": \"2387507\"\n  },\n  \"beneficiario\": {\n    \"nombreBeneficiario\": \"HYUNDAI MOTOR COMPANY\",\n    \"direccionBeneficiario\": \"231-YANGJAE DONG, SEOCHO-GU,\",\n    \"correoBeneficiario\": \"prueba_123@gmail.com\"\n  },\n  \"autorizadorRecojo\": {\n    \"nombre\": \"GONZALES RICARDO\",\n    \"documento\": \"73307515\",\n    \"correo\": \"NCABRERA@BANBIF.COM.PE\"\n  },\n  \"oficina\": {\n    \"nombre\": \"0100\"\n  },\n  \"cuenta\": {\n    \"cuentaOrigen\": \"70007130AA\"\n  },\n  \"lineaCredito\": {\n    \"numero\": 10\n  },\n  \"cartaFianza\": {\n    \"fechaOperacion\": \"23092023\",\n    \"monto\": 350000.00,\n    \"moneda\": \"USD\",\n    \"codigoModalidad\": \"0001\",\n    \"descripcionGarantizar\": \"PARA GARANTIZAR A BXIE BANBIF PRUEBAS PRD EL FIEL CUMPLIMIENTO DEL 10 POR CIENTO DEL BA*10O *0GIL DE PING*9INOS Y CIG*9E*10AS EN EL PER*4\",\n    \"fechaInicio\": \"23092023\",\n    \"fechaVencimiento\": \"24092024\",\n    \"tipo\": \"SOLICITUD\",\n    \"tipoEmision\": \"FISICO\"\n  }\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api-carta-fianza/v1/procesa/solicitud",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"procesa",
+								"solicitud"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Sep 2023 20:55:58 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": \"2023-09-18\",\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"exception\": \"com.fasterxml.jackson.databind.exc.InvalidFormatException\",\n    \"message\": \"Can not deserialize value of type java.math.BigDecimal from String \\\"70007130AA\\\": not a valid representation\\n at [Source: {\\n  \\\"cliente\\\": {\\n    \\\"codigoIBS\\\": \\\"2387507\\\"\\n  },\\n  \\\"beneficiario\\\": {\\n    \\\"nombreBeneficiario\\\": \\\"HYUNDAI MOTOR COMPANY\\\",\\n    \\\"direccionBeneficiario\\\": \\\"231-YANGJAE DONG, SEOCHO-GU,\\\",\\n    \\\"correoBeneficiario\\\": \\\"prueba_123@gmail.com\\\"\\n  },\\n  \\\"autorizadorRecojo\\\": {\\n    \\\"nombre\\\": \\\"GONZALES RICARDO\\\",\\n    \\\"documento\\\": \\\"73307515\\\",\\n    \\\"correo\\\": \\\"NCABRERA@BANBIF.COM.PE\\\"\\n  },\\n  \\\"oficina\\\": {\\n    \\\"nombre\\\": \\\"0100\\\"\\n  },\\n  \\\"cuenta\\\": {\\n    \\\"cuentaOrigen\\\": \\\"70007130AA\\\"\\n  },\\n  \\\"lineaCredito\\\": {\\n    \\\"numero\\\": 10\\n  },\\n  \\\"cartaFianza\\\": {\\n    \\\"fechaOperacion\\\": \\\"23092023\\\",\\n    \\\"monto\\\": 350000.00,\\n    \\\"moneda\\\": \\\"USD\\\",\\n    \\\"codigoModalidad\\\": \\\"0001\\\",\\n    \\\"descripcionGarantizar\\\": \\\"PARA GARANTIZAR A BXIE BANBIF PRUEBAS PRD EL FIEL CUMPLIMIENTO DEL \\\",\\n    \\\"fechaInicio\\\": \\\"23092023\\\",\\n    \\\"fechaVencimiento\\\": \\\"24092024\\\",\\n    \\\"tipo\\\": \\\"SOLICITUD\\\",\\n    \\\"tipoEmision\\\": \\\"FISICO\\\"\\n  }\\n}; line: 19, column: 21] (through reference chain: io.swagger.model.ProcesarSolicitudCartaFianza[\\\"cuenta\\\"]->io.swagger.model.Cuenta[\\\"cuentaOrigen\\\"])\",\n    \"path\": \"/api-carta-fianza/v1/procesa/solicitud\"\n}"
+				},
+				{
+					"name": "DATO 3 - ERROR",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "idTransaccion",
+								"value": "12345",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET",
+								"type": "text"
+							},
+							{
+								"key": "numeroPagina",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200110 102800",
+								"type": "text"
+							},
+							{
+								"key": "sistemaEmisor",
+								"value": "teste",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivoDocumentoEspecial",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalUno",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalDos",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalTres",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "procesarSolicitudCartaFianza",
+									"value": "{\n  \"cliente\": {\n    \"codigoIBS\": \"1077481\"\n  },\n  \"beneficiario\": {\n    \"nombreBeneficiario\": \"CONSORCIO CONSTRUCTOR M2 LIMA\",\n    \"direccionBeneficiario\": \"DONGVAN INDUSTRIAL ZONE, DUY TIEN D\",\n    \"correoBeneficiario\": \"prueba_123@gmail.com\"\n  },\n  \"autorizadorRecojo\": {\n    \"nombre\": \"GONZALES RICARDO\",\n    \"documento\": \"73307515\",\n    \"correo\": \"NCABRERA@BANBIF.COM.PE\"\n  },\n  \"oficina\": {\n    \"nombre\": \"0101\"\n  },\n  \"cuenta\": {\n    \"cuentaOrigen\": \"7000736984\"\n  },\n  \"lineaCredito\": {\n    \"numero\": 3\n  },\n  \"cartaFianza\": {\n    \"fechaOperacion\": \"20092023\",\n    \"monto\": 150000.00,\n    \"moneda\": \"SOL\",\n    \"codigoModalidad\": \"0001\",\n    \"descripcionGarantizar\": \"PARA GARANTIZAR A BXIE BANBIF PRUEBAS PRD EL FIEL CUMPLIMIENTO DEL 10 POR CIENTO DEL BA*10O *0GIL DE PING*9INOS Y CIG*9E*10AS EN EL PER*4\",\n    \"fechaInicio\": \"20092023\",\n    \"fechaVencimiento\": \"20092024\",\n    \"tipo\": \"SOLICITUD\",\n    \"tipoEmision\": \"\"\n  }\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api-carta-fianza/v1/procesa/solicitud",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"procesa",
+								"solicitud"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Sep 2023 20:57:40 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"mensajes\": [\n            {\n                \"codigo\": \"-1\",\n                \"mensaje\": \"Campo faltante o no es válido: cartaFianza.tipoEmision\",\n                \"tipo\": \"error\"\n            }\n        ],\n        \"idTransaccion\": \"12345\",\n        \"datosAdicionales\": \"-1 - Campo faltante o no es válido: cartaFianza.tipoEmision\"\n    }\n}"
+				},
+				{
+					"name": "DATO 4 - ERROR",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "idTransaccion",
+								"value": "12345",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET",
+								"type": "text"
+							},
+							{
+								"key": "numeroPagina",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200110 102800",
+								"type": "text"
+							},
+							{
+								"key": "sistemaEmisor",
+								"value": "teste",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivoDocumentoEspecial",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalUno",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalDos",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalTres",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "procesarSolicitudCartaFianza",
+									"value": "{\n  \"cliente\": {\n    \"codigoIBS\": \"615692\"\n  },\n  \"beneficiario\": {\n    \"nombreBeneficiario\": \"BRUCKNER TEXTILE TECHNOLOGIES GMBH\",\n    \"direccionBeneficiario\": \"BENZSTR. 8-10-71229 LEONBERG, GERMA\",\n    \"correoBeneficiario\": \"prueba_123@gmail.com\"\n  },\n  \"autorizadorRecojo\": {\n    \"nombre\": \"GONZALES RICARDO\",\n    \"documento\": \"73307515\",\n    \"correo\": \"NCABRERA@BANBIF.COM.PE\"\n  },\n  \"oficina\": {\n    \"nombre\": \"0850\"\n  },\n  \"cuenta\": {\n    \"cuentaOrigen\": \"7000289058\"\n  },\n  \"lineaCredito\": {\n    \"numero\": 26\n  },\n  \"cartaFianza\": {\n    \"fechaOperacion\": \"19092023\",\n    \"monto\": 350000.00,\n    \"moneda\": \"SOL\",\n    \"codigoModalidad\": \"0001\",\n    \"descripcionGarantizar\": \"PARA GARANTIZAR A BXIE BANBIF PRUEBAS PRD EL FIEL CUMPLIMIENTO DEL 10 POR CIENTO DEL BA*10O *0GIL DE PING*9INOS Y CIG*9E*10AS EN EL PER*4\",\n    \"fechaInicio\": \"19092023\",\n    \"fechaVencimiento\": \"19092024\",\n    \"tipo\": \"SOLICITUD\",\n    \"tipoEmision\": \"FISICO\"\n  }\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api-carta-fianza/v1/procesa/solicitud",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"procesa",
+								"solicitud"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Sep 2023 20:59:21 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"mensajes\": [\n            {\n                \"codigo\": \"1\",\n                \"mensaje\": \"No se encontró oficinas disponibles para la entrega de carta fianza\",\n                \"tipo\": \"warn\"\n            }\n        ],\n        \"totalRegistros\": 0,\n        \"idTransaccion\": \"12345\"\n    },\n    \"datos\": {\n        \"respuestaOperacion\": {\n            \"codRespuesta\": \"\",\n            \"numeroReferencia\": \"\"\n        },\n        \"cartaFianza\": {\n            \"idCartaFianza\": \"\"\n        }\n    }\n}"
+				},
+				{
+					"name": "DATO 5 - ERROR",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "idTransaccion",
+								"value": "12345",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET",
+								"type": "text"
+							},
+							{
+								"key": "numeroPagina",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200110 102800",
+								"type": "text"
+							},
+							{
+								"key": "sistemaEmisor",
+								"value": "teste",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivoDocumentoEspecial",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalUno",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalDos",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalTres",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "procesarSolicitudCartaFianza",
+									"value": "{\n  \"cliente\": {\n    \"codigoIBS\": \"2387507\"\n  },\n  \"beneficiario\": {\n    \"nombreBeneficiario\": \"HYUNDAI MOTOR COMPANY\",\n    \"direccionBeneficiario\": \"231-YANGJAE DONG, SEOCHO-GU,\",\n    \"correoBeneficiario\": \"prueba_123@gmail.com\"\n  },\n  \"autorizadorRecojo\": {\n    \"nombre\": \"GONZALES RICARDO\",\n    \"documento\": \"73307515\",\n    \"correo\": \"NCABRERA@BANBIF.COM.PE\"\n  },\n  \"oficina\": {\n    \"nombre\": \"0100\"\n  },\n  \"cuenta\": {\n    \"cuentaOrigen\": \"7000713062\"\n  },\n  \"lineaCredito\": {\n    \"numero\": 15\n  },\n  \"cartaFianza\": {\n    \"fechaOperacion\": \"23092023\",\n    \"monto\": 350000.00,\n    \"moneda\": \"USD\",\n    \"codigoModalidad\": \"0001\",\n    \"descripcionGarantizar\": \"PARA GARANTIZAR A BXIE BANBIF PRUEBAS PRD EL FIEL CUMPLIMIENTO DEL 10 POR CIENTO DEL BA*10O *0GIL DE PING*9INOS Y CIG*9E*10AS EN EL PER*4\",\n    \"fechaInicio\": \"23092023\",\n    \"fechaVencimiento\": \"24092024\",\n    \"tipo\": \"SOLICITUD\",\n    \"tipoEmision\": \"DIGITAL\"\n  }\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api-carta-fianza/v1/procesa/solicitud",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"procesa",
+								"solicitud"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Sep 2023 22:07:48 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"mensajes\": [\n            {\n                \"codigo\": \"1\",\n                \"mensaje\": \"El tipo transacción no corresponde al cliente.\",\n                \"tipo\": \"warn\"\n            },\n            {\n                \"codigo\": \"1\",\n                \"mensaje\": \"El número de línea de crédito no corresponde al cliente.\",\n                \"tipo\": \"warn\"\n            },\n            {\n                \"codigo\": \"1\",\n                \"mensaje\": \"No se encontró la ruta de propuesta.\",\n                \"tipo\": \"warn\"\n            }\n        ],\n        \"totalRegistros\": 0,\n        \"idTransaccion\": \"12345\"\n    },\n    \"datos\": {\n        \"respuestaOperacion\": {\n            \"codRespuesta\": \"\",\n            \"numeroReferencia\": \"\"\n        },\n        \"cartaFianza\": {\n            \"idCartaFianza\": \"\"\n        }\n    }\n}"
+				},
+				{
+					"name": "DATO 6 - ERROR",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "idTransaccion",
+								"value": "12345",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET",
+								"type": "text"
+							},
+							{
+								"key": "numeroPagina",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200110 102800",
+								"type": "text"
+							},
+							{
+								"key": "sistemaEmisor",
+								"value": "teste",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivoDocumentoEspecial",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalUno",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalDos",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalTres",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "procesarSolicitudCartaFianza",
+									"value": "{\n  \"cliente\": {\n    \"codigoIBS\": \"426362\"\n  },\n  \"beneficiario\": {\n    \"nombreBeneficiario\": \"HYUNDAI MOTOR COMPANY\",\n    \"direccionBeneficiario\": \"231-YANGJAE DONG, SEOCHO-GU,\",\n    \"correoBeneficiario\": \"prueba_123@gmail.com\"\n  },\n  \"autorizadorRecojo\": {\n    \"nombre\": \"GONZALES RICARDO\",\n    \"documento\": \"73307515\",\n    \"correo\": \"NCABRERA@BANBIF.COM.PE\"\n  },\n  \"oficina\": {\n    \"nombre\": \"0100\"\n  },\n  \"cuenta\": {\n    \"cuentaOrigen\": \"7000208287\"\n  },\n  \"lineaCredito\": {\n    \"numero\": 25\n  },\n  \"cartaFianza\": {\n    \"fechaOperacion\": \"23092023\",\n    \"monto\": 350000.00,\n    \"moneda\": \"USD\",\n    \"codigoModalidad\": \"0001\",\n    \"descripcionGarantizar\": \"PARA GARANTIZAR A BXIE BANBIF PRUEBAS PRD EL FIEL CUMPLIMIENTO DEL 10 POR CIENTO DEL BA*10O *0GIL DE PING*9INOS Y CIG*9E*10AS EN EL PER*4\",\n    \"fechaInicio\": \"23092023\",\n    \"fechaVencimiento\": \"24092024\",\n    \"tipo\": \"SOLICITUD\",\n    \"tipoEmision\": \"DIGITAL\"\n  }\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api-carta-fianza/v1/procesa/solicitud",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"procesa",
+								"solicitud"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Sep 2023 23:10:19 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"mensajes\": [\n            {\n                \"codigo\": \"1\",\n                \"mensaje\": \"Cliente se encuentra en lista negra.\",\n                \"tipo\": \"warn\"\n            },\n            {\n                \"codigo\": \"1\",\n                \"mensaje\": \"No se encontró el tipo de carta fianza\",\n                \"tipo\": \"warn\"\n            }\n        ],\n        \"totalRegistros\": 0,\n        \"idTransaccion\": \"12345\"\n    },\n    \"datos\": {\n        \"respuestaOperacion\": {\n            \"codRespuesta\": \"\",\n            \"numeroReferencia\": \"\"\n        },\n        \"cartaFianza\": {\n            \"idCartaFianza\": \"\"\n        }\n    }\n}"
+				},
+				{
+					"name": "PRUEBA RENOVACION CF",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "idTransaccion",
+								"value": "12345",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET",
+								"type": "text"
+							},
+							{
+								"key": "numeroPagina",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200110 102800",
+								"type": "text"
+							},
+							{
+								"key": "sistemaEmisor",
+								"value": "teste",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivoDocumentoEspecial",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalUno",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalDos",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalTres",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "procesarSolicitudCartaFianza",
+									"value": "{\n  \"cliente\": {\n    \"codigoIBS\": \"44682\"\n  },\n  \"beneficiario\": {\n    \"nombreBeneficiario\": \"GAS NATURAL DE LIMA Y CALLAO S.A.BRUCKNER TEXTILE TECHNOLOGIES GMBH\",\n    \"direccionBeneficiario\": \"AV CENTENARIO 156\",\n    \"correoBeneficiario\": \"prueba_123@gmail.com\"\n  },\n  \"autorizadorRecojo\": {\n    \"nombre\": \"GONZALES RICARDO\",\n    \"documento\": \"73307515\",\n    \"correo\": \"NCABRERA@BANBIF.COM.PE\"\n  },\n  \"oficina\": {\n    \"nombre\": \"0101\"\n  },\n  \"cuenta\": {\n    \"cuentaOrigen\": \"7000746351\"\n  },\n  \"lineaCredito\": {\n    \"numero\": 27\n  },\n  \"cartaFianza\": {\n    \"idCartaFianza\": \"1234567890\",\n    \"fechaOperacion\": \"18092023\",\n    \"monto\": 250000.00,\n    \"moneda\": \"SOL\",\n    \"codigoModalidad\": \"0001\",\n    \"descripcionGarantizar\": \"PARA GARANTIZAR A BXIE BANBIF PRUEBAS PRD EL FIEL CUMPLIMIENTO DEL \",\n    \"fechaInicio\": \"18092023\",\n    \"fechaVencimiento\": \"18092024\",\n    \"tipo\": \"RENOVACION\",\n    \"tipoEmision\": \"DIGITAL\"\n  }\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api-carta-fianza/v1/procesa/solicitud",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"procesa",
+								"solicitud"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 19 Sep 2023 04:46:30 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"mensajes\": [\n            {\n                \"codigo\": \"0\",\n                \"mensaje\": \"El proceso de la renovación de carta fianza fue exitoso\",\n                \"tipo\": \"info\"\n            }\n        ],\n        \"totalRegistros\": 1,\n        \"idTransaccion\": \"12345\"\n    },\n    \"datos\": {\n        \"respuestaOperacion\": {\n            \"codRespuesta\": \"0\",\n            \"numeroReferencia\": \"230918234622\"\n        },\n        \"cartaFianza\": {\n            \"idCartaFianza\": \"1234567890\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Procesar Solicitud Carta Fianza DEV",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "idTransaccion",
+						"value": "321675312",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "codigoCanal",
+						"value": "BANCA_POR_INTERNET",
+						"type": "text"
+					},
+					{
+						"key": "numeroPagina",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "fechaHora",
+						"value": "20200110 102800",
+						"type": "text"
+					},
+					{
+						"key": "sistemaEmisor",
+						"value": "teste",
+						"type": "text"
+					},
+					{
+						"key": "authorization",
+						"value": "{{tokenCF}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "archivoDocumentoEspecial",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "archivoDocumentoAdicionalUno",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "archivoDocumentoAdicionalDos",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "archivoDocumentoAdicionalTres",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "procesarSolicitudCartaFianza",
+							"value": "{\n  \"cliente\": {\n    \"codigoIBS\": \"615692\"\n  },\n  \"beneficiario\": {\n    \"nombreBeneficiario\": \"BRUCKNER TEXTILE TECHNOLOGIES GMBH\",\n    \"direccionBeneficiario\": \"BENZSTR. 8-10-71229 LEONBERG, GERMA\",\n    \"correoBeneficiario\": \"omar.collado@fractalservicios.pe\"\n  },\n  \"autorizadorRecojo\": {\n    \"nombre\": \"GONZALES RICARDO\",\n    \"documento\": \"73307515\",\n    \"correo\": \"NCABRERA@BANBIF.COM.PE\"\n  },\n  \"oficina\": {\n    \"nombre\": \"0100\"\n  },\n  \"cuenta\": {\n    \"cuentaOrigen\": \"7000289058\"\n  },\n  \"lineaCredito\": {\n    \"numero\": 26\n  },\n  \"cartaFianza\": {\n    \"fechaOperacion\": \"19092023\",\n    \"monto\": 350000.00,\n    \"moneda\": \"SOL\",\n    \"codigoModalidad\": \"0001\",\n    \"descripcionGarantizar\": \"PARA GARANTIZAR A BXIE BANBIF PRUEBAS PRD EL FIEL CUMPLIMIENTO DEL 10 POR CIENTO DEL BA*10O *0GIL DE PING*9INOS Y CIG*9E*10AS EN EL PER*4\",\n    \"fechaInicio\": \"19092023\",\n    \"fechaVencimiento\": \"19092024\",\n    \"tipo\": \"SOLICITUD\",\n    \"tipoEmision\": \"FISICO\",\n    \"rucBeneficiario\": \"20512862196\",\n    \"tipoAfiliado\": \"A\",\n    \"nombreAfianzado\": \"EMPRESA AFIANZA\",\n    \"rucAfianzado\": \"20487802370\"\n  }\n}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api-carta-fianza.appsopsprvdes.dombif.peru:443/api-carta-fianza/v1/procesa/solicitud",
+					"protocol": "https",
+					"host": [
+						"api-carta-fianza",
+						"appsopsprvdes",
+						"dombif",
+						"peru"
+					],
+					"port": "443",
+					"path": [
+						"api-carta-fianza",
+						"v1",
+						"procesa",
+						"solicitud"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Programa IN0005RI",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"program\": \"IN0005RI\",\r\n    \"INPUT\": {\r\n        \"lyntra\": \"CFIA\",\r\n        \"lyntip\": \"0001\",\r\n        \"lynfec\": \"31032023\",\r\n        \"lynnom\": \"JUAN PEREZ VELEZ\",\r\n        \"lyndir\": \"CALLE LIBRE 640\",\r\n        \"lynmai\": \"SBURGOS@MOLITALIA.COM.PE\",\r\n        \"lynimp\": \"0000000088900\",\r\n        \"lynmon\": \"SOL\",\r\n        \"lyntga\": \"EL FIEL CUMPLIMIENTO POR PRESTACIONES ACCESORIAS DE LA AD\",\r\n        \"lynfin\": \"01032023\",\r\n        \"lynfvt\": \"31052023\",\r\n        \"lynaut\": \"JUAN PABLO PESCORAN\",\r\n        \"lyndoi\": \"73307500\",\r\n        \"lyncor\": \"007000735210\",\r\n        \"lyncun\": \"002515298\",\r\n        \"lynlnc\": \"0001\",\r\n        \"lynbrn\": \"0101\",\r\n        \"lynobs\": \"\",\r\n        \"lynmai2\": \"NCABRERA@BANBIF.COM.PE\",\r\n        \"lyntpcf\": \"DIGITAL\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://adapter-as400.appsopsprvdes.dombif.peru/adapter-as400/call",
+					"protocol": "https",
+					"host": [
+						"adapter-as400",
+						"appsopsprvdes",
+						"dombif",
+						"peru"
+					],
+					"path": [
+						"adapter-as400",
+						"call"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Programa IN0012RI",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"program\": \"IN0012RI\",\r\n    \"params\": {\r\n        \"listWithEnds\": false,\r\n        \"readIndexOne\": false,\r\n        \"INPUT\": {\r\n            \"lvecun\": \"000044682\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://adapter-as400.appsopsprvdes.dombif.peru/adapter-as400/call",
+					"protocol": "https",
+					"host": [
+						"adapter-as400",
+						"appsopsprvdes",
+						"dombif",
+						"peru"
+					],
+					"path": [
+						"adapter-as400",
+						"call"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

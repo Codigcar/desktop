@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resource class="com.linoma.ga.projects.resources.SSHResource">
+	<primaryContactName />
+	<primaryContactPhone />
+	<primaryContactEmail />
+	<secondaryContactName />
+	<secondaryContactPhone />
+	<secondaryContactEmail />
+	<resourceName>Share_BIF1BPIPJ14</resourceName>
+	<domainName>Default</domainName>
+	<resourceDescription>Compartido de Banca por Internet Empresa Servidor Dominio</resourceDescription>
+	<host>BIF1BPIPJ14</host>
+	<port />
+	<user>dombif\admgoanywhere</user>
+	<password>*1:hNP4PuUkmrIo2Nlga6w3nAlhgMKo/p78n9NbvhPyuDI=</password>
+	<passwordIsEncrypted>true</passwordIsEncrypted>
+	<passwordIsRecoverable>false</passwordIsRecoverable>
+	<keyLocation>KeyVault</keyLocation>
+	<keyVault />
+	<privateKeyAlias />
+	<keyPassword />
+	<keyPasswordIsEncrypted />
+	<keyPasswordIsRecoverable />
+	<privateKeyFile />
+	<privateKeyPassword />
+	<privateKeyPasswordIsEncrypted />
+	<privateKeyPasswordIsRecoverable />
+	<rsaSignatureAlgorithm />
+	<hostKey />
+	<timeout />
+	<connectionRetryAttempts />
+	<connectionRetryInterval />
+	<initialRemoteDirectory>/files/15052-H2W</initialRemoteDirectory>
+	<throttleBandwidth />
+	<proxyType />
+	<proxyHost />
+	<alternateProxyHost />
+	<proxyPort />
+	<proxyUser />
+	<proxyPassword />
+	<proxyPasswordIsEncrypted />
+	<proxyPasswordIsRecoverable />
+	<resolveAtProxy />
+	<authenticationAlgorithms>publickey,password</authenticationAlgorithms>
+	<hostKeyAlgorithms />
+	<cipherAlgorithms />
+	<macAlgorithms />
+	<keyExchangeAlgorithms />
+	<compressionAlgorithms />
+</resource>

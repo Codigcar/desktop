@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "362824820336",
+    "project_id": "banbifempresas",
+    "storage_bucket": "banbifempresas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362824820336:android:0b7b7da66bbbb9e8ea36b5",
+        "android_client_info": {
+          "package_name": "com.banbifbancaempresasapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "362824820336-isuleupr9fgb92qpk9kkk32u29sj9fvl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1RnMtHST_uAJxAOett440qgsa1xmYYPI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "362824820336-isuleupr9fgb92qpk9kkk32u29sj9fvl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "362824820336-sr6rd4bkn5lg692rt9j61uabd7uklc5e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "pe.com.banbif.BancaMovilEmpresas"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

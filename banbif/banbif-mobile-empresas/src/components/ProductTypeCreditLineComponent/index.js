@@ -1,0 +1,2 @@
+import ProductTypeCreditLineComponent from "./ProductTypeCreditLineComponentineComponent";
+export default ProductTypeCreditLineComponent;

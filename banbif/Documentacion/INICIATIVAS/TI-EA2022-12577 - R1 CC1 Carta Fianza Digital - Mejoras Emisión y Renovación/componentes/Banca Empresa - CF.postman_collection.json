@@ -1,0 +1,1117 @@
+{
+	"info": {
+		"_postman_id": "e578a753-cecc-4249-8188-a33982639cb2",
+		"name": "Banca Empresa - CF",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7603976"
+	},
+	"item": [
+		{
+			"name": "oauth Copy",
+			"item": [
+				{
+					"name": "getToken",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"const token = \"Bearer \" + response.access_token;\r",
+									"pm.globals.set(\"tokenBPIE\", token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "user-key",
+								"value": "71ac970647c7b36d5a9cc91a56387fa5"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "f1a44ed3",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "146e95d0033ed46ed70cf0d2f8efe5e8",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "---",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "---",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://rh-sso-rhsso.uatapps.dombif.peru/auth/realms/Banbif-API/protocol/openid-connect/token",
+							"protocol": "https",
+							"host": [
+								"rh-sso-rhsso",
+								"uatapps",
+								"dombif",
+								"peru"
+							],
+							"path": [
+								"auth",
+								"realms",
+								"Banbif-API",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTokenBackoffice",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "user-key",
+								"value": "71ac970647c7b36d5a9cc91a56387fa5"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "fcb4da22",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "9a31cfa822c3a4eb5114d76bd4835e78",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "alvsantos_ntconsult",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "teste",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url_sso}}/auth/realms/Banbif-API/protocol/openid-connect/token",
+							"host": [
+								"{{url_sso}}"
+							],
+							"path": [
+								"auth",
+								"realms",
+								"Banbif-API",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTokenApp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "user-key",
+								"value": "71ac970647c7b36d5a9cc91a56387fa5"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "61e0c535",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "2f211faa8e7dbf532592e184b90535c7",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "juanlazo-amexbif1",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://ssorh.appsopsprvdes.dombif.peru:443/auth/realms/Banbif-API/protocol/openid-connect/token",
+							"protocol": "https",
+							"host": [
+								"ssorh",
+								"appsopsprvdes",
+								"dombif",
+								"peru"
+							],
+							"port": "443",
+							"path": [
+								"auth",
+								"realms",
+								"Banbif-API",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTokenSalesforce",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "3MVG9pHRjzOBdkd9bfsJTzfeDRg1yhvZ7HniUyTYOGnva1docdHzHP8ZrS46DXJwafg3_W2aOt_QhELN2qsL3",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "7D44AF5D6577154F45A417277AC5E9CE6D5AE8741C6FDD7C4EE8BB7FD135C3D2",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "usuario1@banbif.com.dev01",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Pro2041$JmtRSb11R9bnT1DygwBty7q9L",
+									"type": "text"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https://190.42.150.158",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test.salesforce.com/services/oauth2/token",
+							"protocol": "https",
+							"host": [
+								"test",
+								"salesforce",
+								"com"
+							],
+							"path": [
+								"services",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "introspectToken",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "user-key",
+								"value": "71ac970647c7b36d5a9cc91a56387fa5"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJDbGllbnRCYW5rSWRlbnRpZmllciI6IjY1OTYwMCIsIlVzZXJOYW1lIjoiWUFSQzE5IiwiQ3VycmVudERhdGUiOiIyMDE5MDQwNTEyNDkxNTQ5MiJ9.eiTGj4PR-n306zpFkXr03BPoL4m6VGxvZmlp6lgJ40pv4NI_FgzJjGq7oQ16AFZgXFjuY2HCjE9e8-eWGqP3PQ",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "1142iu124",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "NDAG789gds7dsn",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{token_introspection_url}}oauth/token/introspect",
+							"host": [
+								"{{token_introspection_url}}oauth"
+							],
+							"path": [
+								"token",
+								"introspect"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Folder for oauth"
+		},
+		{
+			"name": "api-carta-fianza Copy",
+			"item": [
+				{
+					"name": "Consulta Solicitud",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJlaE44dGRKbmpidnZjQ29xTk5rWEVJOTl5M3htQlloOEJoMzNOWllEYjA4In0.eyJqdGkiOiIxZjM4ZGQxNy1jYzhjLTQzZmItOWE2Ny05MDUwMTU2NjNmNzMiLCJleHAiOjE2MTI4MzA0MjYsIm5iZiI6MCwiaWF0IjoxNjEyODMwMTI2LCJpc3MiOiJodHRwczovL3Nzb3JoLnVhdGFwcHMuZG9tYmlmLnBlcnUvYXV0aC9yZWFsbXMvQmFuYmlmLUFQSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI1YWEzNGIzNS03ZTgxLTQ5NGUtOWYyNi0wMWU1OTVkYzE4M2QiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJiNjU2OTVhYSIsImF1dGhfdGltZSI6MCwic2Vzc2lvbl9zdGF0ZSI6IjNlM2M5M2M3LTZkNDItNGZjOS05OGI2LTk1NmM2YjA4MTBhNSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiY2xpZW50SG9zdCI6IjEwLjIwMC4xMDQuNSIsImNsaWVudElkIjoiYjY1Njk1YWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtYjY1Njk1YWEiLCJjbGllbnRBZGRyZXNzIjoiMTAuMjAwLjEwNC41In0.Et94qrBLzWZofhDUpbz4xpTozMhInLKXtRvoBXp2YodTfLBFwkYpYFNmX2Cx5obvcxSbTZ3ubCjPBMltCDwcMeutJfgAbza1Hti6KWnjJ4GR8g90mzEa9IAsoChTMenxqtLY_HmFQK8Q9gGUOcmy0VHeh7FXZJBJgI8t11ckrRUnvRJJyRa1g1YkcD5yWGzclI4ZRRZqDA7FJDHzNqu2tIbTSWGbw8U7TX858J-Zv4E4Au-ejIkb2w940s8mAswDOgnVAVCYz8HDNdtAIUokheDQkvyq1XbMKB5PNtFe6mFaQtvIvGUF6N25UQ_0RUlfo34nkOiAnUTPubRof1dAcQ",
+								"type": "text"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET",
+								"type": "text"
+							},
+							{
+								"key": "numeroPagina",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200110 102800",
+								"type": "text"
+							},
+							{
+								"key": "sistemaEmisor",
+								"value": "teste",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://banbif-carta-fianza-service-fuse.apps.ocpdev01.dombif.peru/api-carta-fianza/v1/consulta/solicitud/316015/1",
+							"protocol": "https",
+							"host": [
+								"banbif-carta-fianza-service-fuse",
+								"apps",
+								"ocpdev01",
+								"dombif",
+								"peru"
+							],
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"consulta",
+								"solicitud",
+								"316015",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta Lineas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJlaE44dGRKbmpidnZjQ29xTk5rWEVJOTl5M3htQlloOEJoMzNOWllEYjA4In0.eyJqdGkiOiJlN2M4ZWQ5Mi00OGEzLTRkNjMtYjc1OC1jMjAwYjdkYzE3OGQiLCJleHAiOjE2MTI4Mjg2MjcsIm5iZiI6MCwiaWF0IjoxNjEyODI4MzI3LCJpc3MiOiJodHRwczovL3Nzb3JoLnVhdGFwcHMuZG9tYmlmLnBlcnUvYXV0aC9yZWFsbXMvQmFuYmlmLUFQSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI1YWEzNGIzNS03ZTgxLTQ5NGUtOWYyNi0wMWU1OTVkYzE4M2QiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJiNjU2OTVhYSIsImF1dGhfdGltZSI6MCwic2Vzc2lvbl9zdGF0ZSI6ImJlZjUyYTE5LTEyMDItNDRkZC04NjJmLTJjYThlM2NkNjZlNCIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiY2xpZW50SG9zdCI6IjEwLjIwMC4xMDQuNSIsImNsaWVudElkIjoiYjY1Njk1YWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtYjY1Njk1YWEiLCJjbGllbnRBZGRyZXNzIjoiMTAuMjAwLjEwNC41In0.q2yQ5NWGmhm4qs3R0K5DxZFdqNmrkyQJfiQxt9aNZosxl2fjwGuA0ddqoapInZy8klQ-ERgdBd_C0Q0goNYk31P60gizpuaiJJWupi85dm4qWaLtbDT9lTScVhAXDSYa69VTggT02giwksFtOc3GaZkDyq_7DfgsFwTdoQ3-K_4k_4pRLpGs-cyJ5nszIAvNPQ-Mwb_jSomf72BemzGLN6MJlUVOL2Q-PmYV0sjfTFKrVLh4z4GkoUUn3tKXNGIemHI6iZsOYMB7_N91n3nhdbwwQkr5DA_66P_C1kTF0Ju9s5NS0CpHBudlRy0rjgCgeYcoPhxaGIeuGheay9wr6g"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200110 102800"
+							},
+							{
+								"key": "SistemaEmisor",
+								"value": "Teste"
+							}
+						],
+						"url": {
+							"raw": "https://banbif-carta-fianza-service-fuse.uatapps.dombif.peru/api-carta-fianza/v1/consulta/lineas/627",
+							"protocol": "https",
+							"host": [
+								"banbif-carta-fianza-service-fuse",
+								"uatapps",
+								"dombif",
+								"peru"
+							],
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"consulta",
+								"lineas",
+								"627"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Carta Fianza",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "idTransaction",
+								"type": "text",
+								"value": "teste"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200110 101800"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET"
+							},
+							{
+								"key": "numeroPagina",
+								"type": "text",
+								"value": "0"
+							},
+							{
+								"key": "authorization",
+								"value": "123"
+							},
+							{
+								"key": "sistemaEmisor",
+								"value": "teste"
+							},
+							{
+								"key": "sistemaReceptor",
+								"type": "text",
+								"value": "teste"
+							}
+						],
+						"url": {
+							"raw": "https://banbif-carta-fianza-service-fuse.uatapps.dombif.peru/api-carta-fianza/v1/listar/carta/fianza/:entidad/:usuario/:flag",
+							"protocol": "https",
+							"host": [
+								"banbif-carta-fianza-service-fuse",
+								"uatapps",
+								"dombif",
+								"peru"
+							],
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"listar",
+								"carta",
+								"fianza",
+								":entidad",
+								":usuario",
+								":flag"
+							],
+							"variable": [
+								{
+									"key": "entidad",
+									"value": "MEDIFARM"
+								},
+								{
+									"key": "usuario",
+									"value": "KOSORIO"
+								},
+								{
+									"key": "flag",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Carta Fianza",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "idTransaction",
+								"type": "text",
+								"value": "teste"
+							},
+							{
+								"key": "fechaHora",
+								"type": "text",
+								"value": "20200110 101800"
+							},
+							{
+								"key": "codigoCanal",
+								"type": "text",
+								"value": "BANCA_POR_INTERNET"
+							},
+							{
+								"key": "numeroPagina",
+								"type": "text",
+								"value": "0"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "1"
+							},
+							{
+								"key": "SistemaEmisor",
+								"type": "text",
+								"value": "Teste"
+							},
+							{
+								"key": "sistemaReceptor",
+								"type": "text",
+								"value": "teste"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://banbif-carta-fianza-service-fuse.uatapps.dombif.peru/api-carta-fianza/v1/eliminar/carta/fianza/:entidad/:usuario/:numeroReferencia/:tipo",
+							"protocol": "https",
+							"host": [
+								"banbif-carta-fianza-service-fuse",
+								"uatapps",
+								"dombif",
+								"peru"
+							],
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"eliminar",
+								"carta",
+								"fianza",
+								":entidad",
+								":usuario",
+								":numeroReferencia",
+								":tipo"
+							],
+							"variable": [
+								{
+									"key": "entidad",
+									"value": "MEDIFARM"
+								},
+								{
+									"key": "usuario",
+									"value": "OPERADOR78"
+								},
+								{
+									"key": "numeroReferencia",
+									"value": "190925172813"
+								},
+								{
+									"key": "tipo",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar Documento Carta Fianza",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "teste",
+								"type": "text"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET",
+								"type": "text"
+							},
+							{
+								"key": "numeroPagina",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200722 180000",
+								"type": "text"
+							},
+							{
+								"key": "sistemaEmisor",
+								"value": "teste",
+								"type": "text"
+							},
+							{
+								"key": "idTransaccion",
+								"value": "teste",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivoDocumentoEspecial",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalUno",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalDos",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalTres",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "modificarDocumentoCartaFianza",
+									"value": "{\n    \"cliente\": {\n        \"entidad\": {\n            \"nombre\": \"MEDIFARM\",\n            \"usuarios\": [\n                {\n                    \"nombre\": \"KOSORIO\"\n                }\n            ]\n        }\n    },\n    \"cartaFianza\": {\n        \"numeroReferencia\": \"201207175901\",\n        \"tipo\": \"1\"\n    }\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://banbif-carta-fianza-service-fuse.uatapps.dombif.peru/api-carta-fianza/v1/modifica/documento/cartafianza",
+							"protocol": "https",
+							"host": [
+								"banbif-carta-fianza-service-fuse",
+								"uatapps",
+								"dombif",
+								"peru"
+							],
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"modifica",
+								"documento",
+								"cartafianza"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar Carta Fianza",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "idTransaccion",
+								"value": "teste",
+								"type": "text"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200722 180000",
+								"type": "text"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET",
+								"type": "text"
+							},
+							{
+								"key": "numeroPagina",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "teste",
+								"type": "text"
+							},
+							{
+								"key": "sistemaEmisor",
+								"value": "teste",
+								"type": "text"
+							},
+							{
+								"key": "sistemaReceptor",
+								"value": "teste",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cliente\": {\n        \"entidad\": {\n            \"nombre\": \"BPOSAC\",\n            \"usuarios\": [\n                {\n                    \"nombre\": \"LLEANDRO\"\n                }\n            ]\n        }, \"documento\" : {\n\t\t\t\t\"numero\": \"\",\n\t\t\t\t\"tipo\": \"\"\n\t\t}\n    },\n\t\"beneficiario\": {\n\t\t\"nombreBeneficiario\": \"ALEMAN CONSTRUCTORES CO S.A.C.\",\n\t\t\"direccionBeneficiario\": \"CAL.TRONCHADERO NRO. 203 INT. G\",\n\t\t\"correoBeneficiario\": \"edenh@gmail.com\"\n\t},\n    \"cartaFianza\": {\n\t\t\"tipo\": \"1\",\n        \"numeroReferencia\": \"190919113450\",\n\t\t\"fechaOperacion\": \"10/04/21\",\n\t\t\"descripcion\": \"\",\n\t\t\"moneda\": \"SOL\",\n\t\t\"descripcionModalidad\": \"0002\",\n\t\t\"descripcionGarantizar\": \"POR EL PAGO DE LA HERRAMIENTA 'CATERPILLAR' BRINDADA PARA CONSTRUCCIÃ³N EN UN 50%\",\n\t\t\"fechaInicio\": \"04/02/21\",\n\t\t\"fechaVencimiento\": \"04/04/21\",\n\t\t\"monto\": \"1000000.00\"\n    },\n\t\"autorizadorRecojo\": {\n\t\t\"nombre\": \"FELICIANO LOPEZ\",\n\t\t\"documento\": \"96854754\"\n\t},\n\t\"oficina\" : {\n\t\t\"nombre\": \"100.OFICINA PRINCIPAL\"\n\t},\n\t\"cuenta\" : {\n\t\t\"cuentaOrigen\": \"007000533455.SOL\"\n\t},\n\t\"lineaCredito\": {\n\t\t\"numero\": \"11\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://banbif-carta-fianza-service.appsopsprvdes.dombif.peru/api-carta-fianza/v1/modifica/cartafianza",
+							"protocol": "https",
+							"host": [
+								"banbif-carta-fianza-service",
+								"appsopsprvdes",
+								"dombif",
+								"peru"
+							],
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"modifica",
+								"cartafianza"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Modalidad",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "123",
+								"type": "text"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET",
+								"type": "text"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200803 180000",
+								"type": "text"
+							},
+							{
+								"key": "SistemaEmisor",
+								"value": "Teste",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://banbif-carta-fianza-service-fuse.uatapps.dombif.peru/api-carta-fianza/v1/listar/modalidad/:codigoModalidad",
+							"protocol": "https",
+							"host": [
+								"banbif-carta-fianza-service-fuse",
+								"uatapps",
+								"dombif",
+								"peru"
+							],
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"listar",
+								"modalidad",
+								":codigoModalidad"
+							],
+							"variable": [
+								{
+									"key": "codigoModalidad",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Carga Archivo Carta Fianza",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "123123123123",
+								"type": "text"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET",
+								"type": "text"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200110 102800",
+								"type": "text"
+							},
+							{
+								"key": "SistemaEmisor",
+								"value": "teste",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivo",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "request",
+									"value": "{\n    \"cliente\": {\n        \"entidad\": {\n            \"nombre\": \"MEDIFARM\",\n            \"usuarios\": [\n                {\n                    \"nombre\": \"KOSORIO\"\n                }\n            ]\n        }\n    },\n    \"cartaFianza\": {\n\t\t\"fechaOperacion\": \"07/12/2020\",\n\t\t\"numeroAprobacion\": \"2\"\n    }\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://banbif-carta-fianza-service-fuse.uatapps.dombif.peru/api-carta-fianza/v1/carga/archivo/cartafianza",
+							"protocol": "https",
+							"host": [
+								"banbif-carta-fianza-service-fuse",
+								"uatapps",
+								"dombif",
+								"peru"
+							],
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"carga",
+								"archivo",
+								"cartafianza"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Procesar Solicitud Carta Fianza",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "idTransaccion",
+								"value": "12345",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET",
+								"type": "text"
+							},
+							{
+								"key": "numeroPagina",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200110 102800",
+								"type": "text"
+							},
+							{
+								"key": "sistemaEmisor",
+								"value": "teste",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivoDocumentoEspecial",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalUno",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalDos",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalTres",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "procesarSolicitudCartaFianza",
+									"value": "{\n    \"cliente\": {\n        \"codigoIBS\": \"627\"\n    },\n    \"beneficiario\": {\n        \"nombreBeneficiario\": \"JUAN PEREZ VELEZ\",\n        \"direccionBeneficiario\": \"CALLE LIBRE 640\",\n        \"correoBeneficiario\": \"SBURGOS@MOLITALIA.COM.PE\"\n    },\n    \"autorizadorRecojo\": {\n        \"nombre\": \"JUAN PABLO PESCORAN\",\n        \"documento\": \"07300043\",\n        \"correo\": \"JPESCORAN@BANBIF.COM.PE\"\n    },\n    \"oficina\": {\n        \"nombre\": \"0100\"\n    },\n    \"cuenta\": {\n        \"cuentaOrigen\": \"1000089994\"\n    },\n    \"lineaCredito\": {\n        \"numero\": 8105\n    },\n    \"cartaFianza\": {\n        \"fechaOperacion\": \"11022021\",\n        \"monto\": 40000.00,\n        \"moneda\": \"SOL\",\n        \"codigoModalidad\": \"0005\",\n        \"descripcionGarantizar\": \"EL FIEL CUMPLIMIENTO POR PRESTACIONES ACCESORIAS DE LA AD\",\n        \"fechaInicio\": \"01022021\",\n        \"fechaVencimiento\": \"01032021\"\n    }\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://banbif-carta-fianza-service-fuse.uatapps.dombif.peru/api-carta-fianza/v1/procesa/solicitud",
+							"protocol": "https",
+							"host": [
+								"banbif-carta-fianza-service-fuse",
+								"uatapps",
+								"dombif",
+								"peru"
+							],
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"procesa",
+								"solicitud"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registra Carta Fianza",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "teste",
+								"type": "text"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET",
+								"type": "text"
+							},
+							{
+								"key": "numeroPagina",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200722 180000",
+								"type": "text"
+							},
+							{
+								"key": "sistemaEmisor",
+								"value": "teste",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivoDocumentoEspecial",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalUno",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalDos",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "archivoDocumentoAdicionalTres",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "registraCartaFianza",
+									"value": "{\n    \"cliente\": {\n        \"entidad\": {\n            \"nombre\": \"BAFING13\",\n            \"usuarios\": [\n                {\n                    \"nombre\": \"PBISSO\"\n                }\n            ]\n        }\n    },\n\t\"beneficiario\": {\n\t\t\"nombreBeneficiario\": \"JUAN PABLO PESCORAN\",\n\t\t\"direccionBeneficiario\": \"07300043\",\n\t\t\"correoBeneficiario\": \"JPESCORAN@BANBIF.COM.PE\"\n\t},\n    \"cartaFianza\": {\n\t\t\"tipo\": \"1\",\n\t\t\"numeroAprobacion\": 1,\n        \"numeroReferencia\": \"210210183516\",\n\t\t\"fechaOperacion\": \"11022021\",\n\t\t\"descripcion\": \"\",\n\t\t\"moneda\": \"SOL\",\n\t\t\"descripcionModalidad\": \"0005\",\n\t\t\"descripcionGarantizar\": \"EL FIEL CUMPLIMIENTO DEL CONTRATO DE EJECUCIÓN DE LA OBRA 1234\",\n\t\t\"fechaInicio\": \"09/02/21\",\n\t\t\"fechaVencimiento\": \"04/04/21\",\n\t\t\"monto\": \"15000.00\"\n    },\n\t\"autorizadorRecojo\": {\n\t\t\"nombre\": \"JIM CASIMIRO\",\n\t\t\"documento\": \"02324251\"\n\t},\n\t\"oficina\" : {\n\t\t\"nombre\": \"100.OFICINA PRINCIPAL\"\n\t},\n\t\"cuenta\" : {\n\t\t\"cuentaOrigen\": 1000079344\n\t},\n\t\"lineaCredito\": {\n\t\t\"numero\": \"9153\"\n\t}\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://banbif-carta-fianza-service-fuse.uatapps.dombif.peru/api-carta-fianza/v1/registra/cartafianza",
+							"protocol": "https",
+							"host": [
+								"banbif-carta-fianza-service-fuse",
+								"uatapps",
+								"dombif",
+								"peru"
+							],
+							"path": [
+								"api-carta-fianza",
+								"v1",
+								"registra",
+								"cartafianza"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api-transferencia Copy",
+			"item": [
+				{
+					"name": "Transferencia Exterior",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "teste",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "codigoCanal",
+								"value": "BANCA_POR_INTERNET",
+								"type": "text"
+							},
+							{
+								"key": "fechaHora",
+								"value": "20200414 120000",
+								"type": "text"
+							},
+							{
+								"key": "sistemaEmisor",
+								"value": "teste",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cliente\": {\r\n        \"entidad\": {\r\n            \"usuarios\": [\r\n                {\r\n                    \"nombre\": \"EKLEIN\"\r\n                }\r\n            ]\r\n        },\r\n        \"tipoPersona\": \"JURIDICO\"\r\n    },\r\n    \"cuenta\": {\r\n        \"cuentaOrigen\": 8014513797,\r\n        \"moneda\": \"USD\",\r\n        \"cuentaCargo\": \"8555588787988\"\r\n    },\r\n    \"contactoPersona\": {\r\n        \"telefonoTrabajo\": \"989173466\",\r\n        \"nombre\": \"PRUEBA CONTAC NAME\",\r\n        \"email\": \"jcasimiro@banbif.com.pe\",\r\n        \"anexo\": \"4661\"\r\n    },\r\n    \"transferenciaExterior\": {\r\n        \"codigoCanal\": \"5\",\r\n        \"tipoRemesa1\": \"1\",\r\n        \"detalleRemesa1\": \"FACTURAS 1\",\r\n        \"tipoRemesa2\": \"2\",\r\n        \"detalleRemesa2\": \"FACTURAS 2\",\r\n        \"tipoRemesa3\": \"3\",\r\n        \"detalleRemesa3\": \"FACTURAS 3\",\r\n        \"tipoRemesa4\": \"4\",\r\n        \"detalleRemesa4\": \"FACTURAS 4\",\r\n        \"tipoGasto\": \"OUR\",\r\n        \"sucursal\": \"SAN MIGUEL OFIC\",\r\n        \"informacionAbono\": \"1234567890123456789012345678901234567890\",\r\n        \"numeroReferencia\": \"210705091732\",\r\n        \"instruccionUno\": \"INSTRUCCIONES 1\",\r\n        \"instruccionDos\": \"INSTRUCCIONES 2\",\r\n        \"instruccionTres\": \"INSTRUCCIONES 3\",\r\n        \"instruccionCuatro\": \"INSTRUCCIONES 4\",\r\n        \"importeOperacion\": \"0\",\r\n        \"flagOperacion\": \"P\",\r\n        \"beneficiario\": {\r\n            \"nombreBeneficiario\": \"nombre beneficiario\",\r\n            \"apePaBeneficiario\": \"paterno beneficiario\",\r\n            \"apeMaBeneficiario\": \"materno beneficiario\",\r\n            \"direccionBeneficiario\": \"direccion beneficiario\"\r\n        },\r\n        \"bancoIntermediario\": {\r\n            \"cuentaBancoPagadorIntermediario\": \"0385001207889874587\",\r\n            \"nombreBancoIntermediario\": \"BANK INTERMEDIARY\",\r\n            \"direccionBancoIntermediario\": \"ADDRESS BANK INTERMEDIARY\",\r\n            \"codigoRouteBancoIntermediario\": \"S\",\r\n            \"numeroRouteBancoIntermediario\": \"BBDIDOSD\",\r\n            \"ciudadBancoIntermediario\": \"DALLAS\",\r\n            \"paisBancoIntermediario\": \"US\"\r\n        },\r\n        \"bancoPagador\": {\r\n            \"nombreBancoPagador\": \"BANK OF UNITED STATES OF AMERICA\",\r\n            \"direccionBancoPagador\": \"NEW YORK CITY 5TH AVENEU\",\r\n            \"ciudadBancoBeneficiario\": \"NEW YORK\",\r\n            \"codPaisBeneficiario\": \"US\",\r\n            \"codigoRouteBancoPagador\": \"S\",\r\n            \"numeroRouteBancoPagador\": \"BPMOIT22\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://banbif-transferencia-transaccional-service-fuse.uatapps.dombif.peru/api-transferencia/v1/procesa/transferencia/exterior",
+							"protocol": "https",
+							"host": [
+								"banbif-transferencia-transaccional-service-fuse",
+								"uatapps",
+								"dombif",
+								"peru"
+							],
+							"path": [
+								"api-transferencia",
+								"v1",
+								"procesa",
+								"transferencia",
+								"exterior"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

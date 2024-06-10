@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="H2W_BXIE_POST_HAB" mainModule="Main" version="2.0" logLevel="verbose">
+	<variable name="baseDir_HaberesFTP" value="/HABERES_CTS/" />
+	<variable name="rutaBXIE_Haberes" value="/BXIE/HABERES_H2W/" />
+	<variable name="formato_fecha_hora" value="yyyy-MM-dd HH:mm:ss" />
+	<variable name="minHoraInicio" value="07:00:00" />
+	<variable name="maxHoraInicio" value="20:00:00" />
+
+	<module name="Main">
+
+		<setVariable label="minHora Rango" name="minHoraRango" value="${ReformatDateTime(minHoraInicio, &apos;hh:mm:ss&apos;, &apos;HH:mm:ss&apos;)}" version="2.0" />
+
+
+		<setVariable label="maxHora Rango" name="maxHoraRango" value="${ReformatDateTime(maxHoraInicio, &apos;HH:mm:ss&apos;, &apos;HH:mm:ss&apos;)}" version="2.0" />
+
+
+		<timestamp version="1.0">
+			<format outputVariable="endTime" pattern="${formato_fecha_hora}" />
+			<format outputVariable="startTime" pattern="${formato_fecha_hora}" minute="-5" />
+			<format outputVariable="horaActual" pattern="HH:mm:ss" />
+		</timestamp>
+
+
+		<print label="Print RangoFecha" version="1.0">
+			<![CDATA[fechaInicio: ${startTime} ,fecha fin: ${endTime}
+HoraActual: ${horaActual}]]>
+		</print>
+
+		<if label="Cumple rangoHorario" condition="${(horaActual &gt;= minHoraRango) &amp;&amp; (horaActual &lt;= maxHoraRango)}">
+
+			<sftp label="SFTP ObtenerDirectorios Haberes" resourceId="SFTP Produccion" version="1.0" disabled="false" onError="continue">
+				<list label="ListDir_Input_Haberes" fileListVariable="dirInputHab" numFilesFoundVariable="dirCountHab">
+					<fileset dir="${baseDir_HaberesFTP}" recursive="false" includeItems="directories" />
+				</list>
+			</sftp>
+
+
+			<print version="1.0">
+				<![CDATA[NroDir Haberes: ${dirCountHab}]]>
+			</print>
+
+			<forEachLoop label="For Directorios Haberes" itemsVariable="${dirInputHab}" currentItemVariable="current_dir_haberes">
+
+				<setVariable label="InputHab Actual" name="inputHabActual" value="${current_dir_haberes}/INPUT_HOSTTOWEB/" version="1.0" />
+
+
+				<setVariable label="OutputHab Actual" name="outputHabActual" value="${current_dir_haberes}/OUTPUT_HOSTTOWEB/" version="1.0" />
+
+
+				<sftp label="SFTP ObtenerArchivo Haberes" resourceId="SFTP Produccion" version="1.0" disabled="false" onError="setVariable:countInputHab=0">
+					<list label="ListInput_Haberes" fileListVariable="filesInputHab" numFilesFoundVariable="countInputHab">
+						<fileset dir="${inputHabActual}" includeItems="files">
+							<wildcardFilter>
+								<include pattern="H2W_HAB_*" caseSensitive="true" />
+							</wildcardFilter>
+							<dateFilter>
+								<include from="${startTime}" to="${endTime}" />
+							</dateFilter>
+						</fileset>
+					</list>
+					<get label="GetFiles Haberes" sourceFilesVariable="${filesInputHab}" destinationDir="${rutaBXIE_Haberes}" whenFileExists="overwrite" processedSourceFilesVariable="filesHaberes" />
+					<delete inputFilesVariable="${filesInputHab}" />
+				</sftp>
+
+				<if condition="${countInputHab &gt; 0}">
+					<forEachLoop label="Por CadaArchivo Hab" itemsVariable="${filesHaberes}" currentItemVariable="current_file_hab" disabled="false">
+
+						<copy label="Copiar Haberes a BXI INPUT" sourceFile="${concat(rutaBXIE_Haberes, current_file_hab:name)}" destFile="resource:sftp://Share_BIF1BPIPJ14/files/15052-H2W/${current_file_hab:name}" whenFileExists="overwrite" version="1.0" />
+
+
+						<checksum label="chekSum Hab" sourceFile="${concat(rutaBXIE_Haberes, current_file_hab:name)}" checksumAlgorithm="MD5" checksumFormat="Hex" checksumVariable="file_checksum_hab" version="1.0" disabled="false" />
+
+
+						<print label="Print Nombre Archivo" version="1.0">
+							<![CDATA[NombreArchivo: ${current_file_hab:name}
+Checksum: ${file_checksum_hab}]]>
+						</print>
+
+
+						<setVariable label="Path RespHaberes" name="pathRespHaberes" value="${Concat(rutaBXIE_Haberes,&apos;H2W_ERR_&apos;,Substring(current_file_hab:name, 5))}" version="2.0" disabled="false" />
+
+
+						<restPost label="Send Haberes Post" resourceId="Bxie_PRD" uri="/DCIBS_BIFNET/servlet/com.datapro.dibs.servlets.hostToWeb.JsHostToWebHaberes" contentType="application/json" responseBodyDestination="file" responseBodyFile="${pathRespHaberes}" whenResponseBodyFileExists="overwrite" version="1.0" disabled="false" onError="continue">
+							<content>{
+&quot;nombreArchivo&quot; : &quot;${current_file_hab:name}&quot;,
+&quot;checksumArchivo&quot; : &quot;${file_checksum_hab}&quot;
+}</content>
+							<header name="canal" value="HOST_TO_WEB" />
+						</restPost>
+
+						<if label="Existe RespHaberes" condition="${FileExists(pathRespHaberes)}" disabled="false">
+
+							<sftp label="Crear archivo RespHaberes" resourceId="SFTP Produccion" version="1.0">
+								<put sourceFile="${pathRespHaberes}" destinationDir="${outputHabActual}" />
+							</sftp>
+
+
+							<delete label="Borrar RespHaberes Local" file="${pathRespHaberes}" version="1.0" />
+
+						</if>
+
+						<delete label="Borrar Archivos Haberes" file="${concat(rutaBXIE_Haberes, current_file_hab:name)}" version="1.0" />
+
+					</forEachLoop>
+				</if>
+			</forEachLoop>
+			<else>
+
+				<print version="1.0">
+					<![CDATA[----------------> HORARIO FUERA DE RANGO <----------------]]>
+				</print>
+
+			</else>
+		</if>
+	</module>
+
+</project>
