@@ -1,0 +1,104 @@
+function _0x4f4c() {
+    var _0x22c06a = [
+        'ios',
+        '194190pXXczq',
+        'lightBlue',
+        'create',
+        '5ZnJeHP',
+        'Platform',
+        'row',
+        '443473BEVfOc',
+        'center',
+        '4872530NlOwLa',
+        '695852dpbarH',
+        '45939lENETq',
+        '__esModule',
+        '72NqSHcZ',
+        '16FtjtSh',
+        'default',
+        '4762184bRAbZn',
+        'defineProp',
+        'StyleSheet',
+        'erty',
+        '1785663VXWzqN',
+        'grey',
+        'white'
+    ];
+    _0x4f4c = function () {
+        return _0x22c06a;
+    };
+    return _0x4f4c();
+}
+function _0x57cc(_0x4e4306, _0x17d7b7) {
+    var _0x4415ad = _0x4f4c();
+    return _0x57cc = function (_0x32853c, _0x403348) {
+        _0x32853c = _0x32853c - (0x712 * -0x4 + 0x26 * 0x56 + 0x1178);
+        var _0x1b2d14 = _0x4415ad[_0x32853c];
+        return _0x1b2d14;
+    }, _0x57cc(_0x4e4306, _0x17d7b7);
+}
+var _0x50b9d0 = _0x57cc;
+(function (_0x31e27b, _0x101ccb) {
+    var _0x29ca33 = _0x57cc, _0x47c45f = _0x31e27b();
+    while (!![]) {
+        try {
+            var _0x25d42f = parseInt(_0x29ca33(0x1f5)) / (0x1d7a + 0x341 * -0x2 + -0x16f7 * 0x1) + -parseInt(_0x29ca33(0x1f8)) / (-0x1 * -0x190b + -0xa97 + -0x2 * 0x739) + parseInt(_0x29ca33(0x1f9)) / (0x6 * -0x251 + 0x13 * -0xf5 + -0xd * -0x278) * (-parseInt(_0x29ca33(0x1fb)) / (0x2 * -0xeaf + -0x1 * -0x23d6 + -0x674)) + -parseInt(_0x29ca33(0x209)) / (0x623 * 0x1 + -0x25e3 * 0x1 + -0xa97 * -0x3) * (parseInt(_0x29ca33(0x206)) / (-0x655 * -0x1 + 0x1 * 0x1639 + -0x1c88)) + parseInt(_0x29ca33(0x1fe)) / (-0x6b9 + 0x1 * 0xfeb + -0x92b) + parseInt(_0x29ca33(0x1fc)) / (-0x12b5 + 0x25bb * -0x1 + 0x3878) * (parseInt(_0x29ca33(0x202)) / (0x1cfb * 0x1 + -0x2051 + 0x1 * 0x35f)) + -parseInt(_0x29ca33(0x1f7)) / (0x264e + -0x4 * 0x250 + 0x4 * -0x741);
+            if (_0x25d42f === _0x101ccb)
+                break;
+            else
+                _0x47c45f['push'](_0x47c45f['shift']());
+        } catch (_0x47f7dc) {
+            _0x47c45f['push'](_0x47c45f['shift']());
+        }
+    }
+}(_0x4f4c, 0x548f3 + -0x1f048 * -0x4 + -0x747c6));
+var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0x252 + 0xd87 * 0x1 + -0xfd9]);
+Object[_0x50b9d0(0x1ff) + _0x50b9d0(0x201)](exports, _0x50b9d0(0x1fa), { 'value': !![] }), exports[_0x50b9d0(0x1fd)] = undefined;
+var _reactNative = _$$_REQUIRE(_dependencyMap[0x428 + 0x29 * -0x62 + -0x5 * -0x24f]), _colors = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[0x434 + -0x594 + 0x162])), _default = exports[_0x50b9d0(0x1fd)] = _reactNative[_0x50b9d0(0x200)][_0x50b9d0(0x208)]({
+        'container': {
+            'backgroundColor': _colors[_0x50b9d0(0x1fd)][_0x50b9d0(0x204)],
+            'flex': 0x1
+        },
+        'separator': {
+            'borderWidth': 0x1,
+            'borderColor': _colors[_0x50b9d0(0x1fd)][_0x50b9d0(0x203)],
+            'marginBottom': 0x5,
+            'marginTop': 0x5
+        },
+        'pageContainer': {
+            'width': 0x5a,
+            'flexDirection': _0x50b9d0(0x1f4),
+            'alignSelf': _0x50b9d0(0x1f6),
+            'marginTop': 0xa,
+            'alignContent': _0x50b9d0(0x1f6),
+            'height': 0x64
+        },
+        'pageIcon': {
+            'backgroundColor': _colors[_0x50b9d0(0x1fd)][_0x50b9d0(0x204)],
+            'borderColor': _colors[_0x50b9d0(0x1fd)][_0x50b9d0(0x207)],
+            'borderWidth': 0x1,
+            'borderRadius': 0xa,
+            'width': 0x14,
+            'height': 0x14,
+            'shadowOpacity': 0x0,
+            'shadowColor': _colors[_0x50b9d0(0x1fd)][_0x50b9d0(0x204)],
+            'shadowRadius': 0x0,
+            'marginTop': 0x5
+        },
+        'pageIconText': {
+            'color': _colors[_0x50b9d0(0x1fd)][_0x50b9d0(0x207)],
+            'paddingLeft': 0x2,
+            'marginTop': _reactNative[_0x50b9d0(0x20a)]['OS'] === _0x50b9d0(0x205) ? -(0x122f * -0x2 + -0x1ac3 + -0x1 * -0x3f23) : -(0x1ffc + 0x65b * -0x1 + -0x2 * 0xcce)
+        },
+        'pageText': {
+            'marginLeft': 0x5,
+            'color': _colors[_0x50b9d0(0x1fd)][_0x50b9d0(0x207)],
+            'marginTop': 0x7
+        },
+        'textNotFound': {
+            'flex': 0x1,
+            'alignItems': _0x50b9d0(0x1f6),
+            'alignSelf': _0x50b9d0(0x1f6),
+            'paddingTop': 0xf
+        }
+    });

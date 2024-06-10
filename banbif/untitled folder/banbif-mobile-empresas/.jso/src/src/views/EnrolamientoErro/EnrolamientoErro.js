@@ -1,0 +1,76 @@
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0]);
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = undefined;
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1]));
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2]));
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3]));
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4]));
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5]));
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[6]));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[7]);
+  var _Button = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8]));
+  var _Icon = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9]));
+  var _Styles = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10]));
+  var _colors = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11]));
+  var _strings = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12]));
+  var _jsxRuntime = _$$_REQUIRE(_dependencyMap[13]);
+  function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
+  function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
+  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+  var EnrolamientoErro = exports.default = function (_Component) {
+    (0, _inherits2.default)(EnrolamientoErro, _Component);
+    function EnrolamientoErro(props) {
+      var _this;
+      (0, _classCallCheck2.default)(this, EnrolamientoErro);
+      _this = _callSuper(this, EnrolamientoErro, [props]);
+      _this.state = {
+        mensaje: _this.props.route.params.mensaje
+      };
+      return _this;
+    }
+    (0, _createClass2.default)(EnrolamientoErro, [{
+      key: "render",
+      value: function render() {
+        var _this2 = this;
+        return (0, _jsxRuntime.jsxs)(_reactNative.View, {
+          style: _Styles.default.container,
+          children: [(0, _jsxRuntime.jsx)(_Icon.default, {
+            style: {
+              marginVertical: 10
+            },
+            family: _Icon.default.IONICONS,
+            name: "md-close-circle",
+            size: 80,
+            color: _colors.default.lightBlue
+          }), (0, _jsxRuntime.jsx)(_reactNative.Text, {
+            style: [_Styles.default.text, {
+              color: _colors.default.lightBlue
+            }],
+            children: "\xA1Error!"
+          }), (0, _jsxRuntime.jsx)(_reactNative.Text, {
+            style: [_Styles.default.text, _Styles.default.padding20],
+            children: this.state.mensaje
+          }), (0, _jsxRuntime.jsx)(_reactNative.View, {
+            style: _Styles.default.paddingTop20,
+            children: (0, _jsxRuntime.jsx)(_Button.default, {
+              color: _colors.default.lightBlue,
+              width: 150,
+              height: 40,
+              textButton: this.state.mensaje.indexOf(_strings.default.messages.enrolamientoCodigoActivacion["404"]) > -1 ? 'Retornar' : 'Menú',
+              action: function action() {
+                if (_this2.state.mensaje.indexOf(_strings.default.messages.enrolamientoCodigoActivacion["404"]) > -1) {
+                  _this2.props.navigation.navigate('EnrolamientoSoftToken');
+                } else {
+                  _this2.props.navigation.navigate('MainMenu');
+                }
+              }
+            })
+          })]
+        });
+      }
+    }]);
+    return EnrolamientoErro;
+  }(_react.Component);

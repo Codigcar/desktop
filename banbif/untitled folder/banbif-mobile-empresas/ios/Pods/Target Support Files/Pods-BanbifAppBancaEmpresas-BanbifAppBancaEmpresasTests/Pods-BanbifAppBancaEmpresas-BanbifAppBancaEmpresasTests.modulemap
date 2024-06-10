@@ -1,0 +1,6 @@
+module Pods_BanbifAppBancaEmpresas_BanbifAppBancaEmpresasTests {
+  umbrella header "Pods-BanbifAppBancaEmpresas-BanbifAppBancaEmpresasTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

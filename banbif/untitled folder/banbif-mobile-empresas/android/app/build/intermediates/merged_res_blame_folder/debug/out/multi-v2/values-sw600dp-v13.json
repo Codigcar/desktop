@@ -1,0 +1,81 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.banbifbancaempresasapp-mergeDebugResources-40:/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/ccastiro/.gradle/caches/transforms-3/5a6c4f945f597811b9ebf89e5b927192/transformed/material-1.9.0/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,115,185,256,328,386,444,553,617,673,732,795",
+                        "endLines": "2,3,4,5,6,7,9,10,11,12,13,17",
+                        "endColumns": "59,69,70,71,57,57,10,63,55,58,62,10",
+                        "endOffsets": "110,180,251,323,381,439,548,612,668,727,790,962"
+                    },
+                    "to": {
+                        "startLines": "11,12,13,14,15,16,17,19,23,24,26,27",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "650,710,780,851,923,981,1039,1148,1418,1474,1601,1664",
+                        "endLines": "11,12,13,14,15,16,18,19,23,24,26,30",
+                        "endColumns": "59,69,70,71,57,57,10,63,55,58,62,10",
+                        "endOffsets": "705,775,846,918,976,1034,1143,1207,1469,1528,1659,1831"
+                    }
+                },
+                {
+                    "source": "/Users/ccastiro/.gradle/caches/transforms-3/4505864ad4bb0a9b7443375b514ad204/transformed/mediarouter-1.2.2/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,94,163",
+                        "endColumns": "38,68,68",
+                        "endOffsets": "89,158,227"
+                    },
+                    "to": {
+                        "startLines": "2,21,22",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,1280,1349",
+                        "endColumns": "38,68,68",
+                        "endOffsets": "89,1344,1413"
+                    }
+                },
+                {
+                    "source": "/Users/ccastiro/Desktop/desktop/banbif/banbif-mobile-empresas/node_modules/react-native-sensitive-info/android/build/intermediates/packaged_res/debug/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,123,191",
+                        "endLines": "2,3,8",
+                        "endColumns": "67,67,12",
+                        "endOffsets": "118,186,431"
+                    },
+                    "to": {
+                        "startLines": "20,25,31",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "1212,1533,1836",
+                        "endLines": "20,25,35",
+                        "endColumns": "67,67,12",
+                        "endOffsets": "1275,1596,2076"
+                    }
+                },
+                {
+                    "source": "/Users/ccastiro/.gradle/caches/transforms-3/096f958eb181f69a7e2c221006d70098/transformed/appcompat-1.5.0/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,124,193,263,337,413,472,543",
+                        "endColumns": "68,68,69,73,75,58,70,67",
+                        "endOffsets": "119,188,258,332,408,467,538,606"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "94,163,232,302,376,452,511,582",
+                        "endColumns": "68,68,69,73,75,58,70,67",
+                        "endOffsets": "158,227,297,371,447,506,577,645"
+                    }
+                }
+            ]
+        }
+    ]
+}

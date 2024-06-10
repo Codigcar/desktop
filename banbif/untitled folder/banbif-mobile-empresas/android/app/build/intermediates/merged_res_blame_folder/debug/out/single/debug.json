@@ -1,0 +1,70 @@
+[
+    {
+        "merged": "com.banbifbancaempresasapp-merged_res-42:/drawable-xxhdpi_launch_screen.png.flat",
+        "source": "com.banbifbancaempresasapp-main-44:/drawable-xxhdpi/launch_screen.png"
+    },
+    {
+        "merged": "com.banbifbancaempresasapp-merged_res-42:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.banbifbancaempresasapp-main-44:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.banbifbancaempresasapp-merged_res-42:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.banbifbancaempresasapp-main-44:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.banbifbancaempresasapp-merged_res-42:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.banbifbancaempresasapp-main-44:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.banbifbancaempresasapp-merged_res-42:/drawable-xhdpi_launch_screen.png.flat",
+        "source": "com.banbifbancaempresasapp-main-44:/drawable-xhdpi/launch_screen.png"
+    },
+    {
+        "merged": "com.banbifbancaempresasapp-merged_res-42:/drawable-xxxhdpi_launch_screen.png.flat",
+        "source": "com.banbifbancaempresasapp-main-44:/drawable-xxxhdpi/launch_screen.png"
+    },
+    {
+        "merged": "com.banbifbancaempresasapp-merged_res-42:/drawable-mdpi_launch_screen.png.flat",
+        "source": "com.banbifbancaempresasapp-main-44:/drawable-mdpi/launch_screen.png"
+    },
+    {
+        "merged": "com.banbifbancaempresasapp-merged_res-42:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.banbifbancaempresasapp-main-44:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.banbifbancaempresasapp-merged_res-42:/xml_network_security_config.xml.flat",
+        "source": "com.banbifbancaempresasapp-main-44:/xml/network_security_config.xml"
+    },
+    {
+        "merged": "com.banbifbancaempresasapp-merged_res-42:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.banbifbancaempresasapp-main-44:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.banbifbancaempresasapp-merged_res-42:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.banbifbancaempresasapp-main-44:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.banbifbancaempresasapp-merged_res-42:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.banbifbancaempresasapp-main-44:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.banbifbancaempresasapp-merged_res-42:/drawable-hdpi_launch_screen.png.flat",
+        "source": "com.banbifbancaempresasapp-main-44:/drawable-hdpi/launch_screen.png"
+    },
+    {
+        "merged": "com.banbifbancaempresasapp-merged_res-42:/layout_launch_screen.xml.flat",
+        "source": "com.banbifbancaempresasapp-main-44:/layout/launch_screen.xml"
+    },
+    {
+        "merged": "com.banbifbancaempresasapp-merged_res-42:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.banbifbancaempresasapp-main-44:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.banbifbancaempresasapp-merged_res-42:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.banbifbancaempresasapp-main-44:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.banbifbancaempresasapp-merged_res-42:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.banbifbancaempresasapp-main-44:/mipmap-mdpi/ic_launcher_round.png"
+    }
+]

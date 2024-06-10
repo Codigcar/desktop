@@ -1,0 +1,2 @@
+import DollarIconNrAccountLoansComponent from "./DollarIconNrAccountLoansComponent";
+export default DollarIconNrAccountLoansComponent;

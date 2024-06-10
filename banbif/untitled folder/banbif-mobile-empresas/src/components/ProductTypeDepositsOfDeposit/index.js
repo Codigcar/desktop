@@ -1,0 +1,2 @@
+import ProductTypeDepositsOfDeposit from "./ProductTypeDepositsOfDeposit"
+export default ProductTypeDepositsOfDeposit;
