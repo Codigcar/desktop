@@ -1,0 +1,114 @@
+pipeline {
+  agent { label 'iOS'}
+  triggers {
+    gitlab(
+      triggerOnPush: true,
+      triggerOnMergeRequest: true,
+      branchFilterType: "NameBasedFilter",
+      includeBranchesSpec: '${GIT_BRANCH}')
+  }
+  stages {
+      stage('Preparation') {
+        steps {
+          dir('Source') {
+              sh 'security unlock-keychain -p "detectidsdk" ${HOME}/Library/Keychains/login.keychain'
+              sh 'rm -rf Framework/*'
+          }
+        }
+      }
+      
+       stage('Update Libraries Simulator') {
+        steps {
+           sh 'Echo detectidsdk | rsync --delete -avz -e ssh /Users/did-sdk/Documents/Jenkins/MrSlave/workspace/iOS-Data_development-[a-zA-Z0-9]*/Framework/Simulator/did_sdk_data_ios.framework /Users/did-sdk/Documents/Jenkins/MrSlave/workspace/iOS-DID-SDK_development-[a-zA-Z0-9]*/Source/DID_Auth_SDK/didm_auth_sdk_iOS/didm_auth_sdk_iOS/external_library/Core/'
+           sh 'Echo detectidsdk | rsync --delete -avz -e ssh /Users/did-sdk/Documents/Jenkins/MrSlave/workspace/iOS-Encryptor_development-[a-zA-Z0-9]*/Framework/Simulator/did_sdk_encrypt_iOS.framework /Users/did-sdk/Documents/Jenkins/MrSlave/workspace/iOS-DID-SDK_development-[a-zA-Z0-9]*/Source/DID_Auth_SDK/didm_auth_sdk_iOS/didm_auth_sdk_iOS/external_library/Core/'
+           sh 'Echo detectidsdk | rsync --delete -avz -e ssh /Users/did-sdk/Documents/Jenkins/MrSlave/workspace/iOS-Tokens_development-[a-zA-Z0-9]*/Framework/Simulator/did_sdk_tokens_ios.framework /Users/did-sdk/Documents/Jenkins/MrSlave/workspace/iOS-DID-SDK_development-[a-zA-Z0-9]*/Source/DID_Auth_SDK/didm_auth_sdk_iOS/didm_auth_sdk_iOS/external_library/Core/'
+        }
+      }
+      
+      stage('Build Simulator') {
+          steps {
+            dir('Source/DID_Auth_SDK/didm_auth_sdk_iOS') {
+              echo 'Building iOS Project'
+              sh 'xcodebuild -project didm_auth_sdk_iOS.xcodeproj -scheme didm_auth_sdk_iOS -configuration "Release" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 8" clean'
+              sh 'xcodebuild -project didm_auth_sdk_iOS.xcodeproj -scheme didm_auth_sdk_iOS -configuration "Release" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 8" ONLY_ACTIVE_ARCH=NO ARCHS="i386 x86_64"'
+            }
+          }
+        }
+      
+    stage('Update Libraries') {
+     steps {
+        sh 'Echo detectidsdk | rsync --delete -avz -e ssh /Users/did-sdk/Documents/Jenkins/MrSlave/workspace/iOS-Data_development-[a-zA-Z0-9]*/Framework/Devices/did_sdk_data_ios.framework /Users/did-sdk/Documents/Jenkins/MrSlave/workspace/iOS-DID-SDK_development-[a-zA-Z0-9]*/Source/DID_Auth_SDK/didm_auth_sdk_iOS/didm_auth_sdk_iOS/external_library/Core/'
+        sh 'Echo detectidsdk | rsync --delete -avz -e ssh /Users/did-sdk/Documents/Jenkins/MrSlave/workspace/iOS-Encryptor_development-[a-zA-Z0-9]*/Framework/Devices/did_sdk_encrypt_iOS.framework /Users/did-sdk/Documents/Jenkins/MrSlave/workspace/iOS-DID-SDK_development-[a-zA-Z0-9]*/Source/DID_Auth_SDK/didm_auth_sdk_iOS/didm_auth_sdk_iOS/external_library/Core/'
+        sh 'Echo detectidsdk | rsync --delete -avz -e ssh /Users/did-sdk/Documents/Jenkins/MrSlave/workspace/iOS-Tokens_development-[a-zA-Z0-9]*/Framework/Devices/did_sdk_tokens_ios.framework /Users/did-sdk/Documents/Jenkins/MrSlave/workspace/iOS-DID-SDK_development-[a-zA-Z0-9]*/Source/DID_Auth_SDK/didm_auth_sdk_iOS/didm_auth_sdk_iOS/external_library/Core/'
+        sh 'Echo detectidsdk | rsync --delete -avz -e ssh /Users/did-sdk/Documents/Jenkins/MrSlave/workspace/iOS-Liveness_development-[a-zA-Z0-9]*/Framework/Liveness.framework /Users/did-sdk/Documents/Jenkins/MrSlave/workspace/iOS-DID-SDK_development-[a-zA-Z0-9]*/Source/DID_Auth_SDK/didm_auth_sdk_iOS/didm_auth_sdk_iOS/external_library/FaceID/'
+        sh 'Echo detectidsdk | rsync --delete -avz -e ssh /Users/did-sdk/Documents/Jenkins/MrSlave/workspace/iOS-FDetector_development-[a-zA-Z0-9]*/Framework/FaceDetector.framework /Users/did-sdk/Documents/Jenkins/MrSlave/workspace/iOS-DID-SDK_development-[a-zA-Z0-9]*/Source/DID_Auth_SDK/didm_auth_sdk_iOS/didm_auth_sdk_iOS/external_library/FaceID/'
+        sh 'Echo detectidsdk | rsync --delete -avz -e ssh /Users/did-sdk/Documents/Jenkins/MrSlave/workspace/iOS-SelfID_development-[a-zA-Z0-9]*/Framework/SDK.framework /Users/did-sdk/Documents/Jenkins/MrSlave/workspace/iOS-DID-SDK_development-[a-zA-Z0-9]*/Source/DID_Auth_SDK/didm_auth_sdk_iOS/didm_auth_sdk_iOS/external_library/FaceID/'
+
+     }
+   }
+   
+    stage('Build') {
+        steps {
+          dir('Source/DID_Auth_SDK/didm_auth_sdk_iOS') {
+            echo 'Building iOS Project'
+            sh 'xcodebuild -project didm_auth_sdk_iOS.xcodeproj -scheme didm_auth_sdk_iOS -configuration "Release" clean -destination generic/platform=iOS '
+            sh 'xcodebuild -project didm_auth_sdk_iOS.xcodeproj -scheme didm_auth_sdk_iOS -configuration "Release" build ONLY_ACTIVE_ARCH=NO -destination generic/platform=iOS'
+          }
+        }
+      }
+            
+    stage('Tests') {
+      steps {
+        dir('Source/DID_Auth_SDK/didm_auth_sdk_iOS') {
+          echo 'Testing Project'
+          sh 'mkdir -p ../../Framework'
+          sh 'rm -rf ../../Reports'
+          sh 'xcodebuild -project didm_auth_sdk_iOS.xcodeproj -scheme didm_auth_sdk_iOSTests -configuration "Release" -destination platform=iOS,name="QA mobile Cyxtera" OTHER_CODE_SIGN_FLAGS="--keychain jenkins-${JOB_NAME}" -enableCodeCoverage YES test'
+        }
+      }
+    }
+    
+    stage('Compress Artifacts') {
+      steps {
+        dir('Source/Framework') {
+        sh 'zip -r "didm_auth_sdk_iOS.zip" ./*'
+        }
+      }
+    }
+    
+    stage('CodeCoverage') {
+      steps {
+        sh 'mkdir -p Source/Reports'
+        sh 'chmod 777 Source/Reports'
+        //sh 'xsltproc -o Source/Reports/report.junit /Users/did-sdk/Documents/plist_to_junit.xsl /Users/did-sdk/Library/Developer/Xcode/DerivedData/didm_auth_sdk_iOS-[a-z]*/Logs/Test/*.xcresult/TestSummaries.plist'
+        //junit 'Source/Reports/report.junit'
+      }
+    }
+  }
+  post {
+    success {
+      archiveArtifacts 'Source/Framework/*.zip'
+      script{
+          build job: 'iOS-DID-APP/development', parameters: [string(name: 'Name', value: 'Foo1')], quietPeriod: 2, wait: false
+      }
+      notifyBuildSuccess()
+    }
+    failure {
+      notifyBuildError()
+    }
+  }
+}
+def notifyBuildSuccess() {
+   emailext (
+    // attachmentsPattern: 'Source/Framework/*.zip',
+     subject: '${BUILD_STATUS}: [iOS] ${JOB_NAME} Build #${BUILD_NUMBER}',
+     body: 'To get the SDK .framework file, please go to the following link and check the Artifacts section, or simply Download it from attachments. You must unzip the file found there: \n ${RUN_DISPLAY_URL}',
+     to: 'rafael.bocanegra@cyxtera.com, katerine.vasquez@cyxtera.com, linda.barros@cyxtera.com, elkin.salcedo@cyxtera.com')
+}
+
+def notifyBuildError() {
+    emailext (
+      subject: '${BUILD_STATUS}: [iOS] ${JOB_NAME} Build #${BUILD_NUMBER}',
+      body: 'Something went wrong, please check your build log at : \n ${RUN_DISPLAY_URL}',
+      to: 'rafael.bocanegra@cyxtera.com, katerine.vasquez@cyxtera.com, linda.barros@cyxtera.com, elkin.salcedo@cyxtera.com')
+}
