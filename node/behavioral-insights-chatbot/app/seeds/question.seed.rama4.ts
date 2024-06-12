@@ -43,11 +43,12 @@ function generateList({ list, initIndex, num_sem, num_day, rama = 4 }: Props) {
       day: num_day,
       module: num_sem,
       idx: initIndex + index,
-      rama,
+      rama: 4,
     }
   })
   return newList
 }
+
 
 export const QuestionSeedRama4 = async () => {
   const sem1_dia1 = generateList({
@@ -55,7 +56,6 @@ export const QuestionSeedRama4 = async () => {
     initIndex: 41101,
     num_sem: 1,
     num_day: 1,
-    rama: 1,
   })
 
   const sem1_dia3 = generateList({

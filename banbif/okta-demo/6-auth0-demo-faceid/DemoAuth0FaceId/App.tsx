@@ -22,7 +22,6 @@ import WebView from 'react-native-webview';
 import {checkMultiple, PERMISSIONS, request} from 'react-native-permissions';
 import InAppBrowser from 'react-native-inappbrowser-reborn';
 
-
 function extractAccessToken(url: string): string | null {
   // Intenta crear un objeto URL, lo cual también valida la URL
   try {
@@ -56,58 +55,60 @@ const AuthWebview = () => {
   console.log('🚀 ----------------------------------------------🚀');
 
   return (
-    <View style={{flex: 1}}>
-      <WebView
-        javaScriptEnabled
-        thirdPartyCookiesEnabled={true}
-        style={{flex: 1}}
-        mediaCapturePermissionGrantType="grantIfSameHostElsePrompt"
-        originWhitelist={['*']}
-        allowsInlineMediaPlayback
-        useWebKit
-        mediaPlaybackRequiresUserAction={false}
-        onMessage={(event: any) => {
-          console.log(
-            '🚀 --------------------------------------------------🚀',
-          );
-          console.log('🚀 ~ file: App.tsx:67 ~ AuthWebview ~ event:', event);
-          console.log(
-            '🚀 --------------------------------------------------🚀',
-          );
-        }}
-        source={{
-          uri: 'https://webauthn.io/',
-          // uri: URI,
-        }}
-        onNavigationStateChange={(response: any) => {
-          console.log(
-            '🚀 --------------------------------------------------------🚀',
-          );
-          console.log(
-            '🚀 ~ file: App.tsx:70 ~ AuthWebview ~ response:',
-            JSON.stringify(response),
-          );
-          console.log(
-            '🚀 --------------------------------------------------------🚀',
-          );
-          const url = response?.url;
-          console.log('🚀 -----------------------------------------🚀');
-          console.log('🚀 ~ file: Auth0.screen.tsx:50 ~ url:', url);
-          console.log('🚀 -----------------------------------------🚀');
-          const getToken = extractAccessToken(url);
-          console.log(
-            '🚀 ---------------------------------------------------🚀',
-          );
-          console.log('🚀 ~ file: Auth0.screen.tsx:54 ~ getToken:', getToken);
-          console.log(
-            '🚀 ---------------------------------------------------🚀',
-          );
-          if (!getToken) return;
-          // navigation.pop();
-          // navigation.push("MainMenu")
-        }}
-      />
-    </View>
+    <SafeAreaView style={{flex:1}}>
+      <View style={{flex: 1}}>
+        <WebView
+          javaScriptEnabled
+          thirdPartyCookiesEnabled={true}
+          style={{flex: 1}}
+          mediaCapturePermissionGrantType="grantIfSameHostElsePrompt"
+          originWhitelist={['*']}
+          allowsInlineMediaPlayback
+          useWebKit
+          mediaPlaybackRequiresUserAction={false}
+          onMessage={(event: any) => {
+            console.log(
+              '🚀 --------------------------------------------------🚀',
+            );
+            console.log('🚀 ~ file: App.tsx:67 ~ AuthWebview ~ event:', event);
+            console.log(
+              '🚀 --------------------------------------------------🚀',
+            );
+          }}
+          source={{
+            // uri: 'https://webauthn.io/',
+            uri: URI,
+          }}
+          onNavigationStateChange={(response: any) => {
+            console.log(
+              '🚀 --------------------------------------------------------🚀',
+            );
+            console.log(
+              '🚀 ~ file: App.tsx:70 ~ AuthWebview ~ response:',
+              JSON.stringify(response),
+            );
+            console.log(
+              '🚀 --------------------------------------------------------🚀',
+            );
+            const url = response?.url;
+            console.log('🚀 -----------------------------------------🚀');
+            console.log('🚀 ~ file: Auth0.screen.tsx:50 ~ url:', url);
+            console.log('🚀 -----------------------------------------🚀');
+            const getToken = extractAccessToken(url);
+            console.log(
+              '🚀 ---------------------------------------------------🚀',
+            );
+            console.log('🚀 ~ file: Auth0.screen.tsx:54 ~ getToken:', getToken);
+            console.log(
+              '🚀 ---------------------------------------------------🚀',
+            );
+            if (!getToken) return;
+            // navigation.pop();
+            // navigation.push("MainMenu")
+          }}
+        />
+      </View>
+    </SafeAreaView>
   );
 };
 
@@ -233,7 +234,7 @@ const App = () => {
     headers: {
       'my-custom-header': 'my custom header value',
     },
-  }
+  };
 
   const openIAppBrowser = () => {
     // InAppBrowser.open('https://webauthn.io/', configInApp);
@@ -241,21 +242,19 @@ const App = () => {
   };
 
   useEffect(() => {
-    openIAppBrowser()
+    // openIAppBrowser()
+    onLogin()
   }, [])
-  
 
-  return (
-    <SafeAreaView>
-      <View>
-        <Text>holaaa</Text>
-        <Button title="InApp" onPress={() => openIAppBrowser()} />
-      </View>
-    </SafeAreaView>
-  );
   // return (
-  //   <AuthWebview />
-  // )
+  //   <SafeAreaView>
+  //     <View>
+  //       <Text>holaaa</Text>
+  //       <Button title="InApp" onPress={() => openIAppBrowser()} />
+  //     </View>
+  //   </SafeAreaView>
+  // );
+  // return <AuthWebview />;
   // return (
   //   <LogoutScreen />
   // )
