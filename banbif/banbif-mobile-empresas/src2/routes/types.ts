@@ -1,7 +1,7 @@
+import { NativeStackScreenProps } from "@react-navigation/native-stack"
+
 export type AppStackParamList = {
-  AssociateDeviceScreen: undefined
   LoginScreen: undefined
-  Login: undefined
 
   NetworkLogger: undefined
   LoginAuth0: undefined
@@ -32,3 +32,6 @@ export type AppStackParamList = {
   IntermediateScreen: undefined
   FrequentQuestions: undefined
 }
+
+export type AppStackScreenProps<T extends keyof AppStackParamList> =
+  NativeStackScreenProps<AppStackParamList, T>

@@ -1,13 +1,13 @@
-import React, {createRef, useEffect, useRef, useState} from 'react';
-import strings from '../assets/strings';
-import MainMenu from '../views/MainMenu';
-import Login from '../views/Login';
-import ProductName from '../views/ProductName';
-import CheckingAccountDetails from '../views/CheckingAccountDetails';
-import ConsolidatedPosition from '../views/ConsolidatedPosition/ConsolidatedPosition';
-import Loans from '../views/Loans/Loans';
-import TimeDeposits from '../views/TimeDeposits/TimeDeposits';
-import Leasing from '../views/Leasing/Leasing';
+import React, { createRef, useEffect, useRef, useState } from 'react'
+import strings from '../assets/strings'
+import MainMenu from '../views/MainMenu'
+import Login from '../views/Login'
+import ProductName from '../views/ProductName'
+import CheckingAccountDetails from '../views/CheckingAccountDetails'
+import ConsolidatedPosition from '../views/ConsolidatedPosition/ConsolidatedPosition'
+import Loans from '../views/Loans/Loans'
+import TimeDeposits from '../views/TimeDeposits/TimeDeposits'
+import Leasing from '../views/Leasing/Leasing'
 import {
   Image,
   Keyboard,
@@ -15,47 +15,42 @@ import {
   Text,
   TouchableOpacity,
   View,
-} from 'react-native';
-import Icon from '../components/Icon';
-import Logout from '../components/Logout';
-import Logo from '../components/Logo';
-import colors from '../assets/colors';
-import Factoring from '../views/Factoring/Factoring';
-import DepositsOfDeposit from '../views/DepositsOfDeposit/DepositsOfDeposit';
-import InternationalCollections from '../views/InternationalCollections/InternationalCollections';
-import Collections from '../views/Collections/Collections';
-import Discounts from '../views/Discounts/Discounts';
-import LetterCreditLine from '../views/LetterCreditLine/LetterCreditLine';
-import CreditCard from '../views/CreditCard/CrediCard';
-import PendingApprovals from '../views/PendingApprovals/PendingApprovals';
-import EnrolamientoSoftToken from '../views/EnrolamientoSoftToken/EnrolamientoSoftToken';
-import EnrolamientoListo from '../views/EnrolamientoListo/EnrolamientoListo';
-import EnrolamientoErro from '../views/EnrolamientoErro/EnrolamientoErro';
-import CreditLetters from '../views/CreditLetters/CreditLetters';
-import SoftTokenLogin from '../views/SoftTokenLogin/SoftTokenLogin';
-import IntermediateScreen from '../views/IntermediateScreen/IntermediateScreen';
-import images from '../assets/images';
-import NetworkVerification from '../views/NetworkVerification/NetworkVerification';
-import FrequentQuestions from '../views/FrequentQuestions/FrequentQuestions';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {navigate, navigationRef} from '../services/navigation';
-import {AuthService} from '../services/auth';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import NetworkLogger from 'react-native-network-logger';
-import AuthZero from '../../src2/modules/Auth/presentation/Auth0.screen';
-import LogoutScreen from '../../src2/modules/Auth/presentation/Logout.screen';
-import RegisterScreen from '../../src2/modules/Auth/presentation/Register.screen';
-import SettingsScreen from '../../src2/modules/Auth/presentation/Settings.screen';
-import { AppStack } from '../../src2/routes';
-import LoginScreen from '../../src2/modules/Login/presentation/Login.screen';
-import AssociateDeviceScreen from '../../src2/modules/Onboarding/presentation/AssociateDevice.screen';
+} from 'react-native'
+import Icon from '../components/Icon'
+import Logout from '../components/Logout'
+import Logo from '../components/Logo'
+import colors from '../assets/colors'
+import Factoring from '../views/Factoring/Factoring'
+import DepositsOfDeposit from '../views/DepositsOfDeposit/DepositsOfDeposit'
+import InternationalCollections from '../views/InternationalCollections/InternationalCollections'
+import Collections from '../views/Collections/Collections'
+import Discounts from '../views/Discounts/Discounts'
+import LetterCreditLine from '../views/LetterCreditLine/LetterCreditLine'
+import CreditCard from '../views/CreditCard/CrediCard'
+import PendingApprovals from '../views/PendingApprovals/PendingApprovals'
+import EnrolamientoSoftToken from '../views/EnrolamientoSoftToken/EnrolamientoSoftToken'
+import EnrolamientoListo from '../views/EnrolamientoListo/EnrolamientoListo'
+import EnrolamientoErro from '../views/EnrolamientoErro/EnrolamientoErro'
+import CreditLetters from '../views/CreditLetters/CreditLetters'
+import SoftTokenLogin from '../views/SoftTokenLogin/SoftTokenLogin'
+import IntermediateScreen from '../views/IntermediateScreen/IntermediateScreen'
+import images from '../assets/images'
+import NetworkVerification from '../views/NetworkVerification/NetworkVerification'
+import FrequentQuestions from '../views/FrequentQuestions/FrequentQuestions'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { navigate, navigationRef } from '../services/navigation'
+import { AuthService } from '../services/auth'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import NetworkLogger from 'react-native-network-logger'
+import { AppStack } from '../../src2/routes'
+import LoginScreen from '../../src2/modules/Auth/Login/presentation/Login.screen'
 
-const Stack = createNativeStackNavigator();
-let timeout:any;
-const TIME_TIMEOUT = 180000; // 3 minutos
+const Stack = createNativeStackNavigator()
+let timeout: any
+const TIME_TIMEOUT = 180000 // 3 minutos
 
-const FloatingButton = ({onPress}:any) => (
+const FloatingButton = ({ onPress }: any) => (
   <TouchableOpacity
     style={{
       position: 'absolute',
@@ -74,118 +69,84 @@ const FloatingButton = ({onPress}:any) => (
     onPress={onPress}>
     <Text>+</Text>
   </TouchableOpacity>
-);
+)
 
-const MyScreen = () => <NetworkLogger />;
+const MyScreen = () => <NetworkLogger />
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator()
 
 const Routes = () => {
-  const [isTimeout, setIsTimeout] = useState(false);
-  const refLogout = createRef();
+  const [isTimeout, setIsTimeout] = useState(false)
+  const refLogout = createRef()
 
   const resetInactivityTimeout = () => {
-    clearTimeout(timeout);
+    clearTimeout(timeout)
     if (isTimeout) {
       timeout = setTimeout(() => {
-        logout(refLogout);
-      }, TIME_TIMEOUT);
+        logout(refLogout)
+      }, TIME_TIMEOUT)
     }
-  };
+  }
 
   //
-  const logout = async (ref:any) => {
-    await AuthService.doLogout();
-    navigate('Login', {isTimeout: true});
-  };
+  const logout = async (ref: any) => {
+    await AuthService.doLogout()
+    navigate('Login', { isTimeout: true })
+  }
 
   const handleStateChange = () => {
-    setIsTimeout(true);
-  };
+    setIsTimeout(true)
+  }
 
   useEffect(() => {
     timeout = setTimeout(() => {
       if (isTimeout) {
-        logout(refLogout);
+        logout(refLogout)
       }
-    }, TIME_TIMEOUT);
+    }, TIME_TIMEOUT)
 
     const showSubscription = Keyboard.addListener('keyboardDidShow', () => {
-      clearTimeout(timeout);
-    });
+      clearTimeout(timeout)
+    })
     const hideSubscription = Keyboard.addListener('keyboardDidHide', () => {
-      resetInactivityTimeout();
-    });
+      resetInactivityTimeout()
+    })
     return () => {
-      clearTimeout(timeout);
-      showSubscription.remove();
-      hideSubscription.remove();
-    };
-  }, [isTimeout]);
+      clearTimeout(timeout)
+      showSubscription.remove()
+      hideSubscription.remove()
+    }
+  }, [isTimeout])
 
   const panResponder = PanResponder.create({
     onMoveShouldSetPanResponderCapture: () => {
-      resetInactivityTimeout();
+      resetInactivityTimeout()
     },
     onStartShouldSetPanResponder: () => {
-      resetInactivityTimeout();
+      resetInactivityTimeout()
     },
     onStartShouldSetPanResponderCapture: () => {
-      resetInactivityTimeout();
+      resetInactivityTimeout()
     },
-  });
+  })
 
   return (
     <View
       {...panResponder.panHandlers}
-      style={{flex: 1, backgroundColor: 'transparent'}}>
+      style={{ flex: 1, backgroundColor: 'transparent' }}>
       <NavigationContainer
         ref={navigationRef}
         onStateChange={handleStateChange}>
-        <AppStack.Navigator initialRouteName="Login">
-        <AppStack.Screen name="LoginScreen" component={LoginScreen} options={{headerShown:false}} />
-      <AppStack.Screen
-        name="AssociateDeviceScreen"
-        component={AssociateDeviceScreen}
-      />
-
+        <AppStack.Navigator initialRouteName="LoginScreen">
+          {/* Nuevo */}
+          <AppStack.Screen
+            name="LoginScreen"
+            component={LoginScreen}
+            options={{ headerShown: false }}
+          />
+          
+          {/* Nuevo */}
           <AppStack.Screen name="NetworkLogger" component={MyScreen} />
-
-          <AppStack.Screen
-            name="Login"
-            component={Login}
-            options={{
-              headerShown: false,
-            }}
-          />
-          <AppStack.Screen
-            name="LoginAuth0"
-            component={AuthZero}
-            options={{
-              headerShown: false,
-            }}
-          />
-          <AppStack.Screen
-            name="SettingScreen"
-            component={SettingsScreen}
-            options={{
-              headerShown: false,
-            }}
-          />
-          <AppStack.Screen
-            name="LogoutAuth0"
-            component={LogoutScreen}
-            options={{
-              headerShown: false,
-            }}
-          />
-          <AppStack.Screen
-            name="RegisterAuth0"
-            component={RegisterScreen}
-            options={{
-              headerShown: false,
-            }}
-          />
 
           <AppStack.Screen
             name="NetworkVerification"
@@ -206,19 +167,19 @@ const Routes = () => {
           <AppStack.Screen
             name="MainMenu"
             component={MainMenu}
-            options={({navigation, route}) => {
-              let altura = 60;
-              let imagem = <Logo />;
+            options={({ navigation, route }) => {
+              let altura = 60
+              let imagem = <Logo />
 
               if (route?.params) {
-                altura = route.params?.altura;
-                imagem = altura == 0 ? <View /> : <Logo />;
+                altura = route.params?.altura
+                imagem = altura == 0 ? <View /> : <Logo />
               }
               return {
                 gestureEnabled: false,
                 headerTitle: () => (
                   <Image
-                    style={{width: 110, height: 30}}
+                    style={{ width: 110, height: 30 }}
                     source={images.logo}
                   />
                 ),
@@ -232,7 +193,7 @@ const Routes = () => {
                 headerTitleAlign: 'center',
                 headerLeft: () => imagem,
                 headerRight: () => <Logout navigation={navigation} />,
-              };
+              }
             }}
           />
 
@@ -256,7 +217,7 @@ const Routes = () => {
                   family={Icon.ENTYPO}
                   name="chevron-small-left"
                   size={40}
-                  style={{color: colors.white}}
+                  style={{ color: colors.white }}
                 />
               ),
             }}
@@ -265,7 +226,7 @@ const Routes = () => {
           <AppStack.Screen
             name="ProductName"
             component={ProductName}
-            options={({navigation, route}) => ({
+            options={({ navigation, route }) => ({
               title: route.params.descripcion,
               headerStyle: {
                 backgroundColor: colors.lightBlue,
@@ -284,7 +245,7 @@ const Routes = () => {
                   family={Icon.ENTYPO}
                   name="chevron-small-left"
                   size={40}
-                  style={{color: colors.white}}
+                  style={{ color: colors.white }}
                 />
               ),
             })}
@@ -316,7 +277,7 @@ const Routes = () => {
                   family={Icon.ENTYPO}
                   name="chevron-small-left"
                   size={40}
-                  style={{color: colors.black}}
+                  style={{ color: colors.black }}
                 />
               ),
             }}
@@ -346,7 +307,7 @@ const Routes = () => {
                   family={Icon.ENTYPO}
                   name="chevron-small-left"
                   size={40}
-                  style={{color: colors.black}}
+                  style={{ color: colors.black }}
                 />
               ),
             }}
@@ -374,7 +335,7 @@ const Routes = () => {
                   family={Icon.ENTYPO}
                   name="chevron-small-left"
                   size={40}
-                  style={{color: colors.black}}
+                  style={{ color: colors.black }}
                 />
               ),
             }}
@@ -405,7 +366,7 @@ const Routes = () => {
                   family={Icon.ENTYPO}
                   name="chevron-small-left"
                   size={40}
-                  style={{color: colors.black}}
+                  style={{ color: colors.black }}
                 />
               ),
             }}
@@ -432,7 +393,7 @@ const Routes = () => {
                   family={Icon.ENTYPO}
                   name="chevron-small-left"
                   size={40}
-                  style={{color: colors.black}}
+                  style={{ color: colors.black }}
                 />
               ),
             }}
@@ -460,7 +421,7 @@ const Routes = () => {
                   family={Icon.ENTYPO}
                   name="chevron-small-left"
                   size={40}
-                  style={{color: colors.black}}
+                  style={{ color: colors.black }}
                 />
               ),
             }}
@@ -487,7 +448,7 @@ const Routes = () => {
                   family={Icon.ENTYPO}
                   name="chevron-small-left"
                   size={40}
-                  style={{color: colors.black}}
+                  style={{ color: colors.black }}
                 />
               ),
             }}
@@ -514,7 +475,7 @@ const Routes = () => {
                   family={Icon.ENTYPO}
                   name="chevron-small-left"
                   size={40}
-                  style={{color: colors.black}}
+                  style={{ color: colors.black }}
                 />
               ),
             }}
@@ -541,7 +502,7 @@ const Routes = () => {
                   family={Icon.ENTYPO}
                   name="chevron-small-left"
                   size={40}
-                  style={{color: colors.black}}
+                  style={{ color: colors.black }}
                 />
               ),
             }}
@@ -568,7 +529,7 @@ const Routes = () => {
                   family={Icon.ENTYPO}
                   name="chevron-small-left"
                   size={40}
-                  style={{color: colors.black}}
+                  style={{ color: colors.black }}
                 />
               ),
             }}
@@ -595,7 +556,7 @@ const Routes = () => {
                   family={Icon.ENTYPO}
                   name="chevron-small-left"
                   size={40}
-                  style={{color: colors.black}}
+                  style={{ color: colors.black }}
                 />
               ),
             }}
@@ -622,7 +583,7 @@ const Routes = () => {
                   family={Icon.ENTYPO}
                   name="chevron-small-left"
                   size={40}
-                  style={{color: colors.black}}
+                  style={{ color: colors.black }}
                 />
               ),
             }}
@@ -631,7 +592,7 @@ const Routes = () => {
           <AppStack.Screen
             name="PendingApprovals"
             component={PendingApprovals}
-            options={({route}) => ({
+            options={({ route }) => ({
               title: 'Aprobaciones Pendientes',
               headerStyle: {
                 backgroundColor: colors.white,
@@ -649,7 +610,7 @@ const Routes = () => {
                   family={Icon.ENTYPO}
                   name="chevron-small-left"
                   size={40}
-                  style={{color: colors.black}}
+                  style={{ color: colors.black }}
                 />
               ),
             })}
@@ -686,7 +647,7 @@ const Routes = () => {
                   family={Icon.ENTYPO}
                   name="chevron-small-left"
                   size={40}
-                  style={{color: colors.lightBlue}}
+                  style={{ color: colors.lightBlue }}
                 />
               ),
             }}
@@ -755,22 +716,21 @@ const Routes = () => {
                   family={Icon.ENTYPO}
                   name="chevron-small-left"
                   size={40}
-                  style={{color: colors.white}}
+                  style={{ color: colors.white }}
                 />
               ),
             }}
           />
-
         </AppStack.Navigator>
         <FloatingButton
           onPress={() => {
-            console.log('Botón flotante presionado');
-            navigate('NetworkLogger');
+            console.log('Botón flotante presionado')
+            navigate('NetworkLogger')
           }}
         />
       </NavigationContainer>
     </View>
-  );
-};
+  )
+}
 
-export default Routes;
+export default Routes
