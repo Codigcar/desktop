@@ -1,8 +1,11 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack"
 
 export type AppStackParamList = {
+  /* nuevo */
   LoginScreen: undefined
+  OnboardingStep1Screen: undefined
 
+  /*  */
   NetworkLogger: undefined
   LoginAuth0: undefined
   SettingScreen: undefined

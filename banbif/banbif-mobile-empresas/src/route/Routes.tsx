@@ -45,6 +45,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import NetworkLogger from 'react-native-network-logger'
 import { AppStack } from '../../src2/routes'
 import LoginScreen from '../../src2/modules/Auth/Login/presentation/Login.screen'
+import OnboardingStep1Screen from '../../src2/modules/Auth/Onboarding/presentation/OnboardingStep1.screen'
 
 const Stack = createNativeStackNavigator()
 let timeout: any
@@ -139,12 +140,14 @@ const Routes = () => {
         onStateChange={handleStateChange}>
         <AppStack.Navigator initialRouteName="LoginScreen">
           {/* Nuevo */}
-          <AppStack.Screen
-            name="LoginScreen"
-            component={LoginScreen}
-            options={{ headerShown: false }}
-          />
-          
+          <AppStack.Group screenOptions={{ headerShown: false }}>
+            <AppStack.Screen name="LoginScreen" component={LoginScreen} />
+            <AppStack.Screen
+              name="OnboardingStep1Screen"
+              component={OnboardingStep1Screen}
+            />
+          </AppStack.Group>
+
           {/* Nuevo */}
           <AppStack.Screen name="NetworkLogger" component={MyScreen} />
 

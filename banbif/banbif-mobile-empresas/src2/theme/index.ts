@@ -46,7 +46,10 @@ const palette = {
   blue: {
     100: '#10B0F5',
   },
-  'gray-200': '#EEEDE7',
+  gray: {
+    800: '#8C95AB',
+    900: '#2B303B',
+  },
   'red-500': '#EF4444',
   'red-800': '#841b24',
   salmon: {
@@ -54,7 +57,7 @@ const palette = {
     200: '#f1ded0',
   },
   'blue-400': '#0089ff',
-  primary: '#BD1714',
+  primary: '#925AF5',
   yellow: '#fff000',
   toastSuccess: '#42C72C',
   toastWarning: '#F4A814',
@@ -64,6 +67,7 @@ const palette = {
     100: '#00B383',
   },
   blackWithOpacity: 'rgba(0, 0, 0, 0.8)',
+  secondary: '#141925',
 }
 
 const base = 16
@@ -71,10 +75,9 @@ const base = 16
 const theme = createTheme({
   colors: {
     primary: palette.primary,
-    secondary: palette.primary,
+    secondary: palette.secondary,
     yellow: palette.yellow,
     white: palette.white.default,
-    'gray-900': palette.coolGray[900],
     black: palette.black[100],
     link: palette['blue-400'],
     'coolGray-100': palette.coolGray[100],
@@ -104,7 +107,9 @@ const theme = createTheme({
     transparent: palette.transparent,
     // green: palette.green[100]
     'green-100': palette.green[100],
-    blackWithOpacity: palette.blackWithOpacity
+    blackWithOpacity: palette.blackWithOpacity,
+    'gray-800': palette.gray[800],
+    'gray-900': palette.gray[900]
   },
   breakpoints: {},
   spacing: {
